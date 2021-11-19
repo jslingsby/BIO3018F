@@ -4,8 +4,10 @@
     <title>Measuring biodiversity</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jasper Slingsby, BIO3018S" />
-    <meta name="date" content="2021-11-18" />
+    <meta name="date" content="2021-11-19" />
     <script src="1_Intro_files/header-attrs/header-attrs.js"></script>
+    <script src="1_Intro_files/kePrint/kePrint.js"></script>
+    <link href="1_Intro_files/lightable/lightable.css" rel="stylesheet" />
     <script src="1_Intro_files/htmlwidgets/htmlwidgets.js"></script>
     <link href="1_Intro_files/datatables-css/datatables-crosstalk.css" rel="stylesheet" />
     <script src="1_Intro_files/datatables-binding/datatables.js"></script>
@@ -24,7 +26,7 @@ class: center, middle, inverse, title-slide
 # Measuring biodiversity
 ## 1. Introduction
 ### Jasper Slingsby, BIO3018S
-### 2021-11-18
+### 2021-11-19
 
 ---
 
@@ -35,34 +37,51 @@ class: center, middle, inverse, title-slide
 
 layout: false
 
-.left-column[
+.pull-left[
 ## We depend on biodiversity...
+
+There is growing focus on the importance of biodiversity for our survival, with large global initiatives like the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services (IPBES) focused on strengthening the science-policy interface for biodiversity and ecosystem services for the conservation and sustainable use of biodiversity, long-term human well-being and sustainable development.
 
 .footnote[https://ipbes.net/global-assessment]
 ]
 
-.right-column[
-&lt;img src="images/ipbes.jpg" width="75%" style="display: block; margin: auto 0 auto auto;" /&gt;
+.pull-right[
+&lt;img src="images/ipbes.jpg" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
 ]
 
 ---
 
 layout: false
 
-.left-column[
+.pull-left[
 ## We depend on biodiversity...
+
+Attainment of the Sustainable Development Goals (SDGs) depends on the attainment of the goals relating to natural resource management, namely:
+
+- SDG 13 Climate Action
+- SDG 14 Life Below Water
+- SDG 15 Life On Land
 
 .footnote[https://www.unep.org/resources/making-peace-nature]
 ]
 
-.right-column[
-&lt;img src="images/sdgs_makingpeacewithnature_small.jpg" width="55%" style="display: block; margin: auto 0 auto auto;" /&gt;
+.pull-right[
+&lt;img src="images/sdgs_makingpeacewithnature_small.jpg" width="90%" style="display: block; margin: auto 0 auto auto;" /&gt;
 ]
 
 ---
 
-## Understanding and protecting biodiversity requires measuring it...
+## Understanding the role of biodiversity...
 
+.pull-left[
+### ...requires measuring it
+
+Here we see relationships between biodiversity metrics and urban ecosystem services (UES) that have been tested empirically (from Schwarz et al. 2017, _Ecosystem Services_).
+]
+
+.pull-right[
+&lt;img src="images/ecosystem_functions.jpg" width="100%" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
 
 ---
 
@@ -80,22 +99,275 @@ layout: false
 ---
 
 .pull-left[
+## There are many facets of biodiversity to measure!
+
+#### Essential Biodiversity Variables (EBVs)
+
+&lt;img src="images/ebv_circle.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+.footnote[https://geobon.org/]
+]
+
+.pull-right[
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; EBV.class &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; EBV.name &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Genetic composition &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Genetic diversity (richness and heterozygosity) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Genetic differentiation (number of genetic units and genetic distance) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Effective population size &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Inbreeding &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Species populations &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Species distributions &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Species abundances &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Species traits &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morphology &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Physiology &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Phenology &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Movement &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Community composition &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Community abundance &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Taxonomic/phylogenetic diversity &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Trait diversity &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Interaction diversity &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ecosystem functioning &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Primary productivity &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ecosystem phenology &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ecosystem disturbances &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ecosystem structure &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Live cover fraction &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ecosystem distribution &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ecosystem Vertical Profile &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+
+.pull-left[
 ## And many ways of measuring them!
 
+#### Many kinds of diversity
 *   Genetic diversity
 *   Taxonomic diversity
 *   Phylogenetic diversity
 *   Functional diversity
 *   Ecosystem diversity
 *   etc...
+
+#### And many methods for measuring each of them!!!
 ]
 
 .pull-right[
 &lt;img src="images/diversitymeasures.png" width="100%" style="display: block; margin: auto;" /&gt;
-.footnote[Slingsby 2011]
+.footnote[A comparison of **_some_** phylogenetic diversity indices from Slingsby 2011, _PhD Thesis_]
 ]
 
 ---
+
+.pull-left[
+## This module will focus on community composition
+
+&lt;img src="images/Noss_Biodiversity.png" width="75%" style="display: block; margin: auto;" /&gt;
+.footnote[Noss 1990, _Conservation Biology_]
+]
+
+.pull-right[
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; EBV.class &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; EBV.name &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Genetic composition &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Genetic diversity (richness and heterozygosity) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Genetic differentiation (number of genetic units and genetic distance) &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Effective population size &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Inbreeding &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Species populations &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Species distributions &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Species abundances &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Species traits &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morphology &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Physiology &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Phenology &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Movement &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: #23395b !important;"&gt; Community composition &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: #23395b !important;"&gt; Community abundance &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: #23395b !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: #23395b !important;"&gt; Taxonomic/phylogenetic diversity &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: #23395b !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;font-weight: bold;color: white !important;background-color: #23395b !important;"&gt; Trait diversity &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Interaction diversity &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ecosystem functioning &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Primary productivity &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ecosystem phenology &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ecosystem disturbances &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Ecosystem structure &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Live cover fraction &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ecosystem distribution &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Ecosystem Vertical Profile &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+  
+---
+
+## Note: composition can apply to any spatial scale
+
+.pull-left[
+### Ecosystem types         `\(\rightarrow\)`
+
+&lt;img src="images/resolv_ecoregions2017.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+.footnote[https://ecoregions.appspot.com/]
+]
+
+.pull-right[
+### Ecosystem composition
+
+#### e.g.estimated species richness
+
+&lt;img src="images/kreft2007_crop.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+.footnote[Kreft &amp; Jetz 2007, _PNAS_]
+]
+
+---
+
+## Exploring composition allows many insights
+
+.pull-left[
+### Global conservation priorities
+
+&lt;img src="images/hotspots.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+.footnote[https://www.conservation.org/priorities/biodiversity-hotspots]
+]
+
+.pull-right[
+### Testing macroecological theory
+
+#### What determines species richness?
+
+&lt;img src="images/kreft2007_crop.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+.footnote[Kreft &amp; Jetz 2007, _PNAS_]
+]
+
+---
+
 name: colors
 
 ## Colors
@@ -412,8 +684,8 @@ exclude: false
 DT::datatable(head(mtcars), fillContainer = FALSE, options = list(pageLength = 4))
 ```
 
-<div id="htmlwidget-3ffacf3e8365ba5e4cbc" style="width:100%;height:auto;" class="datatables html-widget"></div>
-<script type="application/json" data-for="htmlwidget-3ffacf3e8365ba5e4cbc">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant"],[21,21,22.8,21.4,18.7,18.1],[6,6,4,6,8,6],[160,160,108,258,360,225],[110,110,93,110,175,105],[3.9,3.9,3.85,3.08,3.15,2.76],[2.62,2.875,2.32,3.215,3.44,3.46],[16.46,17.02,18.61,19.44,17.02,20.22],[0,0,1,1,0,1],[1,1,1,0,0,0],[4,4,4,3,3,3],[4,4,1,1,2,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n      <th>wt<\/th>\n      <th>qsec<\/th>\n      <th>vs<\/th>\n      <th>am<\/th>\n      <th>gear<\/th>\n      <th>carb<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":4,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-59800e3e3b92c5eaed28" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-59800e3e3b92c5eaed28">{"x":{"filter":"none","vertical":false,"fillContainer":false,"data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant"],[21,21,22.8,21.4,18.7,18.1],[6,6,4,6,8,6],[160,160,108,258,360,225],[110,110,93,110,175,105],[3.9,3.9,3.85,3.08,3.15,2.76],[2.62,2.875,2.32,3.215,3.44,3.46],[16.46,17.02,18.61,19.44,17.02,20.22],[0,0,1,1,0,1],[1,1,1,0,0,0],[4,4,4,3,3,3],[4,4,1,1,2,1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n      <th>wt<\/th>\n      <th>qsec<\/th>\n      <th>vs<\/th>\n      <th>am<\/th>\n      <th>gear<\/th>\n      <th>carb<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"pageLength":4,"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false,"lengthMenu":[4,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 
 ---
 layout: true

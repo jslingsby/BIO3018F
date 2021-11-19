@@ -38,18 +38,23 @@ library(xaringanthemer)
 # )
 
 style_mono_light(base_color = "#23395b")
+
+library(knitr)
+library(kableExtra)
 ```
 
 layout: false
 
-.left-column[
+.pull-left[
 ## We depend on biodiversity...
+
+There is growing focus on the importance of biodiversity for our survival, with large global initiatives like the Intergovernmental Science-Policy Platform on Biodiversity and Ecosystem Services (IPBES) focused on strengthening the science-policy interface for biodiversity and ecosystem services for the conservation and sustainable use of biodiversity, long-term human well-being and sustainable development.
 
 .footnote[https://ipbes.net/global-assessment]
 ]
 
-.right-column[
-```{r echo = F, fig.align = 'right', out.width = '75%'}
+.pull-right[
+```{r echo = F, fig.align = 'right', out.width = '110%'}
 knitr::include_graphics("images/ipbes.jpg")
 ```
 ]
@@ -58,22 +63,39 @@ knitr::include_graphics("images/ipbes.jpg")
 
 layout: false
 
-.left-column[
+.pull-left[
 ## We depend on biodiversity...
+
+Attainment of the Sustainable Development Goals (SDGs) depends on the attainment of the goals relating to natural resource management, namely:
+
+- SDG 13 Climate Action
+- SDG 14 Life Below Water
+- SDG 15 Life On Land
 
 .footnote[https://www.unep.org/resources/making-peace-nature]
 ]
 
-.right-column[
-```{r echo = F, fig.align = 'right', out.width = '55%'}
+.pull-right[
+```{r echo = F, fig.align = 'right', out.width = '90%'}
 knitr::include_graphics("images/sdgs_makingpeacewithnature_small.jpg")
 ```
 ]
 
 ---
 
-## Understanding and protecting biodiversity requires measuring it...
+## Understanding the role of biodiversity...
 
+.pull-left[
+### ...requires measuring it
+
+Here we see relationships between biodiversity metrics and urban ecosystem services (UES) that have been tested empirically (from Schwarz et al. 2017, _Ecosystem Services_).
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'right', out.width = '100%'}
+knitr::include_graphics("images/ecosystem_functions.jpg")
+```
+]
 
 ---
 
@@ -93,24 +115,122 @@ knitr::include_graphics("images/Noss_Biodiversity.png")
 ---
 
 .pull-left[
+## There are many facets of biodiversity to measure!
+
+#### Essential Biodiversity Variables (EBVs)
+
+```{r echo = F, fig.align = 'center', out.width = '80%'}
+knitr::include_graphics("images/ebv_circle.png")
+```
+
+.footnote[https://geobon.org/]
+]
+
+.pull-right[
+```{r echo=FALSE}
+ebvs <- read.csv("images/ebvs.csv", header = T)
+
+kable(ebvs)  %>%
+  kable_styling(font_size = 12)
+```
+]
+
+---
+
+.pull-left[
 ## And many ways of measuring them!
 
+#### Many kinds of diversity
 *   Genetic diversity
 *   Taxonomic diversity
 *   Phylogenetic diversity
 *   Functional diversity
 *   Ecosystem diversity
 *   etc...
+
+#### And many methods for measuring each of them!!!
 ]
 
 .pull-right[
 ```{r echo = F, fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("images/diversitymeasures.png")
 ```
-.footnote[Slingsby 2011]
+.footnote[A comparison of **_some_** phylogenetic diversity indices from Slingsby 2011, _PhD Thesis_]
 ]
 
 ---
+
+.pull-left[
+## This module will focus on community composition
+
+```{r echo = F, fig.align = 'center', out.width = '75%'}
+knitr::include_graphics("images/Noss_Biodiversity.png")
+```
+.footnote[Noss 1990, _Conservation Biology_]
+]
+
+.pull-right[
+```{r echo=FALSE}
+ebvs <- read.csv("images/ebvs.csv", header = T)
+
+kable(ebvs)  %>%
+  kable_styling(font_size = 12) %>%
+  row_spec(11:13, bold = T, color = "white", background = "#23395b")
+```
+]
+  
+---
+
+## Note: composition can apply to any spatial scale
+
+.pull-left[
+### Ecosystem types         $\rightarrow$
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/resolv_ecoregions2017.png")
+```
+
+.footnote[https://ecoregions.appspot.com/]
+]
+
+.pull-right[
+### Ecosystem composition
+
+#### e.g.estimated species richness
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/kreft2007_crop.jpg")
+```
+.footnote[Kreft & Jetz 2007, _PNAS_]
+]
+
+---
+
+## Exploring composition allows many insights
+
+.pull-left[
+### Global conservation priorities
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/hotspots.jpg")
+```
+
+.footnote[https://www.conservation.org/priorities/biodiversity-hotspots]
+]
+
+.pull-right[
+### Testing macroecological theory
+
+#### What determines species richness?
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/kreft2007_crop.jpg")
+```
+.footnote[Kreft & Jetz 2007, _PNAS_]
+]
+
+---
+
 name: colors
 
 ## Colors

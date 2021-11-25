@@ -178,7 +178,25 @@ kable(ebvs)  %>%
   row_spec(11:13, bold = T, color = "white", background = "#23395b")
 ```
 ]
-  
+
+---
+
+## And three questions...
+
+```{r echo = F, fig.align = 'center', out.width = '70%'}
+knitr::include_graphics("images/chapin.png")
+```
+
+1. What determines the distribution and abundance of biodiversity?
+
+2. What is the role of biodiversity in ecosystem function?
+
+3. How is biodiversity changing and what are the impacts on ecosystem services?
+
+.pull-right[
+.footnote[Modified from Chapin et al. 1997, _Science_]
+]
+    
 ---
 
 ## Note: composition can apply to any spatial scale

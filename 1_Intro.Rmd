@@ -1,6 +1,6 @@
 ---
-title: "Measuring biodiversity"
-subtitle: "1. Introduction"  
+title: "1"
+subtitle: "Introduction to Measuring Biodiversity"  
 author: 
   - "Jasper Slingsby, BIO3018S"
 date: '`r Sys.Date()`'
@@ -161,7 +161,7 @@ knitr::include_graphics("images/diversitymeasures.png")
 ---
 
 .pull-left[
-## This module will focus on community composition
+## My research focuses on community composition
 
 ```{r echo = F, fig.align = 'center', out.width = '75%'}
 knitr::include_graphics("images/Noss_Biodiversity.png")
@@ -175,13 +175,13 @@ ebvs <- read.csv("images/ebvs.csv", header = T)
 
 kable(ebvs)  %>%
   kable_styling(font_size = 12) %>%
-  row_spec(11:13, bold = T, color = "white", background = "#23395b")
+  row_spec(c(11:13), bold = T, color = "white", background = "#23395b")
 ```
 ]
 
 ---
 
-## And three questions...
+## With application to three questions...
 
 ```{r echo = F, fig.align = 'center', out.width = '70%'}
 knitr::include_graphics("images/chapin.png")

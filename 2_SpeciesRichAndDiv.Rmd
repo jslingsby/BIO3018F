@@ -26,6 +26,15 @@ knitr::opts_chunk$set(
   warning = FALSE,
   hiline = TRUE
 )
+
+library(RefManageR)
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear",
+           cite.style = "alphabetic",
+           style = "markdown",
+           hyperlink = FALSE,
+           dashed = FALSE)
+myBib <- ReadBib("bib/2_species.bib", check = FALSE)
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
@@ -55,9 +64,9 @@ Alpha $(\alpha)$ = mean species diversity/richness within local-scale sites, hab
 
 Beta $(\beta)$ = diversity/richness differences between sites or habitats (attributable to species "turnover" or "nestedness")
 
-Gamma $(\gamma)$ = total landscape-scale species diversity/richness ()
+Gamma $(\gamma)$ = total landscape species diversity/richness
 
-.footnote[...]
+.footnote[Whittaker (1972)]
 ]
 
 .pull-right[
@@ -70,14 +79,281 @@ knitr::include_graphics("images/diversitycomponents.png")
 
 layout: false
 
+## Quantifying $\alpha$-diversity...
+
+Can be counts of the number of species in samples, or include information on their relative abundance.
+
+.pull-left[
+
+```{r echo = F, fig.align = 'center', out.width = '75%'}
+knitr::include_graphics("images/alphadiversity.png")
+```
+
+]
+
+.pull-right[
+
+*S* = a simple count of species
+
+*H'* = Species diversity quantified using the Shannon index $(H' = -\sum_{i=1}^{n}(p_i*ln(p_i))$ where $p_i$ is the proportion of individuals belonging to the *i*th species. 
+
+*H'* takes into account both species richness and evenness in their relative abundance.
+
+A community is considered more diverse if the relative abundance of species is more evenly distributed. The logic being that if you remove one individual, more even communities are less likely to lose species.
+]
+
+---
+
+layout: false
+
+.pull-left[
+## Quantifying $\alpha$-diversity...
+
+Many studies will refer to species counts as "species richness", but this is often in error...
+
+Species counts are sensitive to the number of individuals sampled. 
+
+More individuals means greater potential to encounter more species.
+
+```{r echo = F, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics("images/taylorplot.gif")
+```
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'right', out.width = '100%'}
+knitr::include_graphics("images/spp_ind_accum_CP.png")
+```
+
+##### Species counts relative to number of individuals sampled across 81 vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
+
+The relationship is non-linear and asymptotic.
+]
+
+---
+
+layout: false
+
+.pull-left[
+## Quantifying $\alpha$-diversity...
+
+Dependence of species counts on number of individuals sampled is problematic when the number of individuals varies between samples (e.g. vegetation plots, netting events, etc).
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/fire_age.png")
+```
+
+While raw species counts can still be useful for many purposes, it is also useful to have a metric that is independent of abundance and sampling effort.
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/spp_abund_CP.png")
+```
+
+##### Species counts relative to number of individuals sampled for each of 81 vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
+]
+
+---
+
+layout: false
+
+.pull-left[
+## Quantifying $\alpha$-diversity...
+
+Dependence of species counts on number of individuals sampled is problematic when the number of individuals varies between samples (e.g. vegetation plots, netting events, etc).
+
+```{r echo = F, fig.align = 'right', out.width = '100%'}
+knitr::include_graphics("images/forest_fynbos.png")
+```
+
+While raw species counts can still be useful for many purposes, it is also useful to have a metric that is independent of abundance and sampling effort.
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'right', out.width = '75%'}
+knitr::include_graphics("images/forestyoung.jpg")
+```
+
+
+```{r echo = F, fig.align = 'right', out.width = '75%'}
+knitr::include_graphics("images/fynbos.png")
+```
+
+]
+
+---
+
+layout: false
+
+.pull-left[
+## Quantifying $\alpha$-diversity...
+
+###*Species richness* 
+...is usually reserved to mean an estimate of the richness of species while taking abundance and sampling effort into account (see Gotelli and Colwell 2001 for review).
+
+...is often estimated using individual or sample-based ***rarefaction***. 
+
+This is done by resampling a set number (*n*) of individuals or samples from the full dataset to determine the expected number of species for any given *n*. For each *n* the resampling is repeated multiple times and the expected species number determined as an average.
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'right', out.width = '100%'}
+knitr::include_graphics("images/spec_ind_raref_CP.png")
+```
+
+##### Individual-based rarefaction curve developed by sampling individuals from the pooled data from 81 vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
+]
+
+---
+
+layout: false
+
+.pull-left[
+###Individual-based *accumulation* curve 
+```{r echo = F, fig.align = 'center', out.width = '85%'}
+knitr::include_graphics("images/spp_ind_accum_CP.png")
+```
+
+Curve is not smooth, because individuals (and thus species) are added in whatever order (in this case alphabetically by plot).
+
+]
+
+.pull-right[
+###Individual-based *rarefaction* curve 
+
+```{r echo = F, fig.align = 'center', out.width = '85%'}
+knitr::include_graphics("images/spec_ind_raref_CP.png")
+```
+
+Curve is smooth, because individuals (and thus species) are repeatedly sampled and averaged for each sample size.
+
+]
+
+---
+
+layout: false
+
+.pull-left[
+###Sample-based *accumulation* curve 
+```{r echo = F, fig.align = 'center', out.width = '85%'}
+knitr::include_graphics("images/spp_sites_accum_CP.png")
+```
+
+Curve is not smooth, because samples (and thus species) are added in whatever order (in this case by plot number).
+
+]
+
+.pull-right[
+###Sample-based *rarefaction* curve 
+
+<br>
+
+```{r echo = F, fig.align = 'center', out.width = '85%'}
+knitr::include_graphics("images/spec_ind_raref_CP.png")
+```
+
+Curve is smooth, because samples (and thus species) are repeatedly sampled and averaged for each sample size.
+
+]
+
+---
+
+layout: false
+
+##Comparing diversity between sites or surveys
+
+.pull-left[
+###Sample-based *rarefaction* 
+```{r echo = F, fig.align = 'center', out.width = '85%'}
+knitr::include_graphics("images/spec_sites_raref_CP_comp.png")
+```
+
+]
+
+.pull-right[
+###Individual-based *rarefaction* 
+
+```{r echo = F, fig.align = 'center', out.width = '85%'}
+knitr::include_graphics("images/spec_ind_raref_CP_comp.png")
+```
+]
+
+Here I compare surveys of permanent veg plots in the Cape of Good Hope section of TMNP from 1966 and 1996.
+
+---
+
+layout: false
+
+##Comparing diversity between *samples*
+
+.pull-left[
+###Raw species counts 
+```{r echo = F, fig.align = 'center', out.width = '65%'}
+knitr::include_graphics("images/spec_comp_CP.png")
+```
+
+]
+
+.pull-right[
+###Individual-based *rarefaction*<sup>1</sup>
+
+```{r echo = F, fig.align = 'center', out.width = '65%'}
+knitr::include_graphics("images/sper_comp_CP.png")
+```
+
+]
+
+.footnote[<sup>1</sup>for a given *n*]
+
+---
+
+layout: false
+
+##Comparing diversity between *samples*
+
+.pull-left[
+###Raw species counts 
+```{r echo = F, fig.align = 'center', out.width = '65%'}
+knitr::include_graphics("images/spec_comp_hist_CP.png")
+```
+
+t = 1.4957, df = 80, p-value = 0.1387
+]
+
+.pull-right[
+###Individual-based *rarefaction*<sup>1</sup>
+
+```{r echo = F, fig.align = 'center', out.width = '65%'}
+knitr::include_graphics("images/sper_comp_hist_CP.png")
+```
+
+t = 3.2953, df = 80, p-value = 0.0015
+]
+
+---
+
+layout: false
+
 .pull-left[
 ## The decomposition of diversity...
 
-These components are interrelated such that:
+The components of biodiversity are interrelated. How this is expressed depends on your interpretation of $\beta$-diversity, which varies the application at hand.
 
-$\gamma = \alpha + \beta$
 
-.footnote[]
+As "turnover" it is multiplicative (*sensu* Whittaker 1972):
+
+$$\beta = \gamma/\alpha$$
+
+As "average amount of diversity not found in a single, randomly-chosen sample" it is additive<sup>1</sup> (*sensu* MacArthur et al. 1966, Lande 1996):
+
+$$\beta = \gamma - \alpha$$
+
+.footnote[<sup>1</sup>often termed "additive partitioning of diversity". For reviews see Veech et al. 2002 and Anderson et al. 2011.]
 ]
 
 .pull-right[
@@ -85,6 +361,15 @@ $\gamma = \alpha + \beta$
 knitr::include_graphics("images/diversitycomponents.png")
 ```
 ]
+
+---
+
+## References
+
+```{r refs, echo=FALSE, results="asis"}
+NoCite(myBib)
+PrintBibliography(myBib)
+```
 
 ---
 

@@ -26,6 +26,15 @@ knitr::opts_chunk$set(
   warning = FALSE,
   hiline = TRUE
 )
+
+library(RefManageR)
+BibOptions(check.entries = FALSE,
+           bib.style = "authoryear",
+           cite.style = "alphabetic",
+           style = "markdown",
+           hyperlink = FALSE,
+           dashed = FALSE)
+myBib <- ReadBib("bib/1_intro.bib", check = FALSE)
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
@@ -88,7 +97,7 @@ knitr::include_graphics("images/sdgs_makingpeacewithnature_small.jpg")
 .pull-left[
 ### ...requires measuring it
 
-Here we see relationships between biodiversity metrics and urban ecosystem services (UES) that have been tested empirically (from Schwarz et al. 2017, _Ecosystem Services_).
+Here we see relationships between biodiversity metrics and urban ecosystem services (UES) that have been tested empirically (from Schwartz et al. 2017).
 ]
 
 .pull-right[
@@ -197,6 +206,15 @@ knitr::include_graphics("images/chapin.png")
 .footnote[Modified from Chapin et al. 1997, _Science_]
 ]
     
+---
+
+## References
+
+```{r refs, echo=FALSE, results="asis"}
+NoCite(myBib)
+PrintBibliography(myBib)
+```
+
 ---
 
 ## Note: composition can apply to any spatial scale

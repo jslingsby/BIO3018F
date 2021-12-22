@@ -4,7 +4,7 @@
     <title>2</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jasper Slingsby, BIO3018S" />
-    <meta name="date" content="2021-12-21" />
+    <meta name="date" content="2021-12-22" />
     <script src="2_SpeciesRichAndDiv_files/header-attrs/header-attrs.js"></script>
     <script src="2_SpeciesRichAndDiv_files/kePrint/kePrint.js"></script>
     <link href="2_SpeciesRichAndDiv_files/lightable/lightable.css" rel="stylesheet" />
@@ -17,7 +17,7 @@ class: center, middle, inverse, title-slide
 # 2
 ## Species Richness and Diversity
 ### Jasper Slingsby, BIO3018S
-### 2021-12-21
+### 2021-12-22
 
 ---
 
@@ -35,9 +35,9 @@ Alpha `\((\alpha)\)` = mean species diversity/richness within local-scale sites,
 
 Beta `\((\beta)\)` = diversity/richness differences between sites or habitats (attributable to species "turnover" or "nestedness")
 
-Gamma `\((\gamma)\)` = total landscape-scale species diversity/richness ()
+Gamma `\((\gamma)\)` = total landscape species diversity/richness
 
-.footnote[...]
+.footnote[Whittaker (1972)]
 ]
 
 .pull-right[
@@ -48,19 +48,290 @@ Gamma `\((\gamma)\)` = total landscape-scale species diversity/richness ()
 
 layout: false
 
+## Quantifying `\(\alpha\)`-diversity...
+
+Can be counts of the number of species in samples, or include information on their relative abundance.
+
+.pull-left[
+
+&lt;img src="images/alphadiversity.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+
+*S* = a simple count of species
+
+*H'* = Species diversity quantified using the Shannon index `\((H' = -\sum_{i=1}^{n}(p_i*ln(p_i))\)` where `\(p_i\)` is the proportion of individuals belonging to the *i*th species. 
+
+*H'* takes into account both species richness and evenness in their relative abundance.
+
+A community is considered more diverse if the relative abundance of species is more evenly distributed. The logic being that if you remove one individual, more even communities are less likely to lose species.
+]
+
+---
+
+layout: false
+
+.pull-left[
+## Quantifying `\(\alpha\)`-diversity...
+
+Many studies will refer to species counts as "species richness", but this is often in error...
+
+Species counts are sensitive to the number of individuals sampled. 
+
+More individuals means greater potential to encounter more species.
+
+&lt;img src="images/taylorplot.gif" width="60%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+&lt;img src="images/spp_ind_accum_CP.png" width="100%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+##### Species counts relative to number of individuals sampled across 81 vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
+
+The relationship is non-linear and asymptotic.
+]
+
+---
+
+layout: false
+
+.pull-left[
+## Quantifying `\(\alpha\)`-diversity...
+
+Dependence of species counts on number of individuals sampled is problematic when the number of individuals varies between samples (e.g. vegetation plots, netting events, etc).
+
+&lt;img src="images/fire_age.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+While raw species counts can still be useful for many purposes, it is also useful to have a metric that is independent of abundance and sampling effort.
+
+]
+
+.pull-right[
+&lt;img src="images/spp_abund_CP.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+##### Species counts relative to number of individuals sampled for each of 81 vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
+]
+
+---
+
+layout: false
+
+.pull-left[
+## Quantifying `\(\alpha\)`-diversity...
+
+Dependence of species counts on number of individuals sampled is problematic when the number of individuals varies between samples (e.g. vegetation plots, netting events, etc).
+
+&lt;img src="images/forest_fynbos.png" width="100%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+While raw species counts can still be useful for many purposes, it is also useful to have a metric that is independent of abundance and sampling effort.
+
+]
+
+.pull-right[
+&lt;img src="images/forestyoung.jpg" width="75%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+
+&lt;img src="images/fynbos.png" width="75%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+]
+
+---
+
+layout: false
+
+.pull-left[
+## Quantifying `\(\alpha\)`-diversity...
+
+###*Species richness* 
+...is usually reserved to mean an estimate of the richness of species while taking abundance and sampling effort into account (see Gotelli and Colwell 2001 for review).
+
+...is often estimated using individual or sample-based ***rarefaction***. 
+
+This is done by resampling a set number (*n*) of individuals or samples from the full dataset to determine the expected number of species for any given *n*. For each *n* the resampling is repeated multiple times and the expected species number determined as an average.
+
+]
+
+.pull-right[
+&lt;img src="images/spec_ind_raref_CP.png" width="100%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+##### Individual-based rarefaction curve developed by sampling individuals from the pooled data from 81 vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
+]
+
+---
+
+layout: false
+
+.pull-left[
+###Individual-based *accumulation* curve 
+&lt;img src="images/spp_ind_accum_CP.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+Curve is not smooth, because individuals (and thus species) are added in whatever order (in this case alphabetically by plot).
+
+]
+
+.pull-right[
+###Individual-based *rarefaction* curve 
+
+&lt;img src="images/spec_ind_raref_CP.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+Curve is smooth, because individuals (and thus species) are repeatedly sampled and averaged for each sample size.
+
+]
+
+---
+
+layout: false
+
+.pull-left[
+###Sample-based *accumulation* curve 
+&lt;img src="images/spp_sites_accum_CP.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+Curve is not smooth, because samples (and thus species) are added in whatever order (in this case by plot number).
+
+]
+
+.pull-right[
+###Sample-based *rarefaction* curve 
+
+&lt;br&gt;
+
+&lt;img src="images/spec_ind_raref_CP.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+Curve is smooth, because samples (and thus species) are repeatedly sampled and averaged for each sample size.
+
+]
+
+---
+
+layout: false
+
+##Comparing diversity between sites or surveys
+
+.pull-left[
+###Sample-based *rarefaction* 
+&lt;img src="images/spec_sites_raref_CP_comp.png" width="85%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+###Individual-based *rarefaction* 
+
+&lt;img src="images/spec_ind_raref_CP_comp.png" width="85%" style="display: block; margin: auto;" /&gt;
+]
+
+Here I compare surveys of permanent veg plots in the Cape of Good Hope section of TMNP from 1966 and 1996.
+
+---
+
+layout: false
+
+##Comparing diversity between *samples*
+
+.pull-left[
+###Raw species counts 
+&lt;img src="images/spec_comp_CP.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+###Individual-based *rarefaction*&lt;sup&gt;1&lt;/sup&gt;
+
+&lt;img src="images/sper_comp_CP.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.footnote[&lt;sup&gt;1&lt;/sup&gt;for a given *n*]
+
+---
+
+layout: false
+
+##Comparing diversity between *samples*
+
+.pull-left[
+###Raw species counts 
+&lt;img src="images/spec_comp_hist_CP.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+t = 1.4957, df = 80, p-value = 0.1387
+]
+
+.pull-right[
+###Individual-based *rarefaction*&lt;sup&gt;1&lt;/sup&gt;
+
+&lt;img src="images/sper_comp_hist_CP.png" width="65%" style="display: block; margin: auto;" /&gt;
+
+t = 3.2953, df = 80, p-value = 0.0015
+]
+
+---
+
+layout: false
+
 .pull-left[
 ## The decomposition of diversity...
 
-These components are interrelated such that:
+The components of biodiversity are interrelated. How this is expressed depends on your interpretation of `\(\beta\)`-diversity, which varies the application at hand.
 
-`\(\gamma = \alpha + \beta\)`
 
-.footnote[]
+As "turnover" it is multiplicative (*sensu* Whittaker 1972):
+
+`$$\beta = \gamma/\alpha$$`
+
+As "average amount of diversity not found in a single, randomly-chosen sample" it is additive&lt;sup&gt;1&lt;/sup&gt; (*sensu* MacArthur et al. 1966, Lande 1996):
+
+`$$\beta = \gamma - \alpha$$`
+
+.footnote[&lt;sup&gt;1&lt;/sup&gt;often termed "additive partitioning of diversity". For reviews see Veech et al. 2002 and Anderson et al. 2011.]
 ]
 
 .pull-right[
 &lt;img src="images/diversitycomponents.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
 ]
+
+---
+
+## References
+
+Anderson, M. J., T. O. Crist, J. M. Chase, et al. (2011). "Navigating
+the multiple meanings of beta-diversity: a roadmap for the practicing
+ecologist". En. In: _Ecology letters_ 14.1, pp. 19-28. ISSN: 1461-023X,
+1461-0248. DOI:
+[10.1111/j.1461-0248.2010.01552.x](https://doi.org/10.1111%2Fj.1461-0248.2010.01552.x).
+
+Gotelli, N. J. and R. K. Colwell (2001). "Quantifying biodiversity:
+procedures and pitfalls in the measurement and comparison of species
+richness". In: _Ecology letters_ 4.4, pp. 379-391. ISSN: 1461-023X,
+1461-0248. DOI:
+[10.1046/j.1461-0248.2001.00230.x](https://doi.org/10.1046%2Fj.1461-0248.2001.00230.x).
+
+Lande, R. (1996). "Statistics and Partitioning of Species Diversity,
+and Similarity among Multiple Communities". In: _Oikos_ 76.1, pp. 5-13.
+ISSN: 0030-1299, 1600-0706. DOI:
+[10.2307/3545743](https://doi.org/10.2307%2F3545743).
+
+MacArthur, R., H. Recher, and M. Cody (1966). "On the Relation between
+Habitat Selection and Species Diversity". In: _The American naturalist_
+100.913, pp. 319-332. ISSN: 0003-0147. DOI:
+[10.1086/282425](https://doi.org/10.1086%2F282425).
+
+Slingsby, J. A., C. Merow, M. Aiello-Lammens, et al. (2017).
+"Intensifying postfire weather and biological invasion drive species
+loss in a Mediterranean-type biodiversity hotspot". En. In:
+_Proceedings of the National Academy of Sciences of the United States
+of America_ 114.18, pp. 4697-4702. ISSN: 0027-8424, 1091-6490. DOI:
+[10.1073/pnas.1619014114](https://doi.org/10.1073%2Fpnas.1619014114).
+
+Veech, J. A., K. S. Summerville, T. O. Crist, et al. (2002). "The
+additive partitioning of species diversity: recent revival of an old
+idea". En. In: _Oikos_ 99.1, pp. 3-9. ISSN: 0030-1299, 1600-0706. DOI:
+[10.1034/j.1600-0706.2002.990101.x](https://doi.org/10.1034%2Fj.1600-0706.2002.990101.x).
+
+Whittaker, R. H. (1972). "Evolution and measurement of species
+diversity". En. In: _Taxon_ 21.2-3, pp. 213-251. ISSN: 0040-0262,
+1996-8175. DOI: [10.2307/1218190](https://doi.org/10.2307%2F1218190).
 
 ---
 

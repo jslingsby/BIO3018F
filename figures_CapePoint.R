@@ -163,3 +163,16 @@ t.test(rarefy(species66[,-1], 10), rarefy(species96[,-1], 10), paired = T)
 
 ggsave("images/sper_comp_hist_CP.png", width = 4, height = 4)
 
+##Beta diversity
+
+# par(mfrow = c(1,2))
+# hist(designdist(species66[,-1]), main = "", xlab = "Distance")
+# hist(designdist(species96[,-1]), main = "", xlab = "Distance")
+
+var6696 <- tibble(Year = c(rep(1966, 3240), rep(1996, 3240)), `Bray-Curtis Distance` = c(as.vector(designdist(species66[,-1])), as.vector(designdist(species96[,-1]))))
+
+var6696 %>% ggplot(aes(`Bray-Curtis Distance`)) + 
+  geom_histogram(col="grey") +
+  facet_wrap(~Year)
+
+ggsave("images/beta_variation_CP.png", width = 6, height = 3)

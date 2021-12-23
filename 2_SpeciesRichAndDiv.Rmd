@@ -1,6 +1,6 @@
 ---
-title: "2"
-subtitle: "Species Richness and Diversity"  
+title: "2. Species Richness and Diversity"
+subtitle: "Alpha Diversity"  
 author: 
   - "Jasper Slingsby, BIO3018S"
 date: '`r Sys.Date()`'
@@ -126,7 +126,7 @@ knitr::include_graphics("images/taylorplot.gif")
 knitr::include_graphics("images/spp_ind_accum_CP.png")
 ```
 
-##### Species counts relative to number of individuals sampled across 81 vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
+##### Species counts relative to number of individuals sampled across eighty-one 50m<sup>2</sup> vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
 
 The relationship is non-linear and asymptotic.
 ]
@@ -149,11 +149,13 @@ While raw species counts can still be useful for many purposes, it is also usefu
 ]
 
 .pull-right[
-```{r echo = F, fig.align = 'center', out.width = '100%'}
+```{r echo = F, fig.align = 'center', out.width = '90%'}
 knitr::include_graphics("images/spp_abund_CP.png")
 ```
 
-##### Species counts relative to number of individuals sampled for each of 81 vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
+##### Species counts relative to number of individuals sampled for each of eighty-one 50m<sup>2</sup> vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
+
+Since the samples are of a set unit area (50m<sup>2</sup>), the species counts in this figure can also be termed ***species density***.
 ]
 
 ---
@@ -206,7 +208,7 @@ This is done by resampling a set number (*n*) of individuals or samples from the
 knitr::include_graphics("images/spec_ind_raref_CP.png")
 ```
 
-##### Individual-based rarefaction curve developed by sampling individuals from the pooled data from 81 vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
+##### Individual-based rarefaction curve developed by sampling individuals from the pooled data from eighty-one 50m<sup>2</sup> vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
 ]
 
 ---
@@ -265,6 +267,12 @@ Curve is smooth, because samples (and thus species) are repeatedly sampled and a
 
 layout: false
 
+##Estimating asymptotic species richness by extrapolation?
+
+---
+
+layout: false
+
 ##Comparing diversity between sites or surveys
 
 .pull-left[
@@ -308,7 +316,7 @@ knitr::include_graphics("images/sper_comp_CP.png")
 
 ]
 
-.footnote[<sup>1</sup>for a given *n*]
+.footnote[<sup>1</sup>for *n* = 10 individuals]
 
 ---
 
@@ -322,7 +330,7 @@ layout: false
 knitr::include_graphics("images/spec_comp_hist_CP.png")
 ```
 
-t = 1.4957, df = 80, p-value = 0.1387
+Paired T-test: t = 1.4957, df = 80, p-value = 0.1387
 ]
 
 .pull-right[
@@ -332,7 +340,7 @@ t = 1.4957, df = 80, p-value = 0.1387
 knitr::include_graphics("images/sper_comp_hist_CP.png")
 ```
 
-t = 3.2953, df = 80, p-value = 0.0015
+Paired T-test: t = 3.2953, df = 80, p-value = _***0.0015***_
 ]
 
 ---

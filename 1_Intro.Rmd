@@ -1,6 +1,6 @@
 ---
-title: "1"
-subtitle: "Introduction to Measuring Biodiversity"  
+title: "1. Introduction to Measuring Biodiversity"
+subtitle: ""  
 author: 
   - "Jasper Slingsby, BIO3018S"
 date: '`r Sys.Date()`'
@@ -169,6 +169,44 @@ knitr::include_graphics("images/diversitymeasures.png")
 
 ---
 
+## My research focuses on three questions...
+
+```{r echo = F, fig.align = 'center', out.width = '65%'}
+knitr::include_graphics("images/chapin.png")
+```
+
+1. What determines the distribution and abundance of biodiversity?
+
+2. What is the role of biodiversity in ecosystem function (and derived societal benefits)?
+
+3. How is biodiversity changing and what are the impacts on ecosystem services?
+
+.pull-right[
+.footnote[Modified from Chapin et al. 1997, _Science_]
+]
+
+---
+class: center, middle
+
+## But!
+
+> *"The use of different measures or analytical approaches on a single set of data can naturally result in quite different outcomes and interpretations."* - Anderson et al. 2011
+
+<br>
+
+So it's crucial that we master the methods for measuring and analyzing biodiversity data if we hope to answer the questions at hand...
+    
+---
+
+## References
+
+```{r refs, echo=FALSE, results="asis"}
+NoCite(myBib)
+PrintBibliography(myBib)
+```
+
+---
+
 .pull-left[
 ## My research focuses on community composition
 
@@ -187,33 +225,6 @@ kable(ebvs)  %>%
   row_spec(c(11:13), bold = T, color = "white", background = "#23395b")
 ```
 ]
-
----
-
-## With application to three questions...
-
-```{r echo = F, fig.align = 'center', out.width = '70%'}
-knitr::include_graphics("images/chapin.png")
-```
-
-1. What determines the distribution and abundance of biodiversity?
-
-2. What is the role of biodiversity in ecosystem function?
-
-3. How is biodiversity changing and what are the impacts on ecosystem services?
-
-.pull-right[
-.footnote[Modified from Chapin et al. 1997, _Science_]
-]
-    
----
-
-## References
-
-```{r refs, echo=FALSE, results="asis"}
-NoCite(myBib)
-PrintBibliography(myBib)
-```
 
 ---
 

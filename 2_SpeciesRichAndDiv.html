@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>2</title>
+    <title>2. Species Richness and Diversity</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jasper Slingsby, BIO3018S" />
-    <meta name="date" content="2021-12-22" />
+    <meta name="date" content="2021-12-23" />
     <script src="2_SpeciesRichAndDiv_files/header-attrs/header-attrs.js"></script>
     <script src="2_SpeciesRichAndDiv_files/kePrint/kePrint.js"></script>
     <link href="2_SpeciesRichAndDiv_files/lightable/lightable.css" rel="stylesheet" />
@@ -14,10 +14,10 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# 2
-## Species Richness and Diversity
+# 2. Species Richness and Diversity
+## Alpha Diversity
 ### Jasper Slingsby, BIO3018S
-### 2021-12-22
+### 2021-12-23
 
 ---
 
@@ -89,7 +89,7 @@ More individuals means greater potential to encounter more species.
 .pull-right[
 &lt;img src="images/spp_ind_accum_CP.png" width="100%" style="display: block; margin: auto 0 auto auto;" /&gt;
 
-##### Species counts relative to number of individuals sampled across 81 vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
+##### Species counts relative to number of individuals sampled across eighty-one 50m&lt;sup&gt;2&lt;/sup&gt; vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
 
 The relationship is non-linear and asymptotic.
 ]
@@ -110,9 +110,11 @@ While raw species counts can still be useful for many purposes, it is also usefu
 ]
 
 .pull-right[
-&lt;img src="images/spp_abund_CP.png" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/spp_abund_CP.png" width="90%" style="display: block; margin: auto;" /&gt;
 
-##### Species counts relative to number of individuals sampled for each of 81 vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
+##### Species counts relative to number of individuals sampled for each of eighty-one 50m&lt;sup&gt;2&lt;/sup&gt; vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
+
+Since the samples are of a set unit area (50m&lt;sup&gt;2&lt;/sup&gt;), the species counts in this figure can also be termed ***species density***.
 ]
 
 ---
@@ -157,7 +159,7 @@ This is done by resampling a set number (*n*) of individuals or samples from the
 .pull-right[
 &lt;img src="images/spec_ind_raref_CP.png" width="100%" style="display: block; margin: auto 0 auto auto;" /&gt;
 
-##### Individual-based rarefaction curve developed by sampling individuals from the pooled data from 81 vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
+##### Individual-based rarefaction curve developed by sampling individuals from the pooled data from eighty-one 50m&lt;sup&gt;2&lt;/sup&gt; vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
 ]
 
 ---
@@ -208,6 +210,12 @@ Curve is smooth, because samples (and thus species) are repeatedly sampled and a
 
 layout: false
 
+##Estimating asymptotic species richness by extrapolation?
+
+---
+
+layout: false
+
 ##Comparing diversity between sites or surveys
 
 .pull-left[
@@ -243,7 +251,7 @@ layout: false
 
 ]
 
-.footnote[&lt;sup&gt;1&lt;/sup&gt;for a given *n*]
+.footnote[&lt;sup&gt;1&lt;/sup&gt;for *n* = 10 individuals]
 
 ---
 
@@ -255,7 +263,7 @@ layout: false
 ###Raw species counts 
 &lt;img src="images/spec_comp_hist_CP.png" width="65%" style="display: block; margin: auto;" /&gt;
 
-t = 1.4957, df = 80, p-value = 0.1387
+Paired T-test: t = 1.4957, df = 80, p-value = 0.1387
 ]
 
 .pull-right[
@@ -263,7 +271,7 @@ t = 1.4957, df = 80, p-value = 0.1387
 
 &lt;img src="images/sper_comp_hist_CP.png" width="65%" style="display: block; margin: auto;" /&gt;
 
-t = 3.2953, df = 80, p-value = 0.0015
+Paired T-test: t = 3.2953, df = 80, p-value = _***0.0015***_
 ]
 
 ---

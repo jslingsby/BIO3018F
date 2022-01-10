@@ -102,6 +102,8 @@ There are two major approaches:
 
 * *Multivariate measures* that calculate distances (or dissimilarities) that represent the compositional resemblance between pairs of samples
 
+.footnote[The two are related, and can even be the same thing in certain scenarios, but I'm not going to go there in this course...]
+
 ]
 
 .pull-right[
@@ -213,21 +215,25 @@ layout: false
 
 ## Multivariate measures...
 
-e.g. $(A+B-2*J)/(A+B)$ 
-
-Where J is the shared quantity, and A and B are totals for each of the pair of samples
-
-can be...
-
 .pull-left[
 
+```{r echo = F, fig.align = 'center', out.width = '90%'}
+knitr::include_graphics("images/betadiv_multiv.png")
+```
+
+e.g. the same equation, $(A+B-2*J)/(A+B)$ 
+
+Where J is the shared quantity, and A and B are totals for each community, 
+
+can be...
+]
+
+.pull-right[
 ### Sorenson's Index
 
 when based on species presence/absence only
 
-]
-
-.pull-right[
+<br>
 
 ### Bray-Curtis distance
 

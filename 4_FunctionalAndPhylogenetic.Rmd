@@ -2,7 +2,7 @@
 title: "4. Functional and Phylogenetic Diversity"
 subtitle: ""  
 author: 
-  - "Jasper Slingsby, BIO3018S"
+  - "Jasper Slingsby, BIO3018F"
 date: '`r Sys.Date()`'
 output:
   xaringan::moon_reader:
@@ -49,7 +49,10 @@ library(xaringanthemer)
 style_mono_light(base_color = "#00B897")
 
 #https://mycolor.space/?hex=%2323395B&sub=1 
-#"Generic gradient" - #00B897, #89DD81, #F9F871
+#"Generic gradient" - #23395B #006287 #008E9D #00B897 #89DD81 #F9F871
+#"Matching gradient" (reverse) - #23395B #494E77 #716292 #9C77AA #C88DBF #F5A3D0
+
+
 
 library(knitr)
 library(kableExtra)
@@ -78,66 +81,68 @@ knitr::include_graphics("images/forestyoung.jpg")
 ]
 
 ---
+
+layout: false
+
+## There's a lot of diversity in the form of species
+
+Often associated with the environments in which they occur...
+
+```{r echo = F, fig.align = 'center', out.width = '55%'}
+knitr::include_graphics("images/growthform_USGS_image_cropped.jpg")
+```
+
+---
+
+layout: false
+
+## There's a lot of diversity in the form of species
+
+...and they alter properties of the environment, creating habitat for other species...
+
+```{r echo = F, fig.align = 'center', out.width = '55%'}
+knitr::include_graphics("images/habitat_smaller.jpg")
+```
+
+---
+
 layout: false
 
 ## Drawbacks of looking at species diversity only?
 
 - What is a species?
-  - Many definitions...
-- Species counts don't tell you about the identity of species or the similarities and differences between them
+  - Many definitions!
+- Are all species equal?
+  - e.g. would you consider 2 _Erica_ species to be equivalent to an _Erica_ and a _Protea_?
+- Species counts don't tell you about the identity of species or the similarities or differences between them
+- Species counts don't tell you anything about the functioning of species or communities
+- Species counts can't tell you about the origins of diversity (evolution and biogeography)
 
-
-```{r echo = F, fig.align = 'center', out.width = '60%'}
-knitr::include_graphics("images/anderson2011.png")
+```{r echo = F, fig.align = 'center', out.width = '65%'}
+knitr::include_graphics("images/fynbos_community.jpg")
 ```
-
-.footnote[<sup>1</sup>i.e. this is a highly active area of research...]
 
 ---
 
 layout: false
 
+## Measuring _functional_ and _phylogenetic_ diversity
+
 .pull-left[
-## Measuring $\beta$ diversity
 
-There are two major approaches:
+Many approaches!
 
-* *"Classical" diversity metrics*, calculated directly from measures of regional $(\gamma)$ and local $(\alpha)$ diversity through additive or multiplicative decomposition
+Oldest and simplest measures are based on **discrete** predefined  categories (i.e. **functional groups** or **taxonomic rank** (genera, families, etc<sup>1</sup>)).
 
-* *Multivariate measures* that calculate distances (or dissimilarities) that represent the compositional resemblance between pairs of samples
+Simply assign your species to the categories (e.g. trees, shrubs, grasses, etc if you're working with plant functional groups) and calculate your diversity metrics as you would for species.
 
-.footnote[The two are related, and can even be the same thing in certain scenarios, but I'm not going to go there in this course...]
-
+.footnote[<sup>1</sup>Technically, species diversity is just a discrete measure of phylogenetic diversity where the taxonomic rank is "species"...]
 ]
 
 .pull-right[
-```{r echo = F, fig.align = 'right', out.width = '110%'}
-knitr::include_graphics("images/diversitycomponents.png")
-```
-]
 
----
-
-layout: false
-
-.pull-left[
-## The decomposition of "classical" diversity metrics...
-
-The components of biodiversity are interrelated and, depending on your preference or application, can be expressed
-
-Multiplicatively (*sensu* Whittaker 1972):
-
-$$\beta = \gamma/\alpha$$
-
-Additively (*sensu* MacArthur et al. 1966, Lande 1996):
-
-$$\beta = \gamma - \alpha$$
-.footnote[<sup>1</sup>For reviews see Veech et al. 2002 and Anderson et al. 2011.]
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'right', out.width = '110%'}
-knitr::include_graphics("images/diversitycomponents.png")
+```{r echo = F, fig.align = 'right', out.width = '150%'}
+knitr::include_graphics("images/Fynbos_collage.jpg")
 ```
 ]
 
@@ -145,24 +150,24 @@ knitr::include_graphics("images/diversitycomponents.png")
 
 layout: false
 
+## Drawbacks of discrete measures
+
 .pull-left[
-## Multiplicative "classical" diversity
+Similar to issues with species diversity...
 
-$\beta = \gamma/\alpha$ (*sensu* Whittaker 1972)
+#### Taxonomic ranks
+- What is a genus or family?
+- Are all genera or families equal?
+- Taxonomic ranks are mostly pragmatic categories that help us identify taxa based on shared characters...
 
-...expresses $\beta$ diversity as the ratio of landscape $(\gamma)$ to local $(\alpha)$ diversity (usually the mean multiple of local samples, i.e. $\bar{\alpha}$).
-
-If most local $(\alpha)$ samples capture most of the landscape $(\gamma)$ diversity, then $\beta$ diversity (i.e. differences between sites or habitats) must be low, and vv.
-
-Disadvantages: 
-* the ratio is unitless
-* usually need to know $(\gamma)$
-
+#### Functional groups
+- How are they defined?
+- Quantitative (analysis of measured traits) or qualitative (expert opinion)?
 ]
 
 .pull-right[
 ```{r echo = F, fig.align = 'right', out.width = '110%'}
-knitr::include_graphics("images/betadiversity_mult.png")
+knitr::include_graphics("images/taxonomy.png")
 ```
 ]
 
@@ -171,25 +176,52 @@ knitr::include_graphics("images/betadiversity_mult.png")
 layout: false
 
 .pull-left[
-## Additive "classical" diversity
 
-$\beta = \gamma - \alpha$ (*sensu* MacArthur et al. 1966, Lande 1996)
+### Defining functional groups
 
-...expresses $\beta$ diversity as the difference between landscape $(\gamma)$ and local $(\alpha)$ diversity (again, usually the mean multiple of local samples, i.e. $\bar{\alpha}$).
+```{r echo = F, fig.align = 'center', out.width = '70%'}
+knitr::include_graphics("images/tetraria_traits.png")
+```
 
-If local $(\alpha)$ samples capture most of the landscape $(\gamma)$ diversity, then $\beta$ diversity (i.e. differences between sites or habitats) must be low, and vv.
-
-Advantage:
-* the difference is expressed as species.
-
-Disadvantage:
-* still usually need to know $(\gamma)$.
+1) Measure traits of the species under study
 
 ]
 
 .pull-right[
-```{r echo = F, fig.align = 'right', out.width = '110%'}
-knitr::include_graphics("images/betadiversity_add.png")
+
+2) Calculate functional distances between species
+
+```{r echo = F, fig.align = 'center', out.width = '30%'}
+knitr::include_graphics("images/distancemat.png")
+```
+
+3) Cluster species based on distances
+
+```{r echo = F, fig.align = 'center', out.width = '30%'}
+knitr::include_graphics("images/hclust.png")
+```
+
+4) Define groups based on similarity (depth in tree) or desired number of groups
+
+<br>
+
+...but wait a second?
+]
+
+---
+
+layout: false
+
+.pull-left[
+## _Continuous_ measures of functional diversity
+
+Petchey and Gaston (2002)...
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'right', out.width = '90%'}
+knitr::include_graphics("images/FD_continuous.png")
 ```
 ]
 

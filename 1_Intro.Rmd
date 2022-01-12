@@ -2,7 +2,7 @@
 title: "1. Introduction to Measuring Biodiversity"
 subtitle: ""  
 author: 
-  - "Jasper Slingsby, BIO3018S"
+  - "Jasper Slingsby, BIO3018F"
 date: '`r Sys.Date()`'
 output:
   xaringan::moon_reader:

@@ -2,7 +2,7 @@
 title: "2. Species Richness and Diversity"
 subtitle: "Alpha Diversity"  
 author: 
-  - "Jasper Slingsby, BIO3018S"
+  - "Jasper Slingsby, BIO3018F"
 date: '`r Sys.Date()`'
 output:
   xaringan::moon_reader:

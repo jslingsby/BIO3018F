@@ -4,7 +4,7 @@
     <title>4. Functional and Phylogenetic Diversity</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jasper Slingsby, BIO3018F" />
-    <meta name="date" content="2022-01-12" />
+    <meta name="date" content="2022-01-13" />
     <script src="4_FunctionalAndPhylogenetic_files/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
@@ -14,7 +14,7 @@ class: center, middle, inverse, title-slide
 
 # 4. Functional and Phylogenetic Diversity
 ### Jasper Slingsby, BIO3018F
-### 2022-01-12
+### 2022-01-13
 
 ---
 
@@ -118,6 +118,9 @@ Similar to issues with species diversity...
 
 .pull-right[
 &lt;img src="images/taxonomy.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+.footnote[###### Image from https://www.poolparty.biz/taxonomy-management-101]
+
 ]
 
 ---
@@ -158,8 +161,12 @@ layout: false
 .pull-left[
 ## _Continuous_ measures of functional diversity
 
-Petchey and Gaston (2002)...
+There's a lot of useful information in the data and analyses used to create functional groups!
 
+This has led to the development of 3 families of **continuous** functional diversity metrics based on:
+- _Pairwise distances_ (e.g. mean or sum of the pairwise distances between all species in a sample - Walker et al. 1999)
+- _Hierarchical clustering_ (e.g. sum of the branch length joining all species in the sample - Petchey and Gaston 2002)
+- _Multidimensional ordination_ (e.g. the area or volume of encompassed by the set of species in an ordination of trait space (2 or more dimensions) - Villeger et al. 2008)
 ]
 
 .pull-right[
@@ -171,24 +178,50 @@ Petchey and Gaston (2002)...
 layout: false
 
 .pull-left[
-## Multivariate measures...
+## _Continuous_ measures of phylogenetic diversity
 
-There are a large number of metrics that calculate the dissimilarity of pairs of samples based on the number of species that are shared between them or unique to each.
+Similar approaches can be used when estimating phylogenetic diversity.
 
-The metrics typically differ in whether they:
-* are based on species presence/absence only, or also include abundance information
-* include/exclude joint absence information
-* account for differences in the `\(\alpha\)` diversity of samples
+Here there are two families of **continuous** metrics, based on:
+- _Pairwise distances_ (e.g. mean pairwise distances between all species in a sample or minimum nearest taxon distance - Webb et al. 2002)
+- _Phylogenetic trees_ (e.g. sum of the branches joining all species - Faith 1991)
+  - can also use the taxonomic hierarchy instead of a phylogeny, but this suffers from the subjectivity of taxonomic ranks
+- There are no _multidimensional ordination_ methods for phylogenetic diversity
 ]
 
 .pull-right[
-&lt;img src="images/diversitycomponents.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;img src="images/phylogeny.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+####Molecular phylogeny vs taxonomic hierarchy:
+
+Usually one would calculate phylogenetic diversity using a molecular phylogeny (or "phylogenetic tree"), where the branch lengths are time-calibrated based on a molecular clock (rate of DNA mutation through time) and represent time. 
+- Thus the sum of the branch lengths linking species in a sample represents the _sum total independent evolutionary history_ represented by that sample.
+
+The taxonomic hierarchy (Order, Family, Genus etc) is far less objective.
+
+]
+
+---
+
+layout: false
+
+## What about the other components of functional and phylogenetic diversity?
+.pull-left[
+
+We've only covered measures of `\(\alpha\)` (or `\(\gamma\)`) diversity. 
+
+Similar methods as for species diversity can be applied to discrete and continuous measures of functional and phylogenetic `\(\beta\)` diversity...
+
+]
+
+.pull-right[
+&lt;img src="images/diversitycomponents.png" width="70%" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
 layout: false
 
-## Multivariate measures...
+## Functional or phylogenetic beta diversity
 
 .pull-left[
 
@@ -198,19 +231,19 @@ e.g. the same equation, `\((A+B-2*J)/(A+B)\)`
 
 Where J is the shared quantity, and A and B are totals for each community, 
 
-can be...
+can be used for...
 ]
 
 .pull-right[
-### Sorenson's Index
+### Discrete measures
 
-when based on species presence/absence only
+when based on counts of functional groups or taxonomic ranks instead of species
 
 &lt;br&gt;
 
-### Bray-Curtis distance
+### Continuous measures
 
-when it includes abundance information
+when based on branch length (e.g. _PhyloSor_ - Bryant et al. 2008)
 
 ]
 
@@ -220,20 +253,19 @@ when it includes abundance information
 
 layout: false
 
-.pull-left[
-&lt;img src="images/anderson_fig2.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+## Null models...
 
+.pull-left[
+&lt;img src="images/nullmodels.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+.footnote[figure from Slingsby 2011, PhD]
 ]
 
 .pull-right[
-## *Turnover* vs *Variation*
 
-The application `\(\beta\)` diversity can be largely split into 
-* directional analyses, that explore *turnover* along spatial, temporal or environmental gradients, and 
+Do examples from Beta div lecture first?
 
-* non-directional analyses, that explore *variation* within or among groups.
 
-.footnote[figure from Anderson et al. 2011]
 ]
 
 ---

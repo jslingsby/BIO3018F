@@ -295,18 +295,21 @@ $\delta y/\delta x$ = rate of turnover along a gradient
 layout: false
 
 .pull-left[
-```{r echo = F, fig.align = 'right', out.width = '85%'}
-# knitr::include_graphics("images/anderson_fig3.gif")
+```{r echo = F, fig.align = 'center', out.width = '72%'}
+knitr::include_graphics("images/molina_map.png")
+knitr::include_graphics("images/molina_belts.jpg")
 ```
 
 ]
 
 .pull-right[
-## "Turnover" examples
+Eudicots of the Baetic mountains of Andalusia, Spain (Molina‐Venegas et al. 2015) - egs T2&3?
 
-Give number matching case in last slide T1, etc
+```{r echo = F, fig.align = 'center', out.width = '85%'}
+knitr::include_graphics("images/molina_sbd.png")
+knitr::include_graphics("images/molina_sbd_table.png")
+```
 
-.footnote[]
 ]
 
 ---

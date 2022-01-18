@@ -46,7 +46,7 @@ library(xaringanthemer)
 #   inverse_header_color = "#FFFFFF"
 # )
 
-style_mono_light(base_color = "#006287")
+style_mono_light(base_color = "#23395b")
 
 #https://mycolor.space/?hex=%2323395B&sub=1 
 #"Generic gradient"

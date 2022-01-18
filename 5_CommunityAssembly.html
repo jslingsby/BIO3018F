@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>4. Functional and Phylogenetic Diversity</title>
+    <title>5. Community Assembly</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jasper Slingsby, BIO3018F" />
     <meta name="date" content="2022-01-18" />
-    <script src="4_FunctionalAndPhylogenetic_files/header-attrs/header-attrs.js"></script>
+    <script src="5_CommunityAssembly_files/header-attrs/header-attrs.js"></script>
+    <script src="5_CommunityAssembly_files/kePrint/kePrint.js"></script>
+    <link href="5_CommunityAssembly_files/lightable/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# 4. Functional and Phylogenetic Diversity
+# 5. Community Assembly
 ### Jasper Slingsby, BIO3018F
 ### 2022-01-18
 
@@ -25,101 +27,67 @@ class: center, middle, inverse, title-slide
 
 layout: false
 
+## Diversity is not distributed evenly...
+
 .pull-left[
 
-## Are simple counts of the number of species enough?
-
-&lt;img src="images/grassland.jpeg" width="95%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/kreft2007_crop.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+.footnote[Kreft and Jetz 2007]
 ]
 
 .pull-right[
 
-&lt;img src="images/fynbos.png" width="75%" style="display: block; margin: auto;" /&gt;
-
-&lt;img src="images/forestyoung.jpg" width="75%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/cramer_verboom_2017.jpg" width="90%" style="display: block; margin: auto;" /&gt;
+.footnote[Cramer and Verboom 2017]
 ]
 
 ---
 
 layout: false
 
-## There's a lot of diversity in the form of species
+### What determines the distribution and abundance of biodiversity?
 
-Often associated with the environments in which they occur...
-
-&lt;img src="images/growthform_USGS_image_cropped.jpg" width="55%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/fynbos_community.jpg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ---
 
 layout: false
 
-## There's a lot of diversity in the form of species
-
-...and they alter properties of the environment, creating habitat for other species...
-
-&lt;img src="images/habitat_smaller.jpg" width="55%" style="display: block; margin: auto;" /&gt;
-
----
-
-layout: false
-
-## Drawbacks of looking at species diversity only?
-
-- What is a species? There are many definitions!
-- Are all species equal?
-  - Would you consider 2 _Erica_ species to be equivalent to an _Erica_ and a _Protea_ or Giant Sequoia and Coffee?
-- Species counts don't tell you about:
-  - the identity of species or the similarities or differences between them
-  - the functioning of species or communities 
-  - the origins and maintenance of diversity (evolution, ecology and biogeography)
-
-&lt;img src="images/fynbos_community.jpg" width="65%" style="display: block; margin: auto;" /&gt;
-
----
-
-layout: false
-
-## Measuring _functional_ and _phylogenetic_ diversity
+## And how does this vary with spatial scale?
 
 .pull-left[
 
-Many approaches!
-
-Oldest and simplest measures are based on **discrete** predefined  categories (i.e. **functional groups** or **taxonomic rank** (genera, families, etc&lt;sup&gt;1&lt;/sup&gt;)).
-
-Simply assign your species to the categories (e.g. trees, shrubs, grasses, etc if you're working with plant functional groups) and calculate your diversity metrics as you would for species.
-
-.footnote[&lt;sup&gt;1&lt;/sup&gt;Technically, species diversity is just a discrete measure of phylogenetic diversity where the taxonomic rank is "species"...]
+&lt;img src="images/fynbos.jpg" width="110%" style="display: block; margin: auto;" /&gt;
+.footnote[&lt;sup&gt;1&lt;/sup&gt;...]
 ]
 
 .pull-right[
 
-&lt;img src="images/Fynbos_collage.jpg" width="150%" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;img src="images/biomes.jpg" width="61%" style="display: block; margin: auto;" /&gt;&lt;img src="images/resolv_ecoregions2017.png" width="61%" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
 
 layout: false
 
-## Drawbacks of discrete measures
+## Community assembly processes
 
 .pull-left[
-Similar to issues with species diversity...
 
-#### Taxonomic ranks
-- What is a genus or family?
-- Are all genera or families equal?
-- Taxonomic ranks are mostly pragmatic categories that help us identify taxa based on shared characters...
+#### Vary with spatial scale
+- competition or facilitation operates between neighbouring plants
+- biogeographic processes (speciation, extinction, vicariance, dispersal) operate across large extents
 
-#### Functional groups
-- How are they defined?
-- Quantitative (analysis of measured traits) or qualitative (expert opinion)?
+#### Vary with temporal scale
+- pollination, seed dispersal or herbivory can be near-instantaneous
+- speciation or trait evolution occur over long periods of time
+
 ]
 
 .pull-right[
-&lt;img src="images/taxonomy.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;img src="images/assemblyprocesses.png" width="110%" style="display: block; margin: auto;" /&gt;
 
-.footnote[###### Image from https://www.poolparty.biz/taxonomy-management-101]
+.footnote[###### ]
 
 ]
 
@@ -127,32 +95,144 @@ Similar to issues with species diversity...
 
 layout: false
 
+## Assembly of species pools
+
 .pull-left[
 
-### Defining functional groups
+&lt;img src="images/speciespools.png" width="100%" style="display: block; margin: auto;" /&gt;
 
-&lt;img src="images/tetraria_traits.png" width="70%" style="display: block; margin: auto;" /&gt;
-
-1) Measure traits of the species under study
+Community assembly can be thought of as the successive filtering of species pools descending in scale from global to local
 
 ]
 
 .pull-right[
 
-2) Calculate functional distances between species
+_Global species pool_ = all species on the planet (or in the defined study domain)
 
-&lt;img src="images/distancemat.png" width="30%" style="display: block; margin: auto;" /&gt;
+_Regional species pools_ = the species that are present in each region (e.g. a biogeographic region or mountain)
 
-3) Cluster species based on distances
+_Fundamental species pool_ = species with the potential to occur in a particular location (i.e. can disperse there and find the appropriate abiotic conditions necessary for their
+survival)
 
-&lt;img src="images/hclust.png" width="30%" style="display: block; margin: auto;" /&gt;
+_Realised community_ = the actual observed local community (i.e. the subset of species from the fundamental species pools which have the ability to coexist, either stably or unstably)
 
-4) Define groups based on similarity (depth in tree) or desired number of groups
-
-&lt;br&gt;
-
-...but wait a second?
 ]
+
+---
+
+## Cape phytochoria
+
+.pull-left[
+
+&lt;img src="images/centresofendemism.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+An example of regional species pools from the Cape...
+
+.footnote[###### Data and figure from Manning and Goldblatt 2012]
+
+]
+
+.pull-right[
+
+&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; Region &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Area (1000 km2) &lt;/th&gt;
+   &lt;th style="text-align:right;"&gt; Number of species &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Endemism (%) &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Cape Floristic Region &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 90.8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 9381 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 68,3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; NW &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 23.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4259 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 25,5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; SW &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 21.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4864 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 30,5 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; AP &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1530 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 13,6 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; KM &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 16.8 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2336 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 15,3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; LB &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 8.1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2457 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 11,3 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; SE &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 17.3 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2938 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 9,4 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Cape Peninsula &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.7 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2250 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 7,5 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+CFR effectively = _Global species pool_, because of such high endemism
+
+Phytochoria make good _Regional species pools_, but depending on the study the regional pool can be defined to be smaller if it can be justified, e.g the Cape Peninsula is a relatively isolated unit
+
+]
+
+---
+
+layout: false
+
+Biogeographic processes... Global... 
+
+- Latitudinal gradient, energy etc
+
+---
+
+layout: false
+
+Biogeographic processes... Regional... 
+
+- Environmental heterogeneity
+- Mid Domain Effect
+
+---
+
+layout: false
+
+Local determinism
+
+- competition
+- facilitation
+- mutualism
+
+---
+
+layout: false
+
+Examples of teasing apart assembly processes?
 
 ---
 

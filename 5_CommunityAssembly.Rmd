@@ -1,5 +1,5 @@
 ---
-title: "4. Functional and Phylogenetic Diversity"
+title: "5. Community Assembly"
 subtitle: ""  
 author: 
   - "Jasper Slingsby, BIO3018F"
@@ -60,65 +60,31 @@ library(kableExtra)
 
 layout: false
 
+## Diversity is not distributed evenly...
+
 .pull-left[
 
-## Are simple counts of the number of species enough?
-
-```{r echo = F, fig.align = 'center', out.width = '95%'}
-knitr::include_graphics("images/grassland.jpeg")
-```
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/kreft2007_crop.jpg")
+``` 
+.footnote[Kreft and Jetz 2007]
 ]
 
 .pull-right[
 
-```{r echo = F, fig.align = 'center', out.width = '75%'}
-knitr::include_graphics("images/fynbos.png")
+```{r echo = F, fig.align = 'center', out.width = '90%'}
+knitr::include_graphics("images/cramer_verboom_2017.jpg")
 ```
-
-```{r echo = F, fig.align = 'center', out.width = '75%'}
-knitr::include_graphics("images/forestyoung.jpg")
-```
+.footnote[Cramer and Verboom 2017]
 ]
 
 ---
 
 layout: false
 
-## There's a lot of diversity in the form of species
+### What determines the distribution and abundance of biodiversity?
 
-Often associated with the environments in which they occur...
-
-```{r echo = F, fig.align = 'center', out.width = '55%'}
-knitr::include_graphics("images/growthform_USGS_image_cropped.jpg")
-```
-
----
-
-layout: false
-
-## There's a lot of diversity in the form of species
-
-...and they alter properties of the environment, creating habitat for other species...
-
-```{r echo = F, fig.align = 'center', out.width = '55%'}
-knitr::include_graphics("images/habitat_smaller.jpg")
-```
-
----
-
-layout: false
-
-## Drawbacks of looking at species diversity only?
-
-- What is a species? There are many definitions!
-- Are all species equal?
-  - Would you consider 2 _Erica_ species to be equivalent to an _Erica_ and a _Protea_ or Giant Sequoia and Coffee?
-- Species counts don't tell you about:
-  - the identity of species or the similarities or differences between them
-  - the functioning of species or communities 
-  - the origins and maintenance of diversity (evolution, ecology and biogeography)
-
-```{r echo = F, fig.align = 'center', out.width = '65%'}
+```{r echo = F, fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("images/fynbos_community.jpg")
 ```
 
@@ -126,23 +92,21 @@ knitr::include_graphics("images/fynbos_community.jpg")
 
 layout: false
 
-## Measuring _functional_ and _phylogenetic_ diversity
+## And how does this vary with spatial scale?
 
 .pull-left[
 
-Many approaches!
-
-Oldest and simplest measures are based on **discrete** predefined  categories (i.e. **functional groups** or **taxonomic rank** (genera, families, etc<sup>1</sup>)).
-
-Simply assign your species to the categories (e.g. trees, shrubs, grasses, etc if you're working with plant functional groups) and calculate your diversity metrics as you would for species.
-
-.footnote[<sup>1</sup>Technically, species diversity is just a discrete measure of phylogenetic diversity where the taxonomic rank is "species"...]
+```{r echo = F, fig.align = 'center', out.width = '110%'}
+knitr::include_graphics("images/fynbos.jpg")
+``` 
+.footnote[<sup>1</sup>...]
 ]
 
 .pull-right[
 
-```{r echo = F, fig.align = 'right', out.width = '150%'}
-knitr::include_graphics("images/Fynbos_collage.jpg")
+```{r echo = F, fig.align = 'center', out.width = '61%'}
+knitr::include_graphics("images/biomes.jpg")
+knitr::include_graphics("images/resolv_ecoregions2017.png")
 ```
 ]
 
@@ -150,27 +114,26 @@ knitr::include_graphics("images/Fynbos_collage.jpg")
 
 layout: false
 
-## Drawbacks of discrete measures
+## Community assembly processes
 
 .pull-left[
-Similar to issues with species diversity...
 
-#### Taxonomic ranks
-- What is a genus or family?
-- Are all genera or families equal?
-- Taxonomic ranks are mostly pragmatic categories that help us identify taxa based on shared characters...
+#### Vary with spatial scale
+- competition or facilitation operates between neighbouring plants
+- biogeographic processes (speciation, extinction, vicariance, dispersal) operate across large extents
 
-#### Functional groups
-- How are they defined?
-- Quantitative (analysis of measured traits) or qualitative (expert opinion)?
+#### Vary with temporal scale
+- pollination, seed dispersal or herbivory can be near-instantaneous
+- speciation or trait evolution occur over long periods of time
+
 ]
 
 .pull-right[
-```{r echo = F, fig.align = 'right', out.width = '110%'}
-knitr::include_graphics("images/taxonomy.png")
+```{r echo = F, fig.align = 'center', out.width = '110%'}
+knitr::include_graphics("images/assemblyprocesses.png")
 ```
 
-.footnote[###### Image from https://www.poolparty.biz/taxonomy-management-101]
+.footnote[###### ]
 
 ]
 
@@ -178,38 +141,97 @@ knitr::include_graphics("images/taxonomy.png")
 
 layout: false
 
+## Assembly of species pools
+
 .pull-left[
 
-### Defining functional groups
-
-```{r echo = F, fig.align = 'center', out.width = '70%'}
-knitr::include_graphics("images/tetraria_traits.png")
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/speciespools.png")
 ```
 
-1) Measure traits of the species under study
+Community assembly can be thought of as the successive filtering of species pools descending in scale from global to local
 
 ]
 
 .pull-right[
 
-2) Calculate functional distances between species
+_Global species pool_ = all species on the planet (or in the defined study domain)
 
-```{r echo = F, fig.align = 'center', out.width = '30%'}
-knitr::include_graphics("images/distancemat.png")
-```
+_Regional species pools_ = the species that are present in each region (e.g. a biogeographic region or mountain)
 
-3) Cluster species based on distances
+_Fundamental species pool_ = species with the potential to occur in a particular location (i.e. can disperse there and find the appropriate abiotic conditions necessary for their
+survival)
 
-```{r echo = F, fig.align = 'center', out.width = '30%'}
-knitr::include_graphics("images/hclust.png")
-```
+_Realised community_ = the actual observed local community (i.e. the subset of species from the fundamental species pools which have the ability to coexist, either stably or unstably)
 
-4) Define groups based on similarity (depth in tree) or desired number of groups
-
-<br>
-
-...but wait a second?
 ]
+
+---
+
+## Cape phytochoria
+
+.pull-left[
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/centresofendemism.png")
+```
+
+An example of regional species pools from the Cape...
+
+.footnote[###### Data and figure from Manning and Goldblatt 2012]
+
+]
+
+.pull-right[
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+div <- read.csv("images/cfr_diversity.csv", header = T)
+
+names(div) <- c("Region", "Area (1000 km2)", "Number of species", "Endemism (%)")
+
+kable(div)  %>%
+  kable_styling(font_size = 12) #%>%
+#  row_spec(c(11:13), bold = T, color = "white", background = "#23395b")
+```
+
+CFR effectively = _Global species pool_, because of such high endemism
+
+Phytochoria make good _Regional species pools_, but depending on the study the regional pool can be defined to be smaller if it can be justified, e.g the Cape Peninsula is a relatively isolated unit
+
+]
+
+---
+
+layout: false
+
+Biogeographic processes... Global... 
+
+- Latitudinal gradient, energy etc
+
+---
+
+layout: false
+
+Biogeographic processes... Regional... 
+
+- Environmental heterogeneity
+- Mid Domain Effect
+
+---
+
+layout: false
+
+Local determinism
+
+- competition
+- facilitation
+- mutualism
+
+---
+
+layout: false
+
+Examples of teasing apart assembly processes?
 
 ---
 

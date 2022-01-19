@@ -64,10 +64,11 @@ layout: false
 
 .pull-left[
 
-```{r echo = F, fig.align = 'center', out.width = '100%'}
+```{r echo = F, fig.align = 'center', out.width = '90%'}
 knitr::include_graphics("images/kreft2007_crop.jpg")
+knitr::include_graphics("images/cfr_diversity.png")
 ``` 
-.footnote[Kreft and Jetz 2007]
+.footnote[Kreft and Jetz 2007; Freiberg and Manning 2013]
 ]
 
 .pull-right[
@@ -141,23 +142,27 @@ knitr::include_graphics("images/assemblyprocesses.png")
 
 layout: false
 
-## Assembly of species pools
-
 .pull-left[
+
+## Assembly of species pools
 
 ```{r echo = F, fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("images/speciespools.png")
 ```
 
-Community assembly can be thought of as the successive filtering of species pools descending in scale from global to local
+Community assembly can be thought of as the successive filtering of species pools descending in spatial (and temporal) scale from global to local
 
 ]
 
 .pull-right[
 
+<br>
+
+<br>
+
 _Global species pool_ = all species on the planet (or in the defined study domain)
 
-_Regional species pools_ = the species that are present in each region (e.g. a biogeographic region or mountain)
+_Regional species pools_ = the species that are present in each region (e.g. a biogeographic region or mountain), limited by barriers to dispersal
 
 _Fundamental species pool_ = species with the potential to occur in a particular location (i.e. can disperse there and find the appropriate abiotic conditions necessary for their
 survival)
@@ -168,21 +173,23 @@ _Realised community_ = the actual observed local community (i.e. the subset of s
 
 ---
 
-## Cape phytochoria
-
 .pull-left[
+
+### An example of regional species pools from the Cape...
+
+The phytogeographic centres of the CFR
 
 ```{r echo = F, fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("images/centresofendemism.png")
 ```
-
-An example of regional species pools from the Cape...
 
 .footnote[###### Data and figure from Manning and Goldblatt 2012]
 
 ]
 
 .pull-right[
+
+<br>
 
 ```{r echo = F, fig.align = 'center', out.width = '100%'}
 div <- read.csv("images/cfr_diversity.csv", header = T)
@@ -194,9 +201,9 @@ kable(div)  %>%
 #  row_spec(c(11:13), bold = T, color = "white", background = "#23395b")
 ```
 
-CFR effectively = _Global species pool_, because of such high endemism
+The Cape phytochoria make good _Regional species pools_, but the regional pools used can be defined differently depending on the purposes of the study and if it can be justified, e.g. the Cape Peninsula is a relatively isolated biogeographic unit
 
-Phytochoria make good _Regional species pools_, but depending on the study the regional pool can be defined to be smaller if it can be justified, e.g the Cape Peninsula is a relatively isolated unit
+CFR effectively = _Global species pool_, because of such high endemism
 
 ]
 

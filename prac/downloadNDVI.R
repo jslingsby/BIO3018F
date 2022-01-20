@@ -31,8 +31,8 @@ renosterveld <- mt_subset(product = "MOD13Q1",
                        site_name = "renosterveld")
 
 sandstone_low <- mt_subset(product = "MOD13Q1",
-                       lat = -34.411666,
-                       lon = 20.587814,
+                       lat = -34.3983, 
+                       lon = 20.5552,
                        band = "250m_16_days_NDVI",
                        start = "2000-01-01",
                        end = "2021-12-31",

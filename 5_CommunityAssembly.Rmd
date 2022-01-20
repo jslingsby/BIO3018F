@@ -58,6 +58,11 @@ library(knitr)
 library(kableExtra)
 ```
 
+
+```{r xaringan-tile-view, echo=FALSE}
+xaringanExtra::use_tile_view()
+```
+
 layout: false
 
 ## Diversity is not distributed evenly...
@@ -76,7 +81,7 @@ knitr::include_graphics("images/cfr_diversity.png")
 ```{r echo = F, fig.align = 'center', out.width = '90%'}
 knitr::include_graphics("images/cramer_verboom_2017.jpg")
 ```
-.footnote[Cramer and Verboom 2017]
+.center[.footnote[Cramer and Verboom 2017]]
 ]
 
 ---
@@ -100,7 +105,7 @@ layout: false
 ```{r echo = F, fig.align = 'center', out.width = '110%'}
 knitr::include_graphics("images/fynbos.jpg")
 ``` 
-.footnote[<sup>1</sup>...]
+
 ]
 
 .pull-right[
@@ -109,6 +114,7 @@ knitr::include_graphics("images/fynbos.jpg")
 knitr::include_graphics("images/biomes.jpg")
 knitr::include_graphics("images/resolv_ecoregions2017.png")
 ```
+
 ]
 
 ---
@@ -211,9 +217,64 @@ CFR effectively = _Global species pool_, because of such high endemism
 
 layout: false
 
-Biogeographic processes... Global... 
+## Local vs Regional scale processes
 
-- Latitudinal gradient, energy etc
+The diversity of local biological communities is a balance of regional and local processes - Ricklefs 1987
+
+.pull-left[
+
+#### Regional scale
+```{r echo = F, fig.align = 'left', out.width = '50%'}
+knitr::include_graphics("images/centresofendemism.png")
+```
+
+- speciation
+- extinction
+- dispersal
+
+]
+
+.pull-right[
+
+#### Local scale
+```{r echo = F, fig.align = 'left', out.width = '35%'}
+knitr::include_graphics("images/fynbos.jpg")
+``` 
+
+- environmental filtering
+- interspecific interactions
+  - competitive exclusion
+  - predation, pathogen
+  - mutualisms (e.g. mycorrhizae, pollination)
+- adaptation
+- stochastic variation
+]
+
+
+---
+
+layout: false
+
+.left-column[
+
+### What
+
+### Happened
+
+### Here
+]
+
+.right-column[- Latitudinal gradient, energy etc]
+
+.footnote[<sup>1</sup>...]
+
+---
+
+layout: false
+
+.left[Biogeographic processes... Global... ]
+
+.right[- Latitudinal gradient, energy etc]
 
 ---
 

@@ -60,7 +60,7 @@ library(kableExtra)
 
 
 ```{r xaringan-tile-view, echo=FALSE}
-xaringanExtra::use_tile_view()
+# xaringanExtra::use_tile_view()
 ```
 
 layout: false

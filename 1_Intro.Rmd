@@ -92,10 +92,12 @@ knitr::include_graphics("images/sdgs_makingpeacewithnature_small.jpg")
 
 ---
 
-## Understanding the role of biodiversity...
+layout: false
+
+## We need to measure biodiversity to...
 
 .pull-left[
-### ...requires measuring it
+### Understand the role of biodiversity
 
 Here we see relationships between biodiversity metrics and urban ecosystem services (UES) that have been tested empirically (from Schwartz et al. 2017).
 ]
@@ -108,10 +110,70 @@ knitr::include_graphics("images/ecosystem_functions.jpg")
 
 ---
 
+layout: false
+
+## We need to measure biodiversity to...
+
+### Map the distribution of species and ecosystems
+
+```{r echo = F, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics("images/resolv_ecoregions2017.png")
+```
+
+.footnote[https://ecoregions.appspot.com/]
+
+---
+
+layout: false
+
+## We need to measure biodiversity to...
+
+### Test macroecological theory - e.g. What determines species richness?
+
+```{r echo = F, fig.align = 'center', out.width = '80%'}
+knitr::include_graphics("images/kreft2007_crop.jpg")
+```
+.footnote[Kreft & Jetz 2007, _PNAS_]
+
+---
+
+layout: false
+
+## We need to measure biodiversity to...
+
+### Track change in biodiversity
+
+```{r echo = F, fig.align = 'center', out.width = '50%'}
+knitr::include_graphics("images/humphries_extinction.png")
+```
+
+.footnote[Humphreys et al. 2019]
+
+---
+
+layout: false
+
+## We need to measure biodiversity to...
+
+### Set conservation priorities
+
+```{r echo = F, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics("images/hotspots.jpg")
+```
+
+.footnote[https://www.conservation.org/priorities/biodiversity-hotspots]
+
+---
+
+layout: false
+
 .pull-left[
 ## There are many facets of biodiversity to measure!
 
+<br>
+
 > "biodiversity is the sum total of all biotic variation from the level of genes to ecosystems" - Purvis & Hector 2000, _Nature_
+
 ]
 
 .pull-right[
@@ -169,20 +231,22 @@ knitr::include_graphics("images/diversitymeasures.png")
 
 ---
 
-## My research focuses on three questions...
+## My research focuses on four questions...
 
-```{r echo = F, fig.align = 'center', out.width = '65%'}
+```{r echo = F, fig.align = 'center', out.width = '58%'}
 knitr::include_graphics("images/chapin.png")
 ```
 
-1. What determines the distribution and abundance of biodiversity?
+1. What determines the composition and diversity of communities and ecosystems at various scales?
 
 2. What is the role of biodiversity in ecosystem function (and derived societal benefits)?
 
 3. How is biodiversity changing and what are the impacts on ecosystem services?
 
+4. How can we mitigate or adapt to changing biodiversity and ecosystem services?
+
 .pull-right[
-.footnote[Modified from Chapin et al. 1997, _Science_]
+.footnote[Figure modified from Chapin et al. 1997, _Science_]
 ]
 
 ---

@@ -4,10 +4,8 @@
     <title>2. Species Richness and Diversity</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jasper Slingsby, BIO3018F" />
-    <meta name="date" content="2022-01-18" />
+    <meta name="date" content="2022-01-21" />
     <script src="2_SpeciesRichAndDiv_files/header-attrs/header-attrs.js"></script>
-    <script src="2_SpeciesRichAndDiv_files/kePrint/kePrint.js"></script>
-    <link href="2_SpeciesRichAndDiv_files/lightable/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
   <body>
@@ -17,7 +15,7 @@ class: center, middle, inverse, title-slide
 # 2. Species Richness and Diversity
 ## Alpha Diversity
 ### Jasper Slingsby, BIO3018F
-### 2022-01-18
+### 2022-01-21
 
 ---
 
@@ -50,11 +48,12 @@ layout: false
 
 ## Quantifying `\(\alpha\)`-diversity...
 
-Can be counts of the number of species in samples, or include information on their relative abundance.
 
 .pull-left[
 
-&lt;img src="images/alphadiversity.png" width="75%" style="display: block; margin: auto;" /&gt;
+Can be counts of the number of species in samples
+
+&lt;img src="images/alphadiversity1.png" width="75%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -62,11 +61,37 @@ Can be counts of the number of species in samples, or include information on the
 
 *S* = a simple count of species
 
-*H'* = Species diversity quantified using the Shannon index `\((H' = -\sum_{i=1}^{n}(p_i*ln(p_i))\)` where `\(p_i\)` is the proportion of individuals belonging to the *i*th species. 
+But what of relative abundance?
 
-*H'* takes into account both species richness and evenness in their relative abundance.
+]
 
-A community is considered more diverse if the relative abundance of species is more evenly distributed. The logic being that if you remove one individual, more even communities are less likely to lose species.
+---
+
+layout: false
+
+## Quantifying `\(\alpha\)`-diversity...
+
+
+.pull-left[
+
+Can be counts of the number of species in samples, or include information on their relative abundance.
+
+&lt;img src="images/alphadiversity.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+
+A community is considered more diverse if the relative abundances are more evenly distributed, because removing one individual is less likely to remove a species.
+
+The Shannon index (*H'*) quantifies species diversity taking into account both species' richness and evenness in their relative abundance
+
+`\(H' = -\sum_{i=1}^{n}(p_i*ln(p_i))\)` 
+
+where `\(p_i\)` is the proportion of individuals belonging to the *i*th species.
+
+Pielou's measure of evenness (*J*) can be calculated directly as `\(J = H'/log(S)\)`
+
 ]
 
 ---
@@ -152,7 +177,7 @@ layout: false
 
 ...is often estimated using individual or sample-based ***rarefaction***. 
 
-This is done by resampling a set number (*n*) of individuals or samples from the full dataset to determine the expected number of species for any given *n*. For each *n* the resampling is repeated multiple times and the expected species number determined as an average.
+i.e. resampling a set number (*n*) of individuals or samples from the data to determine the expected number of species for any given *n*. Resampling is repeated multiple times for each *n* and the results averaged.
 
 ]
 
@@ -206,11 +231,6 @@ Curve is smooth, because samples (and thus species) are repeatedly sampled and a
 
 ]
 
----
-
-layout: false
-
-##Estimating asymptotic species richness by extrapolation?
 
 ---
 
@@ -276,54 +296,13 @@ Paired T-test: t = 3.2953, df = 80, p-value = _***0.0015***_
 
 ---
 
-layout: false
-
-.pull-left[
-## The decomposition of diversity...
-
-The components of biodiversity are interrelated. How this is expressed depends on your interpretation of `\(\beta\)`-diversity, which varies the application at hand.
-
-
-As "turnover" it is multiplicative (*sensu* Whittaker 1972):
-
-`$$\beta = \gamma/\alpha$$`
-
-As "average amount of diversity not found in a single, randomly-chosen sample" it is additive&lt;sup&gt;1&lt;/sup&gt; (*sensu* MacArthur et al. 1966, Lande 1996):
-
-`$$\beta = \gamma - \alpha$$`
-
-.footnote[&lt;sup&gt;1&lt;/sup&gt;often termed "additive partitioning of diversity". For reviews see Veech et al. 2002 and Anderson et al. 2011.]
-]
-
-.pull-right[
-&lt;img src="images/diversitycomponents.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
-]
-
----
-
 ## References
-
-Anderson, M. J., T. O. Crist, J. M. Chase, et al. (2011). "Navigating
-the multiple meanings of beta-diversity: a roadmap for the practicing
-ecologist". En. In: _Ecology letters_ 14.1, pp. 19-28. ISSN: 1461-023X,
-1461-0248. DOI:
-[10.1111/j.1461-0248.2010.01552.x](https://doi.org/10.1111%2Fj.1461-0248.2010.01552.x).
 
 Gotelli, N. J. and R. K. Colwell (2001). "Quantifying biodiversity:
 procedures and pitfalls in the measurement and comparison of species
 richness". In: _Ecology letters_ 4.4, pp. 379-391. ISSN: 1461-023X,
 1461-0248. DOI:
 [10.1046/j.1461-0248.2001.00230.x](https://doi.org/10.1046%2Fj.1461-0248.2001.00230.x).
-
-Lande, R. (1996). "Statistics and Partitioning of Species Diversity,
-and Similarity among Multiple Communities". In: _Oikos_ 76.1, pp. 5-13.
-ISSN: 0030-1299, 1600-0706. DOI:
-[10.2307/3545743](https://doi.org/10.2307%2F3545743).
-
-MacArthur, R., H. Recher, and M. Cody (1966). "On the Relation between
-Habitat Selection and Species Diversity". In: _The American naturalist_
-100.913, pp. 319-332. ISSN: 0003-0147. DOI:
-[10.1086/282425](https://doi.org/10.1086%2F282425).
 
 Slingsby, J. A., C. Merow, M. Aiello-Lammens, et al. (2017).
 "Intensifying postfire weather and biological invasion drive species
@@ -332,167 +311,9 @@ _Proceedings of the National Academy of Sciences of the United States
 of America_ 114.18, pp. 4697-4702. ISSN: 0027-8424, 1091-6490. DOI:
 [10.1073/pnas.1619014114](https://doi.org/10.1073%2Fpnas.1619014114).
 
-Veech, J. A., K. S. Summerville, T. O. Crist, et al. (2002). "The
-additive partitioning of species diversity: recent revival of an old
-idea". En. In: _Oikos_ 99.1, pp. 3-9. ISSN: 0030-1299, 1600-0706. DOI:
-[10.1034/j.1600-0706.2002.990101.x](https://doi.org/10.1034%2Fj.1600-0706.2002.990101.x).
-
 Whittaker, R. H. (1972). "Evolution and measurement of species
 diversity". En. In: _Taxon_ 21.2-3, pp. 213-251. ISSN: 0040-0262,
 1996-8175. DOI: [10.2307/1218190](https://doi.org/10.2307%2F1218190).
-
----
-
-## Understanding the role of biodiversity...
-
-.pull-left[
-### ...requires measuring it
-
-Here we see relationships between biodiversity metrics and urban ecosystem services (UES) that have been tested empirically (from Schwarz et al. 2017, _Ecosystem Services_).
-]
-
-.pull-right[
-&lt;img src="images/ecosystem_functions.jpg" width="100%" style="display: block; margin: auto 0 auto auto;" /&gt;
-]
-
----
-
-.pull-left[
-## There are many facets of biodiversity to measure!
-
-&gt; "biodiversity is the sum total of all biotic variation from the level of genes to ecosystems" - Purvis &amp; Hector 2000, _Nature_
-]
-
-.pull-right[
-&lt;img src="images/Noss_Biodiversity.png" width="100%" style="display: block; margin: auto;" /&gt;
-.footnote[Noss 1990, _Conservation Biology_]
-]
-
----
-
-.pull-left[
-## There are many facets of biodiversity to measure!
-
-#### Essential Biodiversity Variables (EBVs)
-
-&lt;img src="images/ebv_circle.png" width="80%" style="display: block; margin: auto;" /&gt;
-
-.footnote[https://geobon.org/]
-]
-
-.pull-right[
-&lt;table class="table" style="font-size: 12px; margin-left: auto; margin-right: auto;"&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:left;"&gt; EBV.class &lt;/th&gt;
-   &lt;th style="text-align:left;"&gt; EBV.name &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Genetic composition &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Genetic diversity (richness and heterozygosity) &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Genetic differentiation (number of genetic units and genetic distance) &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Effective population size &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Inbreeding &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Species populations &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Species distributions &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Species abundances &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Species traits &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Morphology &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Physiology &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Phenology &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Movement &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Community composition &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Community abundance &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Taxonomic/phylogenetic diversity &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Trait diversity &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Interaction diversity &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Ecosystem functioning &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Primary productivity &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Ecosystem phenology &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Ecosystem disturbances &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt; Ecosystem structure &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Live cover fraction &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Ecosystem distribution &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:left;"&gt; Ecosystem Vertical Profile &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-]
-
----
-
-.pull-left[
-## And many ways of measuring them!
-
-#### Many kinds of diversity
-*   Genetic diversity
-*   Taxonomic diversity
-*   Phylogenetic diversity
-*   Functional diversity
-*   Ecosystem diversity
-*   etc...
-
-#### And many methods for measuring each of them!!!
-]
-
-.pull-right[
-&lt;img src="images/diversitymeasures.png" width="100%" style="display: block; margin: auto;" /&gt;
-.footnote[A comparison of **_some_** phylogenetic diversity indices from Slingsby 2011, _PhD Thesis_]
-]
 
 ---
 class: center, middle
@@ -503,8 +324,6 @@ Slides created via the R packages:
 
 [**xaringan**](https://github.com/yihui/xaringan)&lt;br&gt;
 [gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
-
-The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

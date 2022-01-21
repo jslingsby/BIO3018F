@@ -34,7 +34,7 @@ BibOptions(check.entries = FALSE,
            style = "markdown",
            hyperlink = FALSE,
            dashed = FALSE)
-myBib <- ReadBib("bib/2_species.bib", check = FALSE)
+myBib <- ReadBib("bib/3_beta.bib", check = FALSE)
 ```
 
 ```{r xaringan-themer, include=FALSE, warning=FALSE}
@@ -343,22 +343,65 @@ layout: false
 
 ## "Variation" examples
 
-Variation among communities from a set of samples (Application V1)
+Exploring variation among samples from one or more surveys or datasets
 
-```{r echo = F, fig.align = 'right', out.width = '75%'}
+```{r echo = F, fig.align = 'right', out.width = '70%'}
 knitr::include_graphics("images/beta_variation_CP.png")
 ```
 
-
-.footnote[Not finished? Add a metric? See table.]
-
+.footnote[Average turnover between plots: 1966 = 0.784; 1996 = 0.780]
 
 ---
 
 layout: false
 
-Baselga 2010 - Turnover vs Nestedness components?
+## "Variation" examples
 
+Variation among communities in relation to an environmental variable
+
+.pull-left[
+
+<br>
+
+<br>
+
+Community similarity in relation to age since last fire
+
+.footnote[Data from Slingsby et al. 2017]
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'right', out.width = '100%'}
+knitr::include_graphics("images/NMDS.png")
+```
+]
+
+---
+
+layout: false
+
+## "Variation" examples
+
+.pull-left[
+
+Grouping samples by compositional similarity
+
+e.g. used to identify distinct vegetation communities
+
+```{r echo = F, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics("images/hclust_plots.png")
+```
+
+.footnote[Data from Slingsby et al. 2017]
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '65%'}
+knitr::include_graphics("images/taylorvegmap.jpg")
+```
+]
 
 ---
 class: center, middle

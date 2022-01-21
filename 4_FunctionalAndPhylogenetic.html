@@ -4,7 +4,7 @@
     <title>4. Functional and Phylogenetic Diversity</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jasper Slingsby, BIO3018F" />
-    <meta name="date" content="2022-01-18" />
+    <meta name="date" content="2022-01-21" />
     <script src="4_FunctionalAndPhylogenetic_files/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
@@ -14,7 +14,7 @@ class: center, middle, inverse, title-slide
 
 # 4. Functional and Phylogenetic Diversity
 ### Jasper Slingsby, BIO3018F
-### 2022-01-18
+### 2022-01-21
 
 ---
 
@@ -145,13 +145,30 @@ layout: false
 
 3) Cluster species based on distances
 
-&lt;img src="images/hclust.png" width="30%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/hclust_species.png" width="30%" style="display: block; margin: auto;" /&gt;
 
 4) Define groups based on similarity (depth in tree) or desired number of groups
 
 &lt;br&gt;
 
 ...but wait a second?
+]
+
+---
+
+layout: false
+
+.pull-left[
+## _Continuous_ measures of functional diversity
+
+There's a lot of useful information in the data and analyses used to create functional groups!
+
+Rather than lose that information by defining discrete groups and counting them, functional diversity can be calculated as the sum of the branch length joining all species in the sample (Petchey and Gaston 2002)
+
+]
+
+.pull-right[
+&lt;img src="images/hclust_species.png" width="90%" style="display: block; margin: auto 0 auto auto;" /&gt;
 ]
 
 ---
@@ -279,27 +296,11 @@ class: center, middle
 
 ## References
 
-Anderson, M. J., T. O. Crist, J. M. Chase, et al. (2011). "Navigating
-the multiple meanings of beta-diversity: a roadmap for the practicing
-ecologist". En. In: _Ecology letters_ 14.1, pp. 19-28. ISSN: 1461-023X,
-1461-0248. DOI:
-[10.1111/j.1461-0248.2010.01552.x](https://doi.org/10.1111%2Fj.1461-0248.2010.01552.x).
-
 Gotelli, N. J. and R. K. Colwell (2001). "Quantifying biodiversity:
 procedures and pitfalls in the measurement and comparison of species
 richness". In: _Ecology letters_ 4.4, pp. 379-391. ISSN: 1461-023X,
 1461-0248. DOI:
 [10.1046/j.1461-0248.2001.00230.x](https://doi.org/10.1046%2Fj.1461-0248.2001.00230.x).
-
-Lande, R. (1996). "Statistics and Partitioning of Species Diversity,
-and Similarity among Multiple Communities". In: _Oikos_ 76.1, pp. 5-13.
-ISSN: 0030-1299, 1600-0706. DOI:
-[10.2307/3545743](https://doi.org/10.2307%2F3545743).
-
-MacArthur, R., H. Recher, and M. Cody (1966). "On the Relation between
-Habitat Selection and Species Diversity". In: _The American naturalist_
-100.913, pp. 319-332. ISSN: 0003-0147. DOI:
-[10.1086/282425](https://doi.org/10.1086%2F282425).
 
 Slingsby, J. A., C. Merow, M. Aiello-Lammens, et al. (2017).
 "Intensifying postfire weather and biological invasion drive species
@@ -307,11 +308,6 @@ loss in a Mediterranean-type biodiversity hotspot". En. In:
 _Proceedings of the National Academy of Sciences of the United States
 of America_ 114.18, pp. 4697-4702. ISSN: 0027-8424, 1091-6490. DOI:
 [10.1073/pnas.1619014114](https://doi.org/10.1073%2Fpnas.1619014114).
-
-Veech, J. A., K. S. Summerville, T. O. Crist, et al. (2002). "The
-additive partitioning of species diversity: recent revival of an old
-idea". En. In: _Oikos_ 99.1, pp. 3-9. ISSN: 0030-1299, 1600-0706. DOI:
-[10.1034/j.1600-0706.2002.990101.x](https://doi.org/10.1034%2Fj.1600-0706.2002.990101.x).
 
 Whittaker, R. H. (1972). "Evolution and measurement of species
 diversity". En. In: _Taxon_ 21.2-3, pp. 213-251. ISSN: 0040-0262,

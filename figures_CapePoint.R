@@ -11,6 +11,10 @@ species96 <- read_excel("data/pnas.1619014114.sd01.xlsx", sheet = "veg1996")
 species66 <- species66 %>% mutate_at(-1, round, 0)
 species96 <- species96 %>% mutate_at(-1, round, 0)
 
+# Get env data
+env <- read_excel("data/pnas.1619014114.sd01.xlsx", sheet = "enviroment", na = "NA")
+env$...1 <- paste("CP_", env$Plot, sep = "")
+
 
 ### Species - Abundance
 
@@ -165,6 +169,8 @@ ggsave("images/sper_comp_hist_CP.png", width = 4, height = 4)
 
 ##Beta diversity
 
+# Variation
+
 # par(mfrow = c(1,2))
 # hist(designdist(species66[,-1]), main = "", xlab = "Distance")
 # hist(designdist(species96[,-1]), main = "", xlab = "Distance")
@@ -176,3 +182,24 @@ var6696 %>% ggplot(aes(`Bray-Curtis Distance`)) +
   facet_wrap(~Year)
 
 ggsave("images/beta_variation_CP.png", width = 6, height = 3)
+
+
+#NMDS
+
+env <- left_join(species66[,1], env)
+
+x <- metaMDS(species66[,-1], distance = "bray")
+
+scores(x) %>%
+  cbind(env) %>%
+  ggplot(aes(x = NMDS1, y = NMDS2)) +
+  geom_point(aes(color = Age1966)) +
+  stat_ellipse(geom = "polygon", aes(group = Age1966, color = Age1966, fill = Age1966), alpha = 0.3) +
+  annotate("text", x = -2, y = 0.95, label = paste0("stress: ", format(x$stress, digits = 4)), hjust = 0) +
+  theme_bw()
+
+ggsave("images/NMDS.png", width = 5, height = 4)
+
+ggdendro::ggdendrogram(hclust(1-designdist(species66[,-1])))
+
+ggsave("images/hclust.png", width = 7, height = 6)

@@ -201,7 +201,7 @@ knitr::include_graphics("images/distancemat.png")
 3) Cluster species based on distances
 
 ```{r echo = F, fig.align = 'center', out.width = '30%'}
-knitr::include_graphics("images/hclust.png")
+knitr::include_graphics("images/hclust_species.png")
 ```
 
 4) Define groups based on similarity (depth in tree) or desired number of groups
@@ -209,6 +209,25 @@ knitr::include_graphics("images/hclust.png")
 <br>
 
 ...but wait a second?
+]
+
+---
+
+layout: false
+
+.pull-left[
+## _Continuous_ measures of functional diversity
+
+There's a lot of useful information in the data and analyses used to create functional groups!
+
+Rather than lose that information by defining discrete groups and counting them, functional diversity can be calculated as the sum of the branch length joining all species in the sample (Petchey and Gaston 2002)
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'right', out.width = '90%'}
+knitr::include_graphics("images/hclust_species.png")
+```
 ]
 
 ---

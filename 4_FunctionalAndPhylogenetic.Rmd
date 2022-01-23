@@ -218,9 +218,11 @@ layout: false
 .pull-left[
 ## _Continuous_ measures of functional diversity
 
-There's a lot of useful information in the data and analyses used to create functional groups!
+There's a lot of useful information in the data and analyses used to define functional groups quantitatively!
 
-Rather than lose that information by defining discrete groups and counting them, functional diversity can be calculated as the sum of the branch length joining all species in the sample (Petchey and Gaston 2002)
+Rather than lose that information by defining discrete groups and counting them, we can use the unique information directly!
+
+E.g. functional diversity can be calculated as the sum of the branch length joining all species in the sample (Petchey and Gaston 2002).
 
 ]
 
@@ -237,11 +239,11 @@ layout: false
 .pull-left[
 ## _Continuous_ measures of functional diversity
 
-There's a lot of useful information in the data and analyses used to create functional groups!
-
-This has led to the development of 3 families of **continuous** functional diversity metrics based on:
+There are 3 major approaches to calculating **continuous** metrics of functional diversity:
 - _Pairwise distances_ (e.g. mean or sum of the pairwise distances between all species in a sample - Walker et al. 1999)
+
 - _Hierarchical clustering_ (e.g. sum of the branch length joining all species in the sample - Petchey and Gaston 2002)
+
 - _Multidimensional ordination_ (e.g. the area or volume of encompassed by the set of species in an ordination of trait space (2 or more dimensions) - Villeger et al. 2008)
 ]
 
@@ -258,13 +260,14 @@ layout: false
 .pull-left[
 ## _Continuous_ measures of phylogenetic diversity
 
-Similar approaches can be used when estimating phylogenetic diversity.
+Similar approaches used for phylogenetic diversity.
 
-Here there are two families of **continuous** metrics, based on:
 - _Pairwise distances_ (e.g. mean pairwise distances between all species in a sample or minimum nearest taxon distance - Webb et al. 2002)
+
 - _Phylogenetic trees_ (e.g. sum of the branches joining all species - Faith 1991)
   - can also use the taxonomic hierarchy instead of a phylogeny, but this suffers from the subjectivity of taxonomic ranks
-- There are no _multidimensional ordination_ methods for phylogenetic diversity
+
+- No _multidimensional ordination_ methods for phylogenetic diversity
 ]
 
 .pull-right[
@@ -274,8 +277,8 @@ knitr::include_graphics("images/phylogeny.png")
 
 #### Molecular phylogeny vs taxonomic hierarchy:
 
-Usually one would calculate phylogenetic diversity using a molecular phylogeny (or "phylogenetic tree"), where the branch lengths are time-calibrated based on a molecular clock (rate of DNA mutation through time) and represent time. 
-- Thus the sum of the branch lengths linking species in a sample represents the _sum total independent evolutionary history_ represented by that sample.
+A molecular phylogeny (or "phylogenetic tree") represents the relationships between species based on similarity of their DNA. Branch lengths are usually time-calibrated based on a molecular clock (rate of mutation through time) to represent time. 
+- The sum of the branch lengths linking species in a sample represents the _sum total independent evolutionary history_ represented by that sample.
 
 The taxonomic hierarchy (Order, Family, Genus etc) is far less objective.
 
@@ -332,6 +335,36 @@ when based on branch length (e.g. _PhyloSor_ - Bryant et al. 2008)
 ]
 
 
+---
+class: center, middle
+
+## So what?
+
+How does being able to measure functional or phylogenetic diversity help us?
+
+---
+
+layout: false
+
+.pull-left[
+
+## "Phylogenetic regionalization"
+
+<br>
+
+Defining phytoregions based on turnover of phylogenetic diversity in the (woody) flora of southern Africa
+
+
+
+.footnote[figure from Daru et al. 2016]
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '90%'}
+knitr::include_graphics("images/daru_phyloregions.png")
+```
+]
 
 ---
 

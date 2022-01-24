@@ -250,7 +250,7 @@ knitr::include_graphics("images/chapin.png")
 ]
 
 ---
-class: center, middle
+class: center
 
 ## But!
 
@@ -258,7 +258,15 @@ class: center, middle
 
 <br>
 
-So it's crucial that we master the methods for measuring and analyzing biodiversity data if we hope to answer the questions at hand...
+In other words, there is no one perfect measure of biodiversity.
+
+<br>
+
+Measures of biodiversity are in fact hypotheses, and should be treated as such. Most biodiversity-related hypotheses should be prefaced *"Assuming our measure of biodiversity is a reasonable approximation of reality, then..."*
+
+<br>
+
+It's crucial that we master the methods for measuring and analyzing biodiversity data, and explore the assumptions and implications of the measures we use, if we hope to answer the questions at hand...
     
 ---
 

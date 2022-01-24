@@ -1,5 +1,5 @@
 ---
-title: "7. Biodiversity and Ecosystem Function"
+title: "7. Remote Sensing of Biodiversity"
 subtitle: ""  
 author: 
   - "Jasper Slingsby, BIO3018F"
@@ -63,11 +63,103 @@ library(kableExtra)
 # xaringanExtra::use_tile_view()
 ```
 
-## How does biodiversity affect ecosystem function?
+class: center, middle
 
-```{r echo = F, fig.align = 'center', out.width = '70%'}
-knitr::include_graphics("images/lang_postfire_50perc.gif")
+### We want to measure biodiversity everywhere, all the time...
+
+```{r echo = F, fig.align = 'center', out.width = '80%'}
+knitr::include_graphics("images/world_seasonality.gif")
 ```
+
+.center[Remote sensing is pretty much the only way this can be achieved...]
+
+---
+
+layout: false
+
+.pull-left[
+
+## It's a rapidly growing field
+
+```{r echo = F, fig.align = 'left', out.width = '100%'}
+knitr::include_graphics("images/turner2003.png")
+```
+
+.footnote[Turner et al. 2003]
+]
+
+.pull-right[
+
+```{r echo = F, fig.align = 'left', out.width = '75%'}
+knitr::include_graphics("images/cavenderbares2020.png")
+```
+.footnote[Cavender-Bares et al. 2020]
+
+]
+
+---
+
+class: center
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/bioscape.png")
+```
+.left[.footnote[...and the Cape is about to be the epicentre of this endeavour - https://www.bioscape.io/]]
+
+---
+
+layout: false
+
+.pull-left[
+## There are many facets of biodiversity to measure!
+
+<br>
+
+An advantage of remote sensing is that it can directly measure the structure, composition and function of biodiversity... 
+
+...at least from the scale of individuals up...
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/Noss_Biodiversity.png")
+```
+.footnote[Noss 1990, _Conservation Biology_]
+]
+
+---
+
+layout: false
+
+.pull-left[
+## (Some) methods
+
+- Measures of composition
+  - species composition
+  - land cover
+  
+- Measures of ecosystem function
+  - productivity
+  - greenness
+  - seasonality/phonology
+  
+- Measures of habitat structure
+  - vegetation structure
+  - configuration of ecosystems
+
+- Measures of environmental heterogeneity
+
+- Using these measures to drive models
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/Noss_Biodiversity.png")
+```
+.footnote[Noss 1990, _Conservation Biology_]
+]
 
 ---
 
@@ -119,7 +211,7 @@ knitr::include_graphics("images/slingsby_2014_BEF.png")
 .footnote[Figure from Slingsby et al. 2014]
 ]
 
-.pull-left[
+.pull-right[
 ```{r echo = F, fig.align = 'center', out.width = '100%'}
 #knitr::include_graphics("images/fynbos_community.jpg")
 ```
@@ -188,6 +280,14 @@ knitr::include_graphics("images/competition.png")
 
 layout: false
 
+## Metrics of biodiversity used?
+
+Cadotte papers on PD and FD
+
+---
+
+layout: false
+
 ## Ecosystem functions vary in space and with scale?
 
 Bond and Chase 2002?
@@ -223,6 +323,8 @@ layout: false
 .pull-left[
 
 Society depends on a range of ecosystem functions for the services they provide
+
+Diaz paper?
 
 .footnote[https://ipbes.net/global-assessment]
 ]

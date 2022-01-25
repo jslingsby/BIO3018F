@@ -63,6 +63,8 @@ library(kableExtra)
 # xaringanExtra::use_tile_view()
 ```
 
+class: center, middle
+
 ## How does biodiversity affect ecosystem function?
 
 ```{r echo = F, fig.align = 'center', out.width = '70%'}
@@ -73,57 +75,73 @@ knitr::include_graphics("images/lang_postfire_50perc.gif")
 
 layout: false
 
-## Some examples of ecosystem functions
-
-Productivity (C sequestration), decomposition, respiration, etc
 
 .pull-left[
+
+## Ecosystem functions?
+
+- Productivity (C sequestration)
+- Decomposition
+- Respiration
+- Water filtration
+- Pollination
+- Predation
+- Herbivory
+- Habitat (for other organisms)
+- Etc
 
 ```{r echo = F, fig.align = 'center', out.width = '90%'}
 #knitr::include_graphics("images/kreft2007_crop.jpg")
 #knitr::include_graphics("images/cfr_diversity.png")
 ``` 
-.footnote[]
+
 ]
 
 .pull-right[
 
-```{r echo = F, fig.align = 'center', out.width = '90%'}
-#knitr::include_graphics("images/cramer_verboom_2017.jpg")
+```{r echo = F, fig.align = 'center', out.width = '110%'}
+knitr::include_graphics("images/snelgrove2014.jpg")
 ```
 .center[]
+.footnote[Snelgrove et al. 2014 (Marine)]
 ]
 
 ---
 
-class: center, middle
+class: center
 
 ## The evolution of B-EF research
 
-```{r echo = F, fig.align = 'center', out.width = '90%'}
+```{r echo = F, fig.align = 'center', out.width = '95%'}
 knitr::include_graphics("images/vanderplas2019_BEF.jpg")
 ```
-.footnote[van der Plas 2019]
+.footnote[Figure from van der Plas 2019]
 
 ---
 
 layout: false
 
-### Direct trait effects vs diversity effects?
-
 .pull-left[
-```{r echo = F, fig.align = 'center', out.width = '68%'}
-knitr::include_graphics("images/slingsby_2014_BEF.png")
-```
+
+## Trait vs diversity effects?
+
+####Direct trait effects
+
+Dominance by indigenous seeders versus sprouters affects rate of biomass accumulation, change in total stream flow, peak storm-flow pulse, and sediment yield or nutrient runoff in fynbos stands/catchments
+  - it also changes with a shift to woody alien trees 
+
+<br>
+
+Hypothetical curves are based on information from a range of sources, see book chapter. The temporal range spans c.15 yr and any seasonal variation is excluded. 
 
 .footnote[Figure from Slingsby et al. 2014]
 ]
 
-.pull-left[
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-#knitr::include_graphics("images/fynbos_community.jpg")
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '90%'}
+knitr::include_graphics("images/slingsby_2014_BEF.png")
 ```
-.footnote[Figure from Tilman et al. 2014]
+
 ]
 
 ---
@@ -132,19 +150,54 @@ layout: false
 
 .pull-left[
 
+## Trait vs diversity effects?
+
+####Diversity effects
+
+Experimental communities (e.g. Cedar Creek) reveal diversity effects on several ecosystem properties...
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+#knitr::include_graphics("images/tilman2014_fig1.png")
+knitr::include_graphics("images/Cedar-Creek.jpg")
+```
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'left', out.width = '95%'}
+knitr::include_graphics("images/tilman2014_fig4.png")
+```
+.footnote[Tilman et al. 2014]
+]
+
+---
+
+layout: false
+
 ## Theoretical mechanisms driving B-EF
 
-- Selection effect
-- Niche complementarity
-- A mix of the two...
+.pull-left[
 
-Highlight links with community assembly...
+More species = greater probability of higher trait diversity, affecting ecosystem processes through:
+
+_**The selection effect**_
+
+More species = more likely to have species that can dominate ecosystem processes
+
+_**Niche complementarity**_
+
+More species = better filling of available niche space and use of resources (links with community assembly)
+
+**A mix of the two...**
+
+Complementarity among and/or dominance by subsets of species or functional groups
+
 
 ]
 
 .pull-right[
 
-```{r echo = F, fig.align = 'center', out.width = '100%'}
+```{r echo = F, fig.align = 'left', out.width = '80%'}
 knitr::include_graphics("images/loreau2001.jpeg")
 ```
 .footnote[Figure from Loreau et al. 2001]
@@ -154,24 +207,102 @@ knitr::include_graphics("images/loreau2001.jpeg")
 
 layout: false
 
-## B-EF effects
+.pull-left[
+
+## Types of B-EF effects
+
+### Diversity-Productivity
+
+Productivity has been the primary focus of most B-EF research, and is supported by many experiments
+
+```{r echo = F, fig.align = 'center', out.width = '110%'}
+knitr::include_graphics("images/tilman2014_fig1.png")
+```
+
+.footnote[Tilman et al. 2014]
+
+]
+
+.pull-right[
+
+"Productivity" has been measured in a number of ways, including biomass, plant abundance or % cover
+
+```{r echo = F, fig.align = 'center', out.width = '110%'}
+knitr::include_graphics("images/tilman2014_fig2.png")
+```
+
+Generally results are consistent with "niche complementarity" (modelled in panel c)
+  - biomass increases with diversity above that of the most productive monoculture - a phenomenon termed "overyielding"
+
+Under "the selection effect" (panel b) the expected maximum cannot exceed that of the most productive monoculture 
+
+]
+
+---
+
+layout: false
 
 .pull-left[
 
-#### Diversity-Productivity Theory
+## Types of B-EF effects
 
-#### Diversity-Stability Theory
+#### Diversity-Stability 
+
+"Biodiversity as insurance" - species respond differently to environmental change, but averaging results in lower community variance
+
+```{r echo = F, fig.align = 'center', out.width = '70%'}
+knitr::include_graphics("images/hooper2005_fig4.png")
+```
+
+.footnote[Hooper et al. 2005]
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '90%'}
+knitr::include_graphics("images/tilman2014_fig3.png")
+```
+
+Species loss = less compensation (or redundancy) and increasing instability
+
+Interestingly, more species = less species-level stability
+
+.footnote[Tilman et al. 2014]
+
+]
+
+---
+
+layout: false
+
+.pull-left[
+
+## Types of B-EF effects
 
 #### Diversity-Invasibility Theory
 
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '65%'}
+knitr::include_graphics("images/competition.png")
+```
+
+.footnote[###### ]
+
+]
+
+---
+
+layout: false
+
+.pull-left[
+
+## Types of B-EF effects
+
 #### Ecosystem multifunctionality
 
-
-Hypothesis:
-- 
-
-Predictions:
-- 
 
 ]
 
@@ -191,6 +322,18 @@ layout: false
 ## Metrics of biodiversity used?
 
 Cadotte papers on PD and FD
+
+---
+
+class: center
+
+### Does B-EF scale up from experiments in space and time?
+
+```{r echo = F, fig.align = 'center', out.width = '75%'}
+knitr::include_graphics("images/gonzalez2020.jpg")
+```
+
+.footnote[Gonzalez et al. 2020]
 
 ---
 

@@ -125,7 +125,7 @@ layout: false
 
 ## Trait vs diversity effects?
 
-####Direct trait effects
+###Direct trait effects
 
 Dominance by indigenous seeders versus sprouters affects rate of biomass accumulation, change in total stream flow, peak storm-flow pulse, and sediment yield or nutrient runoff in fynbos stands/catchments
   - it also changes with a shift to woody alien trees 
@@ -152,7 +152,7 @@ layout: false
 
 ## Trait vs diversity effects?
 
-####Diversity effects
+###Diversity effects
 
 Experimental communities (e.g. Cedar Creek) reveal diversity effects on several ecosystem properties...
 
@@ -246,7 +246,7 @@ layout: false
 
 ## Types of B-EF effects
 
-#### Diversity-Stability 
+### Diversity-Stability 
 
 "Biodiversity as insurance" - species respond differently to environmental change, but averaging results in lower community variance
 
@@ -254,7 +254,7 @@ layout: false
 knitr::include_graphics("images/hooper2005_fig4.png")
 ```
 
-.footnote[Hooper et al. 2005]
+.footnote[]
 
 ]
 
@@ -266,6 +266,34 @@ knitr::include_graphics("images/tilman2014_fig3.png")
 Species loss = less compensation (or redundancy) and increasing instability
 
 Interestingly, more species = less species-level stability
+
+.footnote[Hooper et al. 2005 | Tilman et al. 2014]
+
+]
+
+---
+
+layout: false
+
+.pull-left[
+
+## Types of B-EF effects
+
+### Diversity-Invasibility
+
+More diverse communities are more resistant to invasion - Elton 1958
+
+- A corollary of niche theory
+
+Invaders must find resources to survive and grow, but B-EF experiments show that the levels of unconsumed resources decline as diversity increases...
+
+Biomass attained by invaders of a given functional group often most strongly inhibited by the existing biomass of that same functional group - consistent with the predictions of limiting similarity
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/tilman2014_invasibility.png")
+```
 
 .footnote[Tilman et al. 2014]
 
@@ -279,14 +307,17 @@ layout: false
 
 ## Types of B-EF effects
 
-#### Diversity-Invasibility Theory
+### Diversity-Multifunctionality
 
+Many more species are needed to maintain multiple types of ecosystem processes than are demonstrably linked to any given process
+
+Not all species have desirable effects on the suite of ecosystem processes measured
 
 ]
 
 .pull-right[
-```{r echo = F, fig.align = 'center', out.width = '65%'}
-knitr::include_graphics("images/competition.png")
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/hector2007.png")
 ```
 
 .footnote[###### ]
@@ -295,34 +326,21 @@ knitr::include_graphics("images/competition.png")
 
 ---
 
-layout: false
+class: center, middle
 
-.pull-left[
-
-## Types of B-EF effects
-
-#### Ecosystem multifunctionality
-
-
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'center', out.width = '65%'}
-knitr::include_graphics("images/competition.png")
-```
-
-.footnote[###### ]
-
-]
+## Other considerations?
 
 ---
 
-layout: false
+class: center
 
 ## Metrics of biodiversity used?
 
-Cadotte papers on PD and FD
+```{r echo = F, fig.align = 'center', out.width = '48%'}
+knitr::include_graphics("images/cadotte2008_fig2.png")
+```
 
+.footnote[Cadotte et al. 2008]
 ---
 
 class: center
@@ -342,6 +360,7 @@ layout: false
 ## Ecosystem functions vary in space and with scale?
 
 Bond and Chase 2002?
+Gonzalez et al. 2020?
 
 ---
 

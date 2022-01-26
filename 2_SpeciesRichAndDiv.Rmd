@@ -220,6 +220,12 @@ knitr::include_graphics("images/fynbos.png")
 
 layout: false
 
+## Species - Area relationships?
+
+---
+
+layout: false
+
 .pull-left[
 ## Quantifying $\alpha$-diversity...
 

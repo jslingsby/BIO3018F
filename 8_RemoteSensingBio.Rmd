@@ -81,8 +81,12 @@ layout: false
 
 ## It's a rapidly growing field
 
-```{r echo = F, fig.align = 'left', out.width = '100%'}
+```{r echo = F, fig.align = 'left', out.width = '90%'}
 knitr::include_graphics("images/turner2003.png")
+```
+
+```{r echo = F, fig.align = 'left', out.width = '90%'}
+knitr::include_graphics("images/satellitelaunches.jpg")
 ```
 
 .footnote[Turner et al. 2003]
@@ -133,570 +137,207 @@ knitr::include_graphics("images/Noss_Biodiversity.png")
 layout: false
 
 .pull-left[
-## (Some) methods
+## There are many facets of biodiversity to measure!
 
-- Measures of composition
-  - species composition
-  - land cover
-  
-- Measures of ecosystem function
-  - productivity
-  - greenness
-  - seasonality/phonology
-  
-- Measures of habitat structure
-  - vegetation structure
-  - configuration of ecosystems
+An advantage of remote sensing is that it can directly measure the structure, composition and function of biodiversity... 
 
-- Measures of environmental heterogeneity
 
-- Using these measures to drive models
-
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/Noss_Biodiversity.png")
+```{r echo = F, fig.align = 'center', out.width = '120%'}
+knitr::include_graphics("images/skidmore2021_fig1.png")
 ```
-.footnote[Noss 1990, _Conservation Biology_]
-]
+.footnote[Skidmore et al. 2021]
 
----
-
-layout: false
-
-## Some examples of ecosystem functions
-
-Productivity (C sequestration), decomposition, respiration, etc
-
-.pull-left[
-
-```{r echo = F, fig.align = 'center', out.width = '90%'}
-#knitr::include_graphics("images/kreft2007_crop.jpg")
-#knitr::include_graphics("images/cfr_diversity.png")
-``` 
-.footnote[]
 ]
 
 .pull-right[
 
 ```{r echo = F, fig.align = 'center', out.width = '90%'}
-#knitr::include_graphics("images/cramer_verboom_2017.jpg")
-```
-.center[]
-]
-
----
-
-class: center, middle
-
-## The evolution of B-EF research
-
-```{r echo = F, fig.align = 'center', out.width = '90%'}
-knitr::include_graphics("images/vanderplas2019_BEF.jpg")
-```
-.footnote[van der Plas 2019]
-
----
-
-layout: false
-
-### Direct trait effects vs diversity effects?
-
-.pull-left[
-```{r echo = F, fig.align = 'center', out.width = '68%'}
-knitr::include_graphics("images/slingsby_2014_BEF.png")
+knitr::include_graphics("images/ebv_circle.png")
 ```
 
-.footnote[Figure from Slingsby et al. 2014]
-]
 
-.pull-right[
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-#knitr::include_graphics("images/fynbos_community.jpg")
-```
-.footnote[Figure from Tilman et al. 2014]
-]
+...at least from the scale of individuals up...
 
----
-
-layout: false
-
-.pull-left[
-
-## Theoretical mechanisms driving B-EF
-
-- Selection effect
-- Niche complementarity
-- A mix of the two...
-
-Highlight links with community assembly...
-
-]
-
-.pull-right[
-
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/loreau2001.jpeg")
-```
-.footnote[Figure from Loreau et al. 2001]
-]
-
----
-
-layout: false
-
-## B-EF effects
-
-.pull-left[
-
-#### Diversity-Productivity Theory
-
-#### Diversity-Stability Theory
-
-#### Diversity-Invasibility Theory
-
-#### Ecosystem multifunctionality
-
-
-Hypothesis:
-- 
-
-Predictions:
-- 
-
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'center', out.width = '65%'}
-knitr::include_graphics("images/competition.png")
-```
-
-.footnote[###### ]
+.footnote[https://geobon.org/]
 
 ]
 
 ---
 
-layout: false
+class: center
 
-## Metrics of biodiversity used?
-
-Cadotte papers on PD and FD
-
----
-
-layout: false
-
-## Ecosystem functions vary in space and with scale?
-
-Bond and Chase 2002?
-
----
-
-layout: false
-
-## Experiments vs the real world?
-
-```{r echo = F, fig.align = 'center', out.width = '68%'}
-knitr::include_graphics("images/vanderplas2019_BEF_map.jpg")
-```
-.footnote[van der Plas 2019]
-
----
-
-layout: false
-
-## Experiments vs the real world?
-
-```{r echo = F, fig.align = 'center', out.width = '65%'}
-knitr::include_graphics("images/vanderplas2019_BEF_table1.jpg")
-```
-.footnote[van der Plas 2019]
-
----
-
-layout: false
-
-## B-EF and global change
-
-.pull-left[
-
-Society depends on a range of ecosystem functions for the services they provide
-
-Diaz paper?
-
-.footnote[https://ipbes.net/global-assessment]
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'right', out.width = '110%'}
-knitr::include_graphics("images/ipbes.jpg")
-```
-]
-
----
-
-layout: false
-
-## B-EF and global change
-
-.pull-left[
-
-But we are also altering ecosystems and the functions they provide...
-
-Hooper et al...
-Garcia et al. 2018
-
-]
-
-.pull-right[
-
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/hooper_fig1.jpg")
-```
-.footnote[Hooper et al. 2005]
-]
-
----
-
-## My research focuses on four questions...
-
+##Productivity and Seasonality
 
 ```{r echo = F, fig.align = 'center', out.width = '80%'}
-knitr::include_graphics("images/chapin.png")
+knitr::include_graphics("images/world_seasonality.gif")
 ```
-
-#### ...linking community assembly, ecosystem function and global change
-
-.pull-right[
-.footnote[Figure modified from Chapin et al. 1997, _Science_]
-]
 
 ---
 
-class: center, middle
+class: center
 
-## How do we test these predictions?
+##Land cover (and change)
+
+```{r echo = F, fig.align = 'center', out.width = '50%'}
+knitr::include_graphics("images/skowno2021.jpg")
+```
+
+.left[.footnote[Skowno et al. 2021]]
 
 ---
 
 layout: false
 
-## Null models...
+.pull-left[
+## Functional diversity?
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/peninsula_lidar.png")
+```
+
+Proteaceae shrubs (dark green) surrounded by low shrubs, forbs and graminoids at Silvermine, TMNP. 
+
+.footnote[Data from City of Cape Town]
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/purkis_klemas2011_lidar.png")
+```
+
+Light detection and ranging (LiDAR) allows you to measure topography and the vertical structure of vegetation.
+
+.footnote[Purkis and Klemas 2011]
+]
+
+---
+
+layout: false
+
+.pull-left[
+## Functional diversity?
+
+Imaging spectroscopy ("hyperspectral" remote sensing) allows direct measurement of many leaf traits.
+
+```{r echo = F, fig.align = 'left', out.width = '86%'}
+knitr::include_graphics("images/cawse2021_spectra.png")
+```
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/peninsula_hyperspec.png")
+```
+]
+
+---
+
+layout: false
+
+## Phylogenetic diversity?
 
 ```{r echo = F, fig.align = 'center', out.width = '70%'}
-knitr::include_graphics("images/nullmodels.png")
+knitr::include_graphics("images/meireles2020.jpg")
 ```
 
-.footnote[figure from Slingsby 2011, PhD]
+.left[.footnote[Meireles et al. 2020]]
 
----
-
-layout: false
-
-## Community assembly processes
-
-.pull-left[
-
-#### Vary with spatial scale
-- competition or facilitation operates between neighbouring plants
-- biogeographic processes (speciation, extinction, vicariance, dispersal) operate across large extents
-
-#### Vary with temporal scale
-- pollination, seed dispersal or herbivory can be near-instantaneous
-- speciation or trait evolution occur over long periods of time
-
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'center', out.width = '110%'}
-knitr::include_graphics("images/assemblyprocesses.png")
-```
-
-.footnote[###### ]
-
-]
+Leaf spectra are phylogenetically conserved for some regions, so it's possible that we'll be able to discern lineages using imaging spectroscopy...
 
 ---
 
 layout: false
 
 .pull-left[
+## Populations?
 
-## Assembly of species pools
-
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/speciespools.png")
+```{r echo = F, fig.align = 'center', out.width = '70%'}
+knitr::include_graphics("images/machine_learning.png")
 ```
 
-Community assembly can be thought of as the successive filtering of species pools descending in spatial (and temporal) scale from global to local
-
-]
-
-.pull-right[
-
-<br>
-
-<br>
-
-_Global species pool_ = all species on the planet (or in the defined study domain)
-
-_Regional species pools_ = the species that are present in each region (e.g. a biogeographic region or mountain), limited by barriers to dispersal
-
-_Fundamental species pool_ = species with the potential to occur in a particular location (i.e. can disperse there and find the appropriate abiotic conditions necessary for their
-survival)
-
-_Realised community_ = the actual observed local community (i.e. the subset of species from the fundamental species pools which have the ability to coexist, either stably or unstably)
-
-]
-
----
-
-.pull-left[
-
-### An example of regional species pools from the Cape...
-
-The phytogeographic centres of the CFR
-
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/centresofendemism.png")
-```
-
-.footnote[###### Data and figure from Manning and Goldblatt 2012]
-
-]
-
-.pull-right[
-
-<br>
-
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-div <- read.csv("images/cfr_diversity.csv", header = T)
-
-names(div) <- c("Region", "Area (1000 km2)", "Number of species", "Endemism (%)")
-
-kable(div)  %>%
-  kable_styling(font_size = 12) #%>%
-#  row_spec(c(11:13), bold = T, color = "white", background = "#23395b")
-```
-
-The Cape phytochoria make good _Regional species pools_, but the regional pools used can be defined differently depending on the purposes of the study and if it can be justified, e.g. the Cape Peninsula is a relatively isolated biogeographic unit
-
-CFR effectively = _Global species pool_, because of such high endemism
-
-]
-
----
-
-layout: false
-
-## Local vs Regional scale processes
-
-The diversity of local biological communities is a balance of regional and local processes - Ricklefs 1987
-
-.pull-left[
-
-#### Regional scale
-```{r echo = F, fig.align = 'left', out.width = '50%'}
-knitr::include_graphics("images/centresofendemism.png")
-```
-
-- speciation
-- extinction
-- dispersal
-
-]
-
-.pull-right[
-
-#### Local scale
-```{r echo = F, fig.align = 'left', out.width = '35%'}
-knitr::include_graphics("images/fynbos.jpg")
-``` 
-
-- environmental filtering
-- interspecific interactions
-  - competitive exclusion
-  - predation, pathogen
-  - mutualisms (e.g. mycorrhizae, pollination)
-- adaptation
-- stochastic variation
-]
-
-
----
-
-layout: false
-
-.left-column[
-
-### What
-
-### Happened
-
-### Here
-]
-
-.right-column[- Latitudinal gradient, energy etc]
-
-.footnote[<sup>1</sup>...]
-
----
-
-layout: false
-
-.left[Biogeographic processes... Global... ]
-
-.right[- Latitudinal gradient, energy etc]
-
----
-
-layout: false
-
-Biogeographic processes... Regional... 
-
-- Environmental heterogeneity
-- Mid Domain Effect
-
----
-
-layout: false
-
-Local determinism
-
-- competition
-- facilitation
-- mutualism
-
----
-
-layout: false
-
-Examples of teasing apart assembly processes?
-
----
-
-layout: false
-
-.pull-left[
-## _Continuous_ measures of functional diversity
-
-There's a lot of useful information in the data and analyses used to create functional groups!
-
-This has led to the development of 3 families of **continuous** functional diversity metrics based on:
-- _Pairwise distances_ (e.g. mean or sum of the pairwise distances between all species in a sample - Walker et al. 1999)
-- _Hierarchical clustering_ (e.g. sum of the branch length joining all species in the sample - Petchey and Gaston 2002)
-- _Multidimensional ordination_ (e.g. the area or volume of encompassed by the set of species in an ordination of trait space (2 or more dimensions) - Villeger et al. 2008)
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'right', out.width = '90%'}
-knitr::include_graphics("images/FD_continuous.png")
-```
-]
-
----
-
-layout: false
-
-.pull-left[
-## _Continuous_ measures of phylogenetic diversity
-
-Similar approaches can be used when estimating phylogenetic diversity.
-
-Here there are two families of **continuous** metrics, based on:
-- _Pairwise distances_ (e.g. mean pairwise distances between all species in a sample or minimum nearest taxon distance - Webb et al. 2002)
-- _Phylogenetic trees_ (e.g. sum of the branches joining all species - Faith 1991)
-  - can also use the taxonomic hierarchy instead of a phylogeny, but this suffers from the subjectivity of taxonomic ranks
-- There are no _multidimensional ordination_ methods for phylogenetic diversity
+.footnote[https://xkcd.com/1838/]
 ]
 
 .pull-right[
 ```{r echo = F, fig.align = 'center', out.width = '75%'}
-knitr::include_graphics("images/phylogeny.png")
+knitr::include_graphics("images/cedars_pic.png")
+knitr::include_graphics("images/cedars_mapped.png")
 ```
 
-#### Molecular phylogeny vs taxonomic hierarchy:
-
-Usually one would calculate phylogenetic diversity using a molecular phylogeny (or "phylogenetic tree"), where the branch lengths are time-calibrated based on a molecular clock (rate of DNA mutation through time) and represent time. 
-- Thus the sum of the branch lengths linking species in a sample represents the _sum total independent evolutionary history_ represented by that sample.
-
-The taxonomic hierarchy (Order, Family, Genus etc) is far less objective.
-
+.footnote[Hadebe 2021 MSc thesis]
 ]
+
+---
+
+class: center
+
+##Of course there are challenges and limitations...
+
+```{r echo = F, fig.align = 'center', out.width = '50%'}
+knitr::include_graphics("images/schimel2020_scale.png")
+```
+
+.left[.footnote[Schimel et al. 2020]]
+
+---
+
+class: center
+
+##But this is what fancy modelling is for...
+
+```{r echo = F, fig.align = 'center', out.width = '43%'}
+knitr::include_graphics("images/jetz2016.png")
+```
+
+.left[.footnote[Jetz et al. 2016]]
 
 ---
 
 layout: false
 
-## What about the other components of functional and phylogenetic diversity?
 .pull-left[
+## Combining remote sensing and in situ data
 
-We've only covered measures of $\alpha$ (or $\gamma$) diversity. 
+Using remotely sensed environmental data to inform species distribution models
 
-Similar methods as for species diversity can be applied to discrete and continuous measures of functional and phylogenetic $\beta$ diversity...
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/wilson2016.png")
+```
+
+E.g. Observed cloud frequency from the MODIS satellite is a better predictor of the distribution of _Protea cynaroides_ than interpolated precipitation.
+
+.footnote[Wilson and Jetz 2016]
 
 ]
 
 .pull-right[
-```{r echo = F, fig.align = 'center', out.width = '70%'}
-knitr::include_graphics("images/diversitycomponents.png")
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/randin2020.jpg")
 ```
+.footnote[Randin et al. 2020]
 ]
 
 ---
+
 layout: false
 
-## Functional or phylogenetic beta diversity
-
 .pull-left[
+### Environmental heterogeneity
 
+####_"Conserving nature's stage"_
+Identifying parcels of Earth that are valuable for their capacity to support diverse life forms today and into the future
+
+Typically identified based on their abiotic heterogeneity or geodiversity, much of which can be mapped and/or monitored with remote sensing - topography, climate, soils, etc
+
+]
+
+.pull-right[
 ```{r echo = F, fig.align = 'center', out.width = '90%'}
-knitr::include_graphics("images/betadiv_multiv.png")
+knitr::include_graphics("images/humboldt.jpg")
 ```
-
-e.g. the same equation, $(A+B-2*J)/(A+B)$ 
-
-Where J is the shared quantity, and A and B are totals for each community, 
-
-can be used for...
-]
-
-.pull-right[
-### Discrete measures
-
-when based on counts of functional groups or taxonomic ranks instead of species
-
-<br>
-
-### Continuous measures
-
-when based on branch length (e.g. _PhyloSor_ - Bryant et al. 2008)
-
-]
-
-
-
----
-
-layout: false
-
-## Null models...
-
-.pull-left[
-```{r echo = F, fig.align = 'right', out.width = '110%'}
-knitr::include_graphics("images/nullmodels.png")
-```
-
-.footnote[figure from Slingsby 2011, PhD]
-]
-
-.pull-right[
-
-Rather expand the FD and PD explanations over more slides and give more examples and move null models to community assembly?
-
-
+.footnote[Alexander von Humboldt]
 ]
 
 ---

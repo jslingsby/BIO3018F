@@ -186,6 +186,30 @@ knitr::include_graphics("images/skowno2021.jpg")
 
 ---
 
+class: center
+
+##Land cover change detection
+
+```{r echo = F, fig.align = 'center', out.width = '70%'}
+knitr::include_graphics("images/renosterveld_planet.gif")
+```
+
+.left[.footnote[Moncrieff in review]]
+
+---
+
+class: center
+
+##Land cover change time series
+
+```{r echo = F, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics("images/moilwe.png")
+```
+
+.left[.footnote[Moilwe et al. in prep]]
+
+---
+
 layout: false
 
 .pull-left[

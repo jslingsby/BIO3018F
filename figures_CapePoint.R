@@ -3,6 +3,11 @@ library(tidyverse)
 library(readxl)
 library(vegan)
 
+###Other
+sad <- data.frame(Site = c(rep("Site 1", 10), rep("Site 2", 10), rep("Site 3", 10)), Species = c(c(9, 21, 27, 30, 31, 32, 32, 32, 32, 32), c(9, 17, 21, 24, 27, 29, 30, 31, 32, 32), c(9, 14, 18, 21, 24, 26, 28, 30, 31, 32)), Area = c(qexp(1:10/11)*50, qexp(1:10/11)*50, qexp(1:10/11)*50))
+ggplot(sad, aes(y = Species, x = Area, color = Site)) + geom_line() + geom_point()
+ggsave("images/sad.png", width = 5, height = 3)
+
 ###Get data
 species66 <- read_excel("data/pnas.1619014114.sd01.xlsx", sheet = "veg1966")
 species96 <- read_excel("data/pnas.1619014114.sd01.xlsx", sheet = "veg1996")

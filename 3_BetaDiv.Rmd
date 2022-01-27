@@ -142,6 +142,88 @@ knitr::include_graphics("images/diversitycomponents.png")
 layout: false
 
 .pull-left[
+## The decomposition of "classical" diversity metrics...
+
+Consider this in the context of the species-area relationship. 
+
+If $\gamma$ is constant (32) across sites, then
+- Site 1 = higher $\alpha$, lower $\beta$
+- Site 2 = intermediate $\alpha$ and $\beta$
+- Site 3 = lower $\alpha$, higher $\beta$
+
+
+
+]
+
+.pull-right[
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/sad.png")
+```
+
+```{r echo = F, fig.align = 'center', out.width = '55%'}
+knitr::include_graphics("images/diversitycomponents.png")
+```
+
+]
+
+---
+
+layout: false
+
+.pull-left[
+## Comparing floras...
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/fynbos_community.jpg")
+```
+
+Fynbos has moderate to high $\alpha$ and very high $\beta$, resulting in high $\gamma$
+- ~9500 vascular plant species in the Cape
+- ~2200 native species on the Cape Peninsula alone
+
+]
+
+.pull-right[
+
+```{r echo = F, fig.align = 'center', out.width = '91%'}
+knitr::include_graphics("images/english_meadows.jpg")
+```
+
+English meadows have very high $\alpha$, but very low $\beta$, resulting in moderate to low $\gamma$
+- only 1390 native species in the entire Great Britain and Ireland
+
+]
+
+---
+
+layout: false
+
+.pull-left[
+## Comparing floras...
+
+We often compare the diversity of different regions using species-area curves (usually on log-log axes so the curves are linear) - e.g. Cowling et al. 2015
+
+```{r echo = F, fig.align = 'left', out.width = '98%'}
+knitr::include_graphics("images/fynbos.png")
+```
+
+]
+
+.pull-right[
+
+```{r echo = F, fig.align = 'center', out.width = '75%'}
+knitr::include_graphics("images/cowling2015.png")
+```
+
+
+]
+
+---
+
+layout: false
+
+.pull-left[
 ## Multiplicative "classical" diversity
 
 $\beta = \gamma/\alpha$ (*sensu* Whittaker 1972)
@@ -176,10 +258,10 @@ $\beta = \gamma - \alpha$ (*sensu* MacArthur et al. 1966, Lande 1996)
 If local $(\alpha)$ samples capture most of the landscape $(\gamma)$ diversity, then $\beta$ diversity (i.e. differences between sites or habitats) must be low, and vv.
 
 Advantage:
-* the difference is expressed as species.
+* the difference is expressed as species
 
 Disadvantage:
-* still usually need to know $(\gamma)$.
+* still usually need to know $(\gamma)$
 
 ]
 

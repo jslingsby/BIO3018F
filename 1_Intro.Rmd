@@ -1,5 +1,5 @@
 ---
-title: "1. Introduction to Measuring Biodiversity"
+title: "1. Measuring Biodiversity"
 subtitle: ""  
 author: 
   - "Jasper Slingsby, BIO3018F"

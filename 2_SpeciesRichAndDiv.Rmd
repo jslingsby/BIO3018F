@@ -220,7 +220,35 @@ knitr::include_graphics("images/fynbos.png")
 
 layout: false
 
-## Species - Area relationships?
+.pull-left[
+## Species-Area relationship
+
+The size and sampling of the number of individuals can also affect the shape of the species-area relationship (SAR) at fine scales.
+- Site 1 = many, small individuals
+- Site 2 = intermediate
+- Site 3 = fewer, large individuals
+
+```{r echo = F, fig.align = 'center', out.width = '50%'}
+knitr::include_graphics("images/nested_plots.png")
+```
+
+]
+
+.pull-right[
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/sad.png")
+```
+
+One solution is to make sure you sample an area large enough to encompass all species in an area, but this isn't often logistically (or logically) feasible...
+
+Note that many other factors affect the SAR:
+- patchiness/heterogeneity
+- dispersal (limitation)
+- immigration/extinction
+- disturbance
+
+]
 
 ---
 

@@ -4,7 +4,7 @@
     <title>4. Functional and Phylogenetic Diversity</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jasper Slingsby, BIO3018F" />
-    <meta name="date" content="2022-01-23" />
+    <meta name="date" content="2022-01-27" />
     <script src="4_FunctionalAndPhylogenetic_files/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
@@ -14,7 +14,7 @@ class: center, middle, inverse, title-slide
 
 # 4. Functional and Phylogenetic Diversity
 ### Jasper Slingsby, BIO3018F
-### 2022-01-23
+### 2022-01-27
 
 ---
 
@@ -197,6 +197,25 @@ There are 3 major approaches to calculating **continuous** metrics of functional
 layout: false
 
 .pull-left[
+## Phylogenetic diversity
+
+A **molecular phylogeny** (or "phylogenetic tree") represents the relationships between species based on similarity of their DNA. 
+
+Branch lengths are usually time-calibrated based on a molecular clock (rate of mutation through time) to represent time (or evolutionary history).
+
+Phylogenetic distance is often considered a more complete or integrated measure of the functional similarity of species, because it avoids subjectivity in the selection of traits measured...
+]
+
+.pull-right[
+&lt;img src="images/bird_phylogeny_1.jpg" width="75%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+layout: false
+
+.pull-left[
 ## _Continuous_ measures of phylogenetic diversity
 
 Similar approaches used for phylogenetic diversity.
@@ -210,14 +229,15 @@ Similar approaches used for phylogenetic diversity.
 ]
 
 .pull-right[
-&lt;img src="images/phylogeny.png" width="75%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/phylogeny.png" width="100%" style="display: block; margin: auto;" /&gt;
 
-#### Molecular phylogeny vs taxonomic hierarchy:
+#### Molecular phylogeny vs taxonomic hierarchy
 
-A molecular phylogeny (or "phylogenetic tree") represents the relationships between species based on similarity of their DNA. Branch lengths are usually time-calibrated based on a molecular clock (rate of mutation through time) to represent time. 
-- The sum of the branch lengths linking species in a sample represents the _sum total independent evolutionary history_ represented by that sample.
+The sum of the branch lengths of a phylogeny linking species in a sample represents the _sum total independent evolutionary history_ represented by that sample.
 
 The taxonomic hierarchy (Order, Family, Genus etc) is far less objective.
+
+That said, phylogenies aren't perfect, and there are many sources of error - molecular regions sampled, methods used, etc.
 
 ]
 
@@ -229,6 +249,8 @@ layout: false
 .pull-left[
 
 We've only covered measures of `\(\alpha\)` (or `\(\gamma\)`) diversity. 
+
+&lt;br&gt;
 
 Similar methods as for species diversity can be applied to discrete and continuous measures of functional and phylogenetic `\(\beta\)` diversity...
 
@@ -263,7 +285,7 @@ when based on counts of functional groups or taxonomic ranks instead of species
 
 ### Continuous measures
 
-when based on branch length (e.g. _PhyloSor_ - Bryant et al. 2008)
+when based on _**branch length**_ (e.g. _PhyloSor_ - Bryant et al. 2008)
 
 ]
 
@@ -301,9 +323,10 @@ Defining phytoregions based on turnover of phylogenetic diversity in the (woody)
 
 layout: false
 
+.pull-left[
+
 ## Null models...
 
-.pull-left[
 &lt;img src="images/nullmodels.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
 
 .footnote[figure from Slingsby 2011, PhD]
@@ -311,12 +334,49 @@ layout: false
 
 .pull-right[
 
-Rather expand the FD and PD explanations over more slides and give more examples and move null models to community assembly?
+We often explore the drivers behind the patterns of diversity we see by contrasting different measures of diversity and/or comparing them to the patterns we would expect to see in the absence of that driver.
 
+One commonly used method for generating the expected patterns is _null models_... 
+
+Null models can be used to "randomize" properties of interest in the data. Typically we generate a large number of "randomized" datasets (e.g. 999) and explore where the observed data rank with respect to the null datasets.
+
+We can address questions like:
+- Are species in communities more closely (or distantly) related than we'd expect?
+- Are species in communities more functionally similar (or dissimilar) than we'd expect?
+]
+
+---
+
+layout: false
+
+.pull-left[
+
+## Null models...
+
+&lt;img src="images/nullmodels.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+.footnote[figure from Slingsby 2011, PhD]
+]
+
+.pull-right[
+
+Null models can be used to "randomize" properties of interest in the data. 
+
+There are a number of ways of doing this, but the key is to try to make sure you only randomize the property of interest and keep everything else the same.
+
+Properties include:
+- The functional or phylogenetic relationships among species
+- The abiotic (or spatial) relationships among sites
+- The numbers of species in communities (the row sums)
+- The numbers of occurrences (and/or abundances) of each species across all communities
+- Etc
+
+You have to think very carefully about what properties are affected when applying null models!
 
 ]
 
 ---
+
 class: center, middle
 
 ## Take-home

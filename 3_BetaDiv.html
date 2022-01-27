@@ -4,7 +4,7 @@
     <title>3. Species Richness and Diversity</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jasper Slingsby, BIO3018F" />
-    <meta name="date" content="2022-01-21" />
+    <meta name="date" content="2022-01-27" />
     <script src="3_BetaDiv_files/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
@@ -15,7 +15,7 @@ class: center, middle, inverse, title-slide
 # 3. Species Richness and Diversity
 ## Beta Diversity
 ### Jasper Slingsby, BIO3018F
-### 2022-01-21
+### 2022-01-27
 
 ---
 
@@ -103,6 +103,76 @@ Additively (*sensu* MacArthur et al. 1966, Lande 1996):
 layout: false
 
 .pull-left[
+## The decomposition of "classical" diversity metrics...
+
+Consider this in the context of the species-area relationship. 
+
+If `\(\gamma\)` is constant (32) across sites, then
+- Site 1 = higher `\(\alpha\)`, lower `\(\beta\)`
+- Site 2 = intermediate `\(\alpha\)` and `\(\beta\)`
+- Site 3 = lower `\(\alpha\)`, higher `\(\beta\)`
+
+
+
+]
+
+.pull-right[
+
+&lt;img src="images/sad.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="images/diversitycomponents.png" width="55%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+layout: false
+
+.pull-left[
+## Comparing floras...
+
+&lt;img src="images/fynbos_community.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+
+Fynbos has moderate to high `\(\alpha\)` and very high `\(\beta\)`, resulting in high `\(\gamma\)`
+- ~9500 vascular plant species in the Cape
+- ~2200 native species on the Cape Peninsula alone
+
+]
+
+.pull-right[
+
+&lt;img src="images/english_meadows.jpg" width="91%" style="display: block; margin: auto;" /&gt;
+
+English meadows have very high `\(\alpha\)`, but very low `\(\beta\)`, resulting in moderate to low `\(\gamma\)`
+- only 1390 native species in the entire Great Britain and Ireland
+
+]
+
+---
+
+layout: false
+
+.pull-left[
+## Comparing floras...
+
+We often compare the diversity of different regions using species-area curves (usually on log-log axes so the curves are linear) - e.g. Cowling et al. 2015
+
+&lt;img src="images/fynbos.png" width="98%" style="display: block; margin: auto auto auto 0;" /&gt;
+
+]
+
+.pull-right[
+
+&lt;img src="images/cowling2015.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+---
+
+layout: false
+
+.pull-left[
 ## Multiplicative "classical" diversity
 
 `\(\beta = \gamma/\alpha\)` (*sensu* Whittaker 1972)
@@ -135,10 +205,10 @@ layout: false
 If local `\((\alpha)\)` samples capture most of the landscape `\((\gamma)\)` diversity, then `\(\beta\)` diversity (i.e. differences between sites or habitats) must be low, and vv.
 
 Advantage:
-* the difference is expressed as species.
+* the difference is expressed as species
 
 Disadvantage:
-* still usually need to know `\((\gamma)\)`.
+* still usually need to know `\((\gamma)\)`
 
 ]
 

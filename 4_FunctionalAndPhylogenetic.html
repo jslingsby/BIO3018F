@@ -329,20 +329,22 @@ layout: false
 
 &lt;img src="images/nullmodels.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
 
+We often explore the drivers behind the patterns of diversity we see by contrasting different measures of diversity and/or comparing them to the patterns we would expect to see in the absence of that driver.
+
 .footnote[figure from Slingsby 2011, PhD]
 ]
 
 .pull-right[
 
-We often explore the drivers behind the patterns of diversity we see by contrasting different measures of diversity and/or comparing them to the patterns we would expect to see in the absence of that driver.
+&lt;br&gt;
 
 One commonly used method for generating the expected patterns is _null models_... 
 
 Null models can be used to "randomize" properties of interest in the data. Typically we generate a large number of "randomized" datasets (e.g. 999) and explore where the observed data rank with respect to the null datasets.
 
 We can address questions like:
-- Are species in communities more closely (or distantly) related than we'd expect?
-- Are species in communities more functionally similar (or dissimilar) than we'd expect?
+- _Are species in communities more closely (or distantly) related than we'd expect?_
+- _Are species in communities more functionally similar (or dissimilar) than we'd expect?_
 ]
 
 ---
@@ -355,23 +357,26 @@ layout: false
 
 &lt;img src="images/nullmodels.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
 
+Null models can be used to "randomize" properties of interest in the data, creating datasets that can serve as a "null" for comparison to your actual data. 
+
 .footnote[figure from Slingsby 2011, PhD]
 ]
 
 .pull-right[
 
-Null models can be used to "randomize" properties of interest in the data. 
+&lt;br&gt;
 
-There are a number of ways of doing this, but the key is to try to make sure you only randomize the property of interest and keep everything else the same.
+There are a number of ways of doing this, but the key is to only randomize the property of interest and keep everything else the same.
 
-Properties include:
-- The functional or phylogenetic relationships among species
-- The abiotic (or spatial) relationships among sites
-- The numbers of species in communities (the row sums)
-- The numbers of occurrences (and/or abundances) of each species across all communities
-- Etc
+Properties include (_inter alia_):
+- functional or phylogenetic relationships
+- abiotic (or spatial) relationships among sites
+- number of species in communities (row sums)
+- number of occurrences (or abundances) of species across all communities (column sums)
 
 You have to think very carefully about what properties are affected when applying null models!
+
+You also need to think carefully about how you sample your communities and how you structure them in your null model (e.g. grouping and analyzing sites separately by region or doing one global analysis).
 
 ]
 

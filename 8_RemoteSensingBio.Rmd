@@ -1,5 +1,5 @@
 ---
-title: "7. Remote Sensing of Biodiversity"
+title: "8. Remote Sensing of Biodiversity"
 subtitle: ""  
 author: 
   - "Jasper Slingsby, BIO3018F"

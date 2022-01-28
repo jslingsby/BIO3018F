@@ -365,11 +365,20 @@ knitr::include_graphics("images/humboldt.jpg")
 ]
 
 ---
-class: center, middle
+class: middle
 
 ## Take-home
 
->*"..."*
+>*There are many ways to measure biodiversity. None are perfect. You should treat them as hypotheses.*
+
+>*How you measure biodiversity can affect the outcome of your study. There are many ways to measure biodiversity incorrectly for the application at hand!*
+
+>*Measures of biodiversity allow us to explore:*
+> - *How biodiversity is generated and communities are assembled*
+> - *How biodiversity affects ecosystem functions, including benefits to society*
+> - *How the environment is changing with time and human impacts*
+
+>*Community assembly, biotic effects on ecosystem function, and responses to global change are tightly intertwined*
 
 ---
 

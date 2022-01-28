@@ -1,6 +1,6 @@
 ---
-title: "5. Community Assembly"
-subtitle: ""  
+title: "5. The Assembly of Diversity"
+subtitle: "Local Processes"  
 author: 
   - "Jasper Slingsby, BIO3018F"
 date: '`r Sys.Date()`'
@@ -346,8 +346,8 @@ knitr::include_graphics("images/fynbos_community.jpg")
 ``` 
 
 - environmental filtering
-- interspecific interactions (competition, predation, pathogens, mutualisms
-- adaptation)
+- interspecific interactions (competition, predation, pathogens, mutualisms)
+- adaptation
 - stochastic variation
 ]
 
@@ -411,6 +411,28 @@ knitr::include_graphics("images/assemblyprocesses.png")
 ```
 
 .footnote[###### ]
+]
+
+---
+
+.pull-left[
+
+### Island Biogeography
+
+MacArthur and Wilson 1967
+
+]
+
+.pull-right[
+
+<br>
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/island_biogeography.png")
+```
+
+.footnote[Figure from Warren et al. 2015]
+
 ]
 
 ---

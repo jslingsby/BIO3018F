@@ -4,8 +4,8 @@ library(tidyverse)
 library(readr)
 
 sites <- data.frame(site_name = c("grassy field", "invasion", "renosterveld", "sandstone_low", "sandstone_high", "limestone"),
-                    lat = c(-34.375052, -34.386014, -34.374259, -34.3983, -34.372797, -34.424473),
-                    lon = c(20.531749, 20.534986, 20.504233, 20.5552, 20.548398, 20.580608))
+                    lat = c(-34.375052, -34.386014, -34.374259, -34.3961, -34.3748, -34.4309),
+                    lon = c(20.531749, 20.534986, 20.504233, 20.5494, 20.5428, 20.5666))
 
 dat <- mt_batch_subset(df = sites,
                         product = "MOD13Q1",
@@ -14,7 +14,7 @@ dat <- mt_batch_subset(df = sites,
                         start = "2000-01-01",
                         end = "2021-12-31")
 
-write_csv(dat, "MODISdat_batch.csv")
+write_csv(dat, "MODISdat_batch_28Jan.csv")
 
 #############  
 

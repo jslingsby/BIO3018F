@@ -7,8 +7,8 @@ source("prac/02_plot.NDVI.R")
 source("prac/03_negexp_model.R")
 
 ###Get data
-adat <- read_csv("prac/MODISdat.csv")
-adat <- adat %>% filter(calendar_date < as.Date("2015-9-14"))
+adat <- read_csv("prac/MODISdat_batch_28Jan.csv")
+#adat <- adat %>% filter(calendar_date > as.Date("2015-9-14"))
 
 ###Plot all timeseries
 adat %>%
@@ -46,7 +46,7 @@ dat$NDVI <- dat$value*dat$scale
 fit_negexpMLES <- fit.negexpS.MLE(dat, par)
 
 # plot
-plot.NDVI(dat)
+plot.NDVI(dat, ylim = c(0.1, 0.9), main = sitnms[i])
 # add curve with MLE parameters
 lines(dat$age, pred.negexpS(fit_negexpMLES$par,dat$age), col = 'skyblue', lwd = 3)
 # lines(dat$age, pred.S(fit_SMLE$par,dat$age), col = 'skyblue', lwd = 3)

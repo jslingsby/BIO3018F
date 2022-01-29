@@ -9,7 +9,7 @@ plot.NDVI <- function(dat, fit = NA, ...){
   if(!is.null(dat)){ # Begin if/else statement
 
     # Base plot of the data points
-    plot(dat$age, dat$NDVI, ylab = "NDVI", xlab = "Postfire age (Years)")
+    plot(dat$age, dat$NDVI, ylab = "NDVI", xlab = "Postfire age (Years)", ...)
 
     if(!is.na(fit[1])){ #Begin inner if statement
 

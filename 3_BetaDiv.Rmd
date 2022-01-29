@@ -119,40 +119,12 @@ layout: false
 .pull-left[
 ## The decomposition of "classical" diversity metrics...
 
-The components of biodiversity are interrelated and, depending on your preference or application, can be expressed
-
-Multiplicatively (*sensu* Whittaker 1972):
-
-$$\beta = \gamma/\alpha$$
-
-Additively (*sensu* MacArthur et al. 1966, Lande 1996):
-
-$$\beta = \gamma - \alpha$$
-.footnote[<sup>1</sup>For reviews see Veech et al. 2002 and Anderson et al. 2011.]
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'right', out.width = '110%'}
-knitr::include_graphics("images/diversitycomponents.png")
-```
-]
-
----
-
-layout: false
-
-.pull-left[
-## The decomposition of "classical" diversity metrics...
-
 Consider this in the context of the species-area relationship. 
 
 If $\gamma$ is constant (32) across sites, then
 - Site 1 = higher $\alpha$, lower $\beta$
 - Site 2 = intermediate $\alpha$ and $\beta$
 - Site 3 = lower $\alpha$, higher $\beta$
-
-
-
 ]
 
 .pull-right[
@@ -179,7 +151,7 @@ knitr::include_graphics("images/fynbos_community.jpg")
 ```
 
 Fynbos has moderate to high $\alpha$ and very high $\beta$, resulting in high $\gamma$
-- ~9500 vascular plant species in the Cape
+- ~9500 vascular plant species in the Cape Flora
 - ~2200 native species on the Cape Peninsula alone
 
 ]
@@ -191,7 +163,7 @@ knitr::include_graphics("images/english_meadows.jpg")
 ```
 
 English meadows have very high $\alpha$, but very low $\beta$, resulting in moderate to low $\gamma$
-- only 1390 native species in the entire Great Britain and Ireland
+- only 1390 native species in the entire Great Britain and Ireland (~3 x the size of the CFR)
 
 ]
 
@@ -216,7 +188,31 @@ knitr::include_graphics("images/fynbos.png")
 knitr::include_graphics("images/cowling2015.png")
 ```
 
+]
 
+---
+
+layout: false
+
+.pull-left[
+## The decomposition of "classical" diversity metrics...
+
+The components of biodiversity are interrelated and, depending on your preference or application, can be expressed
+
+Multiplicatively (*sensu* Whittaker 1972):
+
+$$\beta = \gamma/\alpha$$
+
+Additively (*sensu* MacArthur et al. 1966, Lande 1996):
+
+$$\beta = \gamma - \alpha$$
+.footnote[<sup>1</sup>For reviews see Veech et al. 2002 and Anderson et al. 2011.]
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'right', out.width = '110%'}
+knitr::include_graphics("images/diversitycomponents.png")
+```
 ]
 
 ---

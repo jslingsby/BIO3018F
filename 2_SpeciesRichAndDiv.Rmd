@@ -109,7 +109,7 @@ layout: false
 
 .pull-left[
 
-Can be counts of the number of species in samples, or include information on their relative abundance.
+Can be counts of the number of species in samples, or include information on their **relative abundance**.
 
 ```{r echo = F, fig.align = 'center', out.width = '75%'}
 knitr::include_graphics("images/alphadiversity.png")
@@ -119,7 +119,7 @@ knitr::include_graphics("images/alphadiversity.png")
 
 .pull-right[
 
-A community is considered more diverse if the relative abundances are more evenly distributed, because removing one individual is less likely to remove a species.
+Here a community is considered more diverse if the relative abundances are more evenly distributed, because removing one individual is less likely to remove a species.
 
 The Shannon index (*H'*) quantifies species diversity taking into account both species' richness and evenness in their relative abundance
 
@@ -223,14 +223,16 @@ layout: false
 .pull-left[
 ## Species-Area relationship
 
-The size and sampling of the number of individuals can also affect the shape of the species-area relationship (SAR) at fine scales.
+The size and density of individuals can also affect the shape of the species-area relationship (SAR) at fine scales.
 - Site 1 = many, small individuals
 - Site 2 = intermediate
 - Site 3 = fewer, large individuals
 
-```{r echo = F, fig.align = 'center', out.width = '50%'}
+```{r echo = F, fig.align = 'center', out.width = '40%'}
 knitr::include_graphics("images/nested_plots.png")
 ```
+
+We often use the SAR to estimate the diversity of a larger area by extrapolation.
 
 ]
 
@@ -240,7 +242,7 @@ knitr::include_graphics("images/nested_plots.png")
 knitr::include_graphics("images/sad.png")
 ```
 
-One solution is to make sure you sample an area large enough to encompass all species in an area, but this isn't often logistically (or logically) feasible...
+When comparing sites, one solution is to sample enough area to reach the asymptote of the SAR, but this isn't often logistically (or logically) feasible...
 
 Note that many other factors affect the SAR:
 - patchiness/heterogeneity
@@ -258,7 +260,7 @@ layout: false
 ## Quantifying $\alpha$-diversity...
 
 ###*Species richness* 
-...is usually reserved to mean an estimate of the richness of species while taking abundance and sampling effort into account (see Gotelli and Colwell 2001 for review).
+...is usually reserved to mean an estimate of the number of species while taking abundance and sampling effort into account (see Gotelli and Colwell 2001 for review).
 
 ...is often estimated using individual or sample-based ***rarefaction***. 
 
@@ -333,23 +335,25 @@ layout: false
 
 ##Comparing diversity between sites or surveys
 
+Here I compare surveys of permanent veg plots in the Cape of Good Hope section of TMNP from 1966 and 1996.
+
 .pull-left[
-###Sample-based *rarefaction* 
-```{r echo = F, fig.align = 'center', out.width = '85%'}
+####Sample-based *rarefaction* 
+```{r echo = F, fig.align = 'center', out.width = '75%'}
 knitr::include_graphics("images/spec_sites_raref_CP_comp.png")
 ```
 
 ]
 
 .pull-right[
-###Individual-based *rarefaction* 
+####Individual-based *rarefaction* 
 
-```{r echo = F, fig.align = 'center', out.width = '85%'}
+```{r echo = F, fig.align = 'center', out.width = '75%'}
 knitr::include_graphics("images/spec_ind_raref_CP_comp.png")
 ```
 ]
 
-Here I compare surveys of permanent veg plots in the Cape of Good Hope section of TMNP from 1966 and 1996.
+Note that you can compare between sites by rarefying for a set number of individuals or plots!
 
 ---
 
@@ -358,23 +362,22 @@ layout: false
 ##Comparing diversity between *samples*
 
 .pull-left[
-###Raw species counts 
-```{r echo = F, fig.align = 'center', out.width = '65%'}
+####Raw species counts 
+```{r echo = F, fig.align = 'center', out.width = '60%'}
 knitr::include_graphics("images/spec_comp_CP.png")
 ```
 
 ]
 
 .pull-right[
-###Individual-based *rarefaction*<sup>1</sup>
+####Individual-based *rarefaction*<sup>1</sup>
 
-```{r echo = F, fig.align = 'center', out.width = '65%'}
+```{r echo = F, fig.align = 'center', out.width = '60%'}
 knitr::include_graphics("images/sper_comp_CP.png")
 ```
 
-]
-
 .footnote[<sup>1</sup>for *n* = 10 individuals]
+]
 
 ---
 
@@ -383,8 +386,8 @@ layout: false
 ##Comparing diversity between *samples*
 
 .pull-left[
-###Raw species counts 
-```{r echo = F, fig.align = 'center', out.width = '65%'}
+####Raw species counts 
+```{r echo = F, fig.align = 'center', out.width = '60%'}
 knitr::include_graphics("images/spec_comp_hist_CP.png")
 ```
 
@@ -392,14 +395,27 @@ Paired T-test: t = 1.4957, df = 80, p-value = 0.1387
 ]
 
 .pull-right[
-###Individual-based *rarefaction*<sup>1</sup>
+####Individual-based *rarefaction*<sup>1</sup>
 
-```{r echo = F, fig.align = 'center', out.width = '65%'}
+```{r echo = F, fig.align = 'center', out.width = '60%'}
 knitr::include_graphics("images/sper_comp_hist_CP.png")
 ```
 
 Paired T-test: t = 3.2953, df = 80, p-value = _***0.0015***_
+
+.footnote[<sup>1</sup>for *n* = 10 individuals]
 ]
+
+---
+class: center, middle
+
+## Take home
+
+Measures of alpha diversity can be affected by factors like the area and number of individuals sampled. 
+
+Other factors can be important too, like the length of time sampled for (e.g. bird netting, fishing, etc).
+
+You need to choose your measure of diversity carefully, and potentially correct for these sampling effects (e.g. by using rarefaction, sampling a larger area, etc), depending on the group you're working on and your question at hand.
 
 ---
 

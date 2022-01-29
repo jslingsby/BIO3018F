@@ -48,7 +48,7 @@ library(leaflet)
 library(leaflet.extras)
 library(htmltools)
 leaflet() %>%
-  enableTileCaching(cacheMaxAge = 36288000) %>%
+  enableTileCaching() %>%
   #addTiles(options = tileOptions(useCache = TRUE, crossOrigin = TRUE))
   # Add default OpenStreetMap map tiles
   addProviderTiles("Esri.WorldImagery", options = tileOptions(useCache = TRUE, crossOrigin = TRUE)) %>%  

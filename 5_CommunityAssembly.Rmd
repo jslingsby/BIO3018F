@@ -251,7 +251,7 @@ class: center, middle
 
 ## But wait!
 
-## There are other processes at play that can affect the outcomes...
+### There are other processes at play that can affect the outcomes...
 
 ### Especially when we expand the spatial and temporal scale...
 
@@ -259,9 +259,8 @@ class: center, middle
 
 layout: false
 
-## Mode of speciation
-
 .pull-left[
+## Mode of speciation
 
 ```{r echo = F, fig.align = 'left', out.width = '100%'}
 knitr::include_graphics("images/speciation_mode.png")
@@ -269,17 +268,23 @@ knitr::include_graphics("images/speciation_mode.png")
 
 > Closely-related species tend to be similar, because they share a common ancestor
 
+(phylogenetic signal and niche conservatism)
+
 ]
 
 .pull-right[
 
+<br>
+
+<br>
+
 Where functional similarity reflects phylogeny:
 
-#### Sympatric speciation (in situ speciation) 
-= phylogenetic and functional clustering
+- **Sympatric speciation** (in situ speciation) = phylogenetic and functional clustering
 
-#### Allopatric speciation (speciation via dispersal, isolation and drift) 
-= phylogenetic and functional evenness/overdispersion
+- **Allopatric speciation** (speciation via dispersal, isolation and drift) = phylogenetic and functional evenness/overdispersion
+
+<br>
 
 _i.e. the mode of speciation can create the same pattern as competition or habitat filtering..._
 ]
@@ -288,7 +293,34 @@ _i.e. the mode of speciation can create the same pattern as competition or habit
 
 layout: false
 
-## Assembly of species pools across scales
+## Community assembly processes
+
+.pull-left[
+
+#### Vary with spatial scale
+- competition or facilitation operates between neighbouring plants
+- environmental filtering operates at a range of scales (climate > soils > microsite, etc)
+- biogeographic processes (speciation, extinction, vicariance, dispersal) operate across large extents
+
+#### Vary with temporal scale
+- pollination, seed dispersal or herbivory can be near-instantaneous
+- speciation or trait evolution occur over long periods of time
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '110%'}
+knitr::include_graphics("images/assemblyprocesses.png")
+```
+
+.footnote[###### ]
+]
+
+---
+
+layout: false
+
+### Assembly of species pools across scales
 
 .pull-left[
 
@@ -310,10 +342,11 @@ _Global species pool_ = all species on the planet (or in the defined study domai
 
 _Regional species pools_ = the species that are present in each region (e.g. a biogeographic region or mountain), limited by barriers to dispersal
 
-_Fundamental species pool_ = species with the potential to occur in a particular location (i.e. can disperse there and find the appropriate abiotic conditions necessary for their
-survival)
+_Fundamental species pool_ = species with the potential to occur in a particular location (i.e. can disperse there and find the appropriate abiotic conditions)
 
-_Realised community_ = the actual observed local community (i.e. the subset of species from the fundamental species pools which have the ability to coexist, either stably or unstably)
+_Realised community_ = the actual observed local community (i.e. a subset of the fundamental species pool with the ability to coexist, either stably or unstably)
+
+**_Functional or phylogenetic structure can be created or altered at any step..._**
 
 ]
 
@@ -353,90 +386,6 @@ knitr::include_graphics("images/fynbos_community.jpg")
 
 ---
 
-### An example of inferring community assembly from the Cape...
-
-.pull-left[
-
-```{r echo = F, fig.align = 'center', out.width = '60%'}
-knitr::include_graphics("images/tetraria_scales.png")
-```
-
-Three scales (pools):
-- Global = Cape Floristic Region (CFR)
-- Regional = Cape Peninsula (Pen)
-- Local = plots within Silvermine (Silv)
-
-.footnote[###### Slingsby 2011, PhD]
-
-]
-
-.pull-right[
-
-```{r echo = F, fig.align = 'center', out.width = '60%'}
-knitr::include_graphics("images/centresofendemism.png")
-```
-
-The set of species on the Peninsula and in Silvermine are more dissimilar than you'd expect relative to the CFR - _**suggests allopatric speciation**_
-
-Species at Silvermine are more dissimilar than you'd expect relative to the Peninsula - _**suggests competition**_
-
-Species within plots are more dissimilar than you'd expect relative to all plots - _**suggests competition**_
-
-.footnote[###### Figure from Manning and Goldblatt 2012]
-
-]
-
----
-
-layout: false
-
-## Community assembly processes
-
-.pull-left[
-
-#### Vary with spatial scale
-- competition or facilitation operates between neighbouring plants
-- environmental filtering operates at a range of scales (climate > soils > microsite, etc)
-- biogeographic processes (speciation, extinction, vicariance, dispersal) operate across large extents
-
-#### Vary with temporal scale
-- pollination, seed dispersal or herbivory can be near-instantaneous
-- speciation or trait evolution occur over long periods of time
-
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'center', out.width = '110%'}
-knitr::include_graphics("images/assemblyprocesses.png")
-```
-
-.footnote[###### ]
-]
-
----
-
-.pull-left[
-
-### Island Biogeography
-
-MacArthur and Wilson 1967
-
-]
-
-.pull-right[
-
-<br>
-
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/island_biogeography.png")
-```
-
-.footnote[Figure from Warren et al. 2015]
-
-]
-
----
-
 .pull-left[
 
 ### An example of regional species pools from the Cape...
@@ -471,84 +420,51 @@ CFR effectively = _Global species pool_, because of such high endemism
 
 ]
 
-
 ---
 
-layout: false
+### An example of inferring community assembly from the Cape...
 
-## Local vs Regional scale processes
+.pull-left[
 
-.pull-left[### Neutral Theory
-
-Local processes (competition etc) are mostly irrelevant and local communities are the result of regional processes and dispersal limitation...]
-
-.pull-right[
-```{r echo = F, fig.align = 'center', out.width = '30%'}
-knitr::include_graphics("images/Neutral_Theory_Cover.jpg")
+```{r echo = F, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics("images/tetraria_scales.png")
 ```
 
-Local patterns of functional and phylogenetic diversity will reflect the regional species pool
+Three scales (pools):
+- Global = Cape Floristic Region (CFR)
+- Regional = Cape Peninsula (Pen)
+- Local = plots within Silvermine (Silv)
 
-.footnote[Hubbell 2001]
+.footnote[###### Slingsby 2011, PhD]
+
 ]
 
----
+.pull-right[
 
-layout: false
+```{r echo = F, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics("images/centresofendemism.png")
+```
 
-.left-column[
+The set of species on the Peninsula and in Silvermine are more dissimilar than you'd expect relative to the CFR - _**suggests allopatric speciation**_
 
-### What
+Species at Silvermine are more dissimilar than you'd expect relative to the Peninsula - _**suggests competition**_
 
-### Happened
+Species within plots are more dissimilar than you'd expect relative to all plots - _**suggests competition**_
 
-### Here
+.footnote[###### Figure from Manning and Goldblatt 2012]
+
 ]
-
-.right-column[- Latitudinal gradient, energy etc]
-
-.footnote[<sup>1</sup>...]
-
----
-
-layout: false
-
-.left[Biogeographic processes... Global... ]
-
-.right[- Latitudinal gradient, energy etc]
-
----
-
-layout: false
-
-Biogeographic processes... Regional... 
-
-- Environmental heterogeneity
-- Mid Domain Effect
-
----
-
-layout: false
-
-Local determinism
-
-- competition
-- facilitation
-- mutualism
-
----
-
-layout: false
-
-Examples of teasing apart assembly processes?
 
 ---
 class: center, middle
 
 ## Take-home
 
->*"..."*
+*The distribution and abundance of diversity is determined by assembly processes that operate from local to regional scales*
 
+*While the distinction between local and regional processes is somewhat arbitrary (or even artificial), we typically consider local scale processes to be ecological, operating over the near term, while regional processes are typically evolutionary, operating over longer periods of time*
+
+*We can explore these processes by looking at functional and phylogenetic diversity at different scales (species pools), often in combination with null models*
 ---
 
 ## References

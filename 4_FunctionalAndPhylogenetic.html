@@ -4,7 +4,7 @@
     <title>4. Functional and Phylogenetic Diversity</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jasper Slingsby, BIO3018F" />
-    <meta name="date" content="2022-01-27" />
+    <meta name="date" content="2022-01-29" />
     <script src="4_FunctionalAndPhylogenetic_files/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
@@ -14,7 +14,7 @@ class: center, middle, inverse, title-slide
 
 # 4. Functional and Phylogenetic Diversity
 ### Jasper Slingsby, BIO3018F
-### 2022-01-27
+### 2022-01-29
 
 ---
 
@@ -327,24 +327,25 @@ layout: false
 
 ## Null models...
 
-&lt;img src="images/nullmodels.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
-
 We often explore the drivers behind the patterns of diversity we see by contrasting different measures of diversity and/or comparing them to the patterns we would expect to see in the absence of that driver.
 
-.footnote[figure from Slingsby 2011, PhD]
+One commonly used method for generating the expected patterns is _null models_... 
+
+Null models can be used to "randomize" properties of interest in the data. Typically we generate a large number of "randomized" datasets (e.g. 999) and explore where the observed data rank with respect to the null datasets.
+
 ]
 
 .pull-right[
 
 &lt;br&gt;
 
-One commonly used method for generating the expected patterns is _null models_... 
-
-Null models can be used to "randomize" properties of interest in the data. Typically we generate a large number of "randomized" datasets (e.g. 999) and explore where the observed data rank with respect to the null datasets.
+&lt;img src="images/nullmodels.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
 
 We can address questions like:
 - _Are species in communities more closely (or distantly) related than we'd expect?_
 - _Are species in communities more functionally similar (or dissimilar) than we'd expect?_
+
+.footnote[figure from Slingsby 2011, PhD]
 ]
 
 ---
@@ -355,16 +356,7 @@ layout: false
 
 ## Null models...
 
-&lt;img src="images/nullmodels.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
-
 Null models can be used to "randomize" properties of interest in the data, creating datasets that can serve as a "null" for comparison to your actual data. 
-
-.footnote[figure from Slingsby 2011, PhD]
-]
-
-.pull-right[
-
-&lt;br&gt;
 
 There are a number of ways of doing this, but the key is to only randomize the property of interest and keep everything else the same.
 
@@ -376,8 +368,18 @@ Properties include (_inter alia_):
 
 You have to think very carefully about what properties are affected when applying null models!
 
+
+]
+
+.pull-right[
+
+&lt;br&gt;
+
+&lt;img src="images/nullmodels.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
 You also need to think carefully about how you sample your communities and how you structure them in your null model (e.g. grouping and analyzing sites separately by region or doing one global analysis).
 
+.footnote[figure from Slingsby 2011, PhD]
 ]
 
 ---
@@ -386,7 +388,11 @@ class: center, middle
 
 ## Take-home
 
-&gt;*"..."*
+*There's a lot more to diversity than simple counts of species.*
+
+*Functional and phylogenetic diversity allow us to explore more intricate questions around the ecology and evolution of, and benefits derived from, assemblages.*
+
+*Null models can be useful for exploring the factors that determine the assembly of communities.*
 
 ---
 

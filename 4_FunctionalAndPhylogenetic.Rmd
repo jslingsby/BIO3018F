@@ -398,26 +398,27 @@ layout: false
 
 ## Null models...
 
-```{r echo = F, fig.align = 'right', out.width = '110%'}
-knitr::include_graphics("images/nullmodels.png")
-```
-
 We often explore the drivers behind the patterns of diversity we see by contrasting different measures of diversity and/or comparing them to the patterns we would expect to see in the absence of that driver.
 
-.footnote[figure from Slingsby 2011, PhD]
+One commonly used method for generating the expected patterns is _null models_... 
+
+Null models can be used to "randomize" properties of interest in the data. Typically we generate a large number of "randomized" datasets (e.g. 999) and explore where the observed data rank with respect to the null datasets.
+
 ]
 
 .pull-right[
 
 <br>
 
-One commonly used method for generating the expected patterns is _null models_... 
-
-Null models can be used to "randomize" properties of interest in the data. Typically we generate a large number of "randomized" datasets (e.g. 999) and explore where the observed data rank with respect to the null datasets.
+```{r echo = F, fig.align = 'right', out.width = '110%'}
+knitr::include_graphics("images/nullmodels.png")
+```
 
 We can address questions like:
 - _Are species in communities more closely (or distantly) related than we'd expect?_
 - _Are species in communities more functionally similar (or dissimilar) than we'd expect?_
+
+.footnote[figure from Slingsby 2011, PhD]
 ]
 
 ---
@@ -428,18 +429,7 @@ layout: false
 
 ## Null models...
 
-```{r echo = F, fig.align = 'right', out.width = '110%'}
-knitr::include_graphics("images/nullmodels.png")
-```
-
 Null models can be used to "randomize" properties of interest in the data, creating datasets that can serve as a "null" for comparison to your actual data. 
-
-.footnote[figure from Slingsby 2011, PhD]
-]
-
-.pull-right[
-
-<br>
 
 There are a number of ways of doing this, but the key is to only randomize the property of interest and keep everything else the same.
 
@@ -451,8 +441,20 @@ Properties include (_inter alia_):
 
 You have to think very carefully about what properties are affected when applying null models!
 
+
+]
+
+.pull-right[
+
+<br>
+
+```{r echo = F, fig.align = 'right', out.width = '110%'}
+knitr::include_graphics("images/nullmodels.png")
+```
+
 You also need to think carefully about how you sample your communities and how you structure them in your null model (e.g. grouping and analyzing sites separately by region or doing one global analysis).
 
+.footnote[figure from Slingsby 2011, PhD]
 ]
 
 ---
@@ -461,7 +463,11 @@ class: center, middle
 
 ## Take-home
 
->*"..."*
+*There's a lot more to diversity than simple counts of species.*
+
+*Functional and phylogenetic diversity allow us to explore more intricate questions around the ecology and evolution of, and benefits derived from, assemblages.*
+
+*Null models can be useful for exploring the factors that determine the assembly of communities.*
 
 ---
 

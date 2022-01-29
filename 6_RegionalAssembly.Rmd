@@ -99,7 +99,7 @@ knitr::include_graphics("images/fynbos_community.jpg")
 
 layout: false
 
-## Assembly of species pools across scales
+### Assembly of species pools across scales
 
 .pull-left[
 
@@ -121,11 +121,11 @@ _Global species pool_ = all species on the planet (or in the defined study domai
 
 _Regional species pools_ = the species that are present in each region (e.g. a biogeographic region or mountain), limited by barriers to dispersal
 
-_Fundamental species pool_ = species with the potential to occur in a particular location (i.e. can disperse there and find the appropriate abiotic conditions necessary for their
-survival)
+_Fundamental species pool_ = species with the potential to occur in a particular location (i.e. can disperse there and find the appropriate abiotic conditions)
 
-_Realised community_ = the actual observed local community (i.e. the subset of species from the fundamental species pools which have the ability to coexist, either stably or unstably)
+_Realised community_ = the actual observed local community (i.e. a subset of the fundamental species pool with the ability to coexist, either stably or unstably)
 
+**_Functional or phylogenetic structure can be created or altered at any step..._**
 ]
 
 ---
@@ -175,7 +175,39 @@ knitr::include_graphics("images/hughes2006.jpg")
 
 ---
 
-Environmental heterogeneity?
+layout: false
+
+.pull-left[
+
+## Environmental heterogeneity
+
+### A driver of diversity across scales?
+
+The Environmental Heterogeneity (EH) hypothesis (Ricklefs 1977 and others)
+
+**Ecological** (~local):
+- Provides greater available niche space (and/or refuges), enhancing coexistence
+
+**Evolutionary** (~regional):
+- Provides more opportunities for isolation and divergent adaptation, promoting diversification (speciation) and persistence (less extinction)
+
+]
+
+.pull-right[
+
+```{r echo = F, fig.align = 'center', out.width = '75%'}
+knitr::include_graphics("images/eh_global.png")
+```
+
+A meta-analysis of different taxa across the globe found strong support for EH (Stein et al. 2014).
+
+```{r echo = F, fig.align = 'center', out.width = '50%'}
+knitr::include_graphics("images/cramer_verboom_2017.jpg")
+```
+
+Cramer and Verboom 2017 found good support for EH explaining plant diversity across South Africa.
+
+]
 
 ---
 
@@ -217,9 +249,9 @@ knitr::include_graphics("images/LGM_veg.png")
 
 .pull-left[
 
-## Island Biogeography
+## Dispersal and extinction
 
-### Dispersal and extinction
+## Island Biogeography
 
 The Equilibrium Theory of Island Biogeography (MacArthur and Wilson 1967)
 
@@ -247,9 +279,9 @@ An extension of IBT is to consider specific habitats as islands in a sea of unfa
 
 .pull-left[
 
-## Island Biogeography Extended
+## Dispersal and _speciation_
 
-### Dispersal and _speciation_
+### Island Biogeography Extended
 
 Isolated islands/habitats where immigration is rare are likely to see local adaptation and in situ speciation over time, resulting in a community of close relatives
 
@@ -271,16 +303,87 @@ knitr::include_graphics("images/emerson2008.png")
 
 ---
 
-Mid-domain effect
+layout: false
 
+.pull-left[
+
+## "Neutral" models
+
+_**The Unified Neutral Theory of Biodiversity and Biogeography - Hubbell 2001**_
+
+All individuals of all species are functionally equivalent and local processes (competition etc) are mostly irrelevant...
+
+Local communities are determined by birth, death and migration, which depend only on species abundances...
+
+Local patterns of functional and phylogenetic diversity are determined by the regional species pool (the "Metacommunity" in this case) and dispersal constraints...
+]
+
+.pull-right[
+
+```{r echo = F, fig.align = 'center', out.width = '25%'}
+knitr::include_graphics("images/Neutral_Theory_Cover.jpg")
+```
+
+```{r echo = F, fig.align = 'center', out.width = '90%'}
+knitr::include_graphics("images/neutral_theory.png")
+```
+
+]
+
+---
+
+.pull-left[
+
+## "Neutral" models
+
+The Mid‐Domain Effect (MDE), Colwell & Lees 2000
+
+- aims to explain spatial patterns in species richness invoking only stochasticity and geometrical constraints
+
+- predicts a hump‐shaped pattern in species richness in the mid-domain, because that's where most species ranges will overlap (if all else is equal, i.e. no ecological effects)
+
+- it's essentially a spatially bounded neutral model where communities are linked by short‐distance migration 
+]
+
+.pull-right[
+
+<br>
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/mde.png")
+```
+
+.footnote[Rangel and Diniz-Filho 2005]
+
+]
 
 ---
 
 layout: false
 
-## Local vs Regional balance of diversity
+### To what extent is variation in diversity the result of local determinism (i.e. ecology) vs regional processes (i.e. evolution and biogeography)?
 
 - see Tony's lecture 3
+
+.pull-left[
+
+Local determinism makes three predictions: 
+1. diversity should be strongly correlated with physical aspects of the environment
+  - see EH hypothesis
+2. local diversity in comparable habitats should not vary between regions
+  - ...
+3. local diversity, at least above some ecological saturation level, should be independent of regional diversity
+  - Type I = local diversity proportional to regional diversity
+  - Type II = local diversity saturates beyond some level of diversity
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/gaston2000.png")
+```
+
+.footnote[Gaston 2000]
+]
 
 ---
 
@@ -312,30 +415,6 @@ knitr::include_graphics("images/assemblyprocesses_crop.jpg")
 - ecology and evolution are intricately intertwined
 
 .footnote[###### ]
-]
-
----
-
-layout: false
-
-## Local vs Regional scale processes
-
-.pull-left[
-### Neutral Theory
-
-```{r echo = F, fig.align = 'center', out.width = '20%'}
-knitr::include_graphics("images/Neutral_Theory_Cover.jpg")
-```
-
-Local processes (competition etc) are mostly irrelevant and local communities are the result of ...
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/neutral_theory.png")
-```
-
-.footnote[Hubbell 2001]
 ]
 
 ---

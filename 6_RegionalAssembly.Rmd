@@ -363,15 +363,13 @@ layout: false
 
 ### To what extent is variation in diversity the result of local determinism (i.e. ecology) vs regional processes (i.e. evolution and biogeography)?
 
-- see Tony's lecture 3
-
 .pull-left[
 
 Local determinism makes three predictions: 
 1. diversity should be strongly correlated with physical aspects of the environment
   - see EH hypothesis
 2. local diversity in comparable habitats should not vary between regions
-  - ...
+  - see Stability slides, comparing MTEs
 3. local diversity, at least above some ecological saturation level, should be independent of regional diversity
   - Type I = local diversity proportional to regional diversity
   - Type II = local diversity saturates beyond some level of diversity

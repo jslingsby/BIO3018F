@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2" xmlns:gx="http://www.google.com/kml/ext/2.2" xmlns:kml="http://www.opengis.net/kml/2.2" xmlns:atom="http://www.w3.org/2005/Atom">
+<Document version="1.0">
+	<name>Potberg_prac</name>
+	<open>1</open>
+	<Style id="s_ylw-pushpin_hl">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Placemark>
+		<name>limestone</name>
+		<LookAt>
+			<gx:TimeStamp><when>2017-11-12</when>
+</gx:TimeStamp>
+			<gx:ViewerOptions>
+				<gx:option name="historicalimagery"></gx:option>
+				<gx:option enabled="0" name="sunlight"></gx:option>
+				<gx:option enabled="0" name="streetview"></gx:option>
+			</gx:ViewerOptions>
+			<longitude>20.65576747141956</longitude>
+			<latitude>-34.44031566649674</latitude>
+			<altitude>0</altitude>
+			<heading>1.757847353018293</heading>
+			<tilt>38.3510511572029</tilt>
+			<range>3905.800623079669</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<Point>
+			<gx:drawOrder>1</gx:drawOrder>
+			<coordinates>20.64689987032266,-34.43428850492592,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>sand</name>
+		<LookAt>
+			<gx:TimeStamp><when>2017-11-12</when>
+</gx:TimeStamp>
+			<gx:ViewerOptions>
+				<gx:option name="historicalimagery"></gx:option>
+				<gx:option enabled="0" name="sunlight"></gx:option>
+				<gx:option enabled="0" name="streetview"></gx:option>
+			</gx:ViewerOptions>
+			<longitude>20.55417958269496</longitude>
+			<latitude>-34.39723568595565</latitude>
+			<altitude>0</altitude>
+			<heading>1.810270459549528</heading>
+			<tilt>32.89868596881009</tilt>
+			<range>1416.527122917554</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<Point>
+			<gx:drawOrder>1</gx:drawOrder>
+			<coordinates>20.55572311346533,-34.39803418779338,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>invasion</name>
+		<LookAt>
+			<gx:TimeStamp><when>2017-11-12</when>
+</gx:TimeStamp>
+			<gx:ViewerOptions>
+				<gx:option name="historicalimagery"></gx:option>
+				<gx:option enabled="0" name="sunlight"></gx:option>
+				<gx:option enabled="0" name="streetview"></gx:option>
+			</gx:ViewerOptions>
+			<longitude>20.53929160657833</longitude>
+			<latitude>-34.38692470267465</latitude>
+			<altitude>0</altitude>
+			<heading>1.820599248268152</heading>
+			<tilt>33.56291119634706</tilt>
+			<range>1143.521126616979</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<Point>
+			<gx:drawOrder>1</gx:drawOrder>
+			<coordinates>20.53702651983208,-34.38683051302927,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>sandstone</name>
+		<LookAt>
+			<gx:TimeStamp><when>2017-11-12</when>
+</gx:TimeStamp>
+			<gx:ViewerOptions>
+				<gx:option name="historicalimagery"></gx:option>
+				<gx:option enabled="0" name="sunlight"></gx:option>
+				<gx:option enabled="0" name="streetview"></gx:option>
+			</gx:ViewerOptions>
+			<longitude>20.53884357546356</longitude>
+			<latitude>-34.37641726173677</latitude>
+			<altitude>0</altitude>
+			<heading>1.85745023604434</heading>
+			<tilt>52.64110907765621</tilt>
+			<range>1507.066169104423</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<Point>
+			<gx:drawOrder>1</gx:drawOrder>
+			<coordinates>20.53742066935242,-34.37751138350952,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>grass</name>
+		<LookAt>
+			<gx:TimeStamp><when>2017-11-12</when>
+</gx:TimeStamp>
+			<gx:ViewerOptions>
+				<gx:option name="historicalimagery"></gx:option>
+				<gx:option enabled="0" name="sunlight"></gx:option>
+				<gx:option enabled="0" name="streetview"></gx:option>
+			</gx:ViewerOptions>
+			<longitude>20.53436554619236</longitude>
+			<latitude>-34.3750941252859</latitude>
+			<altitude>0</altitude>
+			<heading>1.862337499355841</heading>
+			<tilt>54.36063052588039</tilt>
+			<range>623.5992665541037</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<Point>
+			<gx:drawOrder>1</gx:drawOrder>
+			<coordinates>20.53174326280192,-34.37494603889993,0</coordinates>
+		</Point>
+	</Placemark>
+	<Placemark>
+		<name>renosterveld</name>
+		<LookAt>
+			<gx:TimeStamp><when>2017-11-12</when>
+</gx:TimeStamp>
+			<gx:ViewerOptions>
+				<gx:option name="historicalimagery"></gx:option>
+				<gx:option enabled="0" name="sunlight"></gx:option>
+				<gx:option enabled="0" name="streetview"></gx:option>
+			</gx:ViewerOptions>
+			<longitude>20.49757030663129</longitude>
+			<latitude>-34.37752619862749</latitude>
+			<altitude>0</altitude>
+			<heading>1.710800919898673</heading>
+			<tilt>17.23502897480764</tilt>
+			<range>1894.069614903643</range>
+			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
+		</LookAt>
+		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<Point>
+			<gx:drawOrder>1</gx:drawOrder>
+			<coordinates>20.49456706180524,-34.37627423186814,0</coordinates>
+		</Point>
+	</Placemark>
+</Document>
+</kml>

@@ -2,19 +2,24 @@
 library(MODISTools)
 library(tidyverse)
 library(readr)
+library(sf)
 
-sites <- data.frame(site_name = c("grassy field", "invasion", "renosterveld", "sandstone_low", "sandstone_high", "limestone"),
-                    lat = c(-34.375052, -34.386014, -34.374259, -34.3961, -34.3748, -34.4309),
-                    lon = c(20.531749, 20.534986, 20.504233, 20.5494, 20.5428, 20.5666))
+# sites <- data.frame(site_name = c("grassy field", "invasion", "renosterveld", "sandstone_low", "sandstone_high", "limestone"),
+#                     lat = c(-34.375052, -34.386014, -34.374259, -34.3961, -34.3748, -34.4309),
+#                     lon = c(20.531749, 20.534986, 20.504233, 20.5494, 20.5428, 20.5666))
+
+sites <- st_read("/home/jasper/GIT/BIO3018F/prac/Potberg_prac_sites.kml")
+
+sites <- data.frame(site_name = sites$Name, lat = st_coordinates(sites)[,2], lon = st_coordinates(sites)[,1])
 
 dat <- mt_batch_subset(df = sites,
                         product = "MOD13Q1",
                         band = "250m_16_days_NDVI",
                         internal = TRUE,
                         start = "2000-01-01",
-                        end = "2021-12-31")
+                        end = "2022-01-30")
 
-write_csv(dat, "MODISdat_batch_28Jan.csv")
+write_csv(dat, "MODISdat_batch_30Jan.csv")
 
 #############  
 

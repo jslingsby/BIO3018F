@@ -7,7 +7,7 @@ source("prac/02_plot.NDVI.R")
 source("prac/03_negexp_model.R")
 
 ###Get data
-adat <- read_csv("prac/MODISdat_batch_28Jan.csv")
+adat <- read_csv("prac/MODISdat_batch_30Jan.csv")
 #adat <- adat %>% filter(calendar_date > as.Date("2015-9-14"))
 
 ###Plot all timeseries
@@ -16,7 +16,8 @@ adat %>%
   geom_line() +
 #  geom_point() +
   facet_wrap(.~ site) +
-  ylab("NDVI")
+  ylab("NDVI") +
+  ylim(0.2, 0.9)
 
 
 ###Run through sites fitting the model

@@ -498,7 +498,7 @@ The jury is out, but here's a model simulation.
 &uparrow; fragmentation = &downarrow; total landscape productivity, but stronger B-EF relationships at larger spatial scales (steeper slopes of blue lines in panels e and f)
 
 ####Conclusion
-Fragmentation is bad, but B-EF may compensate for some of the impacts
+Fragmentation is bad, but B-EF may actually compensate for some of the impacts
 
 ]
 
@@ -507,6 +507,37 @@ Fragmentation is bad, but B-EF may compensate for some of the impacts
 knitr::include_graphics("images/gonzalez2020_frag.jpg")
 ```
 .footnote[Gonzalez et al. 2020]
+]
+
+---
+
+layout: false
+
+.pull-left[
+
+## B-EF and global change: Regime Shifts
+
+Alternative vegetation states can exist on the same abiotic template. They often contrast dramatically in various ecosystem functions (productivity, decomposition, habitat, etc).
+
+They occur naturally, e.g.
+- Open (Fynbos, grassland, savanna) vs closed (forest)
+
+Or can be created unnaturally, e.g.
+- Fynbos/grassland vs pine invasion
+- Expansion of closed into open ecosystems (or vice versa)
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'right', out.width = '110%'}
+knitr::include_graphics("images/slingsby2020_IC.png")
+```
+
+```{r echo = F, fig.align = 'right', out.width = '110%'}
+knitr::include_graphics("images/slingsby2020_ICb.png")
+```
+
+.footnote[Slingsby et al. 2020]
 ]
 
 ---

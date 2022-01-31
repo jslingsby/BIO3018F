@@ -111,14 +111,16 @@ layout: false
 ## Drawbacks of looking at species diversity only?
 
 - What is a species? There are many definitions!
+
 - Are all species equal?
-  - Would you consider 2 _Erica_ species to be equivalent to an _Erica_ and a _Protea_ or Giant Sequoia and Coffee?
+  - Would you consider 2 _Erica_ species to be equivalent to an _Erica_ and a _Protea_ or cacao and coffee?
+
 - Species counts don't tell you about:
   - the identity of species or the similarities or differences between them
   - the functioning of species or communities 
   - the origins and maintenance of diversity (evolution, ecology and biogeography)
 
-```{r echo = F, fig.align = 'center', out.width = '65%'}
+```{r echo = F, fig.align = 'center', out.width = '50%'}
 knitr::include_graphics("images/fynbos_community.jpg")
 ```
 
@@ -132,7 +134,9 @@ layout: false
 
 Many approaches!
 
-Oldest and simplest measures are based on **discrete** predefined  categories (i.e. **functional groups** or **taxonomic rank** (genera, families, etc<sup>1</sup>)).
+Oldest and simplest measures are based on **discrete** predefined  categories:
+- **functional groups** (growth form, etc)
+- **taxonomic rank** (genera, families, etc<sup>1</sup>)
 
 Simply assign your species to the categories (e.g. trees, shrubs, grasses, etc if you're working with plant functional groups) and calculate your diversity metrics as you would for species.
 
@@ -222,7 +226,7 @@ There's a lot of useful information in the data and analyses used to define func
 
 Rather than lose that information by defining discrete groups and counting them, we can use the unique information directly!
 
-E.g. functional diversity can be calculated as the sum of the branch length joining all species in the sample (Petchey and Gaston 2002).
+E.g. functional diversity can be calculated as the sum of the branch length joining all species in the sample (Petchey and Gaston 2002)
 
 ]
 
@@ -396,6 +400,28 @@ layout: false
 
 .pull-left[
 
+## Decifering the determinants of community assembly
+
+<br>
+
+Don't worry about the scary figure... We'll discuss this more in the next two lectures...
+
+.footnote[figure from Webb et al. 2002]
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '90%'}
+knitr::include_graphics("images/webb2002.png")
+```
+]
+
+---
+
+layout: false
+
+.pull-left[
+
 ## Null models...
 
 We often explore the drivers behind the patterns of diversity we see by contrasting different measures of diversity and/or comparing them to the patterns we would expect to see in the absence of that driver.
@@ -465,7 +491,7 @@ class: center, middle
 
 *There's a lot more to diversity than simple counts of species.*
 
-*Functional and phylogenetic diversity allow us to explore more intricate questions around the ecology and evolution of, and benefits derived from, assemblages.*
+*Functional and phylogenetic diversity allow us to explore more intricate questions around the ecology, evolution and function of assemblages.*
 
 *Null models can be useful for exploring the factors that determine the assembly of communities.*
 

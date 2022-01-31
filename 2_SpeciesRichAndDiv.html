@@ -4,7 +4,7 @@
     <title>2. Species Richness and Diversity</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jasper Slingsby, BIO3018F" />
-    <meta name="date" content="2022-01-29" />
+    <meta name="date" content="2022-01-31" />
     <script src="2_SpeciesRichAndDiv_files/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
@@ -15,7 +15,7 @@ class: center, middle, inverse, title-slide
 # 2. Species Richness and Diversity
 ## Alpha Diversity
 ### Jasper Slingsby, BIO3018F
-### 2022-01-29
+### 2022-01-31
 
 ---
 
@@ -46,22 +46,23 @@ Gamma `\((\gamma)\)` = total landscape species diversity/richness
 
 layout: false
 
-## Quantifying `\(\alpha\)`-diversity...
-
-
 .pull-left[
 
-Can be counts of the number of species in samples
+## Quantifying `\(\alpha\)`-diversity...
 
-&lt;img src="images/alphadiversity1.png" width="75%" style="display: block; margin: auto;" /&gt;
+Can be counts of the number of species in samples,
+
+&lt;img src="images/alphadiversity1.png" width="70%" style="display: block; margin: auto;" /&gt;
 
 ]
 
 .pull-right[
 
+&lt;br&gt;
+
 *S* = a simple count of species
 
-But what of relative abundance?
+*But what of relative abundance?*
 
 ]
 
@@ -69,22 +70,30 @@ But what of relative abundance?
 
 layout: false
 
-## Quantifying `\(\alpha\)`-diversity...
-
-
 .pull-left[
 
-Can be counts of the number of species in samples, or include information on their **relative abundance**.
+## Quantifying `\(\alpha\)`-diversity...
 
-&lt;img src="images/alphadiversity.png" width="75%" style="display: block; margin: auto;" /&gt;
+Can be counts of the number of species in samples, 
+
+&lt;img src="images/alphadiversity.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+or include information on their **relative abundance**
 
 ]
 
 .pull-right[
 
-Here a community is considered more diverse if the relative abundances are more evenly distributed, because removing one individual is less likely to remove a species.
+&lt;br&gt;
 
-The Shannon index (*H'*) quantifies species diversity taking into account both species' richness and evenness in their relative abundance
+*S* = a simple count of species
+
+*But what of relative abundance?*
+
+A community is considered more diverse if the relative abundances are more evenly distributed 
+- because removing one individual is less likely to remove a species.
+
+**Shannon's index** (*H'*) quantifies species diversity taking into account both species' richness and evenness in their relative abundance
 
 `\(H' = -\sum_{i=1}^{n}(p_i*ln(p_i))\)` 
 
@@ -107,7 +116,7 @@ Species counts are sensitive to the number of individuals sampled.
 
 More individuals means greater potential to encounter more species.
 
-&lt;img src="images/taylorplot.gif" width="60%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/taylorplot.gif" width="70%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -338,7 +347,7 @@ Measures of alpha diversity can be affected by factors like the area and number 
 
 Other factors can be important too, like the length of time sampled for (e.g. bird netting, fishing, etc).
 
-You need to choose your measure of diversity carefully, and potentially correct for these sampling effects (e.g. by using rarefaction, sampling a larger area, etc), depending on the group you're working on and your question at hand.
+You need to choose your measure of diversity carefully, and potentially correct for these sampling effects (e.g. by using rarefaction, sampling a larger area, etc), depending on your question and the group you're working on
 
 ---
 

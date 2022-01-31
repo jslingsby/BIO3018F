@@ -1,0 +1,97 @@
+---
+title: "Bio3018F Practical 2022"
+subtitle: "Biodiversity and Ecosystem Function in the Cape Floristic Region"
+author: "Jasper Slingsby"
+output: hrbrthemes::ipsum_pdf
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE,  dev = "cairo_pdf")
+```
+
+# Introduction
+
+Our understanding of and approach to studying the relationship between biodiversity and ecosystem function (B-EF) has evolved over the past few decades (Figure 1; van der Plas 2019). The historical view was one of biodiversity as the response variable, being determined by environmental and anthropogenic factors, with little feedback to ecosystem function. In the early 1990s, this shifted (and perhaps overcompensated) to focus on the causal effects of variation in biodiversity on ecosystem functioning, with little emphasis on the role of environmental variation. More recently, there is recognition that biodiversity both responds to the environment and partly drives ecosystem function in concert with environmental variation. The current focus of most B-EF research is on the relative importance of abiotic drivers (natural and anthropogenic) versus biotic variation in determining various ecosystem functions.
+
+```{r echo = F, fig.align = 'center', out.width = '95%', fig.cap = "(from van der Plas 2019)"}
+knitr::include_graphics("images/vanderplas2019_BEF.jpg")
+```
+
+The Cape Floristic Region (CFR) of South Africa is one of the most botanically diverse areas on the planet. The indigenous flora of the CFR has several components with different evolutionary and biogeographic origins (Figure 2; Bergh et al. 2014), and distinct differences in a range of ecosystem functions. The CFR also has a long history of global change impacts, from direct anthropogenic disturbance (e.g. land use / land cover) to the introduction of invasive alien species. This provides a range of highly varied ecosystem types within close proximity, that often share or contrast in their biotic composition (species, functional and phylogenetic diversity) and abiotic conditions - climate, soils and disturbance regimes (fire, herbivory).
+
+```{r echo = F, fig.align = 'center', out.width = '60%', fig.cap = "Ordination of genus-level floristic similarities of GCFR vegetation units sensu Mucina and Rutherford (2006), as inferred on the basis of the 'important species' lists provided in The vegetation of South Africa, Lesotho and Swaziland (Mucina and Rutherford 2006). Figure from Bergh et al. 2014."}
+knitr::include_graphics("images/bergh2014.png")
+```
+
+
+[Describe the measures of ecosystem function here... i.e. average and amplitude of seasonality of the Normalized Difference Vegetation Index (NDVI) recorded by the MODIS Terra satellite...]
+
+In this practical, we will explore how variation in a set of measures of biodiversity (species, functional and phylogenetic $\alpha$ and $\beta$ diversity) and environmental conditions relate to a set of metrics of ecosystem function derived from satellite timeseries.
+
+The questions are:
+
+* Does the variation in environmental conditions potentially explain the observed variation in species, functional and phylogenetic $\alpha$ and $\beta$ diversity?
+
+* To what degree does the variation in functional and phylogenetic diversity potentially explain the observed variation in our measures of ecosystem function?
+
+Finally, consider this practical a descriptive study. Describe a follow-up study that you would perform to discern cause from correlation and partition the relative influence of environmental conditions versus biodiversity on our measures of ecosystem function.
+
+<br>
+
+# Methods:
+
+The sites are selected to represent contrasting vegetation, but to all be the same (or similar) post-fire age (time since last fire). We will split into 4 teams of 2 or 3. Each pair will survey a point location (towards the corners) within the 250 by 250m MODIS pixel that makes up each site.
+
+Each team will need:
+
+* One or more smartphones
+* 2 x 10m measuring tape (or longer)
+* 1 x clipboard, paper and pen or pencil
+* 1 x densiometer
+* 1 x metre rule
+* 1 x Vernier calipers
+* 8 x large plastic bags for carrying soil and plant samples for each point location
+* 8 x soil sample bags
+* 2 x masking tape
+* 2 x marker pen
+
+At each site, navigate to your team's point location, lay out the two tapes at 90 degrees, crossing at 3.2m and ending at 6.4m. Consider this your guide for a 3.2m radius (~20m2) circle. Within the circle we will measure:
+
+1. _Environmental conditions:_
+
+  * Estimate % projected cover (think the area you would see from above) bare soil
+
+  * Take a densiometer reading at ground level. To do this, hold the densiometer level on the soil surface. Pick a spot close to the centre, but try not to pick an obviously open (or closed) patch, it should be representative of the location. To take a reading, split each square into quarters and score them for the amount of light visible - a value from 0 (complete canopy cover) to 4 (no vegetation visible) - counting up these values for all 24 squares (to a maximum of 96), and write this down. We will convert this to canopy cover later, applying the formula $100 - 1.04*X$, where $X$ is your reading.
+
+  * Take a **soil sample** (as per Mike's prac, but it can be smaller as we are going to pool the 4 samples per site). These we will process for soil colour and pH as per Mike's prac.
+
+  * Do a **dung count**, scoring dung for the point location by the number of quarters where you find dung (i.e. a single score from 0-4 for the point location). Try to avoid scoring obvious single scat ("dung creation") events in more than one quadrat, unless it's an impressive pile.
+  
+  * Take a few notes (and photos) on any other features that you think may be important or interesting (slope, rockiness, whatever).
+
+<br>
+
+2. _Diversity sampling:_
+
+  * First, make sure your smartphone is fully charged and set to record GPS location with your photographs!
+
+  * With your team, decide on which are the top 5 species by % projected cover. If your site is dominated by fewer than 5 species, count up as many species as make up 80% of the vegetation. 
+
+    * Take diagnostic photos for the 5 species (habit (whole plant), leaf, base, flowers and/or fruits).
+
+    * For each of three individuals of your 5 target species, measure the height and collect a shoots for measuring leaf length and leaf width (mark with masking tape and put in sample bag for the site).
+    
+  * Finally, set a timer and take as many photos of new species (other than your 5 target species) within or near your plot as you can before the alarm goes off. Make sure to take a photo of your site label on your sample bag between sites so you know which photos were collected at which sites. When we get back to base you will upload the photos to folders in the intranet labeled by site.
+  
+  
+# References
+
+Bergh et al
+
+Mucina and Rutherford
+
+Slingsby et al. 2020
+
+van der Plas
+
+Wilson et al

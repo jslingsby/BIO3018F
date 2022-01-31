@@ -142,30 +142,12 @@ layout: false
 
 ## This requires measuring biodiversity to...
 
-### Test macroecological theory - e.g. What determines species richness?
+### Develop and test theory - e.g. What determines species richness?
 
 ```{r echo = F, fig.align = 'center', out.width = '80%'}
 knitr::include_graphics("images/kreft2007_crop.jpg")
 ```
 .footnote[Kreft & Jetz 2007, _PNAS_]
-
----
-
-layout: false
-
-## This requires measuring biodiversity to...
-
-.pull-left[
-### Understand the role of biodiversity
-
-Here we see relationships between biodiversity metrics and urban ecosystem services (UES) that have been tested empirically (from Schwartz et al. 2017).
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'right', out.width = '100%'}
-knitr::include_graphics("images/ecosystem_functions.jpg")
-```
-]
 
 ---
 
@@ -194,6 +176,24 @@ knitr::include_graphics("images/hotspots.jpg")
 ```
 
 .footnote[https://www.conservation.org/priorities/biodiversity-hotspots]
+
+---
+
+layout: false
+
+## This requires measuring biodiversity to...
+
+.pull-left[
+### Understand the role of biodiversity
+
+Here we see relationships between biodiversity metrics and urban ecosystem services (UES) that have been tested empirically (from Schwartz et al. 2017).
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'right', out.width = '100%'}
+knitr::include_graphics("images/ecosystem_functions.jpg")
+```
+]
 
 ---
 
@@ -268,7 +268,7 @@ class: center
 
 > *"The use of different measures or analytical approaches on a single set of data can naturally result in quite different outcomes and interpretations."* - Anderson et al. 2011
 
-In other words, there is no one perfect measure of biodiversity.
+i.e., there is no one perfect measure of biodiversity.
 
 <br>
 
@@ -286,312 +286,6 @@ It's crucial that we master the methods for measuring and analyzing biodiversity
 NoCite(myBib)
 PrintBibliography(myBib)
 ```
-
----
-
-.pull-left[
-## My research focuses on community composition
-
-```{r echo = F, fig.align = 'center', out.width = '75%'}
-knitr::include_graphics("images/Noss_Biodiversity.png")
-```
-.footnote[Noss 1990, _Conservation Biology_]
-]
-
-.pull-right[
-```{r echo=FALSE}
-ebvs <- read.csv("images/ebvs.csv", header = T)
-
-kable(ebvs)  %>%
-  kable_styling(font_size = 12) %>%
-  row_spec(c(11:13), bold = T, color = "white", background = "#23395b")
-```
-]
-
----
-
-## Note: composition can apply to any spatial scale
-
-.pull-left[
-### Ecosystem types         $\rightarrow$
-
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/resolv_ecoregions2017.png")
-```
-
-.footnote[https://ecoregions.appspot.com/]
-]
-
-.pull-right[
-### Ecosystem composition
-
-#### e.g. estimated species richness
-
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/kreft2007_crop.jpg")
-```
-.footnote[Kreft & Jetz 2007, _PNAS_]
-]
-
----
-
-## Exploring composition allows many insights
-
-.pull-left[
-### Global conservation priorities
-
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/hotspots.jpg")
-```
-
-.footnote[https://www.conservation.org/priorities/biodiversity-hotspots]
-]
-
-.pull-right[
-### Testing macroecological theory
-
-#### What determines species richness?
-
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/kreft2007_crop.jpg")
-```
-.footnote[Kreft & Jetz 2007, _PNAS_]
-]
-
----
-
-name: colors
-
-## Colors
-
-.left-column[
-Text color
-
-[Link Color](#3)
-
-**Bold Color**
-
-_Italic Color_
-
-`Inline Code`
-]
-
-.right-column[
-Lorem ipsum dolor sit amet, [consectetur adipiscing elit (link)](#3), 
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-Erat nam at lectus urna.
-Pellentesque elit ullamcorper **dignissim cras tincidunt (bold)** lobortis feugiat. 
-_Eros donec ac odio tempor_ orci dapibus ultrices. 
-Id porta nibh venenatis cras sed felis eget velit aliquet.
-Aliquam id diam maecenas ultricies mi.
-Enim sit amet 
-`code_color("inline")`
-venenatis urna cursus eget nunc scelerisque viverra.
-]
-
----
-
-# Big Topic or Inverse Slides `#`
-
-## Slide Headings `##`
-
-### Sub-slide Headings `###`
-
-#### Bold Call-Out `####`
-
-This is a normal paragraph text. Only use header levels 1-4.
-
-##### Possible, but not recommended `#####`
-
-###### Definitely don't use h6 `######`
-
----
-
-# Left-Column Headings
-
-.left-column[
-## First
-
-## Second
-
-## Third
-]
-
-.right-column[
-Dolor quis aptent mus a dictum ultricies egestas.
-
-Amet egestas neque tempor fermentum proin massa!
-
-Dolor elementum fermentum pharetra lectus arcu pulvinar.
-]
-
----
-class: inverse center middle
-
-# Topic Changing Interstitial
-
---
-
-```
-class: inverse center middle
-```
-
----
-layout: true
-
-## Blocks
-
----
-
-### Blockquote
-
-> This is a blockquote following a header.
->
-> When something is important enough, you do it even if the odds are not in your favor.
-
----
-
-### Code Blocks
-
-#### R Code
-
-```{r eval=FALSE}
-ggplot(gapminder) +
-  aes(x = gdpPercap, y = lifeExp, size = pop, color = country) +
-  geom_point() +
-  facet_wrap(~year)
-```
-
-#### JavaScript
-
-```js
-var fun = function lang(l) {
-  dateformat.i18n = require('./lang/' + l)
-  return true;
-}
-```
-
----
-
-### More R Code
-
-```{r eval=FALSE}
-dplyr::starwars %>% dplyr::slice_sample(n = 4)
-```
-
----
-
-```{r message=TRUE, eval=requireNamespace("cli", quietly = TRUE)}
-cli::cli_alert_success("It worked!")
-```
-
---
-
-```{r message=TRUE}
-message("Just a friendly message")
-```
-
---
-
-```{r warning=TRUE}
-warning("This could be bad...")
-```
-
---
-
-```{r error=TRUE}
-stop("I hope you're sitting down for this")
-```
-
-
----
-layout: true
-
-## Tables
-
----
-exclude: `r if (requireNamespace("tibble", quietly=TRUE)) "false" else "true"`
-
-```{r eval=requireNamespace("tibble", quietly=TRUE)}
-tibble::as_tibble(mtcars)
-```
-
----
-
-```{r}
-knitr::kable(head(mtcars), format = 'html')
-```
-
----
-exclude: `r if (requireNamespace("DT", quietly=TRUE)) "false" else "true"`
-
-```{r eval=requireNamespace("DT", quietly=TRUE)}
-DT::datatable(head(mtcars), fillContainer = FALSE, options = list(pageLength = 4))
-```
-
----
-layout: true
-
-## Lists
-
----
-
-.pull-left[
-#### Here is an unordered list:
-
-*   Item foo
-*   Item bar
-*   Item baz
-*   Item zip
-]
-
-.pull-right[
-
-#### And an ordered list:
-
-1.  Item one
-1.  Item two
-1.  Item three
-1.  Item four
-]
-
----
-
-### And a nested list:
-
-- level 1 item
-  - level 2 item
-  - level 2 item
-    - level 3 item
-    - level 3 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-  - level 2 item
-  - level 2 item
-- level 1 item
-
----
-
-### Nesting an ol in ul in an ol
-
-- level 1 item (ul)
-  1. level 2 item (ol)
-  1. level 2 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-- level 1 item (ul)
-  1. level 2 item (ol)
-  1. level 2 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-  1. level 4 item (ol)
-  1. level 4 item (ol)
-    - level 3 item (ul)
-    - level 3 item (ul)
-- level 1 item (ul)
 
 ---
 

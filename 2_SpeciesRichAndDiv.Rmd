@@ -79,14 +79,13 @@ knitr::include_graphics("images/diversitycomponents.png")
 
 layout: false
 
-## Quantifying $\alpha$-diversity...
-
-
 .pull-left[
 
-Can be counts of the number of species in samples
+## Quantifying $\alpha$-diversity...
 
-```{r echo = F, fig.align = 'center', out.width = '75%'}
+Can be counts of the number of species in samples,
+
+```{r echo = F, fig.align = 'center', out.width = '70%'}
 knitr::include_graphics("images/alphadiversity1.png")
 ```
 
@@ -94,9 +93,11 @@ knitr::include_graphics("images/alphadiversity1.png")
 
 .pull-right[
 
+<br>
+
 *S* = a simple count of species
 
-But what of relative abundance?
+*But what of relative abundance?*
 
 ]
 
@@ -104,24 +105,32 @@ But what of relative abundance?
 
 layout: false
 
-## Quantifying $\alpha$-diversity...
-
-
 .pull-left[
 
-Can be counts of the number of species in samples, or include information on their **relative abundance**.
+## Quantifying $\alpha$-diversity...
 
-```{r echo = F, fig.align = 'center', out.width = '75%'}
+Can be counts of the number of species in samples, 
+
+```{r echo = F, fig.align = 'center', out.width = '70%'}
 knitr::include_graphics("images/alphadiversity.png")
 ```
+
+or include information on their **relative abundance**
 
 ]
 
 .pull-right[
 
-Here a community is considered more diverse if the relative abundances are more evenly distributed, because removing one individual is less likely to remove a species.
+<br>
 
-The Shannon index (*H'*) quantifies species diversity taking into account both species' richness and evenness in their relative abundance
+*S* = a simple count of species
+
+*But what of relative abundance?*
+
+A community is considered more diverse if the relative abundances are more evenly distributed 
+- because removing one individual is less likely to remove a species.
+
+**Shannon's index** (*H'*) quantifies species diversity taking into account both species' richness and evenness in their relative abundance
 
 $H' = -\sum_{i=1}^{n}(p_i*ln(p_i))$ 
 
@@ -144,7 +153,7 @@ Species counts are sensitive to the number of individuals sampled.
 
 More individuals means greater potential to encounter more species.
 
-```{r echo = F, fig.align = 'center', out.width = '60%'}
+```{r echo = F, fig.align = 'center', out.width = '70%'}
 knitr::include_graphics("images/taylorplot.gif")
 ```
 
@@ -415,7 +424,7 @@ Measures of alpha diversity can be affected by factors like the area and number 
 
 Other factors can be important too, like the length of time sampled for (e.g. bird netting, fishing, etc).
 
-You need to choose your measure of diversity carefully, and potentially correct for these sampling effects (e.g. by using rarefaction, sampling a larger area, etc), depending on the group you're working on and your question at hand.
+You need to choose your measure of diversity carefully, and potentially correct for these sampling effects (e.g. by using rarefaction, sampling a larger area, etc), depending on your question and the group you're working on
 
 ---
 

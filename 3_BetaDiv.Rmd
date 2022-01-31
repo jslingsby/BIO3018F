@@ -319,8 +319,6 @@ when it includes abundance information
 
 ]
 
-
-
 ---
 
 layout: false
@@ -375,13 +373,15 @@ layout: false
 .pull-left[
 ```{r echo = F, fig.align = 'center', out.width = '72%'}
 knitr::include_graphics("images/molina_map.png")
-knitr::include_graphics("images/molina_belts.jpg")
 ```
 
+```{r echo = F, fig.align = 'center', out.width = '72%'}
+knitr::include_graphics("images/molina_belts.jpg")
+```
 ]
 
 .pull-right[
-Eudicots of the Baetic mountains of Andalusia, Spain (Molina‐Venegas et al. 2015) - egs T2&3?
+Eudicots of the Baetic mountains of Andalusia, Spain (Molina‐Venegas et al. 2015)
 
 ```{r echo = F, fig.align = 'center', out.width = '85%'}
 knitr::include_graphics("images/molina_sbd.png")
@@ -459,9 +459,8 @@ knitr::include_graphics("images/NMDS.png")
 
 layout: false
 
-## "Variation" examples
-
 .pull-left[
+## "Variation" examples
 
 Grouping samples by compositional similarity
 
@@ -472,13 +471,14 @@ knitr::include_graphics("images/hclust_plots.png")
 ```
 
 .footnote[Data from Slingsby et al. 2017]
-
 ]
 
 .pull-right[
-```{r echo = F, fig.align = 'center', out.width = '65%'}
+```{r echo = F, fig.align = 'center', out.width = '75%'}
 knitr::include_graphics("images/taylorvegmap.jpg")
 ```
+
+.footnote[Map from Taylor 1983]
 ]
 
 ---
@@ -487,6 +487,8 @@ class: center, middle
 ## Take-home
 
 >*"Plurality in the concept of $\beta$ diversity can yield important ecological insights when navigated well. By knowing the properties of the measures being used and applying more than one, the underlying ecological structures in the data generating patterns in $\beta$ diversity can be revealed..."* - Anderson et al. 2011
+
+>*"This applies to most measures of diversity..."* - Slingsby 2022
 
 ---
 

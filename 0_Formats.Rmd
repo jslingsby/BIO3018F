@@ -94,66 +94,9 @@ knitr::include_graphics("images/sdgs_makingpeacewithnature_small.jpg")
 
 ---
 
-## My research focuses on...
-
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/chapin.png")
-```
-
-.footnote[Figure modified from Chapin et al. 1997, _Science_]
-
----
-
-## My research focuses on four questions...
-
-```{r echo = F, fig.align = 'center', out.width = '58%'}
-knitr::include_graphics("images/chapin.png")
-```
-
-1. What determines the composition and diversity of communities and ecosystems at various scales?
-
-2. What is the role of biodiversity in ecosystem function (and derived societal benefits)?
-
-3. How is biodiversity changing and what are the impacts on ecosystem services?
-
-4. How can we mitigate or adapt to changing biodiversity and ecosystem services?
-
-.pull-right[
-.footnote[Figure modified from Chapin et al. 1997, _Science_]
-]
-
----
-
 layout: false
 
-## This requires measuring biodiversity to...
-
-### Map the distribution of species and ecosystems
-
-```{r echo = F, fig.align = 'center', out.width = '60%'}
-knitr::include_graphics("images/resolv_ecoregions2017.png")
-```
-
-.footnote[https://ecoregions.appspot.com/]
-
----
-
-layout: false
-
-## This requires measuring biodiversity to...
-
-### Test macroecological theory - e.g. What determines species richness?
-
-```{r echo = F, fig.align = 'center', out.width = '80%'}
-knitr::include_graphics("images/kreft2007_crop.jpg")
-```
-.footnote[Kreft & Jetz 2007, _PNAS_]
-
----
-
-layout: false
-
-## This requires measuring biodiversity to...
+## We need to measure biodiversity to...
 
 .pull-left[
 ### Understand the role of biodiversity
@@ -171,7 +114,34 @@ knitr::include_graphics("images/ecosystem_functions.jpg")
 
 layout: false
 
-## This requires measuring biodiversity to...
+## We need to measure biodiversity to...
+
+### Map the distribution of species and ecosystems
+
+```{r echo = F, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics("images/resolv_ecoregions2017.png")
+```
+
+.footnote[https://ecoregions.appspot.com/]
+
+---
+
+layout: false
+
+## We need to measure biodiversity to...
+
+### Test macroecological theory - e.g. What determines species richness?
+
+```{r echo = F, fig.align = 'center', out.width = '80%'}
+knitr::include_graphics("images/kreft2007_crop.jpg")
+```
+.footnote[Kreft & Jetz 2007, _PNAS_]
+
+---
+
+layout: false
+
+## We need to measure biodiversity to...
 
 ### Track change in biodiversity
 
@@ -185,7 +155,7 @@ knitr::include_graphics("images/humphries_extinction.png")
 
 layout: false
 
-## This requires measuring biodiversity to...
+## We need to measure biodiversity to...
 
 ### Set conservation priorities
 
@@ -200,7 +170,7 @@ knitr::include_graphics("images/hotspots.jpg")
 layout: false
 
 .pull-left[
-## But there are many facets of biodiversity!
+## There are many facets of biodiversity to measure!
 
 <br>
 
@@ -218,7 +188,7 @@ knitr::include_graphics("images/Noss_Biodiversity.png")
 ---
 
 .pull-left[
-## With different aspects that can be measured!
+## There are many facets of biodiversity to measure!
 
 #### Essential Biodiversity Variables (EBVs)
 
@@ -262,9 +232,29 @@ knitr::include_graphics("images/diversitymeasures.png")
 ]
 
 ---
+
+## My research focuses on four questions...
+
+```{r echo = F, fig.align = 'center', out.width = '58%'}
+knitr::include_graphics("images/chapin.png")
+```
+
+1. What determines the composition and diversity of communities and ecosystems at various scales?
+
+2. What is the role of biodiversity in ecosystem function (and derived societal benefits)?
+
+3. How is biodiversity changing and what are the impacts on ecosystem services?
+
+4. How can we mitigate or adapt to changing biodiversity and ecosystem services?
+
+.pull-right[
+.footnote[Figure modified from Chapin et al. 1997, _Science_]
+]
+
+---
 class: center
 
-## Problem!
+## But!
 
 > *"The use of different measures or analytical approaches on a single set of data can naturally result in quite different outcomes and interpretations."* - Anderson et al. 2011
 
@@ -274,7 +264,7 @@ In other words, there is no one perfect measure of biodiversity.
 
 ## Take home
 
-_**Measures of biodiversity are in fact hypotheses**_, and should be treated as such. Most biodiversity-related hypotheses should be prefaced *"Assuming our measure of biodiversity is a reasonable approximation of reality, then..."*
+Measures of biodiversity are in fact hypotheses, and should be treated as such. Most biodiversity-related hypotheses should be prefaced *"Assuming our measure of biodiversity is a reasonable approximation of reality, then..."*
 
 It's crucial that we master the methods for measuring and analyzing biodiversity data, and explore the assumptions and implications of the measures we use, if we hope to answer the questions at hand...
     
@@ -325,7 +315,7 @@ knitr::include_graphics("images/resolv_ecoregions2017.png")
 .pull-right[
 ### Ecosystem composition
 
-#### e.g. estimated species richness
+#### e.g.estimated species richness
 
 ```{r echo = F, fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("images/kreft2007_crop.jpg")

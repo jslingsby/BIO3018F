@@ -1,0 +1,76 @@
+<?xml version="1.0"?>
+<gpx version="1.1" creator="GDAL 3.3.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.topografix.com/GPX/1/1" xsi:schemaLocation="http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd">
+<metadata><bounds minlat="-34.424884852695428" minlon="20.410411385946034" maxlat="-34.374789808053123" maxlon="20.555831358075480"/></metadata>                
+<wpt lat="-34.423977829755067" lon="20.4104177167745">
+  <name>NW_limestone</name>
+</wpt>
+<wpt lat="-34.399788320759534" lon="20.554743405024222">
+  <name>NW_sand</name>
+</wpt>
+<wpt lat="-34.386200769143016" lon="20.538498386539015">
+  <name>NW_invasion</name>
+</wpt>
+<wpt lat="-34.377182704308069" lon="20.538547860058671">
+  <name>NW_sandstone</name>
+</wpt>
+<wpt lat="-34.374897158713189" lon="20.530403014009572">
+  <name>NW_grass</name>
+</wpt>
+<wpt lat="-34.374789808053123" lon="20.503212402799498">
+  <name>NW_renosterveld</name>
+</wpt>
+<wpt lat="-34.424879611375111" lon="20.410411385946034">
+  <name>SW_limestone</name>
+</wpt>
+<wpt lat="-34.400690126530748" lon="20.554738628224239">
+  <name>SW_sand</name>
+</wpt>
+<wpt lat="-34.387102574890811" lon="20.538493437977614">
+  <name>SW_invasion</name>
+</wpt>
+<wpt lat="-34.378084511393475" lon="20.538542913696102">
+  <name>SW_sandstone</name>
+</wpt>
+<wpt lat="-34.375798965091114" lon="20.530397980773543">
+  <name>SW_grass</name>
+</wpt>
+<wpt lat="-34.375691610826316" lon="20.503207078157381">
+  <name>SW_renosterveld</name>
+</wpt>
+<wpt lat="-34.423983070899524" lon="20.411505958277715">
+  <name>NE_limestone</name>
+</wpt>
+<wpt lat="-34.399792275331279" lon="20.55583135807548">
+  <name>NE_sand</name>
+</wpt>
+<wpt lat="-34.386204866759392" lon="20.539586161353245">
+  <name>NE_invasion</name>
+</wpt>
+<wpt lat="-34.377186800548884" lon="20.539635518272203">
+  <name>NE_sandstone</name>
+</wpt>
+<wpt lat="-34.374901327096914" lon="20.531490641419847">
+  <name>NE_grass</name>
+</wpt>
+<wpt lat="-34.374794218056707" lon="20.504300024462065">
+  <name>NE_renosterveld</name>
+</wpt>
+<wpt lat="-34.424884852695428" lon="20.411499639132948">
+  <name>SE_limestone</name>
+</wpt>
+<wpt lat="-34.400694081235244" lon="20.555826592946335">
+  <name>SE_sand</name>
+</wpt>
+<wpt lat="-34.387106672644755" lon="20.539581224454768">
+  <name>SE_invasion</name>
+</wpt>
+<wpt lat="-34.378088607771829" lon="20.539630583567373">
+  <name>SE_sandstone</name>
+</wpt>
+<wpt lat="-34.375803133614809" lon="20.531485619840186">
+  <name>SE_grass</name>
+</wpt>
+<wpt lat="-34.37569602097799" lon="20.504294711476071">
+  <name>SE_renosterveld</name>
+</wpt>
+</gpx>

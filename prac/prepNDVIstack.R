@@ -34,14 +34,56 @@ ndvi <- ndvi*.0001
 
 sites <- vect(st_read("/home/jasper/GIT/BIO3018F/prac/Potberg_prac_sites.kml"))
 sites <- project(sites, ndvi)
+#ndvi <- project(ndvi, crs(sites))
+
+
+##############################################
+###Prep and plot sites
 
 # Plot sites
 plot(ndvi[[504]])
 plot(sites, add = T)
 
+# Get sample locations
+adat <- terra::extract(ndvi, sites, xy=T, cells = T)
+#hmm[,506:508]
+#geom(sites)
+centroids <- xyFromCell(ndvi, cell = adat$cell)
+NW <- centroids + data.frame(x = rep(-50,6), y = rep(50, 6))
+SW <- centroids + data.frame(x = rep(-50,6), y = rep(-50, 6))
+NE <- centroids + data.frame(x = rep(50,6), y = rep(50, 6))
+SE <- centroids + data.frame(x = rep(50,6), y = rep(-50, 6))
+
+sampsites <- bind_rows(NW, SW, NE, SE)
+Team <- c(rep("NW", 6), rep("SW", 6), rep("NE", 6), rep("SE", 6))
+Site <- rep(sites$Name,4)
+
+sampsites$name <- paste0(Team, "_", Site)
+
+pt <- st_as_sf(sampsites, coords = c("x", "y"), crs = crs(ndvi))
+pt <- st_transform(pt, crs = st_crs(4326))
+
+st_write(pt, "prac/sites.gpx", driver = "GPX")
+
+
+library(leaflet)
+library(leaflet.extras)
+library(htmltools)
+leaflet() %>%
+  enableTileCaching() %>%
+  #addTiles(options = tileOptions(useCache = TRUE, crossOrigin = TRUE))
+  # Add default OpenStreetMap map tiles
+  addProviderTiles("Esri.WorldImagery", options = tileOptions(useCache = TRUE, crossOrigin = TRUE)) %>%
+  # Add our points
+  addCircleMarkers(data = pt,
+                   radius = 3,
+                   color = "blue")
+
+#################################
+
 # Extract and prep timeseries
-adat <- t(terra::extract(ndvi, sites))
-adat <- as.data.frame(adat[-1,])
+adat <- as.data.frame(t(adat[,-c(1,506:508)]))
+#adat <- as.data.frame(adat[-1,])
 colnames(adat) <- sites$Name
 adat$calendar_date <- as.Date(dates, format = "%Y_%m_%d")
 adat <- adat %>% pivot_longer(cols = sites$Name, names_to = "site")
@@ -50,7 +92,7 @@ adat$scale <- 1
 
 ###Plot all timeseries
 adat %>%
-  ggplot(aes(x = calendar_date, y = NDVI)) + 
+  ggplot(aes(x = calendar_date, y = value*scale)) + 
   geom_line() +
   #  geom_point() +
   facet_wrap(.~ site) +

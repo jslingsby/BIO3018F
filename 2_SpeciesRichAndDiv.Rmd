@@ -97,7 +97,29 @@ knitr::include_graphics("images/alphadiversity1.png")
 
 *S* = a simple count of species
 
-*But what of relative abundance?*
+]
+
+---
+
+layout: false
+
+.pull-left[
+
+## Quantifying $\alpha$-diversity...
+
+Can be counts of the number of species in samples,
+
+```{r echo = F, fig.align = 'center', out.width = '70%'}
+knitr::include_graphics("images/alphadiversity1.png")
+```
+
+]
+
+.pull-right[
+
+<br>
+
+*S* = a simple count of species, *but what of relative abundance?*
 
 ]
 
@@ -123,9 +145,7 @@ or include information on their **relative abundance**
 
 <br>
 
-*S* = a simple count of species
-
-*But what of relative abundance?*
+*S* = a simple count of species, *but what of relative abundance?*
 
 A community is considered more diverse if the relative abundances are more evenly distributed 
 - because removing one individual is less likely to remove a species.
@@ -136,7 +156,7 @@ $H' = -\sum_{i=1}^{n}(p_i*ln(p_i))$
 
 where $p_i$ is the proportion of individuals belonging to the *i*th species.
 
-Pielou's measure of evenness (*J*) can be calculated directly as $J = H'/log(S)$
+Pielou's measure of evenness (*J*) in the relative abundance (independent of *S*) can be calculated directly as $J = H'/log(S)$
 
 ]
 
@@ -232,16 +252,16 @@ layout: false
 .pull-left[
 ## Species-Area relationship
 
-The size and density of individuals can also affect the shape of the species-area relationship (SAR) at fine scales.
+The density (~size) of individuals can also affect the shape of the species-area relationship (SAR) at fine scales.
 - Site 1 = many, small individuals
 - Site 2 = intermediate
 - Site 3 = fewer, large individuals
 
-```{r echo = F, fig.align = 'center', out.width = '40%'}
+```{r echo = F, fig.align = 'center', out.width = '30%'}
 knitr::include_graphics("images/nested_plots.png")
 ```
 
-We often use the SAR to estimate the diversity of a larger area by extrapolation.
+We estimate the SAR by sampling nested plots of increasing size, and can use it to estimate the diversity of a larger area by extrapolation.
 
 ]
 
@@ -344,8 +364,6 @@ layout: false
 
 ##Comparing diversity between sites or surveys
 
-Here I compare surveys of permanent veg plots in the Cape of Good Hope section of TMNP from 1966 and 1996.
-
 .pull-left[
 ####Sample-based *rarefaction* 
 ```{r echo = F, fig.align = 'center', out.width = '75%'}
@@ -362,7 +380,9 @@ knitr::include_graphics("images/spec_ind_raref_CP_comp.png")
 ```
 ]
 
-Note that you can compare between sites by rarefying for a set number of individuals or plots!
+Note that you can compare between sites by rarefying for a set number of individuals or plots! 
+
+Rarefying by samples doesn't really get around the issue of different numbers of individuals...
 
 ---
 
@@ -385,7 +405,7 @@ knitr::include_graphics("images/spec_comp_CP.png")
 knitr::include_graphics("images/sper_comp_CP.png")
 ```
 
-.footnote[<sup>1</sup>for *n* = 10 individuals]
+.footnote[<sup>1</sup>for *n* = 10 individuals from each sample]
 ]
 
 ---
@@ -412,10 +432,18 @@ knitr::include_graphics("images/sper_comp_hist_CP.png")
 
 Paired T-test: t = 3.2953, df = 80, p-value = _***0.0015***_
 
-.footnote[<sup>1</sup>for *n* = 10 individuals]
+.footnote[<sup>1</sup>for *n* = 10 individualsfrom each sample]
 ]
 
 ---
+class: center, middle
+
+```{r echo = F, fig.align = 'center', out.width = '40%'}
+knitr::include_graphics("images/wfw.png")
+```
+
+---
+
 class: center, middle
 
 ## Take home

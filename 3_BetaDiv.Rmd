@@ -277,8 +277,11 @@ layout: false
 There are a large number of metrics that calculate the dissimilarity of pairs of samples based on the number of species that are shared between them or unique to each.
 
 The metrics typically differ in whether they:
+
 * are based on species presence/absence only, or also include abundance information
+
 * include/exclude joint absence information
+
 * account for differences in the $\alpha$ diversity of samples
 ]
 
@@ -316,6 +319,8 @@ when based on species presence/absence only
 ### Bray-Curtis distance
 
 when it includes abundance information
+
+.footnote[Values range from 0 (identical communities) to 1 (complete turnover).]
 
 ]
 

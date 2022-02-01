@@ -62,7 +62,7 @@ layout: false
 
 .pull-left[
 
-## Are simple counts of the number of species enough?
+## Are simple counts of the number of species and individuals enough?
 
 ```{r echo = F, fig.align = 'center', out.width = '95%'}
 knitr::include_graphics("images/grassland.jpeg")
@@ -86,11 +86,11 @@ layout: false
 
 ## There's a lot of diversity in the form of species
 
-Often associated with the environments in which they occur...
-
 ```{r echo = F, fig.align = 'center', out.width = '55%'}
 knitr::include_graphics("images/growthform_USGS_image_cropped.jpg")
 ```
+
+Often associated with the environments in which they occur...
 
 ---
 
@@ -98,11 +98,11 @@ layout: false
 
 ## There's a lot of diversity in the form of species
 
-...and they alter properties of the environment, creating habitat for other species...
-
 ```{r echo = F, fig.align = 'center', out.width = '55%'}
 knitr::include_graphics("images/habitat_smaller.jpg")
 ```
+
+...and they have various effects on the environment, such as creating habitat for other species...
 
 ---
 
@@ -132,7 +132,9 @@ layout: false
 
 .pull-left[
 
-Many approaches!
+_Represent differences in the functional form and evolutionary history of species_
+
+Many measurement approaches!
 
 Oldest and simplest measures are based on **discrete** predefined  categories:
 - **functional groups** (growth form, etc)

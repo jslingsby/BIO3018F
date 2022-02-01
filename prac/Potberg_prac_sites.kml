@@ -3,16 +3,17 @@
 <Document version="1.0">
 	<name>Potberg_prac</name>
 	<open>1</open>
-	<Style id="s_ylw-pushpin_hl">
-		<IconStyle>
-			<scale>1.3</scale>
-			<Icon>
-				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
-			</Icon>
-			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
-		</IconStyle>
-	</Style>
-	<Style id="s_ylw-pushpin">
+	<StyleMap id="m_ylw-pushpin3">
+		<Pair>
+			<key>normal</key>
+			<styleUrl>#s_ylw-pushpin4</styleUrl>
+		</Pair>
+		<Pair>
+			<key>highlight</key>
+			<styleUrl>#s_ylw-pushpin_hl3</styleUrl>
+		</Pair>
+	</StyleMap>
+	<Style id="s_ylw-pushpin4">
 		<IconStyle>
 			<scale>1.1</scale>
 			<Icon>
@@ -21,16 +22,43 @@
 			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
 		</IconStyle>
 	</Style>
-	<StyleMap id="m_ylw-pushpin">
+	<Style id="s_ylw-pushpin40">
+		<IconStyle>
+			<scale>1.1</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<StyleMap id="m_ylw-pushpin30">
 		<Pair>
 			<key>normal</key>
-			<styleUrl>#s_ylw-pushpin</styleUrl>
+			<styleUrl>#s_ylw-pushpin40</styleUrl>
 		</Pair>
 		<Pair>
 			<key>highlight</key>
-			<styleUrl>#s_ylw-pushpin_hl</styleUrl>
+			<styleUrl>#s_ylw-pushpin_hl30</styleUrl>
 		</Pair>
 	</StyleMap>
+	<Style id="s_ylw-pushpin_hl3">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
+	<Style id="s_ylw-pushpin_hl30">
+		<IconStyle>
+			<scale>1.3</scale>
+			<Icon>
+				<href>http://maps.google.com/mapfiles/kml/pushpin/ylw-pushpin.png</href>
+			</Icon>
+			<hotSpot x="20" y="2" xunits="pixels" yunits="pixels"/>
+		</IconStyle>
+	</Style>
 	<Placemark>
 		<name>limestone</name>
 		<LookAt>
@@ -41,90 +69,96 @@
 				<gx:option enabled="0" name="sunlight"></gx:option>
 				<gx:option enabled="0" name="streetview"></gx:option>
 			</gx:ViewerOptions>
-			<longitude>20.65576747141956</longitude>
-			<latitude>-34.44031566649674</latitude>
+			<longitude>20.41609804328666</longitude>
+			<latitude>-34.42463299717465</latitude>
 			<altitude>0</altitude>
-			<heading>1.757847353018293</heading>
-			<tilt>38.3510511572029</tilt>
-			<range>3905.800623079669</range>
+			<heading>1.808472860306979</heading>
+			<tilt>16.49312057653197</tilt>
+			<range>1726.224177887133</range>
 			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 		</LookAt>
-		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<styleUrl>#m_ylw-pushpin30</styleUrl>
 		<Point>
 			<gx:drawOrder>1</gx:drawOrder>
-			<coordinates>20.64689987032266,-34.43428850492592,0</coordinates>
+			<coordinates>20.41124559572648,-34.42394747055821,0</coordinates>
 		</Point>
 	</Placemark>
 	<Placemark>
 		<name>sand</name>
 		<LookAt>
-			<gx:TimeStamp><when>2017-11-12</when>
-</gx:TimeStamp>
+			<gx:TimeSpan>
+				<begin>2017-11-12</begin>
+				<end>2017-11-12T00:46:20.883643777Z</end>
+			</gx:TimeSpan>
 			<gx:ViewerOptions>
 				<gx:option name="historicalimagery"></gx:option>
 				<gx:option enabled="0" name="sunlight"></gx:option>
 				<gx:option enabled="0" name="streetview"></gx:option>
 			</gx:ViewerOptions>
-			<longitude>20.55417958269496</longitude>
-			<latitude>-34.39723568595565</latitude>
+			<longitude>20.55849520981866</longitude>
+			<latitude>-34.39946167352545</latitude>
 			<altitude>0</altitude>
-			<heading>1.810270459549528</heading>
-			<tilt>32.89868596881009</tilt>
-			<range>1416.527122917554</range>
+			<heading>0.969328791899764</heading>
+			<tilt>0</tilt>
+			<range>1575.068028991931</range>
 			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 		</LookAt>
-		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<styleUrl>#m_ylw-pushpin30</styleUrl>
 		<Point>
 			<gx:drawOrder>1</gx:drawOrder>
-			<coordinates>20.55572311346533,-34.39803418779338,0</coordinates>
+			<coordinates>20.5566256845362,-34.40019106407754,0</coordinates>
 		</Point>
 	</Placemark>
 	<Placemark>
 		<name>invasion</name>
 		<LookAt>
-			<gx:TimeStamp><when>2017-11-12</when>
-</gx:TimeStamp>
+			<gx:TimeSpan>
+				<begin>2017-11-12</begin>
+				<end>2017-11-12T00:46:20.883643777Z</end>
+			</gx:TimeSpan>
 			<gx:ViewerOptions>
 				<gx:option name="historicalimagery"></gx:option>
 				<gx:option enabled="0" name="sunlight"></gx:option>
 				<gx:option enabled="0" name="streetview"></gx:option>
 			</gx:ViewerOptions>
-			<longitude>20.53929160657833</longitude>
-			<latitude>-34.38692470267465</latitude>
+			<longitude>20.53890594994968</longitude>
+			<latitude>-34.38493771659686</latitude>
 			<altitude>0</altitude>
-			<heading>1.820599248268152</heading>
-			<tilt>33.56291119634706</tilt>
-			<range>1143.521126616979</range>
+			<heading>0.981173618540622</heading>
+			<tilt>37.82327770542554</tilt>
+			<range>1090.505241396896</range>
 			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 		</LookAt>
-		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<styleUrl>#m_ylw-pushpin30</styleUrl>
 		<Point>
 			<gx:drawOrder>1</gx:drawOrder>
-			<coordinates>20.53702651983208,-34.38683051302927,0</coordinates>
+			<coordinates>20.53886245317749,-34.38680485325629,0</coordinates>
 		</Point>
 	</Placemark>
 	<Placemark>
 		<name>sandstone</name>
 		<LookAt>
-			<gx:TimeStamp><when>2017-11-12</when>
-</gx:TimeStamp>
+			<gx:TimeSpan>
+				<begin>2017-11-12</begin>
+				<end>2017-11-12T00:46:20.883643777Z</end>
+			</gx:TimeSpan>
 			<gx:ViewerOptions>
 				<gx:option name="historicalimagery"></gx:option>
 				<gx:option enabled="0" name="sunlight"></gx:option>
 				<gx:option enabled="0" name="streetview"></gx:option>
 			</gx:ViewerOptions>
-			<longitude>20.53884357546356</longitude>
-			<latitude>-34.37641726173677</latitude>
+			<longitude>20.54053126622252</longitude>
+			<latitude>-34.37747478302633</latitude>
 			<altitude>0</altitude>
-			<heading>1.85745023604434</heading>
-			<tilt>52.64110907765621</tilt>
-			<range>1507.066169104423</range>
+			<heading>0.9796566908754014</heading>
+			<tilt>38.39623311765544</tilt>
+			<range>997.5276486193459</range>
 			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 		</LookAt>
-		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<styleUrl>#m_ylw-pushpin30</styleUrl>
 		<Point>
 			<gx:drawOrder>1</gx:drawOrder>
-			<coordinates>20.53742066935242,-34.37751138350952,0</coordinates>
+			<coordinates>20.53926675272973,-34.37774859529667,0</coordinates>
 		</Point>
 	</Placemark>
 	<Placemark>
@@ -145,7 +179,7 @@
 			<range>623.5992665541037</range>
 			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 		</LookAt>
-		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<styleUrl>#m_ylw-pushpin3</styleUrl>
 		<Point>
 			<gx:drawOrder>1</gx:drawOrder>
 			<coordinates>20.53174326280192,-34.37494603889993,0</coordinates>
@@ -154,25 +188,27 @@
 	<Placemark>
 		<name>renosterveld</name>
 		<LookAt>
-			<gx:TimeStamp><when>2017-11-12</when>
-</gx:TimeStamp>
+			<gx:TimeSpan>
+				<begin>2017-11-12</begin>
+				<end>2017-11-12T00:46:20.883643777Z</end>
+			</gx:TimeSpan>
 			<gx:ViewerOptions>
 				<gx:option name="historicalimagery"></gx:option>
 				<gx:option enabled="0" name="sunlight"></gx:option>
 				<gx:option enabled="0" name="streetview"></gx:option>
 			</gx:ViewerOptions>
-			<longitude>20.49757030663129</longitude>
-			<latitude>-34.37752619862749</latitude>
+			<longitude>20.50611701354332</longitude>
+			<latitude>-34.37453218339644</latitude>
 			<altitude>0</altitude>
-			<heading>1.710800919898673</heading>
-			<tilt>17.23502897480764</tilt>
-			<range>1894.069614903643</range>
+			<heading>1.000137402918148</heading>
+			<tilt>26.18302251702987</tilt>
+			<range>1345.250281293569</range>
 			<gx:altitudeMode>relativeToSeaFloor</gx:altitudeMode>
 		</LookAt>
-		<styleUrl>#m_ylw-pushpin</styleUrl>
+		<styleUrl>#m_ylw-pushpin30</styleUrl>
 		<Point>
 			<gx:drawOrder>1</gx:drawOrder>
-			<coordinates>20.49456706180524,-34.37627423186814,0</coordinates>
+			<coordinates>20.50316816156322,-34.37449725808678,0</coordinates>
 		</Point>
 	</Placemark>
 </Document>

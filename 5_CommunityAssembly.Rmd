@@ -98,7 +98,7 @@ knitr::include_graphics("images/fynbos_community.jpg")
 
 layout: false
 
-## And how does this vary with spatial scale?
+### And how do these processes vary with spatial scale?
 
 .pull-left[
 
@@ -125,29 +125,29 @@ layout: false
 
 ## Niche theory
 
-_**In simplified terms**_ (there are a few definitions)
-
-The niche is a multidimensional description of a species resource needs, habitat requirements and environmental tolerances 
+The niche is a multidimensional description of a species resource needs, habitat requirements and environmental tolerances<sup>1</sup> 
 - i.e. a particular set of abiotic (light, water, nutrient, shelter, etc) and biotic conditions (predators, prey, pathogens, mutualists (e.g. mycorrhizae, pollinators), competitors, etc)
+- often explored by looking at species traits, assuming they reflect resource use strategies
 
-Niche theory predicts local deterministic processes like habitat filtering, competition, facilitation, mutualisms, etc.
+Niche theory predicts local deterministic processes like habitat filtering, competition, facilitation, etc.
 - These processes influence co-occurrence (limiting diversity), trait distributions and relatedness
+
+.center[#####<sup>1</sup>_**In simplified terms**_ (there are a few definitions)]
 
 ]
 
 .pull-right[
-```{r echo = F, fig.align = 'center', out.width = '65%'}
+```{r echo = F, fig.align = 'center', out.width = '70%'}
 knitr::include_graphics("images/tetraria_env.png")
 ```
 
 Environmental space
 
-```{r echo = F, fig.align = 'center', out.width = '65%'}
+```{r echo = F, fig.align = 'center', out.width = '70%'}
 knitr::include_graphics("images/tetraria_trait.png")
 ```
 
-Trait space (assumes that _trait ~ environment_ or resource use strategy)
-
+Trait space
 
 ]
 
@@ -342,9 +342,9 @@ _Global species pool_ = all species on the planet (or in the defined study domai
 
 _Regional species pools_ = the species that are present in each region (e.g. a biogeographic region or mountain), limited by barriers to dispersal
 
-_Fundamental species pool_ = species with the potential to occur in a particular location (i.e. can disperse there and find the appropriate abiotic conditions)
+_Fundamental species pool_ = species with the potential to occur in a particular location (i.e. have the ability to disperse there and survive the abiotic conditions)
 
-_Realised community_ = the actual observed local community (i.e. a subset of the fundamental species pool with the ability to coexist, either stably or unstably)
+_Realised community_ = the actual observed local community (i.e. a subset of the fundamental species pool that managed to get there and to coexist, either stably or unstably)
 
 **_Functional or phylogenetic structure can be created or altered at any step..._**
 
@@ -369,6 +369,7 @@ knitr::include_graphics("images/centresofendemism.png")
 - extinction
 - dispersal
 
+.footnote[###### The phytogeographic centres of the CFR (Manning and Goldblatt 2012)]
 ]
 
 .pull-right[
@@ -383,6 +384,58 @@ knitr::include_graphics("images/fynbos_community.jpg")
 - adaptation
 - stochastic variation
 ]
+
+---
+
+### An example of inferring community assembly from the Cape...
+
+.pull-left[
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/tetraria_scales_pic.png")
+```
+
+Three scales (pools):
+- Global = Cape Floristic Region (CFR)
+- Regional = Cape Peninsula (Pen)
+- Local = plots within Silvermine (Silv)
+
+.footnote[###### Slingsby 2011, PhD]
+
+]
+
+.pull-right[
+
+```{r echo = F, fig.align = 'center', out.width = '70%'}
+knitr::include_graphics("images/centresofendemism.png")
+```
+
+The set of species on the Peninsula and in Silvermine are more dissimilar than expected relative to the CFR - _**suggests allopatric speciation**_
+
+Species at Silvermine more dissimilar than expected relative to the Peninsula - _**suggests competition**_
+
+Species within plots are more dissimilar than expected relative to all plots - _**suggests competition**_
+
+]
+
+---
+class: center, middle
+
+## Take-home
+
+*Patterns of diversity are determined by assembly processes that operate from local to regional scales*
+
+*While the distinction between local and regional processes is somewhat arbitrary (or even artificial), local scale processes are typically ecological, operating over the near term, while regional processes are typically evolutionary, operating over longer periods of time*
+
+*One method for investigating these processes by exploring functional and phylogenetic diversity at different scales (species pools), often in combination with null models*
+---
+
+## References
+
+```{r refs, echo=FALSE, results="asis"}
+NoCite(myBib)
+PrintBibliography(myBib)
+```
 
 ---
 
@@ -419,60 +472,6 @@ The Cape phytochoria make good _Regional species pools_, but the regional pools 
 CFR effectively = _Global species pool_, because of such high endemism
 
 ]
-
----
-
-### An example of inferring community assembly from the Cape...
-
-.pull-left[
-
-```{r echo = F, fig.align = 'center', out.width = '60%'}
-knitr::include_graphics("images/tetraria_scales.png")
-```
-
-Three scales (pools):
-- Global = Cape Floristic Region (CFR)
-- Regional = Cape Peninsula (Pen)
-- Local = plots within Silvermine (Silv)
-
-.footnote[###### Slingsby 2011, PhD]
-
-]
-
-.pull-right[
-
-```{r echo = F, fig.align = 'center', out.width = '60%'}
-knitr::include_graphics("images/centresofendemism.png")
-```
-
-The set of species on the Peninsula and in Silvermine are more dissimilar than you'd expect relative to the CFR - _**suggests allopatric speciation**_
-
-Species at Silvermine are more dissimilar than you'd expect relative to the Peninsula - _**suggests competition**_
-
-Species within plots are more dissimilar than you'd expect relative to all plots - _**suggests competition**_
-
-.footnote[###### Figure from Manning and Goldblatt 2012]
-
-]
-
----
-class: center, middle
-
-## Take-home
-
-*The distribution and abundance of diversity is determined by assembly processes that operate from local to regional scales*
-
-*While the distinction between local and regional processes is somewhat arbitrary (or even artificial), we typically consider local scale processes to be ecological, operating over the near term, while regional processes are typically evolutionary, operating over longer periods of time*
-
-*We can explore these processes by looking at functional and phylogenetic diversity at different scales (species pools), often in combination with null models*
----
-
-## References
-
-```{r refs, echo=FALSE, results="asis"}
-NoCite(myBib)
-PrintBibliography(myBib)
-```
 
 ---
 class: center, middle

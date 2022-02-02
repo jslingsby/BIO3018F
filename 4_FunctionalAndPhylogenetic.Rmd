@@ -132,9 +132,26 @@ layout: false
 
 .pull-left[
 
-_Represent differences in the functional form and evolutionary history of species_
+_Representing differences in the functional form and evolutionary history of species_
 
 Many measurement approaches!
+
+]
+
+.pull-right[
+
+```{r echo = F, fig.align = 'right', out.width = '150%'}
+knitr::include_graphics("images/Fynbos_collage.jpg")
+```
+]
+
+---
+
+layout: false
+
+## Measuring _functional_ and _phylogenetic_ diversity
+
+.pull-left[
 
 Oldest and simplest measures are based on **discrete** predefined  categories:
 - **functional groups** (growth form, etc)
@@ -457,7 +474,7 @@ layout: false
 
 ## Null models...
 
-Null models can be used to "randomize" properties of interest in the data, creating datasets that can serve as a "null" for comparison to your actual data. 
+Null models "randomize" properties of interest in the data, servings as a "null expectation" for comparison to your actual data. 
 
 There are a number of ways of doing this, but the key is to only randomize the property of interest and keep everything else the same.
 
@@ -480,7 +497,9 @@ You have to think very carefully about what properties are affected when applyin
 knitr::include_graphics("images/nullmodels.png")
 ```
 
-You also need to think carefully about how you sample your communities and how you structure them in your null model (e.g. grouping and analyzing sites separately by region or doing one global analysis).
+You also need to think carefully about how you sample your communities and how you structure them in your null model (e.g. grouping and analyzing sites separately by region or doing one global analysis, etc).
+
+See Gotelli and Graves 1996 for a thorough treatment.
 
 .footnote[figure from Slingsby 2011, PhD]
 ]

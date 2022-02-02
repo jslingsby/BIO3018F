@@ -458,6 +458,33 @@ knitr::include_graphics("images/ipbes.jpg")
 
 ]
 
+---
+
+layout: false
+
+## B-EF and global change: Response vs effect types?
+
+.pull-left[
+
+```{r echo = F, fig.align = 'right', out.width = '95%'}
+knitr::include_graphics("images/fynbos_landscapes.png")
+```
+
+- Fynbos is physiognomally and functionally similar across huge variation in climate, soils etc.
+- This is largely because most lineages are dominated by the same 10 or so lineages.
+- These species look similar, and have similar effects in the environment, but must be responding differently to occur in such different environments
+
+]
+
+
+.pull-right[
+
+```{r echo = F, fig.align = 'right', out.width = '65%'}
+knitr::include_graphics("images/fynbos_turnover.png")
+```
+
+
+]
 
 ---
 

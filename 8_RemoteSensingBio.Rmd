@@ -242,9 +242,9 @@ layout: false
 .pull-left[
 ## Functional diversity?
 
-Imaging spectroscopy ("hyperspectral" remote sensing) allows direct measurement of many leaf traits.
+Imaging spectroscopy ("hyperspectral" remote sensing) allows direct measurement of leaf traits.
 
-```{r echo = F, fig.align = 'left', out.width = '86%'}
+```{r echo = F, fig.align = 'left', out.width = '92%'}
 knitr::include_graphics("images/cawse2021_spectra.png")
 ```
 
@@ -348,10 +348,64 @@ knitr::include_graphics("images/randin2020.jpg")
 layout: false
 
 .pull-left[
+## The Spectral Diversity Hypothesis
+
+Is spectral diversity a good proxy for biotic diversity?
+
+```{r echo = F, fig.align = 'left', out.width = '100%'}
+knitr::include_graphics("images/frye2021map.png")
+```
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '90%'}
+knitr::include_graphics("images/frye2021fig.png")
+```
+
+A test looking at spectral diversity from leaf spectra for 1210 species across 1267 plots supports the hypothesis **at the leaf level...**
+
+.footnote[Frye et al. 2021]
+]
+
+---
+
+layout: false
+
+.pull-left[
+## The Spectral Diversity Hypothesis
+
+
+```{r echo = F, fig.align = 'left', out.width = '85%'}
+knitr::include_graphics("images/vanleeuwen2020_scale.png")
+```
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '70%'}
+knitr::include_graphics("images/vanleeuwen2020b.png")
+```
+
+But canopy reflectance is more complex...
+
+Leaf angle, shadow, density, etc affect the spectral reflectance of vegetation, reducing our ability to identify and map species - especially as the resolution of the imagery coarsens.
+
+.footnote[van Leeuwen et al. 2021]
+]
+
+---
+
+layout: false
+
+.pull-left[
 ### Environmental heterogeneity
 
+Another approach is just to map and monitor environmental heterogeneity
+
 ####_"Conserving nature's stage"_
-Identifying parcels of Earth that are valuable for their capacity to support diverse life forms today and into the future
+
+The Nature Conservancy and others using this approach to identify parcels of Earth that are valuable for their capacity to support diverse life forms today and into the future
 
 Typically identified based on their abiotic heterogeneity or geodiversity, much of which can be mapped and/or monitored with remote sensing - topography, climate, soils, etc
 

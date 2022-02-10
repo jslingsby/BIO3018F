@@ -127,7 +127,7 @@ knitr::include_graphics("images/chapin.png")
 
 layout: false
 
-### I mostly work in the Cape Floristic Region Global Biodiversity Hotspot
+### I mostly work in the Cape Floristic Region, a Global Biodiversity Hotspot
 
 ```{r echo = F, fig.align = 'center', out.width = '75%'}
 knitr::include_graphics("images/hotspots.jpg")
@@ -179,9 +179,11 @@ knitr::include_graphics("images/humphries_extinction.png")
 ]
 
 .pull-right[
-- 37 documented plant extinctions (13 in Cape Town)
+- 37 documented plant extinctions
+  - 13 in Cape Town
 
-- ~13% of all threatened plant species on the planet (1868/14360)
+- ~13% of all threatened plant species on the planet
+  - 1868 of 14360 on the red list (2019)
 
 - Another 1506 considered Rare or Critically Rare 
   - few populations, but no current threats
@@ -200,18 +202,6 @@ layout: false
 ```{r echo = F, fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("images/fynbos_community.jpg")
 ```
-
----
-
-class: center
-
-### 1. The composition and diversity of Fynbos ecosystems
-
-```{r echo = F, fig.align = 'center', out.width = '85%'}
-knitr::include_graphics("images/fynbos_landscapes.png")
-```
-
-Phylogenetically and functionally similar across huge variation in climate, soils etc.
 
 ---
 
@@ -243,8 +233,19 @@ knitr::include_graphics("images/fynbos.jpg")
   - Asteraceae (~1000 spp)
   - Scrophulariaceae (~400 spp)
 
-
 ]
+
+---
+
+class: center
+
+### 1. The composition and diversity of Fynbos ecosystems
+
+```{r echo = F, fig.align = 'center', out.width = '85%'}
+knitr::include_graphics("images/fynbos_landscapes.png")
+```
+
+Phylogenetically and functionally similar across huge variation in climate, soils etc.
 
 ---
 

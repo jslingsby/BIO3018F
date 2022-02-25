@@ -20,17 +20,17 @@ veg <- st_read("/home/jasper/Documents/Datasets/SANBI/RLE_2021_Remnants/FynRemna
 ndvi_g <- project(ndvi, st_crs(veg)$Wkt)
 veg <- st_crop(veg, ndvi_g)
 
-fire <- st_read("/home/jasper/Documents/Datasets/Fire/All_Fires_20_21_gw/All_Fires_20_21_gw.shp")
-fire <- st_crop(fire, ndvi_g)
-mapview::mapview(list(veg,fire), layer.name = c("name",))
-mapview::mapview(veg, zcol = "name")
+# fire <- st_read("/home/jasper/Documents/Datasets/Fire/All_Fires_20_21_gw/All_Fires_20_21_gw.shp")
+# fire <- st_crop(fire, ndvi_g)
+# mapview::mapview(list(veg,fire), layer.name = c("name",))
+# mapview::mapview(veg, zcol = "name")
 
 # Get sites and reproject
 sites <- data.frame(site_name = c("grassy field", "invasion", "renosterveld", "sandstone_low", "sandstone_high", "limestone"),
                     lat = c(-34.375052, -34.386014, -34.374259, -34.3961, -34.372797, -34.424473),
                     lon = c(20.531749, 20.534986, 20.504233, 20.5494, 20.548398, 20.580608))
 
-sites <- vect(sites, geom = c("lon", "lat"), crs = st_crs(4326))
+sites <- vect(sites, geom = c("lon", "lat"), crs = st_crs(4326)$wkt)
 sites <- project(sites, ndvi)
 
 # Plot sites

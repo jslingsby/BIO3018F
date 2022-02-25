@@ -30,11 +30,13 @@ In this practical, we will explore how variation in a set of measures of biodive
 
 The questions are:
 
-* Does the variation in environmental conditions potentially explain the observed variation in species, functional and phylogenetic $\alpha$ and $\beta$ diversity?
+* Does the variation in environmental conditions potentially explain the observed variation in biodiversity (species, functional and phylogenetic $\alpha$ and $\beta$ diversity)?
 
 * To what degree does the variation in functional and phylogenetic diversity potentially explain the observed variation in our measures of ecosystem function?
 
-Finally, consider this practical a descriptive study. Describe a follow-up study that you would perform to discern cause from correlation and partition the relative influence of environmental conditions versus biodiversity on our measures of ecosystem function.
+* What is the relative role of the environment versus biodiversity in determining the observed variation in ecosystem function?
+
+Finally, consider this practical a descriptive study. In your discussion, describe a follow-up study that you would perform to discern cause from correlation and partition the relative influence of environmental conditions versus biodiversity on our measures of ecosystem function.
 
 <br>
 
@@ -82,8 +84,167 @@ At each site, navigate to your team's point location, lay out the two tapes at 9
     * For each of three individuals of your 5 target species, measure the height and collect a shoots for measuring leaf length and leaf width (mark with masking tape and put in sample bag for the site).
     
   * Finally, set a timer and take as many photos of new species (other than your 5 target species) within or near your plot as you can before the alarm goes off. Make sure to take a photo of your site label on your sample bag between sites so you know which photos were collected at which sites. When we get back to base you will upload the photos to folders in the intranet labeled by site.
-  
-  
+
+# Analyses
+
+## Species Diversity
+
+For this I have just taken the count of species encountered at each point, and the aggregated set of unique species for each site. i.e. no rarefaction etc. ou think this is an issue for the method we used?
+
+```{r, echo = F, message=FALSE}
+library(tidyverse)
+library(readxl)
+library(knitr)
+
+# Read in data
+sdat <- read_xlsx("prac/pracdatasheet.xlsx", sheet = "Species")
+
+# Select indigenous or invasive species only
+#sdat <- sdat %>% filter(is.na(Alien))
+#sdat <- sdat %>% filter(Alien == 1)
+
+point_SD <- sdat %>% 
+  mutate(PointName = paste(Site, Point, sep = "_")) %>%
+  select(PointName, WorkingName) %>% 
+  unique() %>%
+  group_by(PointName) %>%
+  summarize(`Species Number` = n())
+
+site_SD <- sdat %>% select(Site, WorkingName) %>% 
+  unique() %>%
+  group_by(Site) %>%
+  summarize(`Species Number` = n())
+
+kable(site_SD)
+```
+
+And by point site:
+
+```{r, echo = F, message=FALSE}
+
+kable(point_SD)
+```
+
+
+## Functional Diversity
+
+Here I've estimated Functional Diversity (FD) according to the method of Petchey and Gaston (2002) for each of the points, sites and functional turnover between points and between sites using the method of Bryant et al. 2008.
+
+Sites:
+```{r, echo = F, message=FALSE}
+#library(FD)
+library(picante)
+
+# Read in data
+tdat <- read_xlsx("prac/pracdatasheet.xlsx", sheet = "Traits")
+
+# Make a community data matrix for the sites
+samp <- tdat %>%                                    # For sites, lumping all points together 
+  mutate(PointName = paste(Site, Point, sep = "_"), # Make a new name column combining Site and Point
+         Abundance = 6-SpeciesNumber) %>%           # Use rankings as "pseudo-abundance", but subtract from 6 to make higher rankings higher abundance
+  select(Site, PointName, FullName, Abundance) %>%  # Select the columns we want
+  unique() %>%                                      # Remove duplicates (there were 3 reps for each species by point)
+  group_by(FullName, Site) %>%                      # For each species within each site...
+  summarize(Abundance = sum(Abundance)) %>%         # ...sum the abundances
+  pivot_wider(names_from = FullName, 
+              values_from = Abundance,
+              values_fill = 0) %>%                  # Turn the 3 columns into a species by site community data matrix
+  na.omit()                                         # Drop and NA entries
+
+
+# Make a community data matrix for the points within sites
+pointsamp <- tdat %>%                               # For points within sites 
+  mutate(PointName = paste(Site, Point, sep = "_"), # Make a new name column combining Site and Point
+         Abundance = 6-SpeciesNumber) %>%           # Use rankings as "pseudo-abundance", but subtract from 6 to make higher rankings higher abundance
+  select(PointName, FullName, Abundance) %>%        # Select the 3 columns we want
+  unique() %>%                                      # Remove duplicates (there were 3 reps for each species by point)
+  pivot_wider(names_from = FullName, 
+              values_from = Abundance,
+              values_fill = 0)  %>%                 # Turn the 3 columns into a species by point community data matrix
+  na.omit()                                         # Drop and NA entries
+
+# Extract species trait means and scale them to mean = 0 and sd = 0
+traits <- tdat %>% 
+  group_by(FullName) %>%
+  summarize(PlantHeight_cm = mean(PlantHeight_cm, na.rm = T), 
+            LeafLength_mm = mean(LeafLength_mm, na.rm = T), 
+            LeafWidth_mm = mean(LeafWidth_mm, na.rm = T)) %>%
+  mutate(across(where(is.numeric), scale)) %>%
+  na.omit() # Drop and NA entries
+
+# Use the traits to create a distance matrix for the species
+trt <- as.matrix(traits[,-1])
+rownames(trt) <- traits$FullName
+D <- dist(trt)
+
+# Use this distance matrix to construct a dendrogram that represents the similarity/dissimilarity among species according to their traits
+tree <- hclust(D,"average")
+
+# Transform the dendrogram into an object of class 'phylo' (needed for the next step)
+ptree <- as.phylo(tree)
+
+# Finally, calculate the functional diversity for each community - sites and points searately (see 'help' to see how to include or not the root of the dendrogram; the default is to include it).
+sampFD <- pd(samp[,-1], ptree)
+rownames(sampFD) <- samp$Site
+colnames(sampFD)[1] <- "FD"
+
+pointsampFD <- pd(pointsamp[,-1], ptree)
+rownames(pointsampFD) <- pointsamp$PointName
+colnames(pointsampFD)[1] <- "FD"
+
+# print tables
+kable(sampFD, digits = 3)
+
+```
+
+By point sample:
+
+```{r, echo = F, message=FALSE}
+kable(pointsampFD, digits = 3)
+```
+
+And functional turnover between sites:
+
+```{r, echo = F, message=FALSE}
+# calculate functional turnover between sites
+sampBFD <- phylosor(samp[,-1], ptree)
+
+msampBFD <- as.data.frame(as.matrix(sampBFD)) # some tomfoolery to present it nicely...
+msampBFD[upper.tri(msampBFD, diag = T)] <- NA
+dimnames(msampBFD) <- list(samp$Site, samp$Site)
+
+options(knitr.kable.NA = '')
+kable(msampBFD, digits = 3)
+```
+
+See help file `?picante::phylosor` in R for details to help know how to interpret. Note that while the function was written for phylogenetic turnover, we've used it for functional turnover.
+
+
+## Phylogenetic Diversity
+
+Here I've estimated Faith's Phylogenetic Diversity (PD; Faith 1991) for each of the sites and phyloSor (Bryant et al. 2008), the phylogenetic turnover between sites.
+
+```{r}
+tree <- read.nexus("prac/Soltis_etal_639taxa_8cploci_rooted.dated.tre")
+#plot.phylo(tree, type = "radial", cex = 0.25)
+```
+
+
+## Environmental Similarity among sites
+
+Here I provide a table and an ordination of the site-level environmental measurements we took relating to various aspects of soil conditions, canopy coverage and herbivory.
+
+
+## Ecosystem function
+
+To explore ecosystem function we looked at the 20-year time series of the Normalized Difference Vegetation Index (NDVI) recorded by the MODIS satellite mission. From these we used the post-fire recovery trajectory modelling framework developed by Wilson et al (2015) to derive estimates of the mean maximum NDVI (alpha + gamma), and the amplitude and timing of seasonality (big alpha and phi) as our measures of ecosystem function. Here I've provided a table of these parameters by site and plots of the model fits. Are the models good fits? Do they miss anything? Is it relevant to the questions we're asking?
+
+```{r}
+
+```
+
+
+
 # References
 
 Bergh et al

@@ -89,7 +89,7 @@ At each site, navigate to your team's point location, lay out the two tapes at 9
 
 ## Species Diversity
 
-For this I have just taken the count of species encountered at each point, and the aggregated set of unique species for each site. i.e. no rarefaction etc. ou think this is an issue for the method we used?
+For this I have just taken the count of species encountered at each point, and the aggregated set of unique species for each site. i.e. no rarefaction etc. Do you think this is an issue for the method we used?
 
 ```{r, echo = F, message=FALSE}
 library(tidyverse)
@@ -103,14 +103,9 @@ sdat <- read_xlsx("prac/pracdatasheet.xlsx", sheet = "Species")
 #sdat <- sdat %>% filter(is.na(Alien))
 #sdat <- sdat %>% filter(Alien == 1)
 
-point_SD <- sdat %>% 
-  mutate(PointName = paste(Site, Point, sep = "_")) %>%
-  select(PointName, WorkingName) %>% 
-  unique() %>%
-  group_by(PointName) %>%
-  summarize(`Species Number` = n())
-
-site_SD <- sdat %>% select(Site, WorkingName) %>% 
+site_SD <- sdat %>% 
+  filter(Point == "SE") %>% # Select only the SE corner
+  select(Site, WorkingName) %>% 
   unique() %>%
   group_by(Site) %>%
   summarize(`Species Number` = n())
@@ -118,11 +113,18 @@ site_SD <- sdat %>% select(Site, WorkingName) %>%
 kable(site_SD)
 ```
 
-And by point site:
 
 ```{r, echo = F, message=FALSE}
+#And by point site:
 
-kable(point_SD)
+# point_SD <- sdat %>% 
+#   mutate(PointName = paste(Site, Point, sep = "_")) %>%
+#   select(PointName, WorkingName) %>% 
+#   unique() %>%
+#   group_by(PointName) %>%
+#   summarize(`Species Number` = n())
+
+#kable(point_SD)
 ```
 
 
@@ -213,19 +215,29 @@ msampBFD <- as.data.frame(as.matrix(sampBFD)) # some tomfoolery to present it ni
 msampBFD[upper.tri(msampBFD, diag = T)] <- NA
 dimnames(msampBFD) <- list(samp$Site, samp$Site)
 
-options(knitr.kable.NA = '')
-kable(msampBFD, digits = 3)
+options(knitr.kable.NA = '') # set table printing function to make NA values blank
+kable(msampBFD, digits = 3) # print a table
 ```
 
 See help file `?picante::phylosor` in R for details to help know how to interpret. Note that while the function was written for phylogenetic turnover, we've used it for functional turnover.
 
+```{r, echo = F, message=FALSE}
+# library(circlize)
 
+# ?chordDiagram
+```
+
+
+
+```{r, echo = F, message=FALSE}
 ## Phylogenetic Diversity
 
-Here I've estimated Faith's Phylogenetic Diversity (PD; Faith 1991) for each of the sites and phyloSor (Bryant et al. 2008), the phylogenetic turnover between sites.
+# Here I've estimated Faith's Phylogenetic Diversity (PD; Faith 1991) for each of the sites and phyloSor (Bryant et al. 2008), the phylogenetic turnover between sites.
 
-```{r}
-tree <- read.nexus("prac/Soltis_etal_639taxa_8cploci_rooted.dated.tre")
+
+# tree <- read.nexus("prac/Soltis_etal_639taxa_8cploci_rooted.dated.tre")
+
+
 #plot.phylo(tree, type = "radial", cex = 0.25)
 ```
 
@@ -234,6 +246,35 @@ tree <- read.nexus("prac/Soltis_etal_639taxa_8cploci_rooted.dated.tre")
 
 Here I provide a table and an ordination of the site-level environmental measurements we took relating to various aspects of soil conditions, canopy coverage and herbivory.
 
+```{r, echo = F, message=FALSE}
+# Read in data
+pdat <- read_xlsx("prac/pracdatasheet.xlsx", sheet = "Sites")
+names(pdat)
+
+# Make boxplot of any variable
+pdat %>% ggplot() +
+  geom_boxplot(aes(y = Dung, x = Site))
+
+# Test for significant difference among sites
+kruskal.test(Dung ~ Site, data = pdat)
+
+# Dunn's Post hoc test to directly explore differences among sites
+library(FSA)
+posthoc <- dunnTest(Dung ~ Site, data = pdat,
+              method="bh")
+
+posthoc
+
+# Map?
+#mapview(Pinus_sf_sub, zcol = "Height_m", cex = 10, layer.name="P. radiata height (m)")
+
+```
+Ordination...
+
+```{r, echo = F, message=FALSE}
+```
+
+Mike has shown you how to explore soil colour. Feel free to explore and add it in...
 
 ## Ecosystem function
 
@@ -242,6 +283,14 @@ To explore ecosystem function we looked at the 20-year time series of the Normal
 ```{r}
 
 ```
+
+
+## Explore relationship between EF and measures of diversity
+
+- Mantel tests?
+?mantel
+
+## Test relationships using a null model?
 
 
 

@@ -212,11 +212,12 @@ And functional turnover between sites:
 sampBFD <- phylosor(samp[,-1], ptree)
 
 msampBFD <- as.data.frame(as.matrix(sampBFD)) # some tomfoolery to present it nicely...
-msampBFD[upper.tri(msampBFD, diag = T)] <- NA
 dimnames(msampBFD) <- list(samp$Site, samp$Site)
 
+msampBFDl <- msampBFD
+msampBFDl[upper.tri(msampBFDl, diag = T)] <- NA
 options(knitr.kable.NA = '') # set table printing function to make NA values blank
-kable(msampBFD, digits = 3) # print a table
+kable(msampBFDl, digits = 3) # print a table
 ```
 
 See help file `?picante::phylosor` in R for details to help know how to interpret. Note that while the function was written for phylogenetic turnover, we've used it for functional turnover.
@@ -272,6 +273,29 @@ posthoc
 Ordination...
 
 ```{r, echo = F, message=FALSE}
+
+set.seed(123) # this allows the result to be reproduced
+nmds <- metaMDS(msampBFD, trymax = 999)
+
+stressplot(nmds)
+
+scale_this <- function(x){
+  (x - mean(x, na.rm=TRUE)) / sd(x, na.rm=TRUE)
+}
+
+env <- pdat %>% 
+  group_by(Site) %>%
+  summarize(BareSoil = mean(PercentBareSoil), 
+            pH = mean(SoilPH), 
+            Dung = mean(Dung),
+            `Canopy Density` = mean(Densiometer))
+
+en <- envfit(nmds, env, permutations = 999, na.rm = TRUE)
+
+plot(nmds)
+plot(en)
+
+
 ```
 
 Mike has shown you how to explore soil colour. Feel free to explore and add it in...

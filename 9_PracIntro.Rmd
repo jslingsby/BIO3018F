@@ -185,7 +185,7 @@ tree <- hclust(D,"average")
 # Transform the dendrogram into an object of class 'phylo' (needed for the next step)
 ptree <- as.phylo(tree)
 
-# Finally, calculate the functional diversity for each community - sites and points searately (see 'help' to see how to include or not the root of the dendrogram; the default is to include it).
+# Finally, calculate the functional diversity for each community - sites and points separately (see ?pd help topic to see how to include or not the root of the dendrogram; the default is to include it).
 sampFD <- pd(samp[,-1], ptree)
 rownames(sampFD) <- samp$Site
 colnames(sampFD)[1] <- "FD"
@@ -272,17 +272,24 @@ posthoc
 ```
 Ordination...
 
-```{r, echo = F, message=FALSE}
+Species...
+
+```{r, echo = F, message=FALSE, warning=FALSE}
 
 set.seed(123) # this allows the result to be reproduced
-nmds <- metaMDS(msampBFD, trymax = 999)
 
+# tomfoolery to get the community data into the desired format
+comm <- as.data.frame(unclass(samp))
+rownames(comm) <- comm[,1]
+comm <- comm[,-1]
+
+# run NMDS
+nmds <- metaMDS(comm, distance = "bray", k = 2, autotransform =TRUE, trymax = 999)
+
+# Check stress plot
 stressplot(nmds)
 
-scale_this <- function(x){
-  (x - mean(x, na.rm=TRUE)) / sd(x, na.rm=TRUE)
-}
-
+# Summarize environmental data to site level (i.e. take the average of point measurements)
 env <- pdat %>% 
   group_by(Site) %>%
   summarize(BareSoil = mean(PercentBareSoil), 
@@ -290,13 +297,26 @@ env <- pdat %>%
             Dung = mean(Dung),
             `Canopy Density` = mean(Densiometer))
 
+# Fit the environmental data to the NMDS fit
 en <- envfit(nmds, env, permutations = 999, na.rm = TRUE)
 
+# Plot
 plot(nmds)
 plot(en)
 
-
 ```
+
+FD
+
+```{r}
+fnmds <- metaMDS(msampBFD, trymax = 999)
+
+plot(fnmds)
+plot(en)
+
+# Try adding the rest yourself...
+```
+
 
 Mike has shown you how to explore soil colour. Feel free to explore and add it in...
 

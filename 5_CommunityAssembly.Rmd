@@ -337,17 +337,11 @@ We often split it into **regional** versus **local** processes
 ]
 
 .pull-right[
+```{r echo = F, fig.align = 'center', out.width = '110%'}
+knitr::include_graphics("images/assemblyprocesses.png")
+```
 
-_Global species pool_ = all species on the planet (or in the defined study domain, e.g. Cape Floral Region)
-
-_Regional species pools_ = the species that are present in each region (e.g. a biogeographic region or mountain), limited by barriers to dispersal
-
-_Fundamental species pool_ = species with the potential to occur in a particular location (i.e. have the ability to disperse there and survive the abiotic conditions)
-
-_Realised community_ = the actual observed local community (i.e. a subset of the fundamental species pool that managed to get there and to coexist, either stably or unstably)
-
-**_Functional or phylogenetic structure can be created or altered at any step..._**
-
+.footnote[###### ]
 ]
 
 ---

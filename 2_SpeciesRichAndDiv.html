@@ -4,7 +4,7 @@
     <title>2. Species Richness and Diversity</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jasper Slingsby, BIO3018F" />
-    <meta name="date" content="2022-02-01" />
+    <meta name="date" content="2023-01-18" />
     <script src="2_SpeciesRichAndDiv_files/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
@@ -12,10 +12,18 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # 2. Species Richness and Diversity
+]
+.subtitle[
 ## Alpha Diversity
+]
+.author[
 ### Jasper Slingsby, BIO3018F
-### 2022-02-01
+]
+.date[
+### 2023-01-18
+]
 
 ---
 
@@ -236,7 +244,7 @@ layout: false
 
 ...is often estimated using individual or sample-based ***rarefaction***. 
 
-i.e. resampling a set number (*n*) of individuals or samples from the data to determine the expected number of species for any given *n*. Resampling is repeated multiple times for each *n* and the results averaged.
+Rarefaction involves resampling a set number (*n*) of individuals or samples from the data to determine the expected number of species for any given *n*. Resampling is repeated multiple times for each *n* and the results averaged.
 
 ]
 
@@ -284,7 +292,7 @@ Curve is not smooth, because samples (and thus species) are added in whatever or
 
 &lt;br&gt;
 
-&lt;img src="images/spec_ind_raref_CP.png" width="85%" style="display: block; margin: auto;" /&gt;
+&lt;img src="images/spec_sites_raref_CP.png" width="85%" style="display: block; margin: auto;" /&gt;
 
 Curve is smooth, because samples (and thus species) are repeatedly sampled and averaged for each sample size.
 
@@ -452,6 +460,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

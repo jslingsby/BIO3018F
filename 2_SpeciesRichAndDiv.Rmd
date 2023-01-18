@@ -293,7 +293,7 @@ layout: false
 
 ...is often estimated using individual or sample-based ***rarefaction***. 
 
-i.e. resampling a set number (*n*) of individuals or samples from the data to determine the expected number of species for any given *n*. Resampling is repeated multiple times for each *n* and the results averaged.
+Rarefaction involves resampling a set number (*n*) of individuals or samples from the data to determine the expected number of species for any given *n*. Resampling is repeated multiple times for each *n* and the results averaged.
 
 ]
 
@@ -350,7 +350,7 @@ Curve is not smooth, because samples (and thus species) are added in whatever or
 <br>
 
 ```{r echo = F, fig.align = 'center', out.width = '85%'}
-knitr::include_graphics("images/spec_ind_raref_CP.png")
+knitr::include_graphics("images/spec_sites_raref_CP.png")
 ```
 
 Curve is smooth, because samples (and thus species) are repeatedly sampled and averaged for each sample size.

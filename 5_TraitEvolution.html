@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>5. Trait Evolution</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jasper Slingsby, BIO3018F" />
+    <meta name="date" content="2023-01-19" />
+    <script src="5_TraitEvolution_files/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# 5. Trait Evolution
+]
+.subtitle[
+## Consequences for Functional and Phylogenetic Diversity
+]
+.author[
+### Jasper Slingsby, BIO3018F
+]
+.date[
+### 2023-01-19
+]
+
+---
+
+
+
+
+
+
+layout: false
+
+.pull-left[
+
+## There's a lot of variation in species' traits
+
+&lt;img src="images/grassland.jpeg" width="95%" style="display: block; margin: auto;" /&gt;
+]
+
+.pull-right[
+
+&lt;img src="images/fynbos.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="images/forestyoung.jpg" width="75%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+layout: false
+
+## Traits are often similar among closely related species...
+
+&lt;img src="images/growthform_USGS_image_cropped.jpg" width="55%" style="display: block; margin: auto;" /&gt;
+
+
+---
+
+layout: false
+
+## ...but not always...
+
+.pull-left[
+&lt;img src="images/traitevolution_cb2004.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+layout: false
+
+## Drawbacks of looking at species diversity only?
+
+- What is a species? There are many definitions!
+
+- Are all species equal?
+  - Would you consider 2 _Erica_ species to be equivalent to an _Erica_ and a _Protea_ or cacao and coffee?
+
+- Species counts don't tell you about:
+  - the identity of species or the similarities or differences between them
+  - the functioning of species or communities 
+  - the origins and maintenance of diversity (evolution, ecology and biogeography)
+
+&lt;img src="images/fynbos_community.jpg" width="50%" style="display: block; margin: auto;" /&gt;
+
+---
+
+layout: false
+
+## Measuring _functional_ and _phylogenetic_ diversity
+
+.pull-left[
+
+_Representing differences in the functional form and evolutionary history of species_
+
+Many measurement approaches!
+
+]
+
+.pull-right[
+
+&lt;img src="images/Fynbos_collage.jpg" width="150%" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+
+layout: false
+
+## Measuring _functional_ and _phylogenetic_ diversity
+
+.pull-left[
+
+Oldest and simplest measures are based on **discrete** predefined  categories:
+- **functional groups** (growth form, etc)
+- **taxonomic rank** (genera, families, etc&lt;sup&gt;1&lt;/sup&gt;)
+
+Simply assign your species to the categories (e.g. trees, shrubs, grasses, etc if you're working with plant functional groups) and calculate your diversity metrics as you would for species.
+
+.footnote[&lt;sup&gt;1&lt;/sup&gt;Technically, species diversity is just a discrete measure of phylogenetic diversity where the taxonomic rank is "species"...]
+]
+
+.pull-right[
+
+&lt;img src="images/Fynbos_collage.jpg" width="150%" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+
+layout: false
+
+## Drawbacks of discrete measures
+
+.pull-left[
+Similar to issues with species diversity...
+
+#### Taxonomic ranks
+- What is a genus or family?
+- Are all genera or families equal?
+- Taxonomic ranks are mostly pragmatic categories that help us identify taxa based on shared characters...
+
+#### Functional groups
+- How are they defined?
+- Quantitative (analysis of measured traits) or qualitative (expert opinion)?
+]
+
+.pull-right[
+&lt;img src="images/taxonomy.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+.footnote[###### Image from https://www.poolparty.biz/taxonomy-management-101]
+
+]
+
+---
+
+layout: false
+
+.pull-left[
+
+### Defining functional groups
+
+&lt;img src="images/tetraria_traits.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+1) Measure traits of the species under study
+
+]
+
+.pull-right[
+
+2) Calculate functional distances between species
+
+&lt;img src="images/distancemat.png" width="30%" style="display: block; margin: auto;" /&gt;
+
+3) Cluster species based on distances
+
+&lt;img src="images/hclust_species.png" width="30%" style="display: block; margin: auto;" /&gt;
+
+4) Define groups based on similarity (depth in tree) or desired number of groups
+
+&lt;br&gt;
+
+...but wait a second?
+]
+
+---
+
+layout: false
+
+.pull-left[
+## _Continuous_ measures of functional diversity
+
+There's a lot of useful information in the data and analyses used to define functional groups quantitatively!
+
+Rather than lose that information by defining discrete groups and counting them, we can use the unique information directly!
+
+E.g. functional diversity can be calculated as the *sum of the branch length* joining all species in the sample (Petchey and Gaston 2002)
+
+]
+
+.pull-right[
+&lt;img src="images/hclust_species.png" width="90%" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+
+layout: false
+
+.pull-left[
+## _Continuous_ measures of functional diversity
+
+There are 3 major approaches to calculating **continuous** metrics of functional diversity:
+- _Pairwise distances_ (e.g. mean or sum of the pairwise distances between all species in a sample - Walker et al. 1999)
+
+- _Hierarchical clustering_ (e.g. sum of the branch length joining all species in the sample - Petchey and Gaston 2002)
+
+- _Multidimensional ordination_ (e.g. the area or volume of encompassed by the set of species in an ordination of trait space (2 or more dimensions) - Villeger et al. 2008)
+]
+
+.pull-right[
+&lt;img src="images/FD_continuous.png" width="90%" style="display: block; margin: auto 0 auto auto;" /&gt;
+]
+
+---
+
+layout: false
+
+.pull-left[
+## Phylogenetic diversity
+
+A **molecular phylogeny** (or "phylogenetic tree") represents the relationships between species based on similarity of their DNA. 
+
+Branch lengths are usually time-calibrated based on a molecular clock (rate of mutation through time) to represent time (or evolutionary history).
+
+Phylogenetic distance is often considered a more complete or integrated measure of the functional similarity of species, because it avoids subjectivity in the selection of traits measured...
+]
+
+.pull-right[
+&lt;img src="images/bird_phylogeny_1.jpg" width="75%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+layout: false
+
+.pull-left[
+## _Continuous_ measures of phylogenetic diversity
+
+Similar approaches used for phylogenetic diversity.
+
+- _Pairwise distances_ (e.g. mean pairwise distances (branch lengths) between all species in a sample or minimum nearest taxon distance - Webb et al. 2002)
+
+- _Phylogenetic trees_ (e.g. sum of the branches joining all species - Faith 1991)
+  - can also use the taxonomic hierarchy instead of a phylogeny, but this suffers from the subjectivity of taxonomic ranks
+
+- No _multidimensional ordination_ methods for phylogenetic diversity
+]
+
+.pull-right[
+&lt;img src="images/phylogeny.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+#### Molecular phylogeny vs taxonomic hierarchy
+
+The sum of the branch lengths of a phylogeny linking species in a sample represents the _sum total independent evolutionary history_ represented by that sample.
+
+The taxonomic hierarchy (Order, Family, Genus etc) is far less objective.
+
+- That said, phylogenies aren't perfect, and there are many sources of error - molecular regions sampled, methods used, etc.
+
+]
+
+---
+
+layout: false
+
+## What about the other components of functional and phylogenetic diversity?
+.pull-left[
+
+We've only covered measures of `\(\alpha\)` (or `\(\gamma\)`) diversity. 
+
+&lt;br&gt;
+
+Similar methods as for species diversity can be applied to discrete and continuous measures of functional and phylogenetic `\(\beta\)` diversity...
+
+]
+
+.pull-right[
+&lt;img src="images/diversitycomponents.png" width="70%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+layout: false
+
+## Functional or phylogenetic beta diversity
+
+.pull-left[
+
+&lt;img src="images/betadiv_multiv.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+e.g. the same equation, `\((A+B-2*J)/(A+B)\)` 
+
+Where J is the shared quantity, and A and B are totals for each community, 
+
+can be used for...
+]
+
+.pull-right[
+### Discrete measures
+
+when based on counts of functional groups or taxonomic ranks instead of species
+
+&lt;br&gt;
+
+### Continuous measures
+
+when based on _**branch length**_ (e.g. _PhyloSor_ - Bryant et al. 2008)
+
+]
+
+
+---
+class: center, middle
+
+## So what?
+
+How does being able to measure functional or phylogenetic diversity help us?
+
+---
+
+layout: false
+
+.pull-left[
+
+## "Phylogenetic regionalization"
+
+&lt;br&gt;
+
+Defining phytoregions based on turnover of phylogenetic diversity in the (woody) flora of southern Africa
+
+
+
+.footnote[figure from Daru et al. 2016]
+
+]
+
+.pull-right[
+&lt;img src="images/daru_phyloregions.png" width="90%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+layout: false
+
+.pull-left[
+
+## Decifering the determinants of community assembly
+
+&lt;br&gt;
+
+Don't worry about the scary figure... We'll discuss this more in the next two lectures...
+
+.footnote[figure from Webb et al. 2002]
+
+]
+
+.pull-right[
+&lt;img src="images/webb2002.png" width="90%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+layout: false
+
+.pull-left[
+
+## Null models...
+
+We often explore the drivers behind the patterns of diversity we see by contrasting different measures of diversity and/or comparing them to the patterns we would expect to see in the absence of that driver.
+
+One commonly used method for generating the expected patterns is _null models_... 
+
+Null models can be used to "randomize" properties of interest in the data. Typically we generate a large number of "randomized" datasets (e.g. 999) and explore where the observed data rank with respect to the null datasets.
+
+]
+
+.pull-right[
+
+&lt;br&gt;
+
+&lt;img src="images/nullmodels.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+We can address questions like:
+- _Are species in communities more closely (or distantly) related than we'd expect?_
+- _Are species in communities more functionally similar (or dissimilar) than we'd expect?_
+
+.footnote[figure from Slingsby 2011, PhD]
+]
+
+---
+
+layout: false
+
+.pull-left[
+
+## Null models...
+
+Null models "randomize" properties of interest in the data, servings as a "null expectation" for comparison to your actual data. 
+
+There are a number of ways of doing this, but the key is to only randomize the property of interest and keep everything else the same.
+
+Properties include (_inter alia_):
+- functional or phylogenetic relationships
+- abiotic (or spatial) relationships among sites
+- number of species in communities (row sums)
+- number of occurrences (or abundances) of species across all communities (column sums)
+
+You have to think very carefully about what properties are affected when applying null models!
+
+
+]
+
+.pull-right[
+
+&lt;br&gt;
+
+&lt;img src="images/nullmodels.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+You also need to think carefully about how you sample your communities and how you structure them in your null model (e.g. grouping and analyzing sites separately by region or doing one global analysis, etc).
+
+See Gotelli and Graves 1996 for a thorough treatment.
+
+.footnote[figure from Slingsby 2011, PhD]
+]
+
+---
+
+class: center, middle
+
+## Take-home
+
+*There's a lot more to diversity than simple counts of species.*
+
+*Functional and phylogenetic diversity allow us to explore more intricate questions around the ecology, evolution and function of assemblages.*
+
+*Null models can be useful for exploring the factors that determine the assembly of communities.*
+
+---
+
+## References
+
+Gotelli, N. J. and R. K. Colwell (2001). "Quantifying biodiversity:
+procedures and pitfalls in the measurement and comparison of species
+richness". In: _Ecology letters_ 4.4, pp. 379-391. ISSN: 1461-023X,
+1461-0248. DOI:
+[10.1046/j.1461-0248.2001.00230.x](https://doi.org/10.1046%2Fj.1461-0248.2001.00230.x).
+
+Slingsby, J. A., C. Merow, M. Aiello-Lammens, et al. (2017).
+"Intensifying postfire weather and biological invasion drive species
+loss in a Mediterranean-type biodiversity hotspot". En. In:
+_Proceedings of the National Academy of Sciences of the United States
+of America_ 114.18, pp. 4697-4702. ISSN: 0027-8424, 1091-6490. DOI:
+[10.1073/pnas.1619014114](https://doi.org/10.1073%2Fpnas.1619014114).
+
+Whittaker, R. H. (1972). "Evolution and measurement of species
+diversity". En. In: _Taxon_ 21.2-3, pp. 213-251. ISSN: 0040-0262,
+1996-8175. DOI: [10.2307/1218190](https://doi.org/10.2307%2F1218190).
+
+---
+class: center, middle
+
+# Thanks!
+
+Slides created via the R packages:
+
+[**xaringan**](https://github.com/yihui/xaringan)&lt;br&gt;
+[gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current% / %total%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

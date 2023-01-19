@@ -466,13 +466,13 @@ layout: false
 
 .pull-left[
 
-```{r echo = F, fig.align = 'right', out.width = '95%'}
+```{r echo = F, fig.align = 'right', out.width = '100%'}
 knitr::include_graphics("images/fynbos_landscapes.png")
 ```
 
 - Fynbos is physiognomally and functionally similar across huge variation in climate, soils etc.
-- This is largely because most lineages are dominated by the same 10 or so lineages.
-- These species look similar, and have similar effects in the environment, but must be responding differently to occur in such different environments
+- This is largely because most communities are dominated by the same 10 or so lineages.
+- Species look similar, and have similar effects on the environment, but must be responding differently to occur in such different environments
 
 ]
 
@@ -500,7 +500,7 @@ The jury is out, but here's one example from an experiment with microbial commun
 &uparrow; temperature = &downarrow; in the intercept of the B-EF relationship (panel B), but the slope hump-shaped, being highest at low and high temperatures.
 
 ####Conclusion
-$\Delta$ temperature alters the B-EF relationship, & more species are required to maintain EF under thermal stress.
+$\Delta$ temperature alters the B-EF relationship, & more species are required to maintain EF under thermal stress (lower and higher end of the scale).
 
 ]
 
@@ -547,7 +547,7 @@ layout: false
 Alternative vegetation states can exist on the same abiotic template. They often contrast dramatically in various ecosystem functions (productivity, decomposition, habitat, etc).
 
 They occur naturally, e.g.
-- Open (Fynbos, grassland, savanna) vs closed (forest)
+- Open (fynbos, grassland, savanna) vs closed (forest) ecosystems
 
 Or can be created unnaturally, e.g.
 - Fynbos/grassland vs pine invasion

@@ -58,20 +58,40 @@ library(kableExtra)
 layout: false
 
 .pull-left[
-## The components of diversity
 
-Alpha $(\alpha)$ = mean species diversity/richness within local-scale sites, habitats or communities (often termed "point diversity")
+## How do we compare diversity between sites?
 
-Beta $(\beta)$ = diversity/richness differences between sites or habitats (attributable to species "turnover" or "nestedness")
+```{r echo = F, fig.align = 'center', out.width = '95%'}
+knitr::include_graphics("images/grassland.jpeg")
+```
+]
 
-Gamma $(\gamma)$ = total landscape species diversity/richness
+.pull-right[
+
+```{r echo = F, fig.align = 'center', out.width = '75%'}
+knitr::include_graphics("images/fynbos.png")
+```
+
+```{r echo = F, fig.align = 'center', out.width = '75%'}
+knitr::include_graphics("images/forestyoung.jpg")
+```
+]
+
+---
+
+layout: false
+
+.pull-left[
+## $\alpha$-diversity
+
+The mean species diversity/richness within local-scale sites, habitats or communities (often termed "point diversity") is called **alpha $(\alpha)$ diversity**.
 
 .footnote[Whittaker (1972)]
 ]
 
 .pull-right[
 ```{r echo = F, fig.align = 'right', out.width = '110%'}
-knitr::include_graphics("images/diversitycomponents.png")
+knitr::include_graphics("images/diversitycomponents_alpha.png")
 ```
 ]
 
@@ -134,7 +154,7 @@ layout: false
 Can be counts of the number of species in samples, 
 
 ```{r echo = F, fig.align = 'center', out.width = '70%'}
-knitr::include_graphics("images/alphadiversity.png")
+knitr::include_graphics("images/alphadiversity1.png")
 ```
 
 or include information on their **relative abundance**
@@ -149,6 +169,29 @@ or include information on their **relative abundance**
 
 A community is considered more diverse if the relative abundances are more evenly distributed 
 - because removing one individual is less likely to remove a species.
+]
+
+---
+
+layout: false
+
+.pull-left[
+
+## Quantifying $\alpha$-diversity...
+
+Can be counts of the number of species in samples, 
+
+```{r echo = F, fig.align = 'center', out.width = '70%'}
+knitr::include_graphics("images/alphadiversity.png")
+```
+
+or include information on their **relative abundance**
+
+]
+
+.pull-right[
+
+<br>
 
 **Shannon's index** (*H'*) quantifies species diversity taking into account both species' richness and evenness in their relative abundance
 
@@ -291,10 +334,11 @@ layout: false
 ###*Species richness* 
 ...is usually reserved to mean an estimate of the number of species while taking abundance and sampling effort into account (see Gotelli and Colwell 2001 for review).
 
-...is often estimated using individual or sample-based ***rarefaction***. 
+...is often estimated using individual or sample-based ***rarefaction***<sup>1</sup>. 
 
 Rarefaction involves resampling a set number (*n*) of individuals or samples from the data to determine the expected number of species for any given *n*. Resampling is repeated multiple times for each *n* and the results averaged.
 
+.footnote[<sup>1</sup>there are better methods these days (e.g. Hill numbers), but they are more complicated...]
 ]
 
 .pull-right[
@@ -437,6 +481,8 @@ Paired T-test: t = 3.2953, df = 80, p-value = _***0.0015***_
 
 ---
 class: center, middle
+
+##Post-fire recovery in natural, cleared and invaded plant communities
 
 ```{r echo = F, fig.align = 'center', out.width = '40%'}
 knitr::include_graphics("images/wfw.png")

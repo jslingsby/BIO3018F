@@ -58,6 +58,53 @@ library(kableExtra)
 layout: false
 
 .pull-left[
+
+## How do we compare diversity between sites?
+
+```{r echo = F, fig.align = 'center', out.width = '90%'}
+knitr::include_graphics("images/grassland.jpeg")
+```
+
+These sites could easily have the same $\alpha$-diversity measure. Would that mean they're the same?
+]
+
+.pull-right[
+
+```{r echo = F, fig.align = 'center', out.width = '75%'}
+knitr::include_graphics("images/fynbos.png")
+```
+
+```{r echo = F, fig.align = 'center', out.width = '75%'}
+knitr::include_graphics("images/forestyoung.jpg")
+```
+]
+
+---
+
+layout: false
+
+## Are these two fynbos sites the same?
+
+.pull-left[
+
+```{r echo = F, fig.align = 'center', out.width = '89%'}
+knitr::include_graphics("images/fynbos_jonkershoek.jpg")
+```
+
+]
+
+.pull-right[
+
+```{r echo = F, fig.align = 'center', out.width = '90%'}
+knitr::include_graphics("images/fynbos.png")
+```
+]
+
+---
+
+layout: false
+
+.pull-left[
 ## The components of diversity
 
 Alpha $(\alpha)$ = mean species diversity/richness within local-scale sites, habitats or communities (often termed "point diversity")
@@ -381,6 +428,29 @@ knitr::include_graphics("images/molina_map.png")
 ```
 
 ```{r echo = F, fig.align = 'center', out.width = '72%'}
+knitr::include_graphics("images/baetic.JPG")
+```
+]
+
+.pull-right[
+Eudicots of the Baetic mountains of Andalusia, Spain (Molina‐Venegas et al. 2015)
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/baetic_cork.JPG")
+```
+
+]
+
+---
+
+layout: false
+
+.pull-left[
+```{r echo = F, fig.align = 'center', out.width = '72%'}
+knitr::include_graphics("images/molina_map.png")
+```
+
+```{r echo = F, fig.align = 'center', out.width = '72%'}
 knitr::include_graphics("images/molina_belts.jpg")
 ```
 ]
@@ -428,10 +498,17 @@ layout: false
 
 Exploring variation among samples from one or more surveys or datasets
 
-```{r echo = F, fig.align = 'right', out.width = '70%'}
+.pull-left[
+```{r echo = F, fig.align = 'left', out.width = '100%'}
+knitr::include_graphics("images/taylor_resurvey_1966_96.png")
+```
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'right', out.width = '100%'}
 knitr::include_graphics("images/beta_variation_CP.png")
 ```
-
+]
 .footnote[Average turnover between plots: 1966 = 0.784; 1996 = 0.780]
 
 ---
@@ -444,20 +521,20 @@ Variation among communities in relation to an environmental variable
 
 .pull-left[
 
-<br>
-
-<br>
-
-Community similarity in relation to age since last fire
+```{r echo = F, fig.align = 'left', out.width = '100%'}
+knitr::include_graphics("images/taylor_resurvey_1966_96.png")
+```
 
 .footnote[Data from Slingsby et al. 2017]
 
 ]
 
 .pull-right[
-```{r echo = F, fig.align = 'right', out.width = '100%'}
+```{r echo = F, fig.align = 'right', out.width = '90%'}
 knitr::include_graphics("images/NMDS.png")
 ```
+
+.footnote[Community similarity in relation to age since last fire]
 ]
 
 ---
@@ -471,7 +548,7 @@ Grouping samples by compositional similarity
 
 e.g. used to identify distinct vegetation communities
 
-```{r echo = F, fig.align = 'center', out.width = '60%'}
+```{r echo = F, fig.align = 'center', out.width = '70%'}
 knitr::include_graphics("images/hclust_plots.png")
 ```
 
@@ -493,7 +570,7 @@ class: center, middle
 
 >*"Plurality in the concept of $\beta$ diversity can yield important ecological insights when navigated well. By knowing the properties of the measures being used and applying more than one, the underlying ecological structures in the data generating patterns in $\beta$ diversity can be revealed..."* - Anderson et al. 2011
 
->*"This applies to most measures of diversity..."* - Slingsby 2022
+>*"This applies to most measures of diversity..."* - Slingsby 2023
 
 ---
 

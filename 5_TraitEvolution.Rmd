@@ -1,6 +1,6 @@
 ---
-title: "4. Functional and Phylogenetic Diversity"
-subtitle: ""  
+title: "5. Trait Evolution"
+subtitle: "Consequences for Functional and Phylogenetic Diversity"  
 author: 
   - "Jasper Slingsby, BIO3018F"
 date: '`r Sys.Date()`'
@@ -62,7 +62,7 @@ layout: false
 
 .pull-left[
 
-## Are simple metrics of the number of species and individuals enough?
+## There's a lot of variation in species' traits
 
 ```{r echo = F, fig.align = 'center', out.width = '95%'}
 knitr::include_graphics("images/grassland.jpeg")
@@ -84,25 +84,24 @@ knitr::include_graphics("images/forestyoung.jpg")
 
 layout: false
 
-## There's a lot of diversity in the form of species
+## Traits are often similar among closely related species...
 
 ```{r echo = F, fig.align = 'center', out.width = '55%'}
 knitr::include_graphics("images/growthform_USGS_image_cropped.jpg")
 ```
 
-Often associated with the environments in which they occur...
 
 ---
 
 layout: false
 
-## There's a lot of diversity in the form of species
+## ...but not always...
 
-```{r echo = F, fig.align = 'center', out.width = '55%'}
-knitr::include_graphics("images/habitat_smaller.jpg")
+.pull-left[
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/traitevolution_cb2004.png")
 ```
-
-...and they have various effects on the environment, such as creating habitat for other species...
+]
 
 ---
 

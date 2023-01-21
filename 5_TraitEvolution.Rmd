@@ -157,11 +157,21 @@ knitr::include_graphics("images/proteas_Roets2006.jpg")
 
 layout: false
 
-## ...but not always...
-
 .pull-left[
-```{r echo = F, fig.align = 'center', out.width = '100%'}
+
+## ...but not always...
+```{r echo = F, fig.align = 'center', out.width = '95%'}
 knitr::include_graphics("images/traitevolution_cb2004.png")
+```
+
+```{r echo = F, fig.align = 'center', out.width = '95%'}
+knitr::include_graphics("images/pinus_radiata.jpg")
+```
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '90%'}
+knitr::include_graphics("images/protea_nana.jpg")
 ```
 ]
 

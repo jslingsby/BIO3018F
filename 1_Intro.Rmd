@@ -97,7 +97,7 @@ knitr::include_graphics("images/sdgs_makingpeacewithnature_small.jpg")
 ## My research focuses on...
 
 ```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/chapin.png")
+knitr::include_graphics("images/chapin2.png")
 ```
 
 .footnote[Figure modified from Chapin et al. 1997, _Science_]
@@ -107,7 +107,7 @@ knitr::include_graphics("images/chapin.png")
 ## My research focuses on four questions...
 
 ```{r echo = F, fig.align = 'center', out.width = '58%'}
-knitr::include_graphics("images/chapin.png")
+knitr::include_graphics("images/chapin2.png")
 ```
 
 1. What determines the composition and diversity of communities and ecosystems at various scales?
@@ -266,6 +266,8 @@ class: center
 
 ## Problem!
 
+We need to be able to measure biodiversity to develop questions, test hypotheses, map priorities, etc
+
 > *"The use of different measures or analytical approaches on a single set of data can naturally result in quite different outcomes and interpretations."* - Anderson et al. 2011
 
 i.e., there is no one perfect measure of biodiversity.
@@ -274,9 +276,7 @@ i.e., there is no one perfect measure of biodiversity.
 
 ## Take home
 
-We need to be able to measure biodiversity to develop questions, test hypotheses, map priorities, etc
-
-But, _**measures of biodiversity are hypotheses themselves**_! Most biodiversity-related hypotheses should be prefaced *"Assuming our measure of biodiversity is a reasonable approximation of reality, then..."*
+_**Measures of biodiversity are hypotheses themselves**_! Most biodiversity-related hypotheses should be prefaced *"Assuming our measure of biodiversity is a reasonable approximation of reality, then..."*
 
 It's crucial that we master the methods for measuring and analyzing biodiversity data, and explore the assumptions and implications of the measures we use for the questions and goals at hand...
 

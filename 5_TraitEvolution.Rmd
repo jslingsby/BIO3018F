@@ -98,17 +98,16 @@ layout: false
 .pull-left[
 ## There are often trade-offs among traits
 
-The leaf economics spectrum (LES) - Wright et al. 2004
+Leaf dry mass per unit area (LMA) predicts 
+- N content, 
+- photosynthetic capacity
+- relative growth rate
 
-- Leaf dry mass per unit area (LMA) predicts N content, photosynthetic capacity and growth rate
+But
 - Trades off against leaf longevity
 
+.footnote[The leaf economics spectrum (LES) - Wright et al. 2004]
 
-```{r echo = F, fig.align = 'center', out.width = '40%'}
-knitr::include_graphics("images/LES_env.webp")
-```
-- Correlates with environment (temp and rainfall)
-    - Higher LMA in hot, dry places
 ]
 
 .pull-right[
@@ -121,14 +120,51 @@ knitr::include_graphics("images/LES.webp")
 
 layout: false
 
+.pull-left[
+## There are often trade-offs among traits
+
+LMA correlates with environment (temp and rainfall)
+- Higher LMA in hot, dry places
+
+.footnote[The leaf economics spectrum (LES) - Wright et al. 2004]
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/LES_env.webp")
+```
+]
+
+---
+
+layout: false
+
 ## Trade-offs constrain trait combinations
 
 .pull-left[
 Trade-offs dictate that some traits and trait combinations (and thus life-history strategies) are impossible...
 
-```{r echo = F, fig.align = 'center', out.width = '60%'}
+<br>
+
+If each trait is a dimension, trade-offs dictate that the "volume" of the trait space is constrained (cannot be filled).
+
+.footnote[Diaz et al. 2016]
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '80%'}
 knitr::include_graphics("images/diaz_hull.webp")
 ```
+]
+
+---
+
+layout: false
+
+## Trade-offs constrain trait combinations
+
+.pull-left[
+Traits and trade-offs often vary among taxonomic lineages, revealing a signal of their evolutionary history (phylogeny).
 
 .footnote[Diaz et al. 2016]
 ]
@@ -138,7 +174,6 @@ knitr::include_graphics("images/diaz_hull.webp")
 knitr::include_graphics("images/diaz.webp")
 ```
 
-Traits and combinations vary among lineages...
 ]
 
 ---
@@ -179,21 +214,17 @@ knitr::include_graphics("images/protea_nana.jpg")
 
 layout: false
 
-## Drawbacks of looking at species diversity only?
+## Trait conservatism has a profound influence on ecology!
 
-- What is a species? There are many definitions!
+.pull-left[
+...
+]
 
-- Are all species equal?
-  - Would you consider 2 _Erica_ species to be equivalent to an _Erica_ and a _Protea_ or cacao and coffee?
-
-- Species counts don't tell you about:
-  - the identity of species or the similarities or differences between them
-  - the functioning of species or communities 
-  - the origins and maintenance of diversity (evolution, ecology and biogeography)
-
-```{r echo = F, fig.align = 'center', out.width = '50%'}
-knitr::include_graphics("images/fynbos_community.jpg")
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/darwin_finches2.webp")
 ```
+]
 
 ---
 

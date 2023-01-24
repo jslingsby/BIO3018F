@@ -271,7 +271,7 @@ layout: false
 
 $\beta = \gamma/\alpha$ (*sensu* Whittaker 1972)
 
-...expresses $\beta$ diversity as the ratio of landscape $(\gamma)$ to local $(\alpha)$ diversity (usually the mean multiple of local samples, i.e. $\bar{\alpha}$).
+...expresses $\beta$ diversity as the ratio of landscape $(\gamma)$ to local $(\alpha)$ diversity (usually the mean of multiple local samples, i.e. $\bar{\alpha}$).
 
 If most local $(\alpha)$ samples capture most of the landscape $(\gamma)$ diversity, then $\beta$ diversity (i.e. differences between sites or habitats) must be low, and vv.
 
@@ -296,15 +296,14 @@ layout: false
 
 $\beta = \gamma - \alpha$ (*sensu* MacArthur et al. 1966, Lande 1996)
 
-...expresses $\beta$ diversity as the difference between landscape $(\gamma)$ and local $(\alpha)$ diversity (again, usually the mean multiple of local samples, i.e. $\bar{\alpha}$).
+...expresses $\beta$ diversity as the difference between landscape $(\gamma)$ and local $(\alpha)$ diversity (again, usually the mean of multiple local samples, i.e. $\bar{\alpha}$).
 
 If local $(\alpha)$ samples capture most of the landscape $(\gamma)$ diversity, then $\beta$ diversity (i.e. differences between sites or habitats) must be low, and vv.
 
 Advantage:
-* the difference is expressed as species
+* the difference is expressed as species (i.e. the average number of species missing from each local site)
 
-Disadvantage:
-* still usually need to know $(\gamma)$
+Disadvantage: still usually need to know $(\gamma)$
 
 ]
 
@@ -351,23 +350,24 @@ knitr::include_graphics("images/betadiv_multiv.png")
 
 e.g. the same equation, $(A+B-2*J)/(A+B)$ 
 
-Where J is the shared quantity, and A and B are totals for each community, 
+*where J is the shared quantity, and A and B are totals for each community* 
 
 can be...
 ]
 
 .pull-right[
-### Sorenson's Index
+### Sorenson's Dissimilarity Index
 
 when based on species presence/absence only
 
-<br>
 
 ### Bray-Curtis distance
 
 when it includes abundance information
 
-.footnote[Values range from 0 (identical communities) to 1 (complete turnover).]
+Values range from 0 (identical communities) to 1 (complete turnover).
+
+.footnote[Be careful. The indices are often inverted (i.e. similarity metrics) depending on the goals of the study.]
 
 ]
 
@@ -385,7 +385,7 @@ knitr::include_graphics("images/anderson_fig2.png")
 .pull-right[
 ## *Turnover* vs *Variation*
 
-The application $\beta$ diversity can be largely split into 
+The application of $\beta$ diversity can be largely split into: 
 * directional analyses, that explore *turnover* along spatial, temporal or environmental gradients, and 
 
 * non-directional analyses, that explore *variation* within or among groups.
@@ -433,12 +433,13 @@ knitr::include_graphics("images/baetic.JPG")
 ]
 
 .pull-right[
-Eudicots of the Baetic mountains of Andalusia, Spain (Molina‐Venegas et al. 2015)
+Floristic turnover with change in elevation vs between mountains (Molina‐Venegas et al. 2015)
 
 ```{r echo = F, fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("images/baetic_cork.JPG")
 ```
 
+Eudicots of the Baetic mountains of Andalusia, Spain 
 ]
 
 ---
@@ -456,7 +457,7 @@ knitr::include_graphics("images/molina_belts.jpg")
 ]
 
 .pull-right[
-Eudicots of the Baetic mountains of Andalusia, Spain (Molina‐Venegas et al. 2015)
+Floristic turnover with change in elevation vs between mountains (Molina‐Venegas et al. 2015)
 
 ```{r echo = F, fig.align = 'center', out.width = '85%'}
 knitr::include_graphics("images/molina_sbd.png")

@@ -4,7 +4,7 @@
     <title>5. Traits, Trade-offs and Phylogeny</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jasper Slingsby, BIO3018F" />
-    <meta name="date" content="2023-01-24" />
+    <meta name="date" content="2023-01-25" />
     <script src="5_TraitEvolution_files/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
@@ -19,7 +19,7 @@ class: center, middle, inverse, title-slide
 ### Jasper Slingsby, BIO3018F
 ]
 .date[
-### 2023-01-24
+### 2023-01-25
 ]
 
 ---
@@ -62,7 +62,7 @@ layout: false
 ## There are often trade-offs among traits
 
 Leaf dry mass per unit area (LMA) predicts 
-- N content, 
+- Nitrogen content 
 - photosynthetic capacity
 - relative growth rate
 
@@ -86,6 +86,10 @@ layout: false
 
 LMA correlates with environment (temp and rainfall)
 - Higher LMA in hot, dry places
+
+&lt;br&gt;
+
+This also represents a trade-off in that specific traits can limit species to specific resource/habitat requirements (water, light, nutrients).
 
 .footnote[The leaf economics spectrum (LES) - Wright et al. 2004]
 ]
@@ -164,7 +168,11 @@ layout: false
 ## Trait conservatism has a profound influence on ecology!
 
 .pull-left[
-...
+Especially if there is dispersal limitation, as is usually the case for islands... e.g. Darwin's finches
+
+The finches have diversified to fill many niches on the Galapagos     islands that are usually filled by other bird lineages elsewhere.
+
+While there has been convergence in some traits (e.g. beak morphology), they all evolved from the same common ancestor and other traits that affect their ecology may be constrained (e.g. climatic tolerance, metabolism, etc).
 ]
 
 .pull-right[
@@ -175,66 +183,55 @@ layout: false
 
 layout: false
 
-## Measuring _functional_ and _phylogenetic_ diversity
+## Trait conservatism has a profound influence on ecology!
 
 .pull-left[
+The Cape Flora is much like an island flora, with many species made up from a few lineages (30 clades account for &gt;50% of the ~9000 species).
 
-_Representing differences in the functional form and evolutionary history of species_
-
-Many measurement approaches!
-
+Large clades like the Proteaceae (~300 spp), Restionaceae (~300 spp) and *Erica* (~700 species) are also ecologically dominant, and have a big influence on ecological processes like fire, hydrology, nutrient cycling, etc.
 ]
 
 .pull-right[
-
-&lt;img src="images/Fynbos_collage.jpg" width="150%" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;img src="images/proteas_Roets2006.jpg" width="80%" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
 
 layout: false
 
-## Measuring _functional_ and _phylogenetic_ diversity
+## Trait conservatism has a profound influence on ecology!
 
 .pull-left[
+Savannas inhabit different climatic niches on different continents...
 
-Oldest and simplest measures are based on **discrete** predefined  categories:
-- **functional groups** (growth form, etc)
-- **taxonomic rank** (genera, families, etc&lt;sup&gt;1&lt;/sup&gt;)
+&lt;img src="images/lehman2014.jpeg" width="100%" style="display: block; margin: auto;" /&gt;
 
-Simply assign your species to the categories (e.g. trees, shrubs, grasses, etc if you're working with plant functional groups) and calculate your diversity metrics as you would for species.
+.footnote[Lehman et al. 2014 *Science*]
 
-.footnote[&lt;sup&gt;1&lt;/sup&gt;Technically, species diversity is just a discrete measure of phylogenetic diversity where the taxonomic rank is "species"...]
 ]
 
 .pull-right[
 
-&lt;img src="images/Fynbos_collage.jpg" width="150%" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;img src="images/moncrieff2014.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+This is likely because of the traits of the dominant lineages and their affects on ecosystem feedbacks, e.g. *Vachellia* and *Senegalia* in Africa versus *Eucalyptus* and *Corymbia* in Australia.
 ]
 
 ---
 
 layout: false
 
-## Drawbacks of discrete measures
+## Trait conservatism has a profound influence on ecology!
 
 .pull-left[
-Similar to issues with species diversity...
+In fact, the same may apply to most major biomes in the world...
 
-#### Taxonomic ranks
-- What is a genus or family?
-- Are all genera or families equal?
-- Taxonomic ranks are mostly pragmatic categories that help us identify taxa based on shared characters...
-
-#### Functional groups
-- How are they defined?
-- Quantitative (analysis of measured traits) or qualitative (expert opinion)?
+.footnote[Moncrieff et al. 2015 *GEB*]
 ]
 
 .pull-right[
-&lt;img src="images/taxonomy.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
 
-.footnote[###### Image from https://www.poolparty.biz/taxonomy-management-101]
+&lt;img src="images/moncrieff2015.jpg" width="75%" style="display: block; margin: auto;" /&gt;
 
 ]
 
@@ -242,281 +239,21 @@ Similar to issues with species diversity...
 
 layout: false
 
+## Trait conservatism influence on biogeography!
+
 .pull-left[
 
-### Defining functional groups
-
-&lt;img src="images/tetraria_traits.png" width="70%" style="display: block; margin: auto;" /&gt;
-
-1) Measure traits of the species under study
+&lt;img src="images/crisp2009_1.png" width="70%" style="display: block; margin: auto;" /&gt;
 
 ]
 
 .pull-right[
 
-2) Calculate functional distances between species
+&lt;img src="images/crisp2009_2.png" width="100%" style="display: block; margin: auto;" /&gt;
 
-&lt;img src="images/distancemat.png" width="30%" style="display: block; margin: auto;" /&gt;
+Speciation is more likely to occur via dispersal to the same biome on a different continent than a shift to a neighbouring, but different biome!
 
-3) Cluster species based on distances
-
-&lt;img src="images/hclust_species.png" width="30%" style="display: block; margin: auto;" /&gt;
-
-4) Define groups based on similarity (depth in tree) or desired number of groups
-
-&lt;br&gt;
-
-...but wait a second?
-]
-
----
-
-layout: false
-
-.pull-left[
-## _Continuous_ measures of functional diversity
-
-There's a lot of useful information in the data and analyses used to define functional groups quantitatively!
-
-Rather than lose that information by defining discrete groups and counting them, we can use the unique information directly!
-
-E.g. functional diversity can be calculated as the *sum of the branch length* joining all species in the sample (Petchey and Gaston 2002)
-
-]
-
-.pull-right[
-&lt;img src="images/hclust_species.png" width="90%" style="display: block; margin: auto 0 auto auto;" /&gt;
-]
-
----
-
-layout: false
-
-.pull-left[
-## _Continuous_ measures of functional diversity
-
-There are 3 major approaches to calculating **continuous** metrics of functional diversity:
-- _Pairwise distances_ (e.g. mean or sum of the pairwise distances between all species in a sample - Walker et al. 1999)
-
-- _Hierarchical clustering_ (e.g. sum of the branch length joining all species in the sample - Petchey and Gaston 2002)
-
-- _Multidimensional ordination_ (e.g. the area or volume of encompassed by the set of species in an ordination of trait space (2 or more dimensions) - Villeger et al. 2008)
-]
-
-.pull-right[
-&lt;img src="images/FD_continuous.png" width="90%" style="display: block; margin: auto 0 auto auto;" /&gt;
-]
-
----
-
-layout: false
-
-.pull-left[
-## Phylogenetic diversity
-
-A **molecular phylogeny** (or "phylogenetic tree") represents the relationships between species based on similarity of their DNA. 
-
-Branch lengths are usually time-calibrated based on a molecular clock (rate of mutation through time) to represent time (or evolutionary history).
-
-Phylogenetic distance is often considered a more complete or integrated measure of the functional similarity of species, because it avoids subjectivity in the selection of traits measured...
-]
-
-.pull-right[
-&lt;img src="images/bird_phylogeny_1.jpg" width="75%" style="display: block; margin: auto;" /&gt;
-
-]
-
----
-
-layout: false
-
-.pull-left[
-## _Continuous_ measures of phylogenetic diversity
-
-Similar approaches used for phylogenetic diversity.
-
-- _Pairwise distances_ (e.g. mean pairwise distances (branch lengths) between all species in a sample or minimum nearest taxon distance - Webb et al. 2002)
-
-- _Phylogenetic trees_ (e.g. sum of the branches joining all species - Faith 1991)
-  - can also use the taxonomic hierarchy instead of a phylogeny, but this suffers from the subjectivity of taxonomic ranks
-
-- No _multidimensional ordination_ methods for phylogenetic diversity
-]
-
-.pull-right[
-&lt;img src="images/phylogeny.png" width="100%" style="display: block; margin: auto;" /&gt;
-
-#### Molecular phylogeny vs taxonomic hierarchy
-
-The sum of the branch lengths of a phylogeny linking species in a sample represents the _sum total independent evolutionary history_ represented by that sample.
-
-The taxonomic hierarchy (Order, Family, Genus etc) is far less objective.
-
-- That said, phylogenies aren't perfect, and there are many sources of error - molecular regions sampled, methods used, etc.
-
-]
-
----
-
-layout: false
-
-## What about the other components of functional and phylogenetic diversity?
-.pull-left[
-
-We've only covered measures of `\(\alpha\)` (or `\(\gamma\)`) diversity. 
-
-&lt;br&gt;
-
-Similar methods as for species diversity can be applied to discrete and continuous measures of functional and phylogenetic `\(\beta\)` diversity...
-
-]
-
-.pull-right[
-&lt;img src="images/diversitycomponents.png" width="70%" style="display: block; margin: auto;" /&gt;
-]
-
----
-layout: false
-
-## Functional or phylogenetic beta diversity
-
-.pull-left[
-
-&lt;img src="images/betadiv_multiv.png" width="90%" style="display: block; margin: auto;" /&gt;
-
-e.g. the same equation, `\((A+B-2*J)/(A+B)\)` 
-
-Where J is the shared quantity, and A and B are totals for each community, 
-
-can be used for...
-]
-
-.pull-right[
-### Discrete measures
-
-when based on counts of functional groups or taxonomic ranks instead of species
-
-&lt;br&gt;
-
-### Continuous measures
-
-when based on _**branch length**_ (e.g. _PhyloSor_ - Bryant et al. 2008)
-
-]
-
-
----
-class: center, middle
-
-## So what?
-
-How does being able to measure functional or phylogenetic diversity help us?
-
----
-
-layout: false
-
-.pull-left[
-
-## "Phylogenetic regionalization"
-
-&lt;br&gt;
-
-Defining phytoregions based on turnover of phylogenetic diversity in the (woody) flora of southern Africa
-
-
-
-.footnote[figure from Daru et al. 2016]
-
-]
-
-.pull-right[
-&lt;img src="images/daru_phyloregions.png" width="90%" style="display: block; margin: auto;" /&gt;
-]
-
----
-
-layout: false
-
-.pull-left[
-
-## Decifering the determinants of community assembly
-
-&lt;br&gt;
-
-Don't worry about the scary figure... We'll discuss this more in the next two lectures...
-
-.footnote[figure from Webb et al. 2002]
-
-]
-
-.pull-right[
-&lt;img src="images/webb2002.png" width="90%" style="display: block; margin: auto;" /&gt;
-]
-
----
-
-layout: false
-
-.pull-left[
-
-## Null models...
-
-We often explore the drivers behind the patterns of diversity we see by contrasting different measures of diversity and/or comparing them to the patterns we would expect to see in the absence of that driver.
-
-One commonly used method for generating the expected patterns is _null models_... 
-
-Null models can be used to "randomize" properties of interest in the data. Typically we generate a large number of "randomized" datasets (e.g. 999) and explore where the observed data rank with respect to the null datasets.
-
-]
-
-.pull-right[
-
-&lt;br&gt;
-
-&lt;img src="images/nullmodels.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
-
-We can address questions like:
-- _Are species in communities more closely (or distantly) related than we'd expect?_
-- _Are species in communities more functionally similar (or dissimilar) than we'd expect?_
-
-.footnote[figure from Slingsby 2011, PhD]
-]
-
----
-
-layout: false
-
-.pull-left[
-
-## Null models...
-
-Null models "randomize" properties of interest in the data, servings as a "null expectation" for comparison to your actual data. 
-
-There are a number of ways of doing this, but the key is to only randomize the property of interest and keep everything else the same.
-
-Properties include (_inter alia_):
-- functional or phylogenetic relationships
-- abiotic (or spatial) relationships among sites
-- number of species in communities (row sums)
-- number of occurrences (or abundances) of species across all communities (column sums)
-
-You have to think very carefully about what properties are affected when applying null models!
-
-
-]
-
-.pull-right[
-
-&lt;br&gt;
-
-&lt;img src="images/nullmodels.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
-
-You also need to think carefully about how you sample your communities and how you structure them in your null model (e.g. grouping and analyzing sites separately by region or doing one global analysis, etc).
-
-See Gotelli and Graves 1996 for a thorough treatment.
-
-.footnote[figure from Slingsby 2011, PhD]
+.footnote[Crisp et al. 2009 *Science*]
 ]
 
 ---
@@ -525,7 +262,9 @@ class: center, middle
 
 ## Take-home
 
-*There's a lot more to diversity than simple counts of species.*
+*The evolutionary history of species leaves a strong imprint on current ecology, especially through trait and nice conservatism.*
+
+*
 
 *Functional and phylogenetic diversity allow us to explore more intricate questions around the ecology, evolution and function of assemblages.*
 

@@ -114,7 +114,7 @@ knitr::include_graphics("images/PotbergSeasonality.gif")
 
 ---
 
-## We're going to look at 6 sites with varying NDVI
+## We're going to look at 6 different sites with varying NDVI
 
 ```{r echo = F, fig.align = 'center', out.height = '65%', warning=F, messages=F}
 
@@ -155,6 +155,16 @@ adat %>%
 
 ---
 
+## We ask:
+
+* Does the variation in environmental conditions explain the observed variation in biodiversity (species and functional $\alpha$ and $\beta$ diversity)?
+
+* To what degree does variation in species and functional and diversity explain the observed variation in our measures of ecosystem function?
+
+* What is the relative role of the environment versus biodiversity in determining the observed variation in ecosystem function?
+
+---
+
 ## Within each site we'll sample 4 point locations
 
 ```{r echo = F, fig.align = 'center', out.height = '65%', warning=F, messages=F}
@@ -192,13 +202,13 @@ leaflet() %>%
 
 ## At each point location we'll
 
-1. Sample _Environmental conditions:_
+Sample _Environmental conditions:_
 
 - Estimate % projected cover (think the area you would see from above) bare soil
 
-- Take a densiometer reading at ground level
+- ~~Take a densiometer reading at ground level~~
 
-- Take a **soil sample** (as per Mike's prac)
+- ~~Take a **soil sample**~~
 
 - Do a **dung count**, scoring dung for the point location by the number of quarters where you find dung (i.e. 0-4 for the point location)
   
@@ -208,7 +218,7 @@ leaflet() %>%
 
 ## At each point location we'll
 
-1. Sample _Diversity:_
+Sample _Diversity:_
 
 - Make sure your smartphone is fully charged and set to record GPS location with your photographs!
 
@@ -217,11 +227,11 @@ leaflet() %>%
 - Take diagnostic photos for the 5 species (habit (whole plant), leaf, base, flowers and/or fruits) and score them 1-5 from most to least abundant
 
 - For three individuals of each of your 5 target species, 
-  - measure the height and collect a shoots for measuring leaf length and leaf width
+  - measure the height and collect shoot for measuring leaf traits back at the Potberg centre (length, width, area and dry mass).
     
-- Finally, set a timer and take as many photos of new species (other than your 5 target species) within or near your plot as you can before the alarm goes off. 
+- Finally, set a timer and take as many diagnostic photos of new species (other than your 5 target species) within or near your plot as you can before the alarm goes off. 
 
-- Take a of something between sites so you know what photos are from where.
+- Take a pic of your site label between sites so you know what photos are from where.
   
 ---
 

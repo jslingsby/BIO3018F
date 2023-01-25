@@ -294,36 +294,63 @@ knitr::include_graphics("images/fynbos.png")
 
 layout: false
 
-.pull-left[
 ## Species-Area relationship
 
-The density (~size) of individuals can also affect the shape of the species-area relationship (SAR) at fine scales.
-- Site 1 = many, small individuals
-- Site 2 = intermediate
-- Site 3 = fewer, large individuals
+.pull-left[
 
-```{r echo = F, fig.align = 'center', out.width = '30%'}
-knitr::include_graphics("images/nested_plots.png")
-```
-
-We estimate the SAR by sampling nested plots of increasing size, and can use it to estimate the diversity of a larger area by extrapolation.
-
-]
-
-.pull-right[
+We often compare the diversity of large areas using the species-area relationship (SAR).
 
 ```{r echo = F, fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("images/sad.png")
 ```
 
-When comparing sites, one solution is to sample enough area to reach the asymptote of the SAR, but this isn't often logistically (or logically) feasible...
+]
 
-Note that many other factors affect the SAR:
+.pull-right[
+
+We estimate the SAR by sampling nested plots of increasing size.
+
+```{r echo = F, fig.align = 'center', out.width = '40%'}
+knitr::include_graphics("images/nested_plots.png")
+```
+
+When comparing sites, one solution is to sample enough area to reach the asymptote of the SAR. 
+
+This isn't often logistically (or logically) feasible, so we usually fit curves to estimate the diversity of the larger area by extrapolation.
+
+]
+
+---
+
+layout: false
+
+## Species-Area relationship
+
+.pull-left[
+
+The density of individuals can affect the shape of the species-area relationship (SAR) at fine scales, because of the relationship between species counts and the number of individuals sampled.
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/sad.png")
+```
+
+
+]
+
+.pull-right[
+
+- Site 1 = many, small individuals
+- Site 2 = intermediate
+- Site 3 = fewer, large individuals
+
+<br>
+
+Note that many other factors can affect the SAR:
 - patchiness/heterogeneity
 - dispersal (limitation)
 - immigration/extinction
 - disturbance
-
+- productivity (e.g. sparse desert vegetation has fewer individuals per unit area)
 ]
 
 ---
@@ -428,7 +455,7 @@ knitr::include_graphics("images/spec_ind_raref_CP_comp.png")
 
 Note that you can compare between sites by rarefying for a set number of individuals or plots! 
 
-Rarefying by samples doesn't really get around the issue of different numbers of individuals...
+Rarefying by samples doesn't really get around the issue of different numbers of individuals though...
 
 ---
 
@@ -482,25 +509,17 @@ Paired T-test: t = 3.2953, df = 80, p-value = _***0.0015***_
 ]
 
 ---
-class: center, middle
-
-##Post-fire recovery in natural, cleared and invaded plant communities
-
-```{r echo = F, fig.align = 'center', out.width = '40%'}
-knitr::include_graphics("images/wfw.png")
-```
-
----
 
 class: center, middle
 
 ## Take home
+Alpha diversity is the diversity at a point location (e.g. a vegetation plot).
 
-Measures of alpha diversity can be affected by factors like the area and number of individuals sampled. 
+Measures of species diversity can consider both the counts of species and evenness in their relative abundance.
 
-Other factors can be important too, like the length of time sampled for (e.g. bird netting, fishing, etc).
+Measures of species diversity are affected by factors like the area and number of individuals sampled. Other factors can be important too, like the length of time sampled for (e.g. bird netting, fishing, etc).
 
-You need to choose your measure of diversity carefully, and potentially correct for these sampling effects (e.g. by using rarefaction, sampling a larger area, etc), depending on your question and the taxonomic group you're working on.
+You need to choose your measure of diversity carefully, and potentially correct for these sampling effects (e.g. by using rarefaction, sampling a larger area, estimating the species-area relationship), depending on your question and the taxonomic groups you're working on.
 
 ---
 

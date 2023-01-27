@@ -203,7 +203,7 @@ layout: false
 
 .pull-left[
 
-### Defining functional groups
+### Defining functional groups quantitatively
 
 ```{r echo = F, fig.align = 'center', out.width = '70%'}
 knitr::include_graphics("images/tetraria_traits.png")
@@ -449,6 +449,7 @@ One commonly used method for generating the expected patterns is _null models_..
 
 Null models can be used to "randomize" properties of interest in the data. Typically we generate a large number of "randomized" datasets (e.g. 999) and explore where the observed data rank with respect to the null datasets.
 
+.footnote[figure from Slingsby 2011, PhD]
 ]
 
 .pull-right[
@@ -463,7 +464,8 @@ We can address questions like:
 - _Are species in communities more closely (or distantly) related than we'd expect?_
 - _Are species in communities more functionally similar (or dissimilar) than we'd expect?_
 
-.footnote[figure from Slingsby 2011, PhD]
+And infer processes from these patterns.
+
 ]
 
 ---
@@ -499,7 +501,7 @@ knitr::include_graphics("images/nullmodels.png")
 
 You also need to think carefully about how you sample your communities and how you structure them in your null model (e.g. grouping and analyzing sites separately by region or doing one global analysis, etc).
 
-See Gotelli and Graves 1996 for a thorough treatment.
+See Gotelli and Graves 1996 for more detail.
 
 .footnote[figure from Slingsby 2011, PhD]
 ]

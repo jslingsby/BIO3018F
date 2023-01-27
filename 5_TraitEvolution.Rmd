@@ -168,6 +168,10 @@ layout: false
 ## Trade-offs constrain trait combinations
 
 .pull-left[
+But trait values, combinations and trade-offs are further constrained by phylogeny.
+
+<br>
+
 Traits and trade-offs often vary among taxonomic lineages, revealing a signal of their evolutionary history (phylogeny).
 
 .footnote[Diaz et al. 2016]
@@ -191,6 +195,26 @@ layout: false
 knitr::include_graphics("images/proteas_Roets2006.jpg")
 ```
 
+
+---
+
+layout: false
+
+### Traits are often similar among closely related species...
+
+.pull-left[
+```{r echo = F, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics("images/restiobook1.jpeg")
+```
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics("images/restiobook2.jpeg")
+```
+]
+
+.footnote[e.g. the loss of leaves in an ancestral restio means they are all culm (stem) photosynthetic... ]
 
 ---
 
@@ -223,9 +247,9 @@ layout: false
 .pull-left[
 Especially if there is dispersal limitation, as is usually the case for islands... e.g. Darwin's finches
 
-The finches have diversified to fill many niches on the Galapagos     islands that are usually filled by other bird lineages elsewhere.
+The finches have diversified to fill many niches on the Galapagos islands that are usually filled by other bird lineages elsewhere.
 
-While there has been convergence in some traits (e.g. beak morphology), they all evolved from the same common ancestor and other traits that affect their ecology may be constrained (e.g. climatic tolerance, metabolism, etc).
+While there has been convergence/divergence in some traits like beak morphology, they all evolved from the same common ancestor and other traits that affect their ecology may be constrained (e.g. climatic tolerance, metabolism, etc).
 ]
 
 .pull-right[
@@ -243,7 +267,9 @@ layout: false
 .pull-left[
 The Cape Flora is much like an island flora, with many species made up from a few lineages (30 clades account for >50% of the ~9000 species).
 
-Large clades like the Proteaceae (~300 spp), Restionaceae (~300 spp) and *Erica* (~700 species) are also ecologically dominant, and have a big influence on ecological processes like fire, hydrology, nutrient cycling, etc.
+<br>
+
+Large (diverse) clades like the Proteaceae (~300 spp), Restionaceae (~300 spp) and *Erica* (~700 species) are ecologically dominant, and have a big influence on ecological processes like fire, hydrology, nutrient cycling, etc.
 ]
 
 .pull-right[
@@ -275,7 +301,7 @@ knitr::include_graphics("images/lehman2014.jpeg")
 knitr::include_graphics("images/moncrieff2014.png")
 ```
 
-This is likely because of the traits of the dominant lineages and their affects on ecosystem feedbacks, e.g. *Vachellia* and *Senegalia* in Africa versus *Eucalyptus* and *Corymbia* in Australia.
+This is likely because of differences in the traits of the dominant lineages and their affects on ecosystem feedbacks, e.g. *Vachellia* and *Senegalia* in Africa versus *Eucalyptus* and *Corymbia* in Australia.
 ]
 
 ---
@@ -318,7 +344,7 @@ knitr::include_graphics("images/crisp2009_1.png")
 knitr::include_graphics("images/crisp2009_2.png")
 ```
 
-Speciation is more likely to occur via dispersal to the same biome on a different continent than a shift to a neighbouring, but different biome!
+Speciation is more likely to occur via dispersal to the same biome on a different continent than to a different biome right next door!
 
 .footnote[Crisp et al. 2009 *Science*]
 ]
@@ -329,13 +355,11 @@ class: center, middle
 
 ## Take-home
 
-*The evolutionary history of species leaves a strong imprint on current ecology, especially through trait and nice conservatism.*
+*The evolutionary history of species leaves a strong imprint on current ecology, especially through trait and niche conservatism.*
 
-*
+*We can explore this influence by exploring speciation, trait evolution and biogeography in focal lineages.*
 
-*Functional and phylogenetic diversity allow us to explore more intricate questions around the ecology, evolution and function of assemblages.*
-
-*Null models can be useful for exploring the factors that determine the assembly of communities.*
+*We can also explore this influence by looking at and contrasting measures of functional and phylogenetic diversity of whole assemblages (previous lecture), revealing insights into the ecology, evolution and function of assemblages.*
 
 ---
 

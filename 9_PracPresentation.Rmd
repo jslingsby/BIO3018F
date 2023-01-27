@@ -114,7 +114,7 @@ knitr::include_graphics("images/PotbergSeasonality.gif")
 
 ---
 
-## We're going to look at 6 different sites with varying NDVI
+## We'll look at 6 sites with different vegetation (incl. natural and anthropogenic) and varying NDVI
 
 ```{r echo = F, fig.align = 'center', out.height = '65%', warning=F, messages=F}
 
@@ -154,14 +154,17 @@ adat %>%
 ```
 
 ---
+####Aim:
+To investigate the Biodiversity-Ecosystem Function paradigms presented by van der Plas (2019) by investigating the relationships among a set of ecosystem types using measures of biodiversity (species and functional $\alpha$ and $\beta$ diversity) and exploring their relationship to various environmental conditions and a set of metrics of ecosystem function derived from satellite timeseries.
 
-## We ask:
+####Questions (feel free to modify):
 
-* Does the variation in environmental conditions explain the observed variation in biodiversity (species and functional $\alpha$ and $\beta$ diversity)?
+-   Does the variation in environmental conditions explain the observed variation in biodiversity (species, functional and phylogenetic $\alpha$ and $\beta$ diversity)?
 
-* To what degree does variation in species and functional and diversity explain the observed variation in our measures of ecosystem function?
+-   To what degree does the variation in functional and phylogenetic diversity explain the observed variation in our measures of ecosystem function?
 
-* What is the relative role of the environment versus biodiversity in determining the observed variation in ecosystem function?
+-   What is the relative role of the environment versus biodiversity in determining the observed variation in ecosystem function?
+
 
 ---
 
@@ -191,7 +194,7 @@ leaflet() %>%
   enableTileCaching() %>%
   #addTiles(options = tileOptions(useCache = TRUE, crossOrigin = TRUE))
   # Add default OpenStreetMap map tiles
-  addProviderTiles("Esri.WorldImagery", options = tileOptions(useCache = TRUE, crossOrigin = TRUE)) %>%
+  addProviderTiles("Esri.WorldImagery") %>%
   # Add our points
   addCircleMarkers(data = pt,
                    radius = 3,

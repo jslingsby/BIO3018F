@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>9. Remote Sensing of Biodiversity</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jasper Slingsby, BIO3018F" />
+    <meta name="date" content="2023-01-27" />
+    <script src="9_RemoteSensingBio_files/header-attrs/header-attrs.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# 9. Remote Sensing of Biodiversity
+]
+.author[
+### Jasper Slingsby, BIO3018F
+]
+.date[
+### 2023-01-27
+]
+
+---
+
+
+
+
+
+
+
+
+
+class: center, middle
+
+### We want to measure biodiversity everywhere, all the time...
+
+&lt;img src="images/world_seasonality.gif" width="80%" style="display: block; margin: auto;" /&gt;
+
+.center[Remote sensing is pretty much the only way this can be achieved...]
+
+---
+
+layout: false
+
+.pull-left[
+
+## It's a rapidly growing field
+
+&lt;img src="images/turner2003.png" width="90%" style="display: block; margin: auto auto auto 0;" /&gt;
+
+&lt;img src="images/satellitelaunches.jpg" width="90%" style="display: block; margin: auto auto auto 0;" /&gt;
+
+.footnote[Turner et al. 2003]
+]
+
+.pull-right[
+
+&lt;img src="images/cavenderbares2020.png" width="75%" style="display: block; margin: auto auto auto 0;" /&gt;
+.footnote[Cavender-Bares et al. 2020]
+
+]
+
+---
+
+class: center
+
+&lt;img src="images/bioscape.png" width="100%" style="display: block; margin: auto;" /&gt;
+.left[.footnote[...and the Cape is about to be the epicentre of this endeavour - https://www.bioscape.io/]]
+
+---
+
+layout: false
+
+## BioSCape: Biodiversity Survey of the Cape
+
+.pull-left[
+
+- `\(&gt;\)` 100 scientists and conservation practitioners
+- 16 teams (mixed US, RSA, other)
+- terrestrial and aquatic
+- 2 planes
+- 4 instruments (hyperspectral and LiDAR)
+- fundamental and applied science
+
+&lt;img src="images/bioscape_planes.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+.pull-right[
+&lt;img src="images/bioscape_kumu.png" width="100%" style="display: block; margin: auto;" /&gt;
+.footnote[www.bioscape.io]
+]
+
+---
+
+layout: false
+
+.pull-left[
+## There are many facets of biodiversity to measure!
+
+&lt;br&gt;
+
+An advantage of remote sensing is that it can directly measure the structure, composition and function of biodiversity... 
+
+...at least from the scale of individuals up...
+
+]
+
+.pull-right[
+&lt;img src="images/Noss_Biodiversity.png" width="100%" style="display: block; margin: auto;" /&gt;
+.footnote[Noss 1990, _Conservation Biology_]
+]
+
+---
+
+layout: false
+
+.pull-left[
+## There are many facets of biodiversity to measure!
+
+An advantage of remote sensing is that it can directly measure the structure, composition and function of biodiversity... 
+
+
+&lt;img src="images/skidmore2021_fig1.png" width="120%" style="display: block; margin: auto;" /&gt;
+.footnote[Skidmore et al. 2021]
+
+]
+
+.pull-right[
+
+&lt;img src="images/ebv_circle.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+
+...at least from the scale of individuals up...
+
+.footnote[https://geobon.org/]
+
+]
+
+---
+
+class: center
+
+##Productivity and Seasonality
+
+&lt;img src="images/world_seasonality.gif" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+
+class: center
+
+##Land cover (and change)
+
+&lt;img src="images/skowno2021.jpg" width="50%" style="display: block; margin: auto;" /&gt;
+
+.left[.footnote[Skowno et al. 2021]]
+
+---
+
+class: center
+
+##Land cover change detection
+
+&lt;img src="images/renosterveld_planet.gif" width="70%" style="display: block; margin: auto;" /&gt;
+
+.left[.footnote[Moncrieff 2022]]
+
+---
+
+class: center
+
+##Land cover change time series
+
+&lt;img src="images/moilwe.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+.left[.footnote[Moilwe et al. in prep]]
+
+---
+
+layout: false
+
+.pull-left[
+## Functional diversity?
+
+&lt;img src="images/peninsula_lidar.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+Proteaceae shrubs (dark green) surrounded by low shrubs, forbs and graminoids at Silvermine, TMNP. 
+
+.footnote[Data from City of Cape Town]
+
+]
+
+.pull-right[
+&lt;img src="images/purkis_klemas2011_lidar.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+Light detection and ranging (LiDAR) allows you to measure topography and the vertical structure of vegetation.
+
+.footnote[Purkis and Klemas 2011]
+]
+
+---
+
+layout: false
+
+.pull-left[
+## Functional diversity?
+
+Imaging spectroscopy ("hyperspectral" remote sensing) allows direct measurement of leaf traits.
+
+&lt;img src="images/cawse2021_spectra.png" width="92%" style="display: block; margin: auto auto auto 0;" /&gt;
+
+]
+
+.pull-right[
+&lt;img src="images/peninsula_hyperspec.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+layout: false
+
+## Phylogenetic diversity?
+
+&lt;img src="images/meireles2020.jpg" width="70%" style="display: block; margin: auto;" /&gt;
+
+.left[.footnote[Meireles et al. 2020]]
+
+Leaf spectra are phylogenetically conserved for some regions, so it's possible that we'll be able to discern lineages using imaging spectroscopy...
+
+---
+
+layout: false
+
+.pull-left[
+## Populations?
+
+&lt;img src="images/machine_learning.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+.footnote[https://xkcd.com/1838/]
+]
+
+.pull-right[
+&lt;img src="images/cedars_pic.png" width="75%" style="display: block; margin: auto;" /&gt;&lt;img src="images/cedars_mapped.png" width="75%" style="display: block; margin: auto;" /&gt;
+
+.footnote[Hadebe 2021 MSc thesis]
+]
+
+---
+
+class: center
+
+##Of course there are challenges and limitations...
+
+&lt;img src="images/schimel2020_scale.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+.left[.footnote[Schimel et al. 2020]]
+
+---
+
+class: center
+
+##But this is what fancy modelling is for...
+
+&lt;img src="images/jetz2016.png" width="43%" style="display: block; margin: auto;" /&gt;
+
+.left[.footnote[Jetz et al. 2016]]
+
+---
+
+layout: false
+
+.pull-left[
+## Combining remote sensing and in situ data
+
+Using remotely sensed environmental data to inform species distribution models
+
+&lt;img src="images/wilson2016.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+E.g. Observed cloud frequency from the MODIS satellite is a better predictor of the distribution of _Protea cynaroides_ than interpolated precipitation.
+
+.footnote[Wilson and Jetz 2016]
+
+]
+
+.pull-right[
+&lt;img src="images/randin2020.jpg" width="100%" style="display: block; margin: auto;" /&gt;
+.footnote[Randin et al. 2020]
+]
+
+---
+
+layout: false
+
+.pull-left[
+## The Spectral Diversity Hypothesis
+
+Is spectral diversity a good proxy for biotic diversity?
+
+&lt;img src="images/frye2021map.png" width="100%" style="display: block; margin: auto auto auto 0;" /&gt;
+
+]
+
+.pull-right[
+&lt;img src="images/frye2021fig.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+A test looking at spectral diversity from leaf spectra for 1210 species across 1267 plots supports the hypothesis **at the leaf level...**
+
+.footnote[Frye et al. 2021]
+]
+
+---
+
+layout: false
+
+.pull-left[
+## The Spectral Diversity Hypothesis
+
+
+&lt;img src="images/vanleeuwen2020_scale.png" width="85%" style="display: block; margin: auto auto auto 0;" /&gt;
+
+]
+
+.pull-right[
+&lt;img src="images/vanleeuwen2020b.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+But canopy reflectance is more complex...
+
+Leaf angle, shadow, density, etc affect the spectral reflectance of vegetation, reducing our ability to identify and map species - especially as the resolution of the imagery coarsens.
+
+.footnote[van Leeuwen et al. 2021]
+]
+
+---
+
+layout: false
+
+.pull-left[
+### Environmental heterogeneity
+
+Another approach is just to map and monitor environmental heterogeneity
+
+####_"Conserving nature's stage"_
+
+The Nature Conservancy and others using this approach to identify parcels of Earth that are valuable for their capacity to support diverse life forms today and into the future
+
+Typically identified based on their abiotic heterogeneity or geodiversity, much of which can be mapped and/or monitored with remote sensing - topography, climate, soils, etc
+
+]
+
+.pull-right[
+&lt;img src="images/humboldt.jpg" width="90%" style="display: block; margin: auto;" /&gt;
+.footnote[Alexander von Humboldt]
+]
+
+---
+class: middle
+
+## Take-home
+
+&gt;*There are many ways to measure biodiversity. None are perfect. You should treat them as hypotheses.*
+
+&gt;*How you measure biodiversity can affect the outcome of your study. There are many ways to measure biodiversity incorrectly for the application at hand!*
+
+&gt;*Measures of biodiversity allow us to explore:*
+&gt; - *How biodiversity is generated and communities are assembled*
+&gt; - *How biodiversity affects ecosystem functions, including benefits to society*
+&gt; - *How the environment is changing with time and human impacts*
+
+&gt;*Community assembly, biotic effects on ecosystem function, and responses to global change are tightly intertwined*
+
+---
+
+## References
+
+Gotelli, N. J. and R. K. Colwell (2001). "Quantifying biodiversity:
+procedures and pitfalls in the measurement and comparison of species
+richness". In: _Ecology letters_ 4.4, pp. 379-391. ISSN: 1461-023X,
+1461-0248. DOI:
+[10.1046/j.1461-0248.2001.00230.x](https://doi.org/10.1046%2Fj.1461-0248.2001.00230.x).
+
+Slingsby, J. A., C. Merow, M. Aiello-Lammens, et al. (2017).
+"Intensifying postfire weather and biological invasion drive species
+loss in a Mediterranean-type biodiversity hotspot". En. In:
+_Proceedings of the National Academy of Sciences of the United States
+of America_ 114.18, pp. 4697-4702. ISSN: 0027-8424, 1091-6490. DOI:
+[10.1073/pnas.1619014114](https://doi.org/10.1073%2Fpnas.1619014114).
+
+Whittaker, R. H. (1972). "Evolution and measurement of species
+diversity". En. In: _Taxon_ 21.2-3, pp. 213-251. ISSN: 0040-0262,
+1996-8175. DOI: [10.2307/1218190](https://doi.org/10.2307%2F1218190).
+
+---
+class: center, middle
+
+# Thanks!
+
+Slides created via the R packages:
+
+[**xaringan**](https://github.com/yihui/xaringan)&lt;br&gt;
+[gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"slideNumberFormat": "%current% / %total%",
+"highlightStyle": "github",
+"highlightLines": true,
+"ratio": "16:9",
+"countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

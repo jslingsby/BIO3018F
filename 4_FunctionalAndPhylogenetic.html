@@ -4,7 +4,7 @@
     <title>4. Functional and Phylogenetic Diversity</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jasper Slingsby, BIO3018F" />
-    <meta name="date" content="2022-02-02" />
+    <meta name="date" content="2023-01-26" />
     <script src="4_FunctionalAndPhylogenetic_files/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
@@ -12,9 +12,15 @@
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
+.title[
 # 4. Functional and Phylogenetic Diversity
+]
+.author[
 ### Jasper Slingsby, BIO3018F
-### 2022-02-02
+]
+.date[
+### 2023-01-26
+]
 
 ---
 
@@ -27,7 +33,7 @@ layout: false
 
 .pull-left[
 
-## Are simple counts of the number of species and individuals enough?
+## Are simple metrics of the number of species and individuals enough?
 
 &lt;img src="images/grassland.jpeg" width="95%" style="display: block; margin: auto;" /&gt;
 ]
@@ -150,7 +156,7 @@ layout: false
 
 .pull-left[
 
-### Defining functional groups
+### Defining functional groups quantitatively
 
 &lt;img src="images/tetraria_traits.png" width="70%" style="display: block; margin: auto;" /&gt;
 
@@ -186,7 +192,7 @@ There's a lot of useful information in the data and analyses used to define func
 
 Rather than lose that information by defining discrete groups and counting them, we can use the unique information directly!
 
-E.g. functional diversity can be calculated as the sum of the branch length joining all species in the sample (Petchey and Gaston 2002)
+E.g. functional diversity can be calculated as the *sum of the branch length* joining all species in the sample (Petchey and Gaston 2002)
 
 ]
 
@@ -241,7 +247,7 @@ layout: false
 
 Similar approaches used for phylogenetic diversity.
 
-- _Pairwise distances_ (e.g. mean pairwise distances between all species in a sample or minimum nearest taxon distance - Webb et al. 2002)
+- _Pairwise distances_ (e.g. mean pairwise distances (branch lengths) between all species in a sample or minimum nearest taxon distance - Webb et al. 2002)
 
 - _Phylogenetic trees_ (e.g. sum of the branches joining all species - Faith 1991)
   - can also use the taxonomic hierarchy instead of a phylogeny, but this suffers from the subjectivity of taxonomic ranks
@@ -258,7 +264,7 @@ The sum of the branch lengths of a phylogeny linking species in a sample represe
 
 The taxonomic hierarchy (Order, Family, Genus etc) is far less objective.
 
-That said, phylogenies aren't perfect, and there are many sources of error - molecular regions sampled, methods used, etc.
+- That said, phylogenies aren't perfect, and there are many sources of error - molecular regions sampled, methods used, etc.
 
 ]
 
@@ -374,6 +380,7 @@ One commonly used method for generating the expected patterns is _null models_..
 
 Null models can be used to "randomize" properties of interest in the data. Typically we generate a large number of "randomized" datasets (e.g. 999) and explore where the observed data rank with respect to the null datasets.
 
+.footnote[figure from Slingsby 2011, PhD]
 ]
 
 .pull-right[
@@ -386,7 +393,8 @@ We can address questions like:
 - _Are species in communities more closely (or distantly) related than we'd expect?_
 - _Are species in communities more functionally similar (or dissimilar) than we'd expect?_
 
-.footnote[figure from Slingsby 2011, PhD]
+And infer processes from these patterns.
+
 ]
 
 ---
@@ -420,7 +428,7 @@ You have to think very carefully about what properties are affected when applyin
 
 You also need to think carefully about how you sample your communities and how you structure them in your null model (e.g. grouping and analyzing sites separately by region or doing one global analysis, etc).
 
-See Gotelli and Graves 1996 for a thorough treatment.
+See Gotelli and Graves 1996 for more detail.
 
 .footnote[figure from Slingsby 2011, PhD]
 ]
@@ -518,6 +526,19 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
 (function() {
   "use strict"
   // Replace <script> tags in slides area to make them executable

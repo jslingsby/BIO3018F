@@ -140,6 +140,12 @@ knitr::include_graphics("images/bioscape_kumu.png")
 
 ---
 
+class: center, middle
+
+## But how do we actually measure biodiversity with remote sensing?
+
+---
+
 layout: false
 
 .pull-left[
@@ -238,6 +244,12 @@ knitr::include_graphics("images/moilwe.png")
 
 ---
 
+class: center, middle
+
+## But what about metrics like species, functional and phylogenetic diversity?
+
+---
+
 layout: false
 
 .pull-left[
@@ -303,7 +315,9 @@ Leaf spectra are phylogenetically conserved for some regions, so it's possible t
 layout: false
 
 .pull-left[
-## Populations?
+## Identifying species?
+
+We can monitor populations of large species..., but identifying all species present...?
 
 ```{r echo = F, fig.align = 'center', out.width = '70%'}
 knitr::include_graphics("images/machine_learning.png")
@@ -325,7 +339,7 @@ knitr::include_graphics("images/cedars_mapped.png")
 
 class: center
 
-##Of course there are challenges and limitations...
+##There are challenges and limitations...
 
 ```{r echo = F, fig.align = 'center', out.width = '50%'}
 knitr::include_graphics("images/schimel2020_scale.png")
@@ -337,7 +351,7 @@ knitr::include_graphics("images/schimel2020_scale.png")
 
 class: center
 
-##But this is what fancy modelling is for...
+##But this is what fancy modelling and proxies are for...
 
 ```{r echo = F, fig.align = 'center', out.width = '43%'}
 knitr::include_graphics("images/jetz2016.png")

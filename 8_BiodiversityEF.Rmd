@@ -85,9 +85,13 @@ layout: false
 - Respiration
 - Water filtration
 - Pollination
-- Predation
+- Nutrient cycling
 - Habitat (for other organisms)
 - Etc
+
+<br>
+
+Ecosystem services are the benefits humans derive from ecosystem functions (directly or indirectly).
 
 ```{r echo = F, fig.align = 'center', out.width = '90%'}
 #knitr::include_graphics("images/kreft2007_crop.jpg")
@@ -131,7 +135,8 @@ layout: false
 .pull-left[
 ###Direct trait effects
 
-- Ecosystem function is directly linked to a particular trait or set of traits
+- Ecosystem function is directly linked to a particular trait or set of traits.
+  - i.e. the actual species identity or trait value is what matters
 
 ]
 
@@ -139,6 +144,8 @@ layout: false
 ###Diversity effects
 
 - Ecosystem function is dependent on the diversity of organisms or range of traits present (i.e. species, functional or phylogenetic diversity). 
+  - i.e. the range or variation in species/traits/phylogenetic history is what matters
+
 
 ]
 
@@ -148,22 +155,20 @@ layout: false
 
 .pull-left[
 
-## Trait vs diversity effects?
-
-###Direct trait effects
+##Direct trait effects
 
 Dominance by indigenous seeders versus sprouters affects rate of biomass accumulation, change in total stream flow, peak storm-flow pulse, and sediment yield or nutrient runoff in fynbos stands/catchments
   - it also changes with a shift to woody alien trees 
 
-<br>
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/treurnicht2021.jpg")
+```
 
-Hypothetical curves are based on information from a range of sources, see book chapter. The temporal range spans c.15 yr and any seasonal variation is excluded. 
-
-.footnote[Figure from Slingsby et al. 2014]
+.footnote[From Slingsby et al. 2014. Hypothetical curves based on literature. Time span ~15 yrs. Seasonality excluded.]
 ]
 
 .pull-right[
-```{r echo = F, fig.align = 'center', out.width = '90%'}
+```{r echo = F, fig.align = 'center', out.width = '85%'}
 knitr::include_graphics("images/slingsby_2014_BEF.png")
 ```
 
@@ -175,9 +180,7 @@ layout: false
 
 .pull-left[
 
-## Trait vs diversity effects?
-
-###Diversity effects
+##Diversity effects
 
 Experimental communities (e.g. Cedar Creek) reveal diversity effects on several ecosystem properties...
 
@@ -189,7 +192,7 @@ knitr::include_graphics("images/Cedar-Creek.jpg")
 ]
 
 .pull-right[
-```{r echo = F, fig.align = 'left', out.width = '95%'}
+```{r echo = F, fig.align = 'left', out.width = '93%'}
 knitr::include_graphics("images/tilman2014_fig4.png")
 ```
 .footnote[Tilman et al. 2014]
@@ -207,15 +210,15 @@ More species = greater probability of higher trait diversity, affecting ecosyste
 
 _**1. The selection effect**_
 
-More species = more likely to have species that can dominate ecosystem processes
+- More species = more likely to have species that can dominate ecosystem processes
 
 _**2. Niche complementarity**_
 
-More species = better filling of available niche space and use of resources (links with community assembly)
+- More species = better filling of available niche space and use of resources (links with community assembly)
 
-**A mix of the two...**
+_**3. A mix of the two...**_
 
-Complementarity among and/or dominance by subsets of species or functional groups
+- Complementarity among and/or dominance by subsets of species or functional groups
 
 
 ]
@@ -273,13 +276,11 @@ layout: false
 
 ### Diversity-Stability 
 
-"Biodiversity as insurance" - species respond differently to environmental change, but averaging results in lower community variance
-
 ```{r echo = F, fig.align = 'center', out.width = '70%'}
 knitr::include_graphics("images/hooper2005_fig4.png")
 ```
 
-.footnote[]
+"Biodiversity as insurance" - species respond differently to environmental change, but averaging results in lower community variance
 
 ]
 
@@ -288,9 +289,9 @@ knitr::include_graphics("images/hooper2005_fig4.png")
 knitr::include_graphics("images/tilman2014_fig3.png")
 ```
 
-Species loss = less compensation (or redundancy) and increasing instability
+Species loss = less compensation (or redundancy) and increasing instability.
 
-Generally holds, BUT (interestingly) more species usually means less species-level stability
+Supported by models (a, b) and experiments (c, d), BUT more species means less species-level stability (consistent with niche theory).
 
 .footnote[Hooper et al. 2005 | Tilman et al. 2014]
 
@@ -310,7 +311,7 @@ _More diverse communities are more resistant to invasion_ - Elton 1958
 
 - A corollary of niche theory
 
-**Logic:** Invaders must find resources to survive and grow, but theory predicts that levels of unconsumed resources decline as diversity increases (and is supported by B-EF experiments).
+**Logic:** Invaders must find resources to survive and grow, but theory predicts that levels of unconsumed resources decline as diversity increases (and is supported by B-EF experiments - see figure).
 
 **Findings:** Biomass attained by invaders of a given functional group are often most strongly inhibited by existing biomass of that same functional group - consistent with the predictions of limiting similarity.
 ]
@@ -334,9 +335,9 @@ layout: false
 
 ### Diversity-Multifunctionality
 
-Many more species are needed to maintain multiple types of ecosystem processes than are demonstrably linked to any given process
+Many more species are needed to maintain multiple types of ecosystem processes than are demonstrably linked to any given process.
 
-Not all species have desirable effects on the suite of ecosystem processes measured
+Not all species have desirable effects on the suite of ecosystem processes measured.
 
 ]
 
@@ -419,9 +420,9 @@ layout: false
 .pull-left[
 
 ###Space? - It's complicated!!!
-Niche complementarity is a local co-existence mechanism, but becomes less important at the regional scale, so the effect on EF should decrease
+Niche complementarity is a local co-existence mechanism, but becomes less important at the regional scale, so the effect on EF should decrease.
 
-Greater heterogeneity at the regional scale means adding species with different niche preferences should increase EF (but not so in homogenous regions)
+Greater heterogeneity at the regional scale means adding species with different niche preferences should increase EF (but not so in homogenous regions).
 
 The actual ecosystem functions themselves often change with scale!
 
@@ -487,34 +488,6 @@ knitr::include_graphics("images/ipbes.jpg")
 
 layout: false
 
-## B-EF and global change: Response vs effect types?
-
-.pull-left[
-
-```{r echo = F, fig.align = 'right', out.width = '100%'}
-knitr::include_graphics("images/fynbos_landscapes.png")
-```
-
-- Fynbos is physiognomally and functionally similar across huge variation in climate, soils etc.
-- This is largely because most communities are dominated by the same 10 or so lineages.
-- Species look similar, and have similar effects on the environment, but must be responding differently to occur in such different environments
-
-]
-
-
-.pull-right[
-
-```{r echo = F, fig.align = 'right', out.width = '65%'}
-knitr::include_graphics("images/fynbos_turnover.png")
-```
-
-
-]
-
----
-
-layout: false
-
 ## B-EF and global change: Climate change
 
 .pull-left[
@@ -560,37 +533,6 @@ Fragmentation is bad, but B-EF may actually compensate for some of the impacts
 knitr::include_graphics("images/gonzalez2020_frag.jpg")
 ```
 .footnote[Gonzalez et al. 2020]
-]
-
----
-
-layout: false
-
-.pull-left[
-
-## B-EF and global change: Regime Shifts
-
-Alternative vegetation states can exist on the same abiotic template. They often contrast dramatically in various ecosystem functions (productivity, decomposition, habitat, etc).
-
-They occur naturally, e.g.
-- Open (fynbos, grassland, savanna) vs closed (forest) ecosystems
-
-Or can be created unnaturally, e.g.
-- Fynbos/grassland vs pine invasion
-- Expansion of closed into open ecosystems (or vice versa)
-
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'right', out.width = '110%'}
-knitr::include_graphics("images/slingsby2020_IC.png")
-```
-
-```{r echo = F, fig.align = 'right', out.width = '110%'}
-knitr::include_graphics("images/slingsby2020_ICb.png")
-```
-
-.footnote[Slingsby et al. 2020]
 ]
 
 ---

@@ -1,0 +1,59 @@
+---
+title: "Feedbacks" 
+author: "Jasper Slingsby"
+format: 
+  revealjs:
+    theme: dark
+    slide-number: true
+    self-contained: true
+editor: visual
+---
+
+## Historical views on community ecology {background-color="#33431e"}
+
+<br>
+
+Gleason vs Clements...
+
+<br>
+
+
+## Emergence... {background-color="#33431e"}
+
+<br>
+
+Emergent properties...
+
+- Population/Species (niche construction)
+
+- Community (Alternative Stable States)
+
+- Globe (Gaia Hypothesis)
+
+## Niche construction {background-color="#33431e"}
+
+
+
+## Alternative Stable States {background-color="#33431e"}
+
+### Alternative biome states
+
+
+## Gaia Hypothesis {background-color="#33431e"}
+
+- What it means
+
+- Daisyworld
+
+## Feedbacks across scales {background-color="#33431e"}
+
+- Fynbos
+
+- Global tree restoration
+
+![Type I and Type II Errors and how they result in false or missing findings, respectively. Image from Norton and Strube 2001, *JOSPT*.](images/type_errors_Norton_Strube_2001.png){width="100%"}
+
+
+##  {background-color="#33431e"}
+
+

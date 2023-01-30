@@ -1,6 +1,6 @@
 ---
-title: "11. Power Analysis" 
-author: "Jasper Slingsby"
+title: "" 
+author: ""
 format: 
   revealjs:
     theme: dark
@@ -9,11 +9,15 @@ format:
 editor: visual
 ---
 
+# Power Analysis {background-color="#33431e"}
+
+Jasper Slingsby
+
 ## Power Analysis {background-color="#33431e"}
 
 <br>
 
-No one ever does them... 
+No one ever does them...
 
 <br>
 
@@ -27,18 +31,20 @@ No one ever does them...
 
 <br>
 
-*Power analysis* is a calculation typically used to estimate the smallest sample size needed for an experiment, given a required significance level, statistical power, and effect size. 
+*Power analysis* is a calculation typically used to estimate the smallest sample size needed for an experiment, given a required significance level, statistical power, and effect size.
 
-- It is *normally conducted before the data collection*.
+-   It is *normally conducted before the data collection*!
 
 ## Why do power analysis? {background-color="#33431e"}
 
 <br>
 
-Not knowing the statistical power of your analysis can result in
+Firstly, it helps you plan your analyses before you've done your data collection, which is always useful.
 
-- missed findings (through Type II Error), or 
-- false findings (through Type I Error).
+Secondly, not knowing the statistical power of your analysis can result in
+
+-   missed findings (through Type II Error), or
+-   false findings (through Type I Error).
 
 ## Why do power analysis? {background-color="#33431e"}
 
@@ -46,8 +52,8 @@ Not knowing the statistical power of your analysis can result in
 
 Type II Error:
 
-- occurs when the researcher erroneously concludes that there is *not* a difference between treatments, when in reality there is...
-- this is a common outcome of low statistical power
+-   occurs when the researcher erroneously concludes that there [*is not*]{.underline} a difference between treatments, when in reality there is...
+-   this is a common outcome of low statistical power
 
 ## Why do power analysis? {background-color="#33431e"}
 
@@ -55,13 +61,12 @@ Type II Error:
 
 Type I Error:
 
-- occurs when the researcher erroneously concludes that there *is* a difference between treatments, when in reality there is not...
-- less likely when there is poor statistical power, but can happen if there with low sample sizes of highly variable subjects, or if there is bias in sampling...
+-   occurs when the researcher erroneously concludes that there [*is*]{.underline} a difference between treatments, when in reality there is not...
+-   less likely when there is poor statistical power, but can happen with low sample sizes of highly variable subjects, or if there is bias in sampling...
 
 ## Why do power analysis? {background-color="#33431e"}
 
 ![Type I and Type II Errors and how they result in false or missing findings, respectively. Image from Norton and Strube 2001, *JOSPT*.](images/type_errors_Norton_Strube_2001.png){width="100%"}
-
 
 ## Statistical Power {background-color="#33431e"}
 
@@ -69,12 +74,12 @@ Type I Error:
 
 Is determined by the combination of the:
 
-- $\alpha$ ("significance") level required (e.g. P < 0.05) 
-- difference between group means
-- variability among subjects
-- sample size (the factor we usually have most control over)
+-   $\alpha$ ("significance") level required (e.g. P \< 0.05)
+-   difference between group means (effect size)
+-   variability among subjects
+-   sample size (the factor we usually have most control over)
 
-## $\alpha$ ("significance") level {.smaller background-color="#33431e"}
+## $\alpha$ ("significance") level {.smaller background-color="#c2c190"}
 
 ```{r}
 library(tidyverse)
@@ -94,13 +99,13 @@ ggplot(ddat, aes(x, fill = Probability, colour = Probability)) +
   xlim(-5,5)
 ```
 
-We usually use an $\alpha$ of 0.05 to indicate significant difference. 
+We usually use an $\alpha$ of 0.05 to indicate significant difference.
 
-- i.e. the probability of the observation not being different to the null is less than 5% (i.e. p < 0.05), or the result should only be observed once or less for every 20 samples. 
+-   i.e. the probability of the observation not being different to the null is less than 5% (i.e. p \< 0.05), or the result should only be observed once or less for every 20 samples.
 
 This is a subjective cut-off, but is generally accepted in the literature...
 
-## Difference between group means {background-color="#33431e"}
+## Difference between group means {.smaller background-color="#c2c190"}
 
 ```{r}
 #library(tidyverse)
@@ -118,6 +123,70 @@ ggplot(ddat, aes(x, fill = Population, colour = Population)) +
   annotate("text", x = 2.5, y = 0.225, label = "Difference in means = 0.5") +
   ylab("Density") +
   xlim(-5,10)
+```
+
+You have greater statistical power when you have greater differences in means (effect size). P1 vs P3 has greater power than either P1 vs P2 or P2 vs P3.
+
+## Variability among subjects {.smaller background-color="#c2c190"}
+
+```{r}
+#| fig-height: 4
+
+#library(tidyverse)
+
+ddat <- rbind(data.frame(x = c(rnorm(5000, 0, 1), rnorm(5000, 0.5, 1), rnorm(5000, 5, 1)), Population = c(rep("P1", 5000), rep("P2", 5000), rep("P3", 5000)), variability = "SD = 1"), data.frame(x = c(rnorm(5000, 0, 2), rnorm(5000, 0.5, 2), rnorm(5000, 5, 2)), Population = c(rep("P1", 5000), rep("P2", 5000), rep("P3", 5000)), variability = "SD = 2"), data.frame(x = c(rnorm(5000, 0, 3), rnorm(5000, 0.5, 3), rnorm(5000, 5, 3)), Population = c(rep("P1", 5000), rep("P2", 5000), rep("P3", 5000)), variability = "SD = 3"))
+
+ggplot(ddat, aes(x, fill = Population, colour = Population)) +
+  geom_density(alpha = 0.1, bw = 1) +
+  geom_segment(aes(x = 0, y = 0, xend = 0, yend = 0.3), col = "gray25", size = 0.5, alpha = .2, linetype = 5) +
+  geom_segment(aes(x = 0.5, y = 0, xend = 0.5, yend = 0.3), col = "gray25", size = 0.5, alpha = .2, linetype = 5) +
+  geom_segment(aes(x = 5, y = 0, xend = 5, yend = 0.3), col = "gray25", size = 0.5, alpha = .2, linetype = 5) +
+  ylab("Density") +
+  xlim(-7.5,12.5)  +
+  facet_wrap(vars(variability))
+```
+Greater variability among subjects results in larger standard deviations, reducing our ability to distinguish among groups (i.e. statistical power).
+
+## Sample size {.smaller background-color="#c2c190"}
+
+```{r}
+#| fig-height: 4
+#library(tidyverse)
+
+ddat <- rbind(data.frame(x = c(rnorm(5000, 0, 1), rnorm(5000, 0.5, 1), rnorm(5000, 5, 1)), Population = c(rep("P1", 5000), rep("P2", 5000), rep("P3", 5000)), Sample = 5000), data.frame(x = c(rnorm(50, 0, 1), rnorm(50, 0.5, 1), rnorm(50, 5, 1)), Population = c(rep("P1", 50), rep("P2", 50), rep("P3", 50)), Sample = 50), data.frame(x = c(rnorm(5, 0, 1), rnorm(5, 0.5, 1), rnorm(5, 5, 1)), Population = c(rep("P1", 5), rep("P2", 5), rep("P3", 5)), Sample = 5))
+
+ss <- ggplot(ddat, aes(x, fill = Population, colour = Population)) +
+  geom_density(alpha = 0.1, bw = 1) +
+  geom_segment(aes(x = 0, y = 0, xend = 0, yend = 0.35), col = "gray25", size = 0.5, alpha = .2, linetype = 5) +
+  geom_segment(aes(x = 0.5, y = 0, xend = 0.5, yend = 0.35), col = "gray25", size = 0.5, alpha = .2, linetype = 5) +
+  geom_segment(aes(x = 5, y = 0, xend = 5, yend = 0.35), col = "gray25", size = 0.5, alpha = .2, linetype = 5) +
+  ylab("Density") +
+  xlim(-5,10) +
+  facet_wrap(vars(Sample))
+
+ss_labels <- ddat %>% group_by(Sample, Population) %>% summarize(sd = sd(x)) %>% mutate(se = round(sd/sqrt(Sample), 3)) %>% mutate(label = paste0("SE = ", se))
+  
+p1_lab <- filter(ss_labels, Population == "P1")
+p2_lab <- filter(ss_labels, Population == "P2")
+p3_lab <- filter(ss_labels, Population == "P3")
+
+ss +
+  geom_text(x = -3.5, y = 0.25, aes(label = label), data = p1_lab, size = 3) +
+  geom_text(x = -3.5, y = 0.2, aes(label = label), data = p2_lab, size = 3) +
+  geom_text(x = -3.5, y = 0.15, aes(label = label), data = p3_lab, size = 3)
+```
+
+Increasing sample size increases statistical power by improving the estimate of the mean and constricting the distribution of the test statistic (i.e. reducing the standard error (SE)).
+
+## ...
+
+```{r}
+#library(tidyverse)
+
+ddat <- rbind(data.frame(x = c(rnorm(5000, 0, 1), rnorm(5000, 0.5, 1), rnorm(5000, 5, 1)), Population = c(rep("P1", 5000), rep("P2", 5000), rep("P3", 5000))), data.frame(x = c(rnorm(50, 0, 1), rnorm(50, 0.5, 1), rnorm(50, 5, 1)), Population = c(rep("P1s", 50), rep("P2s", 50), rep("P3s", 50))))
+
+ggplot(ddat, aes(x, fill = Population, colour = Population)) +
+  geom_boxplot(alpha = 0.1)
 ```
 
 ## Bullets

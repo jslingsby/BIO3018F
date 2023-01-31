@@ -41,6 +41,8 @@ No one ever does them...
 
 Firstly, it helps you plan your analyses before you've done your data collection, which is always useful.
 
+<br>
+
 Secondly, not knowing the statistical power of your analysis can result in
 
 -   missed findings (through Type II Error), or
@@ -177,6 +179,136 @@ ss +
 ```
 
 Increasing sample size increases statistical power by improving the estimate of the mean and constricting the distribution of the test statistic (i.e. reducing the standard error (SE)).
+
+## How do we do power analysis? {background-color="#33431e"}
+
+Simulate the data you would expect to collect in your study, varying the:
+
+-   $\alpha$ ("significance") level (e.g. P \< 0.05)
+-   difference between group means (effect size)
+-   variability among subjects
+-   sample size (the factor we usually have most control over)
+
+...and test for significant difference using the appropriate statistical test.
+
+## Let's run through a few examples {background-color="#33431e"}
+
+- One sample t-test
+- Two sample t-test
+- Paired t-test
+
+## Simulating data {background-color="#33431e"}
+
+First, we need to simulate some data. 
+
+If we believe our data are normally distributed, we can use the handy `rnorm()` function, like so:
+
+```{r, echo = T}
+dat <- rnorm(n = 50, # set the sample size
+             mean = 1, # set the mean to = 1
+             sd = 1) # set the standard deviation to = 1
+```
+
+## Simulating data {background-color="#33431e"}
+
+Now let's look at our new data
+
+- This is easier if we make it a data frame
+
+```{r, echo = T}
+
+df <- data.frame(Data = dat, Treatment = 1)
+
+head(df)
+```
+
+## Simulating data {background-color="#33431e"}
+
+We can plot it like so:
+
+```{r, echo = T}
+ggplot(df, aes(Data, fill = Treatment, colour = Treatment)) +
+  geom_density(alpha = 0.1)
+```
+
+## One sample _t_-test {.smaller background-color="#33431e"}
+
+Tests the hypothesis that the mean of our population is a specific value (e.g. 0).
+
+```{r, echo = T}
+t.test(x = df$Data, # set our vector of data values
+       alternative = "two.sided", # specify the alternative hypothesis (which in this case is "not zero" so it is two-sided (verses "greater" or "less"))
+       mu = 0) # set the "true value" of the mean 
+```
+
+In this case, the difference is highly significant!
+P < 0.000000000005!!!
+
+## One sample _t_-test {.smaller background-color="#33431e"}
+
+What if we fiddle with the _**$\alpha$ ("significance" level)**_?
+
+- You usually wouldn't do this!!! 
+
+but 
+
+- With one-sample _t_-tests one effectively does when choosing your alternative hypothesis.
+  - We set it to be "two-sided" because our alternative was that the mean is "not zero". This means the result is only significantly different if the observed mean is in the upper or lower 2.5% of the distribution.
+- If our alternative hypothesis was that the observed mean was "greater" or "less" then we could set that and the result would only be significantly different if the observed mean is in either the upper or lower 5% of the distribution respectively.
+  - i.e. setting the alternative to "greater" or "less" effectively makes the test more sensitive, similar to increasing the $\alpha$
+  
+## One sample _t_-test {.smaller background-color="#33431e"}
+
+Now let's fiddle with the difference between _**group means (effect size)**_.
+
+In this case this is easiest done by shifting the _mu_ to closer to the mean of our randomly generated data, like so
+```{r, echo = T}
+t.test(x = df$Data, # set our vector of data values
+       alternative = "two.sided", # specify the alternative hypothesis
+       mu = 0.5) # set the "true value" of the mean 
+```
+
+Here we've reduced the effect size to from 1 to 0.5, but the result is still significantly different.
+
+## One sample _t_-test {.smaller background-color="#33431e"}
+
+Now let's fiddle with _**variability among subjects**_.
+
+```{r, echo = T}
+# Make new data with greater variability (standard deviation = 2)
+df <- data.frame(Data = 
+                  rnorm(n = 50, # set the sample size
+                        mean = 1, # set the mean
+                        sd = 2), # set bigger standard deviation
+                 Treatment = 1)
+
+# Run t-test
+t.test(x = df$Data,
+       alternative = "two.sided", 
+       mu = 0.5)
+```
+
+With double the variability (standard deviation), and an effect size of 0.5, the result is no longer significantly different...
+
+## One sample _t_-test {.smaller background-color="#33431e"}
+
+Now let's increase the _**sample size**_.
+
+```{r, echo = T}
+# Make new data with greater sample size (n = 100)
+df <- data.frame(Data = 
+                  rnorm(n = 100, # set the sample size
+                        mean = 1, # set the mean
+                        sd = 2), # set bigger standard deviation
+                 Treatment = 1)
+
+# Run t-test
+t.test(x = df$Data,
+       alternative = "two.sided", 
+       mu = 0.5)
+```
+
+Aha! By doubling our sample size, our result is significantly different once again...
 
 ## ...
 

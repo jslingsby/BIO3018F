@@ -353,7 +353,7 @@ _**power**_ = the power of the test (1 minus the Type II error probability), whi
 
 _**d**_ = Cohen's _d_ = a measure of  effect size = the difference between the means divided by the pooled standard deviation
 
-  - i.e. you input the effect size and variability in one go)
+  - i.e. you input the effect size and variability in one go
 
 :::
 :::
@@ -479,10 +479,16 @@ pwr.anova.test(f = cohen.ES(test = "anov", size = "small")$effect.size,
 
 f	= Effect size
 
-<br>
 
 k	= Number of groups
 
+```{r}
+pwr.anova.test(f = cohen.ES(test = "anov", size = "large")$effect.size,
+               k = 4,
+               power = 0.80,
+               sig.level = 0.05) %>%
+  plot
+```
 ::: 
 ::: 
 
@@ -514,6 +520,16 @@ w	= Effect size
 <br>
 
 df = Degrees of freedom
+
+<br>
+
+```{r}
+pwr.chisq.test(w = cohen.ES(test = "chisq", size = "large")$effect.size,
+              df = 1,
+              power = 0.80,
+              sig.level = 0.05) %>%
+  plot()
+```
 ::: 
 ::: 
 
@@ -538,13 +554,69 @@ pwr.r.test(r = cohen.ES(test = "r", size = "small")$effect.size,
 
 ::: {.column width="50%"}
 
-<br>
-
 r	= correlation coefficient (i.e. it is not $R^2$)
 
+Note that for regression analysis you'd need to set the "alternative" to "greater" or "less", because it assumes that one variable is dependent on the other
+
+```{r}
+pwr.r.test(r = cohen.ES(test = "r", size = "large")$effect.size,
+           power = 0.80,
+           sig.level = 0.05,
+           alternative = "two.sided") %>%
+  plot()
+```
+::: 
+::: 
+
+## _**library(pwr)**_ functions: GLM {.smaller background-color="#c2c190"}
+
 <br>
 
-Note that for regression analysis you'd need to set the "alternative" to "greater" or "less", because it assumes that one variable is dependent on the other
+::: columns
+::: {.column width="50%"}
+
+To test whether two categorical variables (two dimensions of a contingency table) are independent
+
+```{r, echo = T}
+pwr.f2.test(u = 1,
+            v = NULL,
+            f2 = cohen.ES(test = "f2", size = "small")$effect.size,
+            power = 0.8,
+            sig.level = 0.05)
+```
+
+::: 
+
+::: {.column width="50%"}
+
+f2	= Effect size
+
+u = degrees of freedom for numerator (= number of groups - 1)
+
+v	= degrees of freedom for denominator (= total number of individuals across groups - the number of groups)
+
+```{r}
+pwr.f2.test(u = 1,
+            v = NULL,
+            f2 = cohen.ES(test = "f2", size = "large")$effect.size,
+            power = 0.8,
+            sig.level = 0.05)
+```
 ::: 
 ::: 
 
+## The plan from here... {.smaller background-color="#33431e"}
+
+<br>
+
+1. Think carefully about the data you plan to collect and how to analyze them
+
+2. Decide on your statistical analyses/tests
+
+3. Design your data spreadsheet
+
+4. Design your field data sheet
+
+5. Do power analyses for each of your analyses/tests to determine necessary sample sizes
+
+6. If that all goes quickly, we could head into the field to collect some preliminary data

@@ -182,7 +182,7 @@ Increasing sample size increases statistical power by improving the estimate of 
 
 ## How do we do power analysis? {background-color="#33431e"}
 
-Simulate the data you would expect to collect in your study, varying the:
+Simulate the data you would expect to collect, varying the:
 
 -   $\alpha$ ("significance") level (e.g. P \< 0.05)
 -   difference between group means (effect size)
@@ -191,23 +191,24 @@ Simulate the data you would expect to collect in your study, varying the:
 
 ...and test for significant difference using the appropriate statistical test.
 
-## Let's run through a few examples {background-color="#33431e"}
-
-- One sample t-test
-- Two sample t-test
-- Paired t-test
-
 ## Simulating data {background-color="#33431e"}
 
 First, we need to simulate some data. 
 
 If we believe our data are normally distributed, we can use the handy `rnorm()` function, like so:
 
+```{r}
+set.seed(10403)
+```
+
+
 ```{r, echo = T}
 dat <- rnorm(n = 50, # set the sample size
              mean = 1, # set the mean to = 1
              sd = 1) # set the standard deviation to = 1
 ```
+
+Type `?Distributions` <Enter> into your R console for alternative distributions.
 
 ## Simulating data {background-color="#33431e"}
 
@@ -242,7 +243,7 @@ t.test(x = df$Data, # set our vector of data values
 ```
 
 In this case, the difference is highly significant!
-P < 0.000000000005!!!
+P < 0.00000005!!!
 
 ## One sample _t_-test {.smaller background-color="#33431e"}
 
@@ -310,28 +311,240 @@ t.test(x = df$Data,
 
 Aha! By doubling our sample size, our result is significantly different once again...
 
-## ...
+## Estimating the number of samples {background-color="#33431e"}
 
-```{r}
-#library(tidyverse)
+<br>
 
-ddat <- rbind(data.frame(x = c(rnorm(5000, 0, 1), rnorm(5000, 0.5, 1), rnorm(5000, 5, 1)), Population = c(rep("P1", 5000), rep("P2", 5000), rep("P3", 5000))), data.frame(x = c(rnorm(50, 0, 1), rnorm(50, 0.5, 1), rnorm(50, 5, 1)), Population = c(rep("P1s", 50), rep("P2s", 50), rep("P3s", 50))))
+Repeatedly rerunning our simulation with different sample size (_**n**_) would rapidly become tedious...
 
-ggplot(ddat, aes(x, fill = Population, colour = Population)) +
-  geom_boxplot(alpha = 0.1)
+<br>
+
+Fortunately, there's a better way!
+
+<br>
+
+_library(pwr)_ allows us to input the effect size and power required and returns the required _**n**_.
+
+## Estimating the number of samples {.smaller background-color="#33431e"}
+
+### One sample _t_-test
+
+::: columns
+::: {.column width="50%"}
+
+```{r, echo = T}
+library(pwr)
+
+pwr.t.test(d = 0.8,
+           n = NULL,
+           sig.level = 0.05,
+           power = 0.8,
+           type = "one.sample", 
+           alternative = "two.sided")
 ```
 
-## Bullets
+Which suggests we need 15 samples to achieve our desired statistical power.
 
-When you click the **Render** button a document will be generated that includes:
+:::
+::: {.column width="50%"}
+Here we have set _**n**_ = _NULL_ because that's the property we want to estimate.
 
--   Content authored with markdown
--   Output from executable code
+_**power**_ = the power of the test (1 minus the Type II error probability), which in this case we have set to 80%
 
-## Code
+_**d**_ = Cohen's _d_ = a measure of  effect size = the difference between the means divided by the pooled standard deviation
 
-When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+  - i.e. you input the effect size and variability in one go)
 
-```{r}
-1 + 1
+:::
+:::
+
+## Estimating the number of samples {.smaller background-color="#33431e"}
+
+### Cohen's _d_
+
+= the difference between the means divided by the pooled standard deviation (i.e. the standard deviation of the difference)
+
+So, for our simulated data, assuming we're comparing our data to 0:
+
+```{r, echo = T}
+mean(df$Data)
 ```
+
+```{r, echo = T}
+sd(df$Data)
+```
+
+```{r, echo = T}
+mean(df$Data)/sd(df$Data)
+```
+
+## Estimating the number of samples {.smaller background-color="#33431e"}
+
+::: columns
+::: {.column width="50%"}
+
+Rerun for our observed _**d**_:
+
+```{r, echo = T}
+pwr.t.test(d = 0.65,
+           n = NULL,
+           sig.level = 0.05,
+           power = 0.8,
+           type = "one.sample", 
+           alternative = "two.sided")
+```
+
+:::
+
+::: {.column width="50%"}
+And plotted:
+
+```{r, echo = T}
+pwr.t.test(d = 0.65,
+           n = NULL,
+           sig.level = 0.05,
+           power = 0.8,
+           type = "one.sample", 
+           alternative = "two.sided") %>%
+  plot()
+```
+:::
+:::
+
+## _**library(pwr)**_ functions: {.smaller background-color="#33431e"}
+
+- `pwr.p.test`: one-sample proportion test
+- `pwr.2p.test`: two-sample proportion test
+- `pwr.2p2n.test`: two-sample proportion test (unequal sample sizes)
+- `pwr.t.test`: two-sample, one-sample and paired t-tests
+- `pwr.t2n.test`: two-sample t-tests (unequal sample sizes)
+- `pwr.anova.test`: one-way balanced ANOVA
+- `pwr.r.test`: correlation test
+- `pwr.chisq.test`: chi-squared test (goodness of fit and association)
+- `pwr.f2.test`: test for the general linear model
+
+## _**library(pwr)**_ functions: {.smaller background-color="#33431e"}
+
+<br>
+
+### A note on effect sizes...
+
+Each test has a different metric of effect size, each calculated in a different way...
+
+Fortunately, _library(pwr)_ has a convenient function (`cohen.ES`) that can provide these for you for small, medium and large effect sizes.
+
+```{r, echo = T}
+cohen.ES(test = "t", size = "medium")
+```
+
+If you're not sure of the effect size you'd expect, the conservative approach is to use "small"
+
+## _**library(pwr)**_ functions: {.smaller background-color="#33431e"}
+
+<br>
+
+### A note on effect sizes...
+
+You can pass the results of `cohen.ES1` directly to the pwr function by calling the `effect.size` slot in the returned object:
+
+```{r, echo = T}
+str(cohen.ES(test = "t", size = "medium"))
+```
+
+```{r, echo = T}
+cohen.ES(test = "t", size = "medium")$effect.size
+```
+
+## _**library(pwr)**_ functions: ANOVA {.smaller background-color="#c2c190"}
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+
+For comparisons among 3 or more groups
+
+```{r, echo = T}
+pwr.anova.test(f = cohen.ES(test = "anov", size = "small")$effect.size,
+               k = 4,
+               power = 0.80,
+               sig.level = 0.05) %>%
+  plot
+```
+
+::: 
+::: {.column width="50%"}
+
+<br>
+
+f	= Effect size
+
+<br>
+
+k	= Number of groups
+
+::: 
+::: 
+
+## _**library(pwr)**_ functions: Chi-squared {.smaller background-color="#c2c190"}
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+
+To test whether two categorical variables (two dimensions of a contingency table) are independent
+
+```{r, echo = T}
+pwr.chisq.test(w = cohen.ES(test = "chisq", size = "small")$effect.size,
+              df = 1,
+              power = 0.80,
+              sig.level = 0.05) %>%
+  plot()
+```
+
+::: 
+
+::: {.column width="50%"}
+
+<br>
+
+w	= Effect size
+
+<br>
+
+df = Degrees of freedom
+::: 
+::: 
+
+## _**library(pwr)**_ functions: Correlation {.smaller background-color="#c2c190"}
+
+<br>
+
+::: columns
+::: {.column width="50%"}
+
+For correlation analysis
+
+```{r, echo = T}
+pwr.r.test(r = cohen.ES(test = "r", size = "small")$effect.size,
+           power = 0.80,
+           sig.level = 0.05,
+           alternative = "two.sided") %>%
+  plot()
+```
+
+::: 
+
+::: {.column width="50%"}
+
+<br>
+
+r	= correlation coefficient (i.e. it is not $R^2$)
+
+<br>
+
+Note that for regression analysis you'd need to set the "alternative" to "greater" or "less", because it assumes that one variable is dependent on the other
+::: 
+::: 
+

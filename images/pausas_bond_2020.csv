@@ -1,0 +1,19 @@
+,,Vertebrate herbivory,Microbial decomposition,Wildfires
+Conditions,Climate optima,"Dry, temperate",Moist,With a dry season
+,Soil preferences,Nutrient rich,Moist,Nutrient poor
+,Vegetation types,Open,Closed,Open
+,,,,
+Requirements,Type of biomass,Aboveground plant,Above and belowground plant; animal,Aboveground plant
+,Plant biomass consumed,Green and fleshy,"Dead (litter, roots)",Dead and green
+,Relevant plant attributes,Leaf quality (palatability),Litter quality,"Biomass structure, flammability"
+,"Biomass C/N, Lignin/N",Low,Low,High
+,Biomass continuity,Temporal continuity,Contact with soil,Spatial continuity
+,Additional requirement,Water,Defaunation,Ignitions
+,,,,
+Consequences,Vegetation feedback,"Yes, palatability (grasses)","Yes, plant–soil","Yes, flammability"
+,For the ecosystem,Maintain open habitats,Maintain local fertility,Generate and maintain open habitats
+,Plant response traits (adaptations),"Plant structural and chemical defences, trample resistance (grasses)",Decomposability,"Flammability, lignotubers, seed dormancy, thick bark, etc."
+,,,,
+Interactions,Regulated by,"Predators, pathogens","Moisture, temperature, soil","Topographic barriers, ignitions, humans"
+,Regime factors,"Density, size, gut type, sociability",Climate,"Intensity, frequency, size, season"
+,Sensitivity to climate change,Low,Intermediate,High

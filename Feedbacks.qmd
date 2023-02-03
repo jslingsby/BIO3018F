@@ -1,6 +1,6 @@
 ---
-title: "Feedbacks" 
-author: "Jasper Slingsby"
+title: "" 
+author: ""
 format: 
   revealjs:
     theme: dark
@@ -8,6 +8,27 @@ format:
     self-contained: true
 editor: visual
 ---
+
+## Feedbacks {background-color="#33431e"}
+
+### Jasper Slingsby
+
+## Chapin slide
+
+## What is a feedback? {background-color="#33431e"}
+
+
+Feedbacks can be positive or negative
+
+## What is a feedback? {background-color="#33431e"}
+
+Positive feedbacks amplify changes and destabilize the state
+
+Negative feedbacks tend to reduce fluctuations and keep the system within a particular state
+
+## What is a feedback in ecology? {background-color="#33431e"}
+
+## What are the consequences of feedbacks in ecology? {background-color="#33431e"}
 
 ## Historical views on community ecology {background-color="#33431e"}
 
@@ -17,43 +38,36 @@ Gleason vs Clements...
 
 <br>
 
-
 ## Emergence... {background-color="#33431e"}
 
 <br>
 
 Emergent properties...
 
-- Population/Species (niche construction)
+-   Population/Species (niche construction)
 
-- Community (Alternative Stable States)
+-   Community (Alternative Stable States)
 
-- Globe (Gaia Hypothesis)
+-   Globe (Gaia Hypothesis)
 
 ## Niche construction {background-color="#33431e"}
-
-
 
 ## Alternative Stable States {background-color="#33431e"}
 
 ### Alternative biome states
 
-
 ## Gaia Hypothesis {background-color="#33431e"}
 
-- What it means
+-   What it means
 
-- Daisyworld
+-   Daisyworld
 
 ## Feedbacks across scales {background-color="#33431e"}
 
-- Fynbos
+-   Fynbos
 
-- Global tree restoration
+-   Global tree restoration
 
 ![Type I and Type II Errors and how they result in false or missing findings, respectively. Image from Norton and Strube 2001, *JOSPT*.](images/type_errors_Norton_Strube_2001.png){width="100%"}
 
-
 ##  {background-color="#33431e"}
-
-

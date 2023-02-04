@@ -252,119 +252,242 @@ knitr::include_graphics("images/pausas_bond_2022.jpg")
 
 ---
 
-
-## What are the consequences of feedbacks in ecology?
-
----
-
-## Historical views on community ecology
-
-<br>
-
-Gleason vs Clements...
-
-<br>
-
----
-
 ## Emergence... 
 
+Emergent properties are properties and behaviors of a system as a whole that its parts do not have on their own - they emerge thanks to the interactions among parts.
+
 <br>
 
+For example, in biology, each level of organization has properties which emerge at that level. 
+- organisms are not just a group of organs, 
+- ecosystems are not just a group of species
+
+They need to be bound together by specific interactions to emerge as such. Thus, diversity and stability of an ecosystem are emergent properties as are the life and behavior of an organism.
+
+---
+
+## Emergence from feedbacks
+
+.pull-left[
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/pausas_bond_2022.jpg")
+```
+
+.footnote[From Pausas and Bond 2022. _Trends in Ecology and Evolution_]
+]
+
+.pull-right[
 Emergent properties...
 
 -   Population/Species (niche construction)
 
 -   Community (Alternative Stable States)
 
--   Globe (Gaia Hypothesis)
+-   Biosphere (Gaia Hypothesis)
+]
 
 ---
 
-## Niche construction 
+## Niche construction
+
+```{r echo = F, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics("images/beaver_dam.jpg")
+```
+
+.footnote[e.g. beaver dams]
+
+---
+
+## Niche construction
+
+```{r echo = F, fig.align = 'center', out.width = '50%'}
+knitr::include_graphics("images/tree_plant_soil.png")
+```
+
+.footnote[e.g. trees and plant-soil feedbacks through leaf litter etc]
+
+---
+
+## Niche construction
+
+```{r echo = F, fig.align = 'center', out.width = '55%'}
+knitr::include_graphics("images/fire_mberg.gif")
+```
+
+.footnote[e.g. flammable plants and fire regimes]
 
 ---
 
 ## Alternative Stable States
 
+.pull-left[
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/beisner2003_1.jpg")
+```
+
+.footnote[From Beisner et al 2003. _Fronties in Ecology and Evolution_]
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/beisner2003_2.jpg")
+```
+]
+
 ---
 
-### Alternative biome states
+## Alternative Biome States
+
+.pull-left[
+```{r echo = F, fig.align = 'center', out.width = '80%'}
+knitr::include_graphics("images/pausas_bond_2020_abs_1.jpg")
+```
+
+.footnote[From Pausas and Bond 2020. _Trends in Plant Science_]
+]
+
+.pull-right[
+"Open" (grassland, shrubland, savanna) vs "Closed" (forest) ecosystems maintained by fire and/or herbivory
+]
+
+---
+
+## Alternative Biome States
+
+```{r echo = F, fig.align = 'center', out.width = '85%'}
+knitr::include_graphics("images/pausas_bond_2020_abs_2.jpg")
+```
+
+.footnote[From Pausas and Bond 2020. _Trends in Plant Science_]
+
+---
+
+## Alternative Biome States - altering the feedback!
+
+```{r echo = F, fig.align = 'center', out.width = '85%'}
+knitr::include_graphics("images/slingsby2020_IC.png")
+```
+
+.footnote[Slingsby et al 2020. _Global Change Biology_]
 
 ---
 
 ## Gaia Hypothesis
 
--   What it means
+.pull-left[
+```{r echo = F, fig.align = 'center', out.width = '80%'}
+knitr::include_graphics("images/blue_marble.jpg")
+```
 
--   Daisyworld
+.footnote["The Blue Marble" - NASA Apollo 17, 1972]
+]
+
+.pull_right[
+
+<br>
+
+- Earth as a global system with feedbacks that stabilize the planetary environment to certain states, and with state changes in geological time 
+
+- The biosphere has a major effect on the atmosphere and thus produces ecological and evolutionary feedbacks that sustain life
+]
+
+---
+
+## Gaia Hypothesis - Daisyworld model
+
+.pull-left[
+```{r echo = F, fig.align = 'center', out.width = '75%'}
+knitr::include_graphics("images/daisyworld.png")
+```
+
+.footnote[Watson and Lovelock 1982, _Tellus B_]
+]
+
+.pull_right[
+
+- A planet with nothing but black and white daisies
+
+- Black daisies do better under cooler climate, white daisies under warmer
+
+- When white daisies dominate, albedo increases, cooling the planet and selecting for black daisies
+
+- When black daisies dominate, albedo decreases, warming the planet and selecting for white daisies
+
+- Together, these effects stabilize the planet's climate, and the co-existence of black and white daisies
+
+]
+
+---
+
+## Emergence from feedbacks
+
+.pull-left[
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/pausas_bond_2022.jpg")
+```
+
+.footnote[From Pausas and Bond 2022. _Trends in Ecology and Evolution_]
+]
+
+.pull-right[
+Emergent properties...
+
+-   Population/Species (niche construction)
+
+-   Community (Alternative Stable States)
+
+-   Biosphere (Gaia Hypothesis)
+]
 
 ---
 
 ## Feedbacks across scales
 
--   Fynbos
-
--   Global tree restoration
-
----
-
-## Lectures to date
-
-[Intro Walk n Talk]
-
-1. Introduction to measuring diversity
-
-2. Species richness and diversity: Alpha Diversity
-
-3. Species richness and diversity: Beta Diversity
-
-4. Functional and Phylogenetic Diversity
-
-5. The Assembly of Diversity: Local processes
-
-6. The Assembly of Diversity: Regional processes
-
-7. Biodiversity and Ecosystem Function
-
-8. Remote Sensing of Biodiversity
-
-9. Power analysis
-
-[Recycling pathways and feedbacks Walk n Talk]
-
-.footnote[Providing examples from African ecosystems as far as was possible in the time I had... 
-...but the theory is universal, so think about how examples or case studies introduced by other lecturers may apply here.]
-
----
-
-layout: false
-
-## 1. Why do we need to be able to measure biodiversity?
-
-```{r echo = F, fig.align = 'center', out.width = '58%'}
-knitr::include_graphics("images/chapin.png")
+.pull-left[
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/pausas_bond_2022.jpg")
 ```
 
-1. What determines the composition and diversity of communities and ecosystems at various scales?
-
-2. What is the role of biodiversity in ecosystem function (and derived societal benefits)?
-
-3. How is biodiversity changing and what are the impacts on ecosystem services?
-
-4. How can we mitigate or adapt to changing biodiversity and ecosystem services?
+.footnote[From Pausas and Bond 2022. _Trends in Ecology and Evolution_]
+]
 
 .pull-right[
-.footnote[Figure modified from Chapin et al. 1997, _Science_]
+Flammability...
+
+- Population/Species (niche construction)
+
+  - postfire gaps generate recruitment opportunities
+
+- Community (Alternative Stable States)
+
+  - increase in fire activity can create and maintain an open biome
+
+- Biosphere (Gaia Hypothesis)
+
+  - open ecosystems have greater albedo than forest, cooling the planet
+  
 ]
 
 ---
 
-class: center, middle
+## Implications of feedbacks?
 
-## What have we learnt?
+Thresholds from where feedbacks can be disrupted can generate abrupt (nonlinear) changes.
+- implications for local scale and global change driven by climate change, invasive species, human activities, etc.
+
+<br>
+
+Feedbacks link across scales and a change at one scale may have big implications for other scales
+- e.g. What is the effect of global tree planting? Reduced atmospheric CO2, but increased albedo and evapotranspiration?
+ 
+<br>
+
+Simple cause–effect thinking may not be adequate.
+- e.g. Ideas like competition and habitat filtering applied in niche theory may not account for potential feedbacks and state shifts. How can we incorporate this?
 
 ---
+
+layout: false
 
 ## My research focuses on four questions...
 
@@ -383,419 +506,6 @@ knitr::include_graphics("images/chapin2.png")
 .pull-right[
 .footnote[Figure modified from Chapin et al. 1997, _Science_]
 ]
-
----
-
-### We want to measure biodiversity everywhere, all the time...
-
-```{r echo = F, fig.align = 'center', out.width = '80%'}
-knitr::include_graphics("images/world_seasonality.gif")
-```
-
-.center[Remote sensing is pretty much the only way this can be achieved...]
-
----
-
-layout: false
-
-.pull-left[
-
-## It's a rapidly growing field
-
-```{r echo = F, fig.align = 'left', out.width = '90%'}
-knitr::include_graphics("images/turner2003.png")
-```
-
-```{r echo = F, fig.align = 'left', out.width = '90%'}
-knitr::include_graphics("images/satellitelaunches.jpg")
-```
-
-.footnote[Turner et al. 2003]
-]
-
-.pull-right[
-
-```{r echo = F, fig.align = 'left', out.width = '75%'}
-knitr::include_graphics("images/cavenderbares2020.png")
-```
-.footnote[Cavender-Bares et al. 2020]
-
-]
-
----
-
-class: center
-
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/bioscape.png")
-```
-.left[.footnote[...and the Cape is about to be the epicentre of this endeavour - https://www.bioscape.io/]]
-
----
-
-layout: false
-
-## BioSCape: Biodiversity Survey of the Cape
-
-.pull-left[
-
-- $>$ 100 scientists and conservation practitioners
-- 16 teams (mixed US, RSA, other)
-- terrestrial and aquatic
-- 2 planes
-- 4 instruments (hyperspectral and LiDAR)
-- fundamental and applied science
-
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/bioscape_planes.png")
-```
-
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/bioscape_kumu.png")
-```
-.footnote[www.bioscape.io]
-]
-
----
-
-class: center, middle
-
-## But how do we actually measure biodiversity with remote sensing?
-
----
-
-layout: false
-
-.pull-left[
-## There are many facets of biodiversity to measure!
-
-<br>
-
-An advantage of remote sensing is that it can directly measure the structure, composition and function of biodiversity... 
-
-...at least from the scale of individuals up...
-
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/Noss_Biodiversity.png")
-```
-.footnote[Noss 1990, _Conservation Biology_]
-]
-
----
-
-layout: false
-
-.pull-left[
-## There are many facets of biodiversity to measure!
-
-An advantage of remote sensing is that it can directly measure the structure, composition and function of biodiversity... 
-
-
-```{r echo = F, fig.align = 'center', out.width = '120%'}
-knitr::include_graphics("images/skidmore2021_fig1.png")
-```
-.footnote[Skidmore et al. 2021]
-
-]
-
-.pull-right[
-
-```{r echo = F, fig.align = 'center', out.width = '90%'}
-knitr::include_graphics("images/ebv_circle.png")
-```
-
-
-...at least from the scale of individuals up...
-
-.footnote[https://geobon.org/]
-
-]
-
----
-
-class: center
-
-##Productivity and Seasonality
-
-```{r echo = F, fig.align = 'center', out.width = '80%'}
-knitr::include_graphics("images/world_seasonality.gif")
-```
-
----
-
-class: center
-
-##Land cover (and change)
-
-```{r echo = F, fig.align = 'center', out.width = '50%'}
-knitr::include_graphics("images/skowno2021.jpg")
-```
-
-.left[.footnote[Skowno et al. 2021]]
-
----
-
-class: center
-
-##Land cover change detection
-
-```{r echo = F, fig.align = 'center', out.width = '70%'}
-knitr::include_graphics("images/renosterveld_planet.gif")
-```
-
-.left[.footnote[Moncrieff 2022]]
-
----
-
-class: center
-
-##Land cover change time series
-
-```{r echo = F, fig.align = 'center', out.width = '60%'}
-knitr::include_graphics("images/moilwe.png")
-```
-
-.left[.footnote[Moilwe et al. in prep]]
-
----
-
-class: center, middle
-
-## But what about metrics like species, functional and phylogenetic diversity?
-
----
-
-layout: false
-
-.pull-left[
-## Functional diversity?
-
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/peninsula_lidar.png")
-```
-
-Proteaceae shrubs (dark green) surrounded by low shrubs, forbs and graminoids at Silvermine, TMNP. 
-
-.footnote[Data from City of Cape Town]
-
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/purkis_klemas2011_lidar.png")
-```
-
-Light detection and ranging (LiDAR) allows you to measure topography and the vertical structure of vegetation.
-
-.footnote[Purkis and Klemas 2011]
-]
-
----
-
-layout: false
-
-.pull-left[
-## Functional diversity?
-
-Imaging spectroscopy ("hyperspectral" remote sensing) allows direct measurement of leaf traits.
-
-```{r echo = F, fig.align = 'left', out.width = '92%'}
-knitr::include_graphics("images/cawse2021_spectra.png")
-```
-
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/peninsula_hyperspec.png")
-```
-]
-
----
-
-layout: false
-
-## Phylogenetic diversity?
-
-```{r echo = F, fig.align = 'center', out.width = '70%'}
-knitr::include_graphics("images/meireles2020.jpg")
-```
-
-.left[.footnote[Meireles et al. 2020]]
-
-Leaf spectra are phylogenetically conserved for some regions, so it's possible that we'll be able to discern lineages using imaging spectroscopy...
-
----
-
-layout: false
-
-.pull-left[
-## Identifying species?
-
-We can monitor populations of large species..., but identifying all species present...?
-
-```{r echo = F, fig.align = 'center', out.width = '70%'}
-knitr::include_graphics("images/machine_learning.png")
-```
-
-.footnote[https://xkcd.com/1838/]
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'center', out.width = '75%'}
-knitr::include_graphics("images/cedars_pic.png")
-knitr::include_graphics("images/cedars_mapped.png")
-```
-
-.footnote[Hadebe 2021 MSc thesis]
-]
-
----
-
-class: center
-
-##There are challenges and limitations...
-
-```{r echo = F, fig.align = 'center', out.width = '50%'}
-knitr::include_graphics("images/schimel2020_scale.png")
-```
-
-.left[.footnote[Schimel et al. 2020]]
-
----
-
-class: center
-
-##But this is what fancy modelling and proxies are for...
-
-```{r echo = F, fig.align = 'center', out.width = '43%'}
-knitr::include_graphics("images/jetz2016.png")
-```
-
-.left[.footnote[Jetz et al. 2016]]
-
----
-
-layout: false
-
-.pull-left[
-## Combining remote sensing and in situ data
-
-Using remotely sensed environmental data to inform species distribution models
-
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/wilson2016.png")
-```
-
-E.g. Observed cloud frequency from the MODIS satellite is a better predictor of the distribution of _Protea cynaroides_ than interpolated precipitation.
-
-.footnote[Wilson and Jetz 2016]
-
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/randin2020.jpg")
-```
-.footnote[Randin et al. 2020]
-]
-
----
-
-layout: false
-
-.pull-left[
-## The Spectral Diversity Hypothesis
-
-Is spectral diversity a good proxy for biotic diversity?
-
-```{r echo = F, fig.align = 'left', out.width = '100%'}
-knitr::include_graphics("images/frye2021map.png")
-```
-
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'center', out.width = '90%'}
-knitr::include_graphics("images/frye2021fig.png")
-```
-
-A test looking at spectral diversity from leaf spectra for 1210 species across 1267 plots supports the hypothesis **at the leaf level...**
-
-.footnote[Frye et al. 2021]
-]
-
----
-
-layout: false
-
-.pull-left[
-## The Spectral Diversity Hypothesis
-
-
-```{r echo = F, fig.align = 'left', out.width = '85%'}
-knitr::include_graphics("images/vanleeuwen2020_scale.png")
-```
-
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'center', out.width = '70%'}
-knitr::include_graphics("images/vanleeuwen2020b.png")
-```
-
-But canopy reflectance is more complex...
-
-Leaf angle, shadow, density, etc affect the spectral reflectance of vegetation, reducing our ability to identify and map species - especially as the resolution of the imagery coarsens.
-
-.footnote[van Leeuwen et al. 2021]
-]
-
----
-
-layout: false
-
-.pull-left[
-### Environmental heterogeneity
-
-Another approach is just to map and monitor environmental heterogeneity
-
-####_"Conserving nature's stage"_
-
-The Nature Conservancy and others using this approach to identify parcels of Earth that are valuable for their capacity to support diverse life forms today and into the future
-
-Typically identified based on their abiotic heterogeneity or geodiversity, much of which can be mapped and/or monitored with remote sensing - topography, climate, soils, etc
-
-]
-
-.pull-right[
-```{r echo = F, fig.align = 'center', out.width = '90%'}
-knitr::include_graphics("images/humboldt.jpg")
-```
-.footnote[Alexander von Humboldt]
-]
-
----
-class: middle
-
-## Take-home
-
->*There are many ways to measure biodiversity. None are perfect. You should treat them as hypotheses.*
-
->*How you measure biodiversity can affect the outcome of your study. There are many ways to measure biodiversity incorrectly for the application at hand!*
-
->*Measures of biodiversity allow us to explore:*
-> - *How biodiversity is generated and communities are assembled*
-> - *How biodiversity affects ecosystem functions, including benefits to society*
-> - *How the environment is changing with time and human impacts*
-
->*Community assembly, biotic effects on ecosystem function, and responses to global change are tightly intertwined*
 
 ---
 

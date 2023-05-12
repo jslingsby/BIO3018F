@@ -97,17 +97,17 @@ knitr::include_graphics("images/sdgs_makingpeacewithnature_small.jpg")
 ## My research focuses on...
 
 ```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/chapin.png")
+knitr::include_graphics("images/chapin2.png")
 ```
 
-.footnote[Figure modified from Chapin et al. 1997, _Science_]
+.footnote[Figure modified from Chapin et al. 1997, _Science_ and Slingsby et al. 2014]
 
 ---
 
 ## My research focuses on four questions...
 
 ```{r echo = F, fig.align = 'center', out.width = '58%'}
-knitr::include_graphics("images/chapin.png")
+knitr::include_graphics("images/chapin2.png")
 ```
 
 1. What determines the composition and diversity of communities and ecosystems at various scales?
@@ -119,7 +119,7 @@ knitr::include_graphics("images/chapin.png")
 4. How can we mitigate or adapt to changing biodiversity and ecosystem services?
 
 .pull-right[
-.footnote[Figure modified from Chapin et al. 1997, _Science_]
+.footnote[From Chapin et al. 1997, _Science_ and Slingsby et al. 2014]
 ]
 
 
@@ -260,7 +260,7 @@ knitr::include_graphics("images/fynbos_landscapes.png")
 ```
 
 - Most communities are dominated by the same 10 or so lineages
-- Sister species look similar, and have similar effects in the environment in terms of ecosystem function (carbon, hydrology, fire, etc), but must be responding differently to occur in such different environments
+- Sister species look similar, and have similar _effects_ in the environment in terms of ecosystem function (carbon, hydrology, fire, etc), but must be _responding_ differently to occur in such different environments
 
 ]
 
@@ -286,6 +286,26 @@ knitr::include_graphics("images/slingsby2014_assembly.png")
 A predominance of speciation in allopatry, with minimal functional divergence?
 
 .footnote[Slingsby et al. 2014]
+
+---
+
+## My research focuses on four questions...
+
+```{r echo = F, fig.align = 'center', out.width = '58%'}
+knitr::include_graphics("images/chapin2.png")
+```
+
+1. What determines the composition and diversity of communities and ecosystems at various scales?
+
+2. What is the role of biodiversity in ecosystem function (and derived societal benefits)?
+
+3. How is biodiversity changing and what are the impacts on ecosystem services?
+
+4. How can we mitigate or adapt to changing biodiversity and ecosystem services?
+
+.pull-right[
+.footnote[From Chapin et al. 1997, _Science_ and Slingsby et al. 2014]
+]
 
 ---
 
@@ -331,12 +351,13 @@ layout: false
 
 ### 2. Biodiversity and the function of Fynbos ecosystems?
 
-Dominance by indigenous seeders vs sprouters affects rate of aboveground carbon gain and a range of hydrology-related ecosystem functions in fynbos
-  - it also changes with a shift to woody alien trees 
+<br>
+
+Hypothetical curves of various ecosystem functions based on information from a range of sources, see book chapter. The temporal range spans c.15 yr and any seasonal variation is excluded. 
 
 <br>
 
-Hypothetical curves are based on information from a range of sources, see book chapter. The temporal range spans c.15 yr and any seasonal variation is excluded. 
+Dominance by indigenous seeders vs sprouters (or presence of woody alien species) affects rate of aboveground carbon gain and a range of hydrology-related ecosystem functions in fynbos.
 
 .footnote[Figure from Slingsby et al. 2014]
 ]
@@ -406,6 +427,26 @@ _**Traits are better predictors of some recovery parameters**_ than soils, clima
 
 ---
 
+## My research focuses on four questions...
+
+```{r echo = F, fig.align = 'center', out.width = '58%'}
+knitr::include_graphics("images/chapin2.png")
+```
+
+1. What determines the composition and diversity of communities and ecosystems at various scales?
+
+2. What is the role of biodiversity in ecosystem function (and derived societal benefits)?
+
+3. How is biodiversity changing and what are the impacts on ecosystem services?
+
+4. How can we mitigate or adapt to changing biodiversity and ecosystem services?
+
+.pull-right[
+.footnote[From Chapin et al. 1997, _Science_ and Slingsby et al. 2014]
+]
+
+---
+
 layout: false
 
 .pull-left[
@@ -422,7 +463,7 @@ A 44-year repeat vegetation survey at Cape Point
 knitr::include_graphics("images/taylorplot.gif")
 ```
 
-.footnote[Slingsby et al. 2017]
+.footnote[[Slingsby et al. 2017](http://dx.doi.org/10.1073/pnas.1619014114)]
 
 ]
 
@@ -466,6 +507,10 @@ Predicts slower post-fire recovery?
 knitr::include_graphics("images/CFRSeasonality.gif")
 ```
 
+```{r echo = F, fig.align = 'center', out.width = '40%'}
+knitr::include_graphics("images/postfire_curve.png")
+```
+
 .footnote[Moncrieff/Slingsby/Wilson in prep]
 
 ]
@@ -498,6 +543,26 @@ knitr::include_graphics("images/pines.jpg")
 
 Many knock-on effects for productivity, water, fire, etc
 
+]
+
+---
+
+## My research focuses on four questions...
+
+```{r echo = F, fig.align = 'center', out.width = '58%'}
+knitr::include_graphics("images/chapin2.png")
+```
+
+1. What determines the composition and diversity of communities and ecosystems at various scales?
+
+2. What is the role of biodiversity in ecosystem function (and derived societal benefits)?
+
+3. How is biodiversity changing and what are the impacts on ecosystem services?
+
+4. How can we mitigate or adapt to changing biodiversity and ecosystem services?
+
+.pull-right[
+.footnote[From Chapin et al. 1997, _Science_ and Slingsby et al. 2014]
 ]
 
 ---
@@ -537,7 +602,7 @@ layout: false
 knitr::include_graphics("images/emmaexceedmap.png")
 ```
 
-.footnote[https://www.emma.eco/]
+.footnote[https://www.emma.eco/; [Slingsby et al. 2021](http://dx.doi.org/10.1016/j.isprsjprs.2020.05.017)]
 
 ]
 
@@ -547,6 +612,95 @@ knitr::include_graphics("images/emmachange.jpg")
 ```
 
 ]
+
+---
+
+layout: false
+
+### 4. Mitigating or adapting to change... (Also _3. Global change and Fynbos?_)
+
+Impact of the "Day-Zero" drought on Fynbos vegetation greenness (NDVI)
+
+```{r echo = F, fig.align = 'center', out.width = '85%'}
+knitr::include_graphics("images/MEDECOS_EMMA_method_a.png")
+```
+
+.footnote[Slingsby et al in prep]
+
+---
+
+layout: false
+
+### 4. Mitigating or adapting to change... (Also _3. Global change and Fynbos?_)
+
+Impact of the "Day-Zero" drought on Fynbos vegetation greenness (NDVI)
+
+```{r echo = F, fig.align = 'center', out.width = '90%'}
+knitr::include_graphics("images/MEDECOS_EMMA_method.png")
+```
+
+.footnote[Slingsby et al in prep]
+
+---
+
+layout: false
+
+### 4. Mitigating or adapting to change... (Also _3. Global change and Fynbos?_)
+
+Impact of the "Day-Zero" drought on Fynbos vegetation greenness (NDVI)
+
+```{r echo = F, fig.align = 'center', out.width = '90%'}
+knitr::include_graphics("images/MEDECOS_EMMA.png")
+```
+
+.footnote[Slingsby et al in prep]
+
+---
+
+layout: false
+
+### 4. Mitigating or adapting to change... Where too from here?
+
+Integrating multiple forecasts for a focal region...
+
+```{r echo = F, fig.align = 'center', out.width = '68%'}
+knitr::include_graphics("images/mee_ecoforecast_figure1.png")
+```
+
+.footnote[[Slingsby et al. 2023 Methods in Ecology and Evolution](http://dx.doi.org/10.1111/2041-210x.14046)]
+
+---
+
+layout: false
+
+.pull-left[
+## New tools?
+
+Imaging spectroscopy ("hyperspectral" remote sensing) opens new avenues for biodiversity science
+
+```{r echo = F, fig.align = 'left', out.width = '92%'}
+knitr::include_graphics("images/cawse2021_spectra.png")
+```
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/peninsula_hyperspec.png")
+```
+]
+
+---
+
+layout: false
+
+## New tools? - Biodiversity Survey of the Cape
+
+```{r echo = F, fig.align = 'center', out.width = '70%'}
+knitr::include_graphics("images/Bioscape infographic_e3.jpg")
+```
+
+.footnote[www.bioscape.io]
 
 ---
 
@@ -564,6 +718,8 @@ I need to add these...
 class: center, middle
 
 # Thanks!
+
+More at my lab website [**plantecolo.gy**](https://www.plantecolo.gy)
 
 Slides created via the R packages:
 

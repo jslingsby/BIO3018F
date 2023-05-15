@@ -56,11 +56,11 @@ library(kableExtra)
 
 <br>
 
-Answer 3 of 4 essay questions.
+Answer 3 of 4 essay questions (but read the instructions!).
 
-Most questions integrate across content from multiple lecturers. The most relevant lecturers are indicated for each question. Feel free to bring in content from other lecturers (especially examples), but don't ignore the content of the lecturers indicated.
+Most questions integrate across content from multiple lecturers. The most relevant lecturers are indicated for each question. Feel free to include content from other lecturers (especially examples), but don't ignore the content of the lecturers indicated.
 
-The final mark allocation by lecturer for the course (across the test and exam) is roughly proportional to the number of lectures in their section. That said, all sections are relevant to the exam, especially given the integrative nature of the essay questions.
+The final mark allocation by lecturer for the course (across the test and exam) is roughly proportional to the number of lectures in their section. That said, all sections are relevant to the exam, especially given the integrative nature of the essays.
 
 ---
 
@@ -69,11 +69,12 @@ layout: false
 .pull-left[
 ## My lectures
 
-_Providing examples from African ecosystems as far as was possible in the time I had...  ...but the theory is universal, so think about how examples or case studies introduced by other lecturers may apply here._
+_Note that I provided examples from African ecosystems as far as was possible in the time I had...  ...but the theory is universal, so think about how the content I taught may apply to examples or case studies introduced by other lecturers._
 
-<br>
-
-Note that the Power Analysis session was part of the Independent Projects and not part of the exam.
+*Other notes:*
+- The Power Analysis session was part of the Independent Projects and won't be in the exam.
+- The content of the practical is relevant to the exam as the exercise was aimed at reinforcing the content of the lectures.
+- We had a few field lectures/discussions that were aimed at helping you ground the theory in real world examples.
 ]
 
 .pull-right[
@@ -238,11 +239,11 @@ knitr::include_graphics("images/traitevolution_cb2004.png")
 
 ...and these are strongly interrelated...
 
-The evolutionary history of species leaves a strong imprint on current ecology, especially through trait and niche conservatism.
+The evolutionary history of species leaves a strong imprint on current ecology, especially through _trait and niche conservatism_.
 
-Trade-offs among traits constrain the potential combinations of traits and constrain species' niches.
+_Trade-offs_ among traits constrain the potential combinations of traits and constrain species' niches.
 
-We can measure functional and phylogenetic diversity and use them help us to address ecological and evolutionary questions.
+We can measure _functional_ and _phylogenetic_ diversity and use them help us to address ecological and evolutionary questions.
 
 ]
 

@@ -139,7 +139,13 @@ knitr::include_graphics("images/alphadiversity1.png")
 
 <br>
 
-*S* = a simple count of species, *but what of relative abundance?*
+*S* = a simple count of species
+
+<br>
+
+*But what of relative abundance?*
+
+Should a species that is represented by one individual be considered equivalent to one with thousands of individuals?
 
 ]
 
@@ -165,7 +171,15 @@ or include information on their **relative abundance**
 
 <br>
 
-*S* = a simple count of species, *but what of relative abundance?*
+*S* = a simple count of species
+
+<br>
+
+*But what of relative abundance?*
+
+Should a species that is represented by one individual be considered equivalent to one with thousands of individuals?
+
+<br>
 
 A community is considered more diverse if the relative abundances are more evenly distributed 
 - because removing one individual is less likely to remove a species.

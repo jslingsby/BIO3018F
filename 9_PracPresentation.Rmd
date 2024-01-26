@@ -1,6 +1,6 @@
 ---
 title: "9. Practical"
-subtitle: "Biodiversity and Ecosystem Function in the Cape Floristic Region"  
+subtitle: "Biodiversity, Traits, Ecosystem Function and Feedbacks in the Cape Floristic Region"  
 author: 
   - "Jasper Slingsby, BIO3018F"
 date: '`r Sys.Date()`'
@@ -77,6 +77,16 @@ knitr::include_graphics("images/vanderplas2019_BEF.jpg")
 
 ---
 
+## This acknowledges the biotic "response" and "effect"
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/chapin2.png")
+```
+
+.footnote[Figure modified from Chapin et al. 1997, _Science_]
+
+---
+
 class: center
 
 ## The De Hoop landscape includes a wide range of environmental conditions and vegetation communities
@@ -90,10 +100,10 @@ library(tidyverse, quiet = T)
 ndvi <- rast("prac/MODIS/20220130_MODIS_v1g_POT_MOD13Q1_006_NDVI.tif")
 
 # Get veg map and fire and plot
-veg <- st_read("/home/jasper/Documents/Datasets/SANBI/RLE_2021_Remnants/FynRemnantsClean.gpkg", quiet = T)
+veg <- st_read("/Users/jasper/Documents/Datasets/SANBI/RLE_2021_Remnants/FynRemnantsClean.gpkg", quiet = T)
 ndvi_g <- project(ndvi, st_crs(veg)$Wkt)
 veg <- st_crop(veg, ndvi_g, quiet = T)
-#fire <- st_read("/home/jasper/Documents/Datasets/Fire/All_Fires_20_21_gw/CNCFires2021Clean.gpkg", quiet = T)
+#fire <- st_read("/Users/jasper/Documents/Datasets/Fire/All_Fires_20_21_gw/CNCFires2021Clean.gpkg", quiet = T)
 #fire <- st_crop(fire, ndvi_g, quiet = T)
 mapview::mapview(veg, zcol = "name", quiet = T) #+
 #mapview::mapview(fire, zcol = "year", quiet = T)
@@ -104,20 +114,48 @@ mapview::mapview(veg, zcol = "name", quiet = T) #+
 
 class: center
 
-## With variation in "vegetation greenness" over time
+## With variation in species and their traits
 
-```{r echo = F, fig.align = 'center', out.width = '75%'}
-knitr::include_graphics("images/PotbergSeasonality.gif")
+.pull-left[ 
+```{r echo = F, fig.align = 'center', out.width = '95%'}
+knitr::include_graphics("images/eastern_ruens_shale_renosterveld.jpg")
 ```
+]
 
-"vegetation greenness" = the Normalized Difference Vegetation Index (NDVI)
+.pull-right[ 
+```{r echo = F, fig.align = 'center', out.width = '95%'}
+knitr::include_graphics("images/potberg_sandstone_fynbos.jpg")
+```
+]
+
+We'll look at ~4 sites with different vegetation and traits
+
+---
+####Aim:
+To use species' traits to explore how species both respond to and modify resources and ecological processes in their environment and thus infer community assembly processes and biotic effects on ecosystem function.
+
+Over and above the abiotic template, the main ecological processes of interest here are:
+- interspecific interactions (e.g. competition)
+- disturbance by fire
+- disturbance by herbivory
+
+---
+####Questions (feel free to modify):
+
+- Does the variation in abiotic conditions explain the observed variation in species' traits?
+
+- What are the dominant ecological processes determining community assembly and ecosystem function in each ecosystem sampled? How is this reflected in species' "response" and "effect" traits?
+
+- Are there any correlations between "response" and "effect" traits that could create selective trade-offs within species, or potentially generate ecosystem-level feedbacks?
+
+- To what degree is variation in functional traits determined by evolutionary history (i.e. the phylogenetic relationships among species)?
+
 
 ---
 
-## We'll look at 6 sites with different vegetation (incl. natural and anthropogenic) and varying NDVI
+## Within each site we have sampled 4 point locations
 
 ```{r echo = F, fig.align = 'center', out.height = '65%', warning=F, messages=F}
-
 # Get image dates
 dates <- read.csv("prac/MODIS/dates.csv", header = F)
 dates <- dates[seq(2,nrow(dates),2),]
@@ -129,7 +167,7 @@ names(ndvi) <- dates
 ndvi <- ndvi*.0001
 
 # Get sites
-sites <- vect(st_read("/home/jasper/GIT/BIO3018F/prac/Potberg_prac_sites.kml", quiet = T))
+sites <- vect(st_read("/Users/jasper/GIT/BIO3018F/prac/Potberg_prac_sites.kml", quiet = T))
 sites <- project(sites, ndvi)
 
 # Get sample locations
@@ -142,36 +180,7 @@ adat <- adat %>% pivot_longer(cols = sites$Name, names_to = "site")
 adat$age <- (as.numeric(adat$calendar_date) - min(as.numeric(adat$calendar_date), na.rm = T))/365.25 + 2922 #add 8 years...
 adat$scale <- 1
 
-###Plot all timeseries
-adat %>%
-  ggplot(aes(x = calendar_date, y = value*scale)) + 
-  geom_line() +
-  #  geom_point() +
-  facet_wrap(.~ site) +
-  ylab("NDVI") +
-  ylim(0.2, 0.9)
-
-```
-
----
-####Aim:
-To investigate the Biodiversity-Ecosystem Function paradigms presented by van der Plas (2019) by investigating the relationships among a set of ecosystem types using measures of biodiversity (species and functional $\alpha$ and $\beta$ diversity) and exploring their relationship to various environmental conditions and a set of metrics of ecosystem function derived from satellite timeseries.
-
-####Questions (feel free to modify):
-
--   Does the variation in environmental conditions explain the observed variation in biodiversity (species, functional and phylogenetic $\alpha$ and $\beta$ diversity)?
-
--   To what degree does the variation in functional and phylogenetic diversity explain the observed variation in our measures of ecosystem function?
-
--   What is the relative role of the environment versus biodiversity in determining the observed variation in ecosystem function?
-
-
----
-
-## Within each site we'll sample 4 point locations
-
-```{r echo = F, fig.align = 'center', out.height = '65%', warning=F, messages=F}
-
+#####
 adat <- terra::extract(ndvi, sites, xy=T, cells = T)
 #hmm[,506:508]
 #geom(sites)
@@ -203,17 +212,51 @@ leaflet() %>%
 
 ---
 
+## What abiotic variables should we measure in the field?
+
+---
+
+## What ecosystem variables should we measure in the field to explore...
+
+- interspecific interactions (e.g. competition)?
+- disturbance by fire?
+- disturbance by herbivory?
+
+---
+
+## What species traits should we measure to explore...
+
+.pull-left[
+Species' *response* to: 
+- the abiotic environment?
+- interspecific interactions (e.g. competition)?
+- disturbance by fire?
+- disturbance by herbivory?
+]
+
+.pull-right[
+Species' *effect* on: 
+- the abiotic environment?
+- interspecific interactions (e.g. competition)?
+- disturbance by fire?
+- disturbance by herbivory?
+]
+
+---
+
 ## At each point location we'll
 
 Sample _Environmental conditions:_
 
 - Estimate % projected cover (think the area you would see from above) bare soil
 
-- ~~Take a densiometer reading at ground level~~
+- Take a densiometer reading at ground level (a measure of canopy cover / shade / competition for light)
 
-- ~~Take a **soil sample**~~
+- Take a **soil sample** for soil moisture (weigh, dry and re-weigh)
 
-- Do a **dung count**, scoring dung for the point location by the number of quarters where you find dung (i.e. 0-4 for the point location)
+- Do a **dung count** transect
+
+- Look for evidence of historical fires (burn scars, dead burnt skeletons, charcoal)
   
 - Take a few notes (and photos) on any features you think may be interesting
 
@@ -221,20 +264,20 @@ Sample _Environmental conditions:_
 
 ## At each point location we'll
 
-Sample _Diversity:_
+Sample _Traits:_
+
+- Decide on which are the dominant species (by % projected cover) to make up 80% of the vegetation cover.
 
 - Make sure your smartphone is fully charged and set to record GPS location with your photographs!
 
-- Decide on which are the top 5 species by % projected cover (or just species that make up 80% of the vegetation). 
+- Take diagnostic photos for the species (habit (whole plant), leaf, base, flowers and/or fruits) and estimate their % cover
 
-- Take diagnostic photos for the 5 species (habit (whole plant), leaf, base, flowers and/or fruits) and score them 1-5 from most to least abundant
+- For six individuals of each of the target species, 
+  - measure the height and canopy diameter (in 2 perpendicular axes)
+  - collect shoot for measuring leaf traits back at the Potberg centre (length, width, area and dry mass).
+  - Collect a 70cm long shoot/branch
 
-- For three individuals of each of your 5 target species, 
-  - measure the height and collect shoot for measuring leaf traits back at the Potberg centre (length, width, area and dry mass).
-    
-- Finally, set a timer and take as many diagnostic photos of new species (other than your 5 target species) within or near your plot as you can before the alarm goes off. 
-
-- Take a pic of your site label between sites so you know what photos are from where.
+- Take a pic of your site label between sites so you know what photos (and species) are from where.
   
 ---
 

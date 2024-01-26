@@ -52,6 +52,39 @@ library(knitr)
 library(kableExtra)
 ```
 
+```{r xaringanExtra, echo=FALSE}
+xaringanExtra::use_xaringan_extra(c("tile_view", "scribble"))
+```
+
+layout: false
+
+## This module is about how you would measure biodiversity to address the different needs, 
+
+but first, a little *think-pair-share* activity:
+
+<br>
+
+> Take 5 minutes and jot down your thoughts on the following 2 questions. Then you'll pair up with a classmate and share your thoughts with each other.
+
+<br>
+
+  - What is biodiversity?
+  - Why would you want to measure biodiversity?
+
+---
+
+layout: false
+
+## What is biodiversity?
+
+---
+
+layout: false
+
+## Why would you want to measure biodiversity?
+
+---
+
 layout: false
 
 .pull-left[

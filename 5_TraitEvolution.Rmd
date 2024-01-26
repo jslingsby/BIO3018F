@@ -265,7 +265,7 @@ layout: false
 ## Trait conservatism has a profound influence on ecology!
 
 .pull-left[
-The Cape Flora is much like an island flora, with many species made up from a few lineages (30 clades account for >50% of the ~9000 species).
+The Cape Flora is much like an island flora, with many species made up from a few lineages (30 clades account for >50% of the ~9500 species).
 
 <br>
 
@@ -301,7 +301,11 @@ knitr::include_graphics("images/lehman2014.jpeg")
 knitr::include_graphics("images/moncrieff2014.png")
 ```
 
+<br>
+
 This is likely because of differences in the traits of the dominant lineages and their affects on ecosystem feedbacks, e.g. *Vachellia* and *Senegalia* in Africa versus *Eucalyptus* and *Corymbia* in Australia.
+
+.footnote[Moncrieff et al. 2014 *GEB*]
 ]
 
 ---
@@ -311,7 +315,13 @@ layout: false
 ## Trait conservatism has a profound influence on ecology!
 
 .pull-left[
-In fact, the same may apply to most major biomes in the world...
+In fact, the same applies to most major biomes!
+
+<br>
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/moncrieff2015GEB.png")
+```
 
 .footnote[Moncrieff et al. 2015 *GEB*]
 ]

@@ -4,7 +4,7 @@
     <title>3. Species Richness and Diversity</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jasper Slingsby, BIO3018F" />
-    <meta name="date" content="2023-01-25" />
+    <meta name="date" content="2024-01-26" />
     <script src="3_BetaDiv_files/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
@@ -22,7 +22,7 @@ class: center, middle, inverse, title-slide
 ### Jasper Slingsby, BIO3018F
 ]
 .date[
-### 2023-01-25
+### 2024-01-26
 ]
 
 ---
@@ -40,7 +40,7 @@ layout: false
 
 &lt;img src="images/grassland.jpeg" width="90%" style="display: block; margin: auto;" /&gt;
 
-These sites could easily have the same `\(\alpha\)`-diversity measure. Would that mean they're the same?
+These 3 sites could easily have the same `\(\alpha\)`-diversity measure. Would that mean they're the same?
 ]
 
 .pull-right[
@@ -85,6 +85,9 @@ Gamma `\((\gamma)\)` = total landscape species diversity/richness
 
 .pull-right[
 &lt;img src="images/diversitycomponents.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+.footnote[Three sample localities in a landscape.]
+
 ]
 
 ---
@@ -124,23 +127,24 @@ There are two major approaches:
 
 layout: false
 
-.pull-left[
 ## The decomposition of "classical" diversity metrics...
 
-Consider this in the context of the species-area relationship. 
+.pull-left[
 
-If `\(\gamma\)` is constant (32) across sites, then
-- Site 1 = higher `\(\alpha\)`, lower `\(\beta\)`
-- Site 2 = intermediate `\(\alpha\)` and `\(\beta\)`
-- Site 3 = lower `\(\alpha\)`, higher `\(\beta\)`
+&lt;img src="images/diversitycomponents.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+Consider this in the context of the species-area relationship. 
 ]
 
 .pull-right[
 
 &lt;img src="images/sad.png" width="100%" style="display: block; margin: auto;" /&gt;
 
-&lt;img src="images/diversitycomponents.png" width="55%" style="display: block; margin: auto;" /&gt;
+If `\(\gamma\)` is constant (32) across sites, then
 
+- S1 = higher `\(\alpha\)`, lower `\(\beta\)` (i.e. more homogeneous)
+- S2 = intermediate `\(\alpha\)` and `\(\beta\)`
+- S3 = lower `\(\alpha\)`, higher `\(\beta\)` (i.e. more heterogeneous)
 ]
 
 ---
@@ -190,60 +194,65 @@ We often compare the diversity of different regions using species-area curves (u
 
 layout: false
 
-.pull-left[
 ## The decomposition of "classical" diversity metrics...
 
-The components of biodiversity are interrelated and, depending on your preference or application, can be expressed
+.pull-left[
 
-Multiplicatively (*sensu* Whittaker 1972):
+The components of biodiversity are interrelated and, depending on your preference or application, can be expressed:
+
+&lt;br&gt;
+
+**Multiplicatively** (*sensu* Whittaker 1972):
 
 `$$\beta = \gamma/\alpha$$`
 
-Additively (*sensu* MacArthur et al. 1966, Lande 1996):
+**Additively** (*sensu* MacArthur et al. 1966, Lande 1996):
 
 `$$\beta = \gamma - \alpha$$`
 .footnote[&lt;sup&gt;1&lt;/sup&gt;For reviews see Veech et al. 2002 and Anderson et al. 2011.]
 ]
 
 .pull-right[
-&lt;img src="images/diversitycomponents.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;img src="images/diversitycomponents.png" width="90%" style="display: block; margin: auto 0 auto auto;" /&gt;
 ]
 
 ---
 
 layout: false
 
-.pull-left[
 ## Multiplicative "classical" diversity
+
+.pull-left[
 
 `\(\beta = \gamma/\alpha\)` (*sensu* Whittaker 1972)
 
 ...expresses `\(\beta\)` diversity as the ratio of landscape `\((\gamma)\)` to local `\((\alpha)\)` diversity (usually the mean of multiple local samples, i.e. `\(\bar{\alpha}\)`).
 
-If most local `\((\alpha)\)` samples capture most of the landscape `\((\gamma)\)` diversity, then `\(\beta\)` diversity (i.e. differences between sites or habitats) must be low, and vv.
+If most local `\((\alpha)\)` samples capture most of the landscape `\((\gamma)\)` diversity, then `\(\beta\)` diversity (i.e. differences between sites or habitats) must be low, and vice versa.
 
 Disadvantages: 
 * the ratio is unitless
-* usually need to know `\((\gamma)\)`
+* usually need to know landscape diversity `\((\gamma)\)`
 
 ]
 
 .pull-right[
-&lt;img src="images/betadiversity_mult.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;img src="images/betadiversity_mult.png" width="90%" style="display: block; margin: auto 0 auto auto;" /&gt;
 ]
 
 ---
 
 layout: false
 
-.pull-left[
 ## Additive "classical" diversity
+
+.pull-left[
 
 `\(\beta = \gamma - \alpha\)` (*sensu* MacArthur et al. 1966, Lande 1996)
 
 ...expresses `\(\beta\)` diversity as the difference between landscape `\((\gamma)\)` and local `\((\alpha)\)` diversity (again, usually the mean of multiple local samples, i.e. `\(\bar{\alpha}\)`).
 
-If local `\((\alpha)\)` samples capture most of the landscape `\((\gamma)\)` diversity, then `\(\beta\)` diversity (i.e. differences between sites or habitats) must be low, and vv.
+If local `\((\alpha)\)` samples capture most of the landscape `\((\gamma)\)` diversity, then `\(\beta\)` diversity (i.e. differences between sites or habitats) must be low, and vice versa.
 
 Advantage:
 * the difference is expressed as species (i.e. the average number of species missing from each local site)
@@ -253,15 +262,16 @@ Disadvantage: still usually need to know `\((\gamma)\)`
 ]
 
 .pull-right[
-&lt;img src="images/betadiversity_add.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;img src="images/betadiversity_add.png" width="90%" style="display: block; margin: auto 0 auto auto;" /&gt;
 ]
 
 ---
 
 layout: false
 
+## Multivariate measures of `\(\beta\)` diversity
+
 .pull-left[
-## Multivariate measures...
 
 There are a large number of metrics that calculate the dissimilarity of pairs of samples based on the number of species that are shared between them or unique to each.
 
@@ -275,13 +285,13 @@ The metrics typically differ in whether they:
 ]
 
 .pull-right[
-&lt;img src="images/diversitycomponents.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+&lt;img src="images/diversitycomponents.png" width="90%" style="display: block; margin: auto 0 auto auto;" /&gt;
 ]
 
 ---
 layout: false
 
-## Multivariate measures...
+## Multivariate measures of `\(\beta\)` diversity
 
 .pull-left[
 
@@ -364,7 +374,7 @@ layout: false
 ]
 
 .pull-right[
-Floristic turnover with change in elevation vs between mountains (Molina‐Venegas et al. 2015)
+E.g. Floristic _**turnover**_ with change in elevation vs between mountains (Molina‐Venegas et al. 2015)
 
 &lt;img src="images/baetic_cork.JPG" width="100%" style="display: block; margin: auto;" /&gt;
 
@@ -382,7 +392,7 @@ layout: false
 ]
 
 .pull-right[
-Floristic turnover with change in elevation vs between mountains (Molina‐Venegas et al. 2015)
+E.g. Floristic _**turnover**_ with change in elevation vs between mountains (Molina‐Venegas et al. 2015)
 
 &lt;img src="images/molina_sbd.png" width="85%" style="display: block; margin: auto;" /&gt;&lt;img src="images/molina_sbd_table.png" width="85%" style="display: block; margin: auto;" /&gt;
 
@@ -477,6 +487,8 @@ class: center, middle
 
 ## Take-home
 
+There are many ways of measuring and analysing `\(\beta\)` diversity.
+
 &gt;*"Plurality in the concept of `\(\beta\)` diversity can yield important ecological insights when navigated well. By knowing the properties of the measures being used and applying more than one, the underlying ecological structures in the data generating patterns in `\(\beta\)` diversity can be revealed..."* - Anderson et al. 2011
 
 &gt;*"This applies to most measures of diversity..."* - Slingsby 2023
@@ -485,6 +497,7 @@ class: center, middle
 
 ## References
 
+.small[
 Anderson, M. J., T. O. Crist, J. M. Chase, et al. (2011). "Navigating
 the multiple meanings of beta-diversity: a roadmap for the practicing
 ecologist". En. In: _Ecology letters_ 14.1, pp. 19-28. ISSN: 1461-023X,
@@ -522,6 +535,7 @@ idea". En. In: _Oikos_ 99.1, pp. 3-9. ISSN: 0030-1299, 1600-0706. DOI:
 Whittaker, R. H. (1972). "Evolution and measurement of species
 diversity". En. In: _Taxon_ 21.2-3, pp. 213-251. ISSN: 0040-0262,
 1996-8175. DOI: [10.2307/1218190](https://doi.org/10.2307%2F1218190).
+]
 
 ---
 class: center, middle

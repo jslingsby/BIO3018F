@@ -93,6 +93,8 @@ The species diversity/richness within local-scale sites, habitats or communities
 ```{r echo = F, fig.align = 'right', out.width = '110%'}
 knitr::include_graphics("images/diversitycomponents_alpha.png")
 ```
+
+.footnote[Three sample localities in a landscape.]
 ]
 
 ---
@@ -207,7 +209,7 @@ or include information on their **relative abundance**
 
 <br>
 
-**Shannon's index** (*H'*) quantifies species diversity taking into account both species' richness and evenness in their relative abundance
+**Shannon's index** (*H'*) quantifies species diversity taking into account both species' richness and _**evenness**_ in their relative abundance
 
 $H' = -\sum_{i=1}^{n}(p_i*ln(p_i))$ 
 
@@ -215,7 +217,11 @@ where $p_i$ is the proportion of individuals belonging to the *i*th species.
 
 <br>
 
-You can also quantify evenness independently of richness, e.g. **Pielou's evenness** (*J*) in the relative abundance (independent of *S*) can be calculated directly as $J = H'/log(S)$
+You can also quantify evenness independently of richness, e.g. 
+
+- **Pielou's evenness** (*J*) in the relative abundance (independent of *S*) can be calculated directly as $J = H'/log(S)$
+
+    - Ranges near 0 to 1 (maximum evenness)
 
 ]
 
@@ -255,7 +261,7 @@ layout: false
 .pull-left[
 ## Quantifying $\alpha$-diversity...
 
-Dependence of species counts on number of individuals sampled is problematic when the number of individuals varies between samples (e.g. vegetation plots, netting events, etc).
+Dependence of species counts on number of individuals sampled is problematic when the number of individuals varies between samples (e.g. vegetation plots of different area or with different size individuals, netting events, etc).
 
 ```{r echo = F, fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("images/fire_age.png")
@@ -272,7 +278,7 @@ knitr::include_graphics("images/spp_abund_CP.png")
 
 ##### Species counts relative to number of individuals sampled for each of eighty-one 50m<sup>2</sup> vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
 
-Since the samples are of a set unit area (50m<sup>2</sup>), the species counts in this figure can also be termed ***species density***.
+Since the plots are of a set unit area (50m<sup>2</sup>), the species counts in this figure can also be termed ***species density***.
 ]
 
 ---
@@ -282,7 +288,7 @@ layout: false
 .pull-left[
 ## Quantifying $\alpha$-diversity...
 
-Dependence of species counts on number of individuals sampled is problematic when the number of individuals varies between samples (e.g. vegetation plots, netting events, etc).
+Dependence of species counts on number of individuals sampled is problematic when the number of individuals varies between samples (e.g. vegetation plots of different area or with different size individuals, netting events, etc).
 
 ```{r echo = F, fig.align = 'right', out.width = '100%'}
 knitr::include_graphics("images/forest_fynbos.png")
@@ -308,9 +314,9 @@ knitr::include_graphics("images/fynbos.png")
 
 layout: false
 
-## Species-Area relationship
-
 .pull-left[
+
+## Species-Area relationship
 
 We often compare the diversity of large areas using the species-area relationship (SAR).
 
@@ -338,9 +344,9 @@ This isn't often logistically (or logically) feasible, so we usually fit curves 
 
 layout: false
 
-## Species-Area relationship
-
 .pull-left[
+
+## Species-Area relationship
 
 The density of individuals can affect the shape of the species-area relationship (SAR) at fine scales, because of the relationship between species counts and the number of individuals sampled.
 
@@ -353,18 +359,27 @@ knitr::include_graphics("images/sad.png")
 
 .pull-right[
 
-- Site 1 = many, small individuals
-- Site 2 = intermediate
-- Site 3 = fewer, large individuals
-
-<br>
-
-Note that many other factors can affect the SAR:
+Many factors can affect the SAR:
+- size of individuals
 - patchiness/heterogeneity
 - dispersal (limitation)
 - immigration/extinction
 - disturbance
 - productivity (e.g. sparse desert vegetation has fewer individuals per unit area)
+
+All sites have same total # of species, but may vary in:
+- Site 1 = many, small individuals
+- Site 2 = intermediate
+- Site 3 = fewer, large individuals
+
+Or:
+- Site 1 = homogenous/uniform spread of species
+- Site 2 = intermediate
+- Site 3 = heterogenous/patchy spread of species
+
+
+<br>
+
 ]
 
 ---
@@ -389,7 +404,7 @@ Rarefaction involves resampling a set number (*n*) of individuals or samples fro
 knitr::include_graphics("images/spec_ind_raref_CP.png")
 ```
 
-##### Individual-based rarefaction curve developed by sampling individuals from the pooled data from eighty-one 50m<sup>2</sup> vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
+##### Individual-based rarefaction curve developed by sampling individuals from the pooled data from eighty-one 50m<sup>2</sup> vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017). Black line = mean; gray = standard deviation.
 ]
 
 ---
@@ -483,6 +498,8 @@ layout: false
 knitr::include_graphics("images/spec_comp_CP.png")
 ```
 
+.footnote[Note the difference in correlation (_R_) and slope (_y_).]
+
 ]
 
 .pull-right[
@@ -519,7 +536,7 @@ knitr::include_graphics("images/sper_comp_hist_CP.png")
 
 Paired T-test: t = 3.2953, df = 80, p-value = _***0.0015***_
 
-.footnote[<sup>1</sup>for *n* = 10 individualsfrom each sample]
+.footnote[<sup>1</sup>for *n* = 10 individuals from each sample]
 ]
 
 ---
@@ -531,9 +548,9 @@ Alpha diversity is the diversity at a point location (e.g. a vegetation plot).
 
 Measures of species diversity can consider both the counts of species and evenness in their relative abundance.
 
-Measures of species diversity are affected by factors like the area and number of individuals sampled. Other factors can be important too, like the length of time sampled for (e.g. bird netting, fishing, etc).
+Measures of species diversity are affected by factors like the area and number of individuals sampled. Other factors can be important too, like the timing and length of time sampled for (e.g. bird netting, fishing, etc) or the heterogeneity of the environment if sampling by area.
 
-You need to choose your measure of diversity carefully, and potentially correct for these sampling effects (e.g. by using rarefaction, sampling a larger area, estimating the species-area relationship), depending on your question and the taxonomic groups you're working on.
+You need to choose your measure of diversity carefully, and potentially correct for these sampling effects (e.g. by using rarefaction, sampling a larger area, estimating the species-area relationship, etc), depending on your question and the taxonomic groups you're working on.
 
 ---
 

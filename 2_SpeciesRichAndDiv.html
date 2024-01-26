@@ -4,7 +4,7 @@
     <title>2. Species Richness and Diversity</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jasper Slingsby, BIO3018F" />
-    <meta name="date" content="2024-01-10" />
+    <meta name="date" content="2024-01-26" />
     <script src="2_SpeciesRichAndDiv_files/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
   </head>
@@ -22,7 +22,7 @@ class: center, middle, inverse, title-slide
 ### Jasper Slingsby, BIO3018F
 ]
 .date[
-### 2024-01-10
+### 2024-01-26
 ]
 
 ---
@@ -62,6 +62,8 @@ The species diversity/richness within local-scale sites, habitats or communities
 
 .pull-right[
 &lt;img src="images/diversitycomponents_alpha.png" width="110%" style="display: block; margin: auto 0 auto auto;" /&gt;
+
+.footnote[Three sample localities in a landscape.]
 ]
 
 ---
@@ -168,7 +170,7 @@ or include information on their **relative abundance**
 
 &lt;br&gt;
 
-**Shannon's index** (*H'*) quantifies species diversity taking into account both species' richness and evenness in their relative abundance
+**Shannon's index** (*H'*) quantifies species diversity taking into account both species' richness and _**evenness**_ in their relative abundance
 
 `\(H' = -\sum_{i=1}^{n}(p_i*ln(p_i))\)` 
 
@@ -176,7 +178,11 @@ where `\(p_i\)` is the proportion of individuals belonging to the *i*th species.
 
 &lt;br&gt;
 
-You can also quantify evenness independently of richness, e.g. **Pielou's evenness** (*J*) in the relative abundance (independent of *S*) can be calculated directly as `\(J = H'/log(S)\)`
+You can also quantify evenness independently of richness, e.g. 
+
+- **Pielou's evenness** (*J*) in the relative abundance (independent of *S*) can be calculated directly as `\(J = H'/log(S)\)`
+
+    - Ranges near 0 to 1 (maximum evenness)
 
 ]
 
@@ -212,7 +218,7 @@ layout: false
 .pull-left[
 ## Quantifying `\(\alpha\)`-diversity...
 
-Dependence of species counts on number of individuals sampled is problematic when the number of individuals varies between samples (e.g. vegetation plots, netting events, etc).
+Dependence of species counts on number of individuals sampled is problematic when the number of individuals varies between samples (e.g. vegetation plots of different area or with different size individuals, netting events, etc).
 
 &lt;img src="images/fire_age.png" width="100%" style="display: block; margin: auto;" /&gt;
 
@@ -225,7 +231,7 @@ While raw species counts can still be useful for many purposes, it is also usefu
 
 ##### Species counts relative to number of individuals sampled for each of eighty-one 50m&lt;sup&gt;2&lt;/sup&gt; vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
 
-Since the samples are of a set unit area (50m&lt;sup&gt;2&lt;/sup&gt;), the species counts in this figure can also be termed ***species density***.
+Since the plots are of a set unit area (50m&lt;sup&gt;2&lt;/sup&gt;), the species counts in this figure can also be termed ***species density***.
 ]
 
 ---
@@ -235,7 +241,7 @@ layout: false
 .pull-left[
 ## Quantifying `\(\alpha\)`-diversity...
 
-Dependence of species counts on number of individuals sampled is problematic when the number of individuals varies between samples (e.g. vegetation plots, netting events, etc).
+Dependence of species counts on number of individuals sampled is problematic when the number of individuals varies between samples (e.g. vegetation plots of different area or with different size individuals, netting events, etc).
 
 &lt;img src="images/forest_fynbos.png" width="100%" style="display: block; margin: auto 0 auto auto;" /&gt;
 
@@ -255,9 +261,9 @@ While raw species counts can still be useful for many purposes, it is also usefu
 
 layout: false
 
-## Species-Area relationship
-
 .pull-left[
+
+## Species-Area relationship
 
 We often compare the diversity of large areas using the species-area relationship (SAR).
 
@@ -281,9 +287,9 @@ This isn't often logistically (or logically) feasible, so we usually fit curves 
 
 layout: false
 
-## Species-Area relationship
-
 .pull-left[
+
+## Species-Area relationship
 
 The density of individuals can affect the shape of the species-area relationship (SAR) at fine scales, because of the relationship between species counts and the number of individuals sampled.
 
@@ -294,18 +300,27 @@ The density of individuals can affect the shape of the species-area relationship
 
 .pull-right[
 
-- Site 1 = many, small individuals
-- Site 2 = intermediate
-- Site 3 = fewer, large individuals
-
-&lt;br&gt;
-
-Note that many other factors can affect the SAR:
+Many factors can affect the SAR:
+- size of individuals
 - patchiness/heterogeneity
 - dispersal (limitation)
 - immigration/extinction
 - disturbance
 - productivity (e.g. sparse desert vegetation has fewer individuals per unit area)
+
+All sites have same total # of species, but may vary in:
+- Site 1 = many, small individuals
+- Site 2 = intermediate
+- Site 3 = fewer, large individuals
+
+Or:
+- Site 1 = homogenous/uniform spread of species
+- Site 2 = intermediate
+- Site 3 = heterogenous/patchy spread of species
+
+
+&lt;br&gt;
+
 ]
 
 ---
@@ -328,7 +343,7 @@ Rarefaction involves resampling a set number (*n*) of individuals or samples fro
 .pull-right[
 &lt;img src="images/spec_ind_raref_CP.png" width="100%" style="display: block; margin: auto 0 auto auto;" /&gt;
 
-##### Individual-based rarefaction curve developed by sampling individuals from the pooled data from eighty-one 50m&lt;sup&gt;2&lt;/sup&gt; vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017).
+##### Individual-based rarefaction curve developed by sampling individuals from the pooled data from eighty-one 50m&lt;sup&gt;2&lt;/sup&gt; vegetation plots in Table Mountain National Park (data from Slingsby et al. 2017). Black line = mean; gray = standard deviation.
 ]
 
 ---
@@ -408,6 +423,8 @@ layout: false
 ####Raw species counts 
 &lt;img src="images/spec_comp_CP.png" width="60%" style="display: block; margin: auto;" /&gt;
 
+.footnote[Note the difference in correlation (_R_) and slope (_y_).]
+
 ]
 
 .pull-right[
@@ -438,7 +455,7 @@ Paired T-test: t = 1.4957, df = 80, p-value = 0.1387
 
 Paired T-test: t = 3.2953, df = 80, p-value = _***0.0015***_
 
-.footnote[&lt;sup&gt;1&lt;/sup&gt;for *n* = 10 individualsfrom each sample]
+.footnote[&lt;sup&gt;1&lt;/sup&gt;for *n* = 10 individuals from each sample]
 ]
 
 ---
@@ -450,9 +467,9 @@ Alpha diversity is the diversity at a point location (e.g. a vegetation plot).
 
 Measures of species diversity can consider both the counts of species and evenness in their relative abundance.
 
-Measures of species diversity are affected by factors like the area and number of individuals sampled. Other factors can be important too, like the length of time sampled for (e.g. bird netting, fishing, etc).
+Measures of species diversity are affected by factors like the area and number of individuals sampled. Other factors can be important too, like the timing and length of time sampled for (e.g. bird netting, fishing, etc) or the heterogeneity of the environment if sampling by area.
 
-You need to choose your measure of diversity carefully, and potentially correct for these sampling effects (e.g. by using rarefaction, sampling a larger area, estimating the species-area relationship), depending on your question and the taxonomic groups you're working on.
+You need to choose your measure of diversity carefully, and potentially correct for these sampling effects (e.g. by using rarefaction, sampling a larger area, estimating the species-area relationship, etc), depending on your question and the taxonomic groups you're working on.
 
 ---
 

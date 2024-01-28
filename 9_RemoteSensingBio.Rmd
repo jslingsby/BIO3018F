@@ -6,7 +6,7 @@ author:
 date: '`r Sys.Date()`'
 output:
   xaringan::moon_reader:
-    css: xaringan-themer.css
+    css: ["xaringan-themer.css", "custom styles.css"]
     nature:
       slideNumberFormat: "%current% / %total%"
       highlightStyle: github
@@ -103,12 +103,14 @@ knitr::include_graphics("images/cavenderbares2020.png")
 
 ---
 
-class: center
+layout: false
 
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/bioscape.png")
+## BioSCape: Biodiversity Survey of the Cape
+
+```{r echo = F, fig.align = 'center', out.width = '90%'}
+knitr::include_graphics("images/bioscape_new.png")
 ```
-.left[.footnote[...and the Cape is about to be the epicentre of this endeavour - https://www.bioscape.io/]]
+.left[.footnote[...and the Cape is currently the epicentre of this endeavour - https://www.bioscape.io/]]
 
 ---
 
@@ -118,12 +120,13 @@ layout: false
 
 .pull-left[
 
-- $>$ 100 scientists and conservation practitioners
-- 16 teams (mixed US, RSA, other)
+- $>$ 150 scientists and conservation practitioners
+- 19 teams (mixed US, RSA, other)
 - terrestrial and aquatic
-- 2 planes
-- 4 instruments (hyperspectral and LiDAR)
+- 3 planes
+- 6 instruments (2 x V-SWIR imaging spectrometers, hyperspectral thermal, multispectral (RGB + NIR) and 2 x LiDAR)
 - fundamental and applied science
+- mostly NASA funded
 
 ```{r echo = F, fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("images/bioscape_planes.png")
@@ -137,6 +140,14 @@ knitr::include_graphics("images/bioscape_kumu.png")
 ```
 .footnote[www.bioscape.io]
 ]
+
+---
+
+class: center, middle
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/Bioscape infographic_e3.jpg")
+```
 
 ---
 
@@ -195,6 +206,60 @@ knitr::include_graphics("images/ebv_circle.png")
 .footnote[https://geobon.org/]
 
 ]
+
+---
+
+background-image: url("images/nasa_ems.jpeg")
+background-size: contain
+
+text-color: white
+
+.left-column[
+## .my-style-white[The Electromagnetic Spectrum]
+]
+
+---
+
+## Many sensor types!
+
+.left-column[
+
+Active vs passive sensors
+
+Multispectral vs hyperspectral (imaging spectrometers)
+
+Much variation within each type 
+
+- Especially spectral range and resolution!
+
+.footnote[[Pettorelli et al. 2018](http://dx.doi.org/10.13140/RG.2.2.25962.41926)]
+]
+
+.right-column[
+```{r echo = F, fig.align = 'center', out.width = '85%'}
+knitr::include_graphics("images/pettorelli2018_sensors.png")
+```
+]
+
+---
+
+layout: false
+
+## Multispectral vs hyperspectral (imaging spectrometers)
+
+```{r echo = F, fig.align = 'center', out.width = '70%'}
+knitr::include_graphics("images/multi vs hyper.png")
+```
+
+---
+
+### Remote sensing is particularly useful in combo with other observations
+
+```{r echo = F, fig.align = 'center', out.width = '75%'}
+knitr::include_graphics("images/turner2014.jpeg")
+```
+
+.footnote[[Turner 2014](https://doi-org.ezproxy.uct.ac.za/10.1126/science.1256014)]
 
 ---
 
@@ -300,6 +365,14 @@ knitr::include_graphics("images/peninsula_hyperspec.png")
 
 layout: false
 
+```{r echo = F, fig.align = 'centre', out.width = '100%'}
+knitr::include_graphics("images/traitmapping.png")
+```
+
+---
+
+layout: false
+
 ## Phylogenetic diversity?
 
 ```{r echo = F, fig.align = 'center', out.width = '70%'}
@@ -339,7 +412,7 @@ knitr::include_graphics("images/cedars_mapped.png")
 
 class: center
 
-##There are challenges and limitations...
+## There are challenges and limitations...
 
 ```{r echo = F, fig.align = 'center', out.width = '50%'}
 knitr::include_graphics("images/schimel2020_scale.png")
@@ -351,7 +424,7 @@ knitr::include_graphics("images/schimel2020_scale.png")
 
 class: center
 
-##But this is what fancy modelling and proxies are for...
+## But this is what fancy modelling and proxies are for...
 
 ```{r echo = F, fig.align = 'center', out.width = '43%'}
 knitr::include_graphics("images/jetz2016.png")
@@ -361,12 +434,51 @@ knitr::include_graphics("images/jetz2016.png")
 
 ---
 
+class: center
+
+## Spectral unmixing can detect "spectral signatures"
+
+.left-column[
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/jonaskop_class.png")
+```
+
+.smaller[Jonaskop, Riviersonderend Mountains]
+]
+
+.right-column[
+
+Map species/types based on their reflectance of the electromagnetic spectrum!
+
+```{r echo = F, fig.align = 'center', out.width = '50%'}
+knitr::include_graphics("images/jonaskop_spectral_library.png")
+```
+
+Given a library of spectral signatures of different species and land cover types (endmembers), spectral unmixing infers the composition of each pixel from the possible mixes of endmembers. This gives a cover map of the majority endmember for each pixel (as here) and the fraction of each endmember for all pixels (next slide).
+
+]
+
+---
+
+class: center
+
+## Spectral unmixing can detect "spectral signatures"
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/jonaskop_unmix.png")
+```
+
+.left[.footnote[Fractional cover of species (e.g. pines), functional groups or land cover types! ]]
+
+---
+
 layout: false
 
 .pull-left[
 ## Combining remote sensing and in situ data
 
-Using remotely sensed environmental data to inform species distribution models
+Using remotely sensed environmental data to inform species distribution models (SDMs)
 
 ```{r echo = F, fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("images/wilson2016.png")
@@ -380,9 +492,8 @@ E.g. Observed cloud frequency from the MODIS satellite is a better predictor of 
 
 .pull-right[
 ```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/randin2020.jpg")
+knitr::include_graphics("images/kingprotea.jpg")
 ```
-.footnote[Randin et al. 2020]
 ]
 
 ---
@@ -465,16 +576,16 @@ class: middle
 
 ## Take-home
 
->*There are many ways to measure biodiversity. None are perfect. You should treat them as hypotheses.*
+>*Remote sensing is a rapidly growing field that is seen as the holy grail for mapping and monitoring biodiversity (and Essential Biodiversity Variables) at high spatial resolution from local to global scales.*
 
->*How you measure biodiversity can affect the outcome of your study. There are many ways to measure biodiversity incorrectly for the application at hand!*
+>*There are many remote sensing methods and tools, and these are constantly improving.*
 
->*Measures of biodiversity allow us to explore:*
-> - *How biodiversity is generated and communities are assembled*
-> - *How biodiversity affects ecosystem functions, including benefits to society*
-> - *How the environment is changing with time and human impacts*
+>*While there are many limitations (e.g. spatial resolution), many can be addressed with modelling approaches, and are being overcome as the technology and methods improve.*
 
->*Community assembly, biotic effects on ecosystem function, and responses to global change are tightly intertwined*
+>*Remote sensing approaches must be paired with _in situ_ observations to "ground-truth" and calibrate/validate that they do reflect reality on the ground.*
+
+>*Remote sensing can be valuable for mapping habitat variables such as climate, topography, etc that can inform inference about species distributions or other proxies for biodiversity like environmental heterogeneity or spectral diversity.*
+
 
 ---
 

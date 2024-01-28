@@ -354,7 +354,7 @@ knitr::include_graphics("images/crisp2009_1.png")
 knitr::include_graphics("images/crisp2009_2.png")
 ```
 
-Speciation is more likely to occur via dispersal to the same biome on a different continent than to a different biome right next door!
+Speciation is more likely to occur via dispersal to a similar biome on a different continent than to a different biome right next door!
 
 .footnote[Crisp et al. 2009 *Science*]
 ]

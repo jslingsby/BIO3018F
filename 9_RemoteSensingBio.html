@@ -4,9 +4,10 @@
     <title>9. Remote Sensing of Biodiversity</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jasper Slingsby, BIO3018F" />
-    <meta name="date" content="2023-05-09" />
+    <meta name="date" content="2024-01-28" />
     <script src="9_RemoteSensingBio_files/header-attrs/header-attrs.js"></script>
     <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="custom styles.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
@@ -19,7 +20,7 @@ class: center, middle, inverse, title-slide
 ### Jasper Slingsby, BIO3018F
 ]
 .date[
-### 2023-05-09
+### 2024-01-28
 ]
 
 ---
@@ -64,10 +65,12 @@ layout: false
 
 ---
 
-class: center
+layout: false
 
-&lt;img src="images/bioscape.png" width="100%" style="display: block; margin: auto;" /&gt;
-.left[.footnote[...and the Cape is about to be the epicentre of this endeavour - https://www.bioscape.io/]]
+## BioSCape: Biodiversity Survey of the Cape
+
+&lt;img src="images/bioscape_new.png" width="90%" style="display: block; margin: auto;" /&gt;
+.left[.footnote[...and the Cape is currently the epicentre of this endeavour - https://www.bioscape.io/]]
 
 ---
 
@@ -77,12 +80,13 @@ layout: false
 
 .pull-left[
 
-- `\(&gt;\)` 100 scientists and conservation practitioners
-- 16 teams (mixed US, RSA, other)
+- `\(&gt;\)` 150 scientists and conservation practitioners
+- 19 teams (mixed US, RSA, other)
 - terrestrial and aquatic
-- 2 planes
-- 4 instruments (hyperspectral and LiDAR)
+- 3 planes
+- 6 instruments (2 x V-SWIR imaging spectrometers, hyperspectral thermal, multispectral (RGB + NIR) and 2 x LiDAR)
 - fundamental and applied science
+- mostly NASA funded
 
 &lt;img src="images/bioscape_planes.png" width="100%" style="display: block; margin: auto;" /&gt;
 
@@ -92,6 +96,12 @@ layout: false
 &lt;img src="images/bioscape_kumu.png" width="100%" style="display: block; margin: auto;" /&gt;
 .footnote[www.bioscape.io]
 ]
+
+---
+
+class: center, middle
+
+&lt;img src="images/Bioscape infographic_e3.jpg" width="100%" style="display: block; margin: auto;" /&gt;
 
 ---
 
@@ -144,6 +154,54 @@ An advantage of remote sensing is that it can directly measure the structure, co
 .footnote[https://geobon.org/]
 
 ]
+
+---
+
+background-image: url("images/nasa_ems.jpeg")
+background-size: contain
+
+text-color: white
+
+.left-column[
+## .my-style-white[The Electromagnetic Spectrum]
+]
+
+---
+
+## Many sensor types!
+
+.left-column[
+
+Active vs passive sensors
+
+Multispectral vs hyperspectral (imaging spectrometers)
+
+Much variation within each type 
+
+- Especially spectral range and resolution!
+
+.footnote[[Pettorelli et al. 2018](http://dx.doi.org/10.13140/RG.2.2.25962.41926)]
+]
+
+.right-column[
+&lt;img src="images/pettorelli2018_sensors.png" width="85%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+
+layout: false
+
+## Multispectral vs hyperspectral (imaging spectrometers)
+
+&lt;img src="images/multi vs hyper.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+---
+
+### Remote sensing is particularly useful in combo with other observations
+
+&lt;img src="images/turner2014.jpeg" width="75%" style="display: block; margin: auto;" /&gt;
+
+.footnote[[Turner 2014](https://doi-org.ezproxy.uct.ac.za/10.1126/science.1256014)]
 
 ---
 
@@ -233,6 +291,12 @@ Imaging spectroscopy ("hyperspectral" remote sensing) allows direct measurement 
 
 layout: false
 
+&lt;img src="images/traitmapping.png" width="100%" /&gt;
+
+---
+
+layout: false
+
 ## Phylogenetic diversity?
 
 &lt;img src="images/meireles2020.jpg" width="70%" style="display: block; margin: auto;" /&gt;
@@ -265,7 +329,7 @@ We can monitor populations of large species..., but identifying all species pres
 
 class: center
 
-##There are challenges and limitations...
+## There are challenges and limitations...
 
 &lt;img src="images/schimel2020_scale.png" width="50%" style="display: block; margin: auto;" /&gt;
 
@@ -275,11 +339,44 @@ class: center
 
 class: center
 
-##But this is what fancy modelling and proxies are for...
+## But this is what fancy modelling and proxies are for...
 
 &lt;img src="images/jetz2016.png" width="43%" style="display: block; margin: auto;" /&gt;
 
 .left[.footnote[Jetz et al. 2016]]
+
+---
+
+class: center
+
+## Spectral unmixing can detect "spectral signatures"
+
+.left-column[
+
+&lt;img src="images/jonaskop_class.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+.smaller[Jonaskop, Riviersonderend Mountains]
+]
+
+.right-column[
+
+Map species/types based on their reflectance of the electromagnetic spectrum!
+
+&lt;img src="images/jonaskop_spectral_library.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+Given a library of spectral signatures of different species and land cover types (endmembers), spectral unmixing infers the composition of each pixel from the possible mixes of endmembers. This gives a cover map of the majority endmember for each pixel (as here) and the fraction of each endmember for all pixels (next slide).
+
+]
+
+---
+
+class: center
+
+## Spectral unmixing can detect "spectral signatures"
+
+&lt;img src="images/jonaskop_unmix.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+.left[.footnote[Fractional cover of species (e.g. pines), functional groups or land cover types! ]]
 
 ---
 
@@ -288,7 +385,7 @@ layout: false
 .pull-left[
 ## Combining remote sensing and in situ data
 
-Using remotely sensed environmental data to inform species distribution models
+Using remotely sensed environmental data to inform species distribution models (SDMs)
 
 &lt;img src="images/wilson2016.png" width="100%" style="display: block; margin: auto;" /&gt;
 
@@ -299,8 +396,7 @@ E.g. Observed cloud frequency from the MODIS satellite is a better predictor of 
 ]
 
 .pull-right[
-&lt;img src="images/randin2020.jpg" width="100%" style="display: block; margin: auto;" /&gt;
-.footnote[Randin et al. 2020]
+&lt;img src="images/kingprotea.jpg" width="100%" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
@@ -373,16 +469,16 @@ class: middle
 
 ## Take-home
 
-&gt;*There are many ways to measure biodiversity. None are perfect. You should treat them as hypotheses.*
+&gt;*Remote sensing is a rapidly growing field that is seen as the holy grail for mapping and monitoring biodiversity (and Essential Biodiversity Variables) at high spatial resolution from local to global scales.*
 
-&gt;*How you measure biodiversity can affect the outcome of your study. There are many ways to measure biodiversity incorrectly for the application at hand!*
+&gt;*There are many remote sensing methods and tools, and these are constantly improving.*
 
-&gt;*Measures of biodiversity allow us to explore:*
-&gt; - *How biodiversity is generated and communities are assembled*
-&gt; - *How biodiversity affects ecosystem functions, including benefits to society*
-&gt; - *How the environment is changing with time and human impacts*
+&gt;*While there are many limitations (e.g. spatial resolution), many can be addressed with modelling approaches, and are being overcome as the technology and methods improve.*
 
-&gt;*Community assembly, biotic effects on ecosystem function, and responses to global change are tightly intertwined*
+&gt;*Remote sensing approaches must be paired with _in situ_ observations to "ground-truth" and calibrate/validate that they do reflect reality on the ground.*
+
+&gt;*Remote sensing can be valuable for mapping habitat variables such as climate, topography, etc that can inform inference about species distributions or other proxies for biodiversity like environmental heterogeneity or spectral diversity.*
+
 
 ---
 

@@ -78,7 +78,7 @@ knitr::include_graphics("images/centresofendemism.png")
 
 - speciation
 - extinction
-- dispersal
+- dispersal (immigration, emigration)
 
 ]
 
@@ -138,7 +138,7 @@ layout: false
 
 - speciation
 - extinction
-- dispersal
+- dispersal (immigration, emigration)
 
 ]
 
@@ -189,7 +189,7 @@ knitr::include_graphics("images/cowling2015b.png")
 
 Major change can be bad for diversity though... Too much, and things go extinct!
 
-Environmental stability is key for maintaining high diversity.
+Environmental stability is key for maintaining high diversity, as evidences in the Med-Type Ecosystems of the world.
 
 ]
 
@@ -282,15 +282,42 @@ Isolated islands/habitats where immigration is rare are likely to see local adap
 
 .pull-right[
 
-<br>
-
-```{r echo = F, fig.align = 'center', out.width = '100%'}
-knitr::include_graphics("images/emerson2008.png")
+```{r echo = F, fig.align = 'center', out.width = '90%'}
+knitr::include_graphics("images/emerson2008_crop.png")
 ```
 
 ]
 
 ---
+
+.pull-left[
+
+## Dispersal and _speciation_
+
+### Island Biogeography Extended
+
+Treefrog assemblages around the world have convergently evolved species with very large and small body sizes, representing resource partitioning, because prey size is associated with body size
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/moen2009a.gif")
+```
+
+.footnote[[Moen and Wiens 2009](https://doi.org/10.1111/j.1558-5646.2008.00538.x)]
+
+]
+
+.pull-right[
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/moen2009.gif")
+```
+
+This pattern is repeated at finer scales, such as islands in the Caribbean.
+
+]
+
+---
+
 
 layout: false
 

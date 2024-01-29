@@ -332,12 +332,12 @@ layout: false
 .pull-left[
 
 #### Vary with spatial scale
-- competition or facilitation operates between neighbouring plants
+- competition or facilitation operates between neighbouring individuals
 - environmental filtering operates at a range of scales (climate > soils > microsite, etc)
 - biogeographic processes (speciation, extinction, vicariance, dispersal) operate across large extents
 
 #### Vary with temporal scale
-- pollination, seed dispersal or herbivory can be near-instantaneous
+- pollination, seed dispersal, herbivory, predation, etc can be near-instantaneous
 - speciation or trait evolution occur over long periods of time
 
 ]

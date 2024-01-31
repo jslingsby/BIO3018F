@@ -363,7 +363,7 @@ layout: false
 
 _**The Unified Neutral Theory of Biodiversity and Biogeography - Hubbell 2001**_
 
-All individuals of all species are functionally equivalent and local processes (competition etc) are mostly irrelevant...
+All individuals of all species are functionally equivalent and local processes (competition etc) are mostly irrelevant... (i.e. only regional processes apply)
 
 Local communities are determined by birth, death and migration, which depend only on species abundances...
 
@@ -426,7 +426,7 @@ Local determinism makes 3 predictions (Ricklefs 2004)
     - see Stability slides, comparing MTEs
 3. local diversity, above some saturation level, should be independent of regional diversity
     - Type I = local diversity $\propto$ regional diversity
-    - Type II = local diversity saturates
+    - Type II = local diversity saturates (i.e. because niche space is full...)
     
 There is evidence for and against each, suggesting that the patterns we see are a mix of the two...
 ]

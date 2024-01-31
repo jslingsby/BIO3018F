@@ -98,7 +98,7 @@ knitr::include_graphics("images/fynbos_community.jpg")
 
 layout: false
 
-### And how do these processes vary with spatial scale?
+### And how do these processes vary with spatial and temporal scale?
 
 .pull-left[
 
@@ -127,7 +127,7 @@ layout: false
 
 The niche is a multidimensional description of a species resource needs, habitat requirements and environmental tolerances<sup>1</sup> 
 - i.e. a particular set of abiotic (light, water, nutrient, shelter, etc) and biotic conditions (predators, prey, pathogens, mutualists (e.g. mycorrhizae, pollinators), competitors, etc)
-- often explored by looking at species traits, assuming they reflect resource use strategies
+- often explored by looking at where species occur in the environment, or by looking at their traits, assuming these reflect resource use strategies
 
 .center[#####<sup>1</sup>_**In simplified terms**_ (there are a few definitions)]
 
@@ -157,7 +157,8 @@ layout: false
 ## Niche theory
 
 Niche theory predicts local deterministic processes like habitat filtering, competition, facilitation, etc.
-- These processes influence co-occurrence (limiting diversity), trait distributions and relatedness
+- These processes influence the co-occurrence/coexistence, trait/functional similarity and relatedness of species
+- Thus influencing various forms of diversity (species, functional, phylogenetic)
 
 ]
 
@@ -338,7 +339,7 @@ layout: false
 
 #### Vary with temporal scale
 - pollination, seed dispersal, herbivory, predation, etc can be near-instantaneous
-- speciation or trait evolution occur over long periods of time
+- speciation or trait evolution occur over long periods of time (typically >100s of generations)
 
 ]
 
@@ -411,6 +412,26 @@ knitr::include_graphics("images/fynbos_community.jpg")
 - interspecific interactions (competition, predation, pathogens, mutualisms)
 - adaptation
 - stochastic variation
+]
+
+---
+
+layout: false
+
+.pull-left[
+## Dominant processes vary with the relative scale of your species pools
+
+Community assembly can be thought of as the successive filtering of species pools descending in spatial (and temporal) scale from global to local.
+
+The outcomes of your analyses can depend in the scale at which your communities and regional species pools are defined, because different processes are more or less important at different scales.
+
+.footnote[[Cavender-Bares et al. 2006](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1890/0012-9658%282006%2987%5B109%3APSOFPC%5D2.0.CO%3B2?casa_token=cWplHgCzp80AAAAA%3A7IfWBV54lFb4N37JwSWScsVhuHRJpjhH4e013QvRRymIcKPvp2niEUDnVIpb31yxdkUBbWu20wpIc7I)]
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '70%'}
+knitr::include_graphics("images/cavender2006.png")
+```
 ]
 
 ---

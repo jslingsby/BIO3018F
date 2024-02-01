@@ -75,28 +75,58 @@ knitr::include_graphics("images/lang_postfire_50perc.gif")
 
 layout: false
 
+## What are ecosystem functions? ...a bit of a quagmire...
+
+#### Ecological processes
+- result from interactions among organisms and between organisms and their environment
+  - such as competition, herbivory, carnivory, mutualisms, photosynthesis
+
+#### Ecosystem processes
+- transfers of energy, material, or organisms among pools in an ecosystem, 
+  - such as primary  production, decomposition, heterotrophic respiration and evapotranspiration
+
+#### Ecosystem functions
+- attributes related to the performance of an ecosystem that are the consequence of ecosystem processes - typically direct and indirect benefits of ecosystem processes for a range of species, including humans
+  - examples include nutrient regulation, food production and water supply
+
+.footnote[definitions from [Pettorelli et al 2018](http://dx.doi.org/10.1002/rse2.59)]
+
+---
+
+layout: false
+
+## What are ecosystem services?
+
+#### Ecosystem services
+- the benefits human populations derive, directly or indirectly, from ecosystem functions, typically split into:
+  - provisioning services (food, fibre, water, biomass, etc)
+  - regulating services (air and water quality, erosion control, etc)
+  - supporting services (soil formation, nutrient cycling, hydrological cycle, primary productivity...)
+  - cultural services (recreation, ecotourism, ethical values, spiritual connections)
+
+> The key distinction between ecosystem functions and ecosystem services is that  functions  can  have  both  intrinsic  and  potential anthropocentric values, while services are defined only in terms of their benefits to people.
+
+Note that we've only recently been trying to come up with clear definitions so there are still grey areas - e.g. most "supporting services" are probably ecosystem precesses...
+
+---
+
+layout: false
+
 
 .pull-left[
 
-## Ecosystem functions?
+## Ecosystem functions in B-EF research
 
 - Productivity (C sequestration)
 - Decomposition
 - Respiration
-- Water filtration
 - Pollination
-- Nutrient cycling
+- Biogeochemical cycling (nutrients, water)
 - Habitat (for other organisms)
-- Etc
+- Stability
+- Invasibility, etc...
 
-<br>
-
-Ecosystem services are the benefits humans derive from ecosystem functions (directly or indirectly).
-
-```{r echo = F, fig.align = 'center', out.width = '90%'}
-#knitr::include_graphics("images/kreft2007_crop.jpg")
-#knitr::include_graphics("images/cfr_diversity.png")
-``` 
+##### While there is increasing recognition of the different definitions I just gave you, historically there's been quite a bit of overlap. Either way, it is interesting to explore how biodiversity affects any and all of ecological processes, ecosystem processes, ecosystem  functions and ecosystem services. By the same token, it's probably easier to retain the name "Biodiversity-Ecosystem Function (or B-EF)" for the field of research, rather than rename it "B-ElP-EP-EF-ES"?
 
 ]
 
@@ -163,15 +193,18 @@ Dominance by indigenous seeders versus sprouters affects rate of biomass accumul
 ```{r echo = F, fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("images/treurnicht2021.jpg")
 ```
+.footnote[Image from [Treurnicht et al. 2021](http://dx.doi.org/10.1111/1365-2664.13882)]
 
-.footnote[From Slingsby et al. 2014. Hypothetical curves based on literature. Time span ~15 yrs. Seasonality excluded.]
 ]
 
 .pull-right[
-```{r echo = F, fig.align = 'center', out.width = '85%'}
+```{r echo = F, fig.align = 'center', out.width = '72%'}
 knitr::include_graphics("images/slingsby_2014_BEF.png")
 ```
 
+Hypothetical curves based on literature. Time span ~15 yrs. Seasonality excluded. 
+
+.footnote[From [Slingsby et al. 2014](https://www.zora.uzh.ch/id/eprint/100403/)]
 ]
 
 ---
@@ -289,9 +322,9 @@ knitr::include_graphics("images/hooper2005_fig4.png")
 knitr::include_graphics("images/tilman2014_fig3.png")
 ```
 
-Species loss = less compensation (or redundancy) and increasing instability.
+Species loss = less compensation (or redundancy) and increasing _community-level_ instability.
 
-Supported by models (a, b) and experiments (c, d), BUT more species means less species-level stability (consistent with niche theory).
+Supported by models (a, b) and experiments (c, d), BUT more species means less _species-level_ stability (consistent with niche theory).
 
 .footnote[Hooper et al. 2005 | Tilman et al. 2014]
 
@@ -365,16 +398,21 @@ layout: false
 .pull-left[
 Most B-EF studies measure species diversity, assuming its a good proxy for functional diversity, and that the mechanism behind B-EF is mediated by traits.
 
-Increasingly, studies are using FD or PD and often getting better results.
+Increasingly, studies are using FD or PD and often getting better results. There is also more focus on selecting the right traits, guided by theory.
+
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/chacon-labelle2022.png")
+```
+.footnote[[Chacón-Labella et al. 2022](http://dx.doi.org/10.1016/j.tree.2022.10.007)]
+
 ]
 
 .pull-right[
-```{r echo = F, fig.align = 'center', out.width = '100%'}
+```{r echo = F, fig.align = 'center', out.width = '95%'}
 knitr::include_graphics("images/cadotte2008_fig2.png")
 ```
-]
-
 .footnote[Cadotte et al. 2008]
+]
 
 ---
 
@@ -544,19 +582,10 @@ class: center
 _**Community assembly, ecosystem function and global change are intricately linked!!!**_
 
 ```{r echo = F, fig.align = 'center', out.width = '80%'}
-knitr::include_graphics("images/chapin.png")
+knitr::include_graphics("images/chapin2.png")
 ```
 
 .footnote[Figure modified from Chapin et al. 1997, _Science_]
-
----
-
-## References
-
-```{r refs, echo=FALSE, results="asis"}
-NoCite(myBib)
-PrintBibliography(myBib)
-```
 
 ---
 class: center, middle

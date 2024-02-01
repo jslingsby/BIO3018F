@@ -138,7 +138,7 @@ library(tidyverse, quiet = T)
 ndvi <- rast("prac/MODIS/20220130_MODIS_v1g_POT_MOD13Q1_006_NDVI.tif")
 
 # Get veg map and fire and plot
-veg <- st_read("/home/jasper/Documents/Datasets/SANBI/RLE_2021_Remnants/FynRemnantsClean.gpkg", quiet = T)
+veg <- st_read("/Users/jasper/Documents/Datasets/SANBI/RLE_2021_Remnants/FynRemnantsClean.gpkg", quiet = T)
 ndvi_g <- project(ndvi, st_crs(veg)$Wkt)
 veg <- st_crop(veg, ndvi_g, quiet = T)
 mapview::mapview(veg, zcol = "name", quiet = T) 
@@ -242,7 +242,7 @@ knitr::include_graphics("images/pausas_bond_2020_1.jpg")
 
 ## What are feedbacks in ecology?
 
-Organisms can modify their environment, and these modifications can feed back to the organism and generate emergent properties at different scales, with evolutionary consequences...
+Organisms can modify their environment, and these modifications can feed back to the organism and generate emergent properties at different scales, with ecological and evolutionary consequences...
 
 ```{r echo = F, fig.align = 'center', out.width = '55%'}
 knitr::include_graphics("images/pausas_bond_2022.jpg")
@@ -277,13 +277,13 @@ knitr::include_graphics("images/pausas_bond_2022.jpg")
 ]
 
 .pull-right[
-Emergent properties...
+Emergent properties at different scales...
 
--   Population/Species (niche construction)
+-   Population/Species - Niche construction
 
--   Community (Alternative Stable States)
+-   Community - Alternative Stable States
 
--   Biosphere (Gaia Hypothesis)
+-   Biosphere - Gaia Hypothesis
 ]
 
 ---
@@ -325,7 +325,7 @@ knitr::include_graphics("images/fire_mberg.gif")
 knitr::include_graphics("images/beisner2003_1.jpg")
 ```
 
-.footnote[From Beisner et al 2003. _Fronties in Ecology and Evolution_]
+.footnote[From Beisner et al 2003. _Frontiers in Ecology and Evolution_]
 ]
 
 .pull-right[
@@ -365,10 +365,12 @@ knitr::include_graphics("images/pausas_bond_2020_abs_2.jpg")
 ## Alternative Biome States - altering the feedback!
 
 ```{r echo = F, fig.align = 'center', out.width = '85%'}
-knitr::include_graphics("images/slingsby2020_IC.png")
+knitr::include_graphics("images/slingsby2020_IC_crop.png")
 ```
 
-.footnote[Slingsby et al 2020. _Global Change Biology_]
+Land cover change on the Cape Peninsula alters the flow (and frequency) of fire, allowing forest to invade fynbos.
+
+.footnote[[Slingsby et al 2020. _Global Change Biology_](http://dx.doi.org/10.1111/gcb.14861)]
 
 ---
 
@@ -430,13 +432,13 @@ knitr::include_graphics("images/pausas_bond_2022.jpg")
 ]
 
 .pull-right[
-Emergent properties...
+Emergent properties at different scales...
 
--   Population/Species (niche construction)
+-   Population/Species - Niche construction
 
--   Community (Alternative Stable States)
+-   Community - Alternative Stable States
 
--   Biosphere (Gaia Hypothesis)
+-   Biosphere - Gaia Hypothesis
 ]
 
 ---
@@ -478,7 +480,7 @@ Thresholds from where feedbacks can be disrupted can generate abrupt (nonlinear)
 <br>
 
 Feedbacks link across scales and a change at one scale may have big implications for other scales
-- e.g. What is the effect of global tree planting? Reduced atmospheric CO2, but increased albedo and evapotranspiration?
+- e.g. What is the effect of global tree planting? Reduced atmospheric CO2, but also lower albedo (higher temperature absorption) and increased evapotranspiration?
  
 <br>
 
@@ -506,15 +508,6 @@ knitr::include_graphics("images/chapin2.png")
 .pull-right[
 .footnote[Figure modified from Chapin et al. 1997, _Science_]
 ]
-
----
-
-## References
-
-```{r refs, echo=FALSE, results="asis"}
-NoCite(myBib)
-PrintBibliography(myBib)
-```
 
 ---
 class: center, middle

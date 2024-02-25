@@ -5,11 +5,14 @@ library(readxl)
 library(GGally)
 
 ## Download data from Googlesheets
-if (Sys.getenv("USER") == "jasper") {gmail = "jasper.slingsby@uct.ac.za"}
+#if (Sys.getenv("USER") == "jasper") {gmail = "jasper.slingsby@uct.ac.za"}
 
 # Authenticate and access the Google Sheet
-drive_auth(email = gmail)
-gs4_auth(token = drive_token())
+#drive_auth(email = gmail)
+#gs4_auth(token = drive_token())
+
+drive_deauth()
+gs4_deauth()
 
 # Download
 sheet <- "https://docs.google.com/spreadsheets/d/1VYMvHk7b_GcVFxCLYt4GUyUIMfrgWasQT7uy6aE0_ms/edit#gid=1570965423"
@@ -60,6 +63,7 @@ cont_trts <- c("Height (cm)", "Leaf length (mm)", "Leaf width (mm)", "LMA", "LDM
 disc_trts <- c("Growth form", "Caginess", "Herbivory", "Leaf strength", "Phenolics")
 flammability <- c("Max T (C)", "Burning time BT (s)", "Length burnt BL (cm)", "Biomass Burnt BB (%)")
 
+
 ## Plant traits 
 # Within continuous traits
 data %>%
@@ -90,14 +94,24 @@ data %>%
 ## Flammability traits
 # Within flammability traits
 data %>%
-  ggpairs(flammability)
+  ggpairs(flammability,
+          mapping = ggplot2::aes(colour = Site))
 
 # Flammability data by site
 data %>%
   ggduo("Site", flammability)
 
-# Flammability data by species - Better as a ggplot?
-#data %>%
+# Flammability data by species
+data %>%
+  select(all_of(c("Taxon", "Site", flammability))) %>%
+  pivot_longer(cols = flammability) %>%
+  ggplot(aes(y = value, x = fct_reorder(Taxon, as.numeric(as.factor(Site))), fill = Site)) +
+    geom_col() +
+    theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
+    facet_wrap(vars(name), scales = "free") +
+    xlab("Species")
+    
+
 #  ggduo("Taxon", flammability, cardinality_threshold = 25)
 
 # Flammability data by site, weighted by % cover of species

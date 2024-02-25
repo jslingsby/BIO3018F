@@ -140,16 +140,13 @@ Over and above the abiotic template, the main ecological processes of interest h
 - disturbance by herbivory
 
 ---
-####Questions (feel free to modify):
-
-- Does the variation in abiotic conditions explain the observed variation in species' traits?
+####Questions:
 
 - What are the dominant ecological processes determining community assembly and ecosystem function in each ecosystem sampled? How is this reflected in species' "response" and "effect" traits?
 
 - Are there any correlations between "response" and "effect" traits that could create selective trade-offs within species, or potentially generate ecosystem-level feedbacks?
 
-- To what degree is variation in functional traits determined by evolutionary history (i.e. the phylogenetic relationships among species)?
-
+- To what degree is variation in traits determined by evolutionary history (i.e. the phylogenetic relationships among species)?
 
 ---
 
@@ -275,7 +272,7 @@ Sample _Traits:_
 - For six individuals of each of the target species, 
   - measure the height and canopy diameter (in 2 perpendicular axes)
   - collect shoot for measuring leaf traits back at the Potberg centre (length, width, area and dry mass).
-  - Collect a 70cm long shoot/branch
+  - collect a 70cm long shoot/branch
 
 - Take a pic of your site label between sites so you know what photos (and species) are from where.
 
@@ -292,6 +289,8 @@ library(googlesheets4)
 library(googledrive)
 library(readxl)
 library(GGally)
+library(taxize)
+library(reactable)
 
 # Tell Google drive and Google sheets the file is open to view
 drive_deauth()
@@ -311,10 +310,41 @@ Set `path = ` to wherever you want to save the data on your laptop...
 ```{r}
 traits <- read_xlsx("prac/flammability/flammabilitytraits2024.xlsx","TraitData")
 fire <- read_xlsx("prac/flammability/flammabilitytraits2024.xlsx","Flammability")
+taxonomy <- read_xlsx("prac/flammability/flammabilitytraits2024.xlsx","AcceptedSpecies")
+site <- read_xlsx("prac/flammability/flammabilitytraits2024.xlsx","SiteData2023")
 ```
 
 Set the file path to wherever you saved the data on your laptop...
 
+---
+
+## Summarise the site data
+
+.pull-left[
+```{r, fig.asp = 0.5, eval = FALSE}
+site %>%
+  mutate(CanopyCover = 100 - 4.16*Densiometer) %>%
+  rowwise() %>%
+  mutate(Dung = sum(c(Dung_Eland, Dung_Bontebok, Dung_Ostrich, Dung_Other))) %>%
+  pivot_longer(cols = c("CanopyCover", "Dung", "SoilPH", "PercentBareSoil")) %>%
+  ggplot(aes(y = value, x = Site)) +
+    geom_boxplot() +
+    facet_wrap(vars(name), nrow = 2, scales = "free")
+```
+]
+
+.pull-right[
+```{r, fig.asp = 0.8, echo = FALSE}
+site %>%
+  mutate(CanopyCover = 100 - 4.16*Densiometer) %>%
+  rowwise() %>%
+  mutate(Dung = sum(c(Dung_Eland, Dung_Bontebok, Dung_Ostrich, Dung_Other))) %>%
+  pivot_longer(cols = c("CanopyCover", "Dung", "SoilPH", "PercentBareSoil")) %>%
+  ggplot(aes(y = value, x = Site)) +
+    geom_boxplot() +
+    facet_wrap(vars(name), nrow = 2, scales = "free")
+```
+]
 ---
 
 ## Summarise traits by species - morphometrics
@@ -362,9 +392,46 @@ fire <- fire %>%
 
 # Join traits into one
 data <- left_join(traits, fire)
+data <- left_join(data, taxonomy)
 ```
 
-...and join the morphometric and flammability traits into one
+...and join the taxonomy, morphometric and flammability traits into one
+
+---
+
+## Taxonomic classification
+
+.pull-left[
+```{r}
+data$Taxon <- data$Taxon %>% str_replace_all(c("Elytropappus rhinocerotis" = "Dicerothamnus rhinocerotis", "Rapanea melanophloeos" = "Myrsine melanophloeos"))
+
+hmm <- classification(data$Taxon, db = "ncbi")
+
+tree <- class2tree(hmm)
+```
+]
+
+.pull-right[
+```{r, fig.asp = 0.6}
+plot(tree)
+lines(x=c(24,24),y=c(0,25),lwd=2)
+```
+How about we split the 25 taxa into 6 groups?
+
+]
+
+---
+
+## Taxonomic classification
+
+.pull-left[
+```{r, eval = FALSE}
+tclass <- cutree(as.hclust(ape::multi2di(tree$phylo)), k = 6)
+
+data <- left_join(data, data.frame(TaxonClass = as.factor(tclass), Taxon = names(tclass)))
+
+reactable(data)
+```
 
 ---
 
@@ -385,8 +452,8 @@ flammability <- c("Max T (C)", "Burning time BT (s)", "Length burnt BL (cm)", "B
 
 ## Plant traits: within continuous morphometric traits
 
-```{r, fig.align = 'center', out.width = '80%'}
-data %>%  ggpairs(cont_trts)
+```{r, fig.align = 'center', out.width = '70%', fig.asp = 0.6}
+data %>%  ggpairs(cont_trts) 
 ```
 
 ---
@@ -412,7 +479,7 @@ data %>% ggduo(disc_trts, cont_trts)
 
 .pull-left[
 
-```{r, fig.align = 'center', out.width = '65%', fig.asp=1.15}
+```{r, fig.align = 'center', out.width = '50%', fig.asp=1.25}
 # Unweighted
 data %>% ggduo("Site", cont_trts)
 ```
@@ -420,9 +487,27 @@ data %>% ggduo("Site", cont_trts)
 
 .pull-right[
 
-```{r, fig.align = 'center', out.width = '65%', fig.asp = 1.15}
+```{r, fig.align = 'center', out.width = '50%', fig.asp = 1.25}
 # Weighted by % cover of species
 data %>% ggduo("Site", cont_trts, mapping = ggplot2::aes(weight = `Cover at site (%)`))
+```
+]
+
+---
+
+.pull-left[
+
+### Plant traits: continuous by TaxonClass
+
+```{r, fig.align = 'center', out.width = '90%', fig.asp=1.5, eval = FALSE}
+data %>% ggduo("TaxonClass", cont_trts)
+```
+]
+
+.pull-right[
+
+```{r, fig.align = 'center', out.width = '90%', fig.asp=1.5, echo = FALSE}
+data %>% ggduo("TaxonClass", cont_trts)
 ```
 ]
 
@@ -493,6 +578,25 @@ Now weighted by % cover of species
 data %>%
   ggduo("Site", flammability,
         mapping = ggplot2::aes(weight = `Cover at site (%)`))
+```
+]
+
+---
+
+.pull-left[
+### Flammability by TaxonClass
+
+```{r, fig.align = 'center', out.width = '75%', fig.asp = 1.5, eval = FALSE}
+data %>%
+  ggduo("TaxonClass", flammability)
+```
+]
+
+.pull-right[
+
+```{r, fig.align = 'center', out.width = '75%', fig.asp = 1.5, echo = FALSE}
+data %>%
+  ggduo("TaxonClass", flammability)
 ```
 ]
 

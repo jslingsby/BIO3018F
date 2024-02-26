@@ -426,12 +426,39 @@ How about we split the 25 taxa into 6 groups?
 
 .pull-left[
 ```{r, eval = FALSE}
-tclass <- cutree(as.hclust(ape::multi2di(tree$phylo)), k = 6)
+# Extract and merge higher taxonomic ranks
+tclass <- tree$classification %>% select(norank_91835, norank_4734, norank_91836, norank_2821351, norank_71274) %>%
+unite(col = "TaxonClass", na.rm = T)
 
-data <- left_join(data, data.frame(TaxonClass = as.factor(tclass), Taxon = names(tclass)))
+# Group Proteaceae
+tclass[which(rownames(tclass) %in% c("Aulax umbellata", "Leucadendron salignum", "Mimetes cucullatus", "Protea neriifolia", "Protea repens")),1] <- "proteaceae"
+
+# tclass <- cutree(as.hclust(ape::multi2di(tree$phylo)), k = 6) #Another way to do it based on branches
+
+# Combine data
+data <- left_join(data, data.frame(TaxonClass = tclass[,1], Taxon = rownames(tclass)))
 
 reactable(data)
 ```
+]
+
+.pull-right[
+```{r, echo = FALSE}
+# Extract and merge higher taxonomic ranks
+tclass <- tree$classification %>% select(norank_91835, norank_4734, norank_91836, norank_2821351, norank_71274) %>%
+unite(col = "TaxonClass", na.rm = T)
+
+# Group Proteaceae
+tclass[which(rownames(tclass) %in% c("Aulax umbellata", "Leucadendron salignum", "Mimetes cucullatus", "Protea neriifolia", "Protea repens")),1] <- "proteaceae"
+
+# tclass <- cutree(as.hclust(ape::multi2di(tree$phylo)), k = 6) #Another way to do it based on branches
+
+# Combine data
+data <- left_join(data, data.frame(TaxonClass = tclass[,1], Taxon = rownames(tclass)))
+
+reactable(data)
+```
+]
 
 ---
 
@@ -479,7 +506,7 @@ data %>% ggduo(disc_trts, cont_trts)
 
 .pull-left[
 
-```{r, fig.align = 'center', out.width = '50%', fig.asp=1.25}
+```{r, fig.align = 'center', out.width = '55%', fig.asp=1.25}
 # Unweighted
 data %>% ggduo("Site", cont_trts)
 ```
@@ -487,7 +514,7 @@ data %>% ggduo("Site", cont_trts)
 
 .pull-right[
 
-```{r, fig.align = 'center', out.width = '50%', fig.asp = 1.25}
+```{r, fig.align = 'center', out.width = '55%', fig.asp = 1.25}
 # Weighted by % cover of species
 data %>% ggduo("Site", cont_trts, mapping = ggplot2::aes(weight = `Cover at site (%)`))
 ```
@@ -497,17 +524,17 @@ data %>% ggduo("Site", cont_trts, mapping = ggplot2::aes(weight = `Cover at site
 
 .pull-left[
 
-### Plant traits: continuous by TaxonClass
+### Plant traits: by TaxonClass
 
-```{r, fig.align = 'center', out.width = '90%', fig.asp=1.5, eval = FALSE}
-data %>% ggduo("TaxonClass", cont_trts)
+```{r planttaxclass1, fig.align = 'center', out.width = '75%', fig.asp=1.5, eval = FALSE}
+data %>% ggduo(columnsX = "TaxonClass", columnsY = cont_trts)
 ```
 ]
 
 .pull-right[
 
-```{r, fig.align = 'center', out.width = '90%', fig.asp=1.5, echo = FALSE}
-data %>% ggduo("TaxonClass", cont_trts)
+```{r planttaxclass2, fig.align = 'center', out.width = '75%', fig.asp=1.5, echo = FALSE}
+data %>% ggduo(columnsX = "TaxonClass", columnsY = cont_trts)
 ```
 ]
 
@@ -586,17 +613,15 @@ data %>%
 .pull-left[
 ### Flammability by TaxonClass
 
-```{r, fig.align = 'center', out.width = '75%', fig.asp = 1.5, eval = FALSE}
-data %>%
-  ggduo("TaxonClass", flammability)
+```{r flamtaxclass1, fig.align = 'center', out.width = '75%', fig.asp = 1.5, eval = FALSE}
+data %>% ggduo(columnsX = "TaxonClass", columnsY = flammability)
 ```
 ]
 
 .pull-right[
 
-```{r, fig.align = 'center', out.width = '75%', fig.asp = 1.5, echo = FALSE}
-data %>%
-  ggduo("TaxonClass", flammability)
+```{r flamtaxclass2, fig.align = 'center', out.width = '75%', fig.asp = 1.5, echo = FALSE}
+data %>% ggduo(columnsX = "TaxonClass", columnsY = flammability)
 ```
 ]
 

@@ -13,7 +13,7 @@ This is a 3-week equivalent lecture series on _Measuring Biodiversity_ for the t
 7. [The Assembly of Diversity Regional Processes](7_RegionalAssembly)
 8. [Biodiversity and Ecosystem Function](8_BiodiversityEF)
 9. [Remote Sensing of Biodiversity](9_RemoteSensingBio)
-10. [Feedbacks in Ecology](10. Feedbacks in Ecology)
+10. [Feedbacks in Ecology](10_Feedbacks)
 
 Other:
 

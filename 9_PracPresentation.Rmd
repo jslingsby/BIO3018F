@@ -87,6 +87,25 @@ knitr::include_graphics("images/chapin2.png")
 
 ---
 
+## Feedbacks!
+
+.pull-left[
+```{r echo = F, fig.align = 'center', out.width = '90%'}
+knitr::include_graphics("images/pausas_bond_2020_1.jpg")
+```
+
+.footnote[Pausas and Bond 2020. _Trends in Ecology and Evolution_]
+]
+
+.pull-right[
+> _"**Figure 1.** Plant Biomass and Vegetation Structure in Terrestrial Ecosystems is Determined by Three Feedback Processes: Vertebrate Herbivory, Microbial Decomposition, and Wildfires."_
+
+These feedbacks are particularly likely where there are linkages and trade-offs in the traits that determine species _response_ to the selective environment versus the traits that determine their _effect_ on the environment _sensu_ [Diaz and Cabido 2001](https://doi.org/10.1016/S0169-5347(01)02283-2) (especially Box 2).
+
+]
+
+---
+
 class: center
 
 ## The De Hoop landscape includes a wide range of environmental conditions and vegetation communities
@@ -131,6 +150,7 @@ knitr::include_graphics("images/potberg_sandstone_fynbos.jpg")
 We'll look at ~4 sites with different vegetation and traits
 
 ---
+
 ####Aim:
 To use species' traits to explore how species both respond to and modify resources and ecological processes in their environment and thus infer community assembly processes and biotic effects on ecosystem function.
 
@@ -140,6 +160,11 @@ Over and above the abiotic template, the main ecological processes of interest h
 - disturbance by herbivory
 
 ---
+
+####Hypothesis:
+
+Differences in the relative dominance of ecological processes across ecosystems in De Hoop Nature Reserve should be reflected in both the emergent properties of each ecosystem as a whole and in the structure, composition and function of plant biodiversity within each such that the dominant plant traits create feedbacks to maintain each ecological process.
+
 ####Questions:
 
 - What are the dominant ecological processes determining community assembly and ecosystem function in each ecosystem sampled? How is this reflected in species' "response" and "effect" traits?
@@ -147,6 +172,8 @@ Over and above the abiotic template, the main ecological processes of interest h
 - Are there any correlations between "response" and "effect" traits that could create selective trade-offs within species, or potentially generate ecosystem-level feedbacks?
 
 - To what degree is variation in traits determined by evolutionary history (i.e. the phylogenetic relationships among species)?
+
+- Is there any evidence that the dominant ecological processes across the reserve may be being altered and what are the likely consequences?
 
 ---
 
@@ -687,6 +714,25 @@ data %>% ggduo(disc_trts, flammability, mapping = ggplot2::aes(weight = `Cover a
 data %>% ggpairs(c(cont_trts, flammability))
 ```
 
+---
+
+# Deliverable
+
+A brief research report in the format of a paper in the journal [_Biology Letters_](https://royalsocietypublishing.org/rsbl/for-authors).
+
+- 2,500 words maximum, including references.
+- Standard journal paper format: 
+  - Title 
+  - Abstract 
+  - Introduction 
+  - Methods 
+  - Results 
+  - Discussion 
+  - References
+  
+- Consider relevant references from the lectures...
+- No statistics required, but you're welcome to have a go for extra marks.
+- Feel free to highlight the shortcomings of our study and what you would do to improve it.
 
 ---
 class: center, middle

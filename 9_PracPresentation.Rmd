@@ -100,7 +100,7 @@ knitr::include_graphics("images/pausas_bond_2020_1.jpg")
 .pull-right[
 > _"**Figure 1.** Plant Biomass and Vegetation Structure in Terrestrial Ecosystems is Determined by Three Feedback Processes: Vertebrate Herbivory, Microbial Decomposition, and Wildfires."_
 
-These feedbacks are particularly likely where there are linkages and trade-offs in the traits that determine species _response_ to the selective environment versus the traits that determine their _effect_ on the environment _sensu_ [Diaz and Cabido 2001](https://doi.org/10.1016/S0169-5347(01)02283-2) (especially Box 2).
+These feedbacks are particularly likely where there are linkages and trade-offs in the traits that determine species _response_ to the selective environment versus the traits that determine their _effect_ on the environment _sensu_ [Diaz and Cabido 2001](https://www.sciencedirect.com/science/article/pii/S0169534701022832) (especially Box 2).
 
 ]
 
@@ -179,7 +179,7 @@ Differences in the relative dominance of ecological processes across ecosystems 
 
 ## Within each site we have sampled 4 point locations
 
-```{r echo = F, fig.align = 'center', out.height = '65%', warning=F, messages=F}
+```{r echo = F, fig.align = 'center', out.height = '65%', warning=F, messages=F, results='asis'}
 # Get image dates
 dates <- read.csv("prac/MODIS/dates.csv", header = F)
 dates <- dates[seq(2,nrow(dates),2),]
@@ -223,6 +223,8 @@ pt <- st_transform(pt, crs = st_crs(4326))
 library(leaflet)
 library(leaflet.extras)
 library(htmltools)
+library(widgetframe)
+
 leaflet() %>%
   enableTileCaching() %>%
   #addTiles(options = tileOptions(useCache = TRUE, crossOrigin = TRUE))
@@ -231,7 +233,8 @@ leaflet() %>%
   # Add our points
   addCircleMarkers(data = pt,
                    radius = 3,
-                   color = "blue")
+                   color = "blue") %>%
+  frameWidget()
 ```
 
 ---

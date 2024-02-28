@@ -429,20 +429,21 @@ data <- left_join(data, taxonomy)
 
 ---
 
+.pull-left[
+
 ## Taxonomic classification
 
-.pull-left[
 ```{r}
 data$Taxon <- data$Taxon %>% str_replace_all(c("Elytropappus rhinocerotis" = "Dicerothamnus rhinocerotis", "Rapanea melanophloeos" = "Myrsine melanophloeos"))
 
-hmm <- classification(data$Taxon, db = "ncbi")
-
-tree <- class2tree(hmm)
+taxaclass <- classification(data$Taxon, db = "ncbi")
 ```
 ]
 
 .pull-right[
-```{r, fig.asp = 0.6}
+```{r, fig.asp = 0.8}
+tree <- class2tree(taxaclass)
+
 plot(tree)
 lines(x=c(24,24),y=c(0,25),lwd=2)
 ```
@@ -452,9 +453,10 @@ How about we split the 25 taxa into 6 groups?
 
 ---
 
+.pull-left[
+
 ## Taxonomic classification
 
-.pull-left[
 ```{r, eval = FALSE}
 # Extract and merge higher taxonomic ranks
 tclass <- tree$classification %>% select(norank_91835, norank_4734, norank_91836, norank_2821351, norank_71274) %>%

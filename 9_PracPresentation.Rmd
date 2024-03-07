@@ -341,7 +341,7 @@ Set `path = ` to wherever you want to save the data on your laptop...
 traits <- read_xlsx("prac/flammability/flammabilitytraits2024.xlsx","TraitData")
 fire <- read_xlsx("prac/flammability/flammabilitytraits2024.xlsx","Flammability")
 taxonomy <- read_xlsx("prac/flammability/flammabilitytraits2024.xlsx","AcceptedSpecies")
-site <- read_xlsx("prac/flammability/flammabilitytraits2024.xlsx","SiteData2023")
+site <- read_xlsx("prac/flammability/flammabilitytraits2024.xlsx","SiteData")
 ```
 
 Set the file path to wherever you saved the data on your laptop...
@@ -353,26 +353,31 @@ Set the file path to wherever you saved the data on your laptop...
 .pull-left[
 ```{r, fig.asp = 0.5, eval = FALSE}
 site %>%
-  mutate(CanopyCover = 100 - 4.16*Densiometer) %>%
-  rowwise() %>%
-  mutate(Dung = sum(c(Dung_Eland, Dung_Bontebok, Dung_Ostrich, Dung_Other))) %>%
-  pivot_longer(cols = c("CanopyCover", "Dung", "SoilPH", "PercentBareSoil")) %>%
-  ggplot(aes(y = value, x = Site)) +
+  mutate(
+    CanopyCover = 100 - 4.16*Densiometer,
+    Herbivory = as.numeric(factor(`Herbivory (A/L/M/H)`, levels = c("A","L","M","H")))-1,
+    `Evidence of fire` = as.numeric(factor(`Dead skeletons or charcoal (A/L/M/H)`, levels = c("A","L","M","H")))-1) %>%
+  pivot_longer(cols = c("CanopyCover", "Herbivory", "Dung", "Trampling", "SoilPH", "Bare soil (%)", "Infiltration (s)", "Ticks (/10)", "Evidence of fire", "Termite mounds")) %>%
+  ggplot(aes(y = value, x = SiteName)) +
     geom_boxplot() +
-    facet_wrap(vars(name), nrow = 2, scales = "free")
+    theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+    facet_wrap(vars(name), nrow = 3, scales = "free")
 ```
+Note that I've converted the ordinal classes (Absent > Low > Medium > High) into numbers (0 - 3) and taken the averages.
 ]
 
 .pull-right[
 ```{r, fig.asp = 0.8, echo = FALSE}
 site %>%
-  mutate(CanopyCover = 100 - 4.16*Densiometer) %>%
-  rowwise() %>%
-  mutate(Dung = sum(c(Dung_Eland, Dung_Bontebok, Dung_Ostrich, Dung_Other))) %>%
-  pivot_longer(cols = c("CanopyCover", "Dung", "SoilPH", "PercentBareSoil")) %>%
-  ggplot(aes(y = value, x = Site)) +
+  mutate(
+    CanopyCover = 100 - 4.16*Densiometer,
+    Herbivory = as.numeric(factor(`Herbivory (A/L/M/H)`, levels = c("A","L","M","H")))-1,
+    `Evidence of fire` = as.numeric(factor(`Dead skeletons or charcoal (A/L/M/H)`, levels = c("A","L","M","H")))-1) %>%
+  pivot_longer(cols = c("CanopyCover", "Herbivory", "Dung", "Trampling", "SoilPH", "Bare soil (%)", "Infiltration (s)", "Ticks (/10)", "Evidence of fire", "Termite mounds")) %>%
+  ggplot(aes(y = value, x = SiteName)) +
     geom_boxplot() +
-    facet_wrap(vars(name), nrow = 2, scales = "free")
+    theme(axis.text.x = element_text(angle = 45, hjust = 1)) +
+    facet_wrap(vars(name), nrow = 3, scales = "free")
 ```
 ]
 ---

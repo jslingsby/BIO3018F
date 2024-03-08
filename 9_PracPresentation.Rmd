@@ -596,6 +596,25 @@ data %>% ggduo("Site", disc_trts, mapping = ggplot2::aes(weight = `Cover at site
 
 # Flammability traits
 
+We measured various aspects of shoot flammability using a Jaureguiberry device ([Jaureguiberry et al. 2011](http://dx.doi.org/10.1111/j.1442-9993.2010.02222.x)).
+
+Measurements include:
+- MT: Maximum temperature (degrees C)
+- BL: Burned length (cm)
+- BT: Burn time (s)
+- BB: Biomass burned (%)
+
+Other metrics can also be calculated (but I've left that up to you):
+- BR: burn rate = BL/BT (cm s$^1$)
+- FL: a combined flammability score 
+
+See the paper for details.
+
+Other papers of interest:
+[Kraaij et al. 2022](http://dx.doi.org/10.7717/peerj.13765),
+[Msweli et al. 2020](http://dx.doi.org/10.7717/peerj.10161),
+[Burger and Bond 2015](http://dx.doi.org/10.1016/j.sajb.2015.05.026),
+[Calitz et al. 2015](http://dx.doi.org/10.1016/j.sajb.2015.07.005)
 ---
 
 ### Flammability traits: within

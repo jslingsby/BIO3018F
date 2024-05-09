@@ -356,7 +356,7 @@ knitr::include_graphics("images/crisp2009_2.png")
 
 Speciation is more likely to occur via dispersal to a similar biome on a different continent than to a different biome right next door!
 
-.footnote[Crisp et al. 2009 *Science*]
+.footnote[[**Crisp et al. 2009, Nature**](https://doi.org/10.1038/nature07764)]
 ]
 
 ---

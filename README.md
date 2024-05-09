@@ -21,5 +21,6 @@ Other:
 
 - [Intro to power analysis](11_PowerAnalysis).
 - [Practical](9_PracPresentation) on _Biodiversity, Traits, Ecosystem Function and Feedbacks in the Cape Floristic Region_.
+- [Exam tutorial](12_ExamTutorial)
 
 You can find them in PDF form in the Git repository [here](https://github.com/jslingsby/BIO3018F/tree/main/lecture_pdfs_2024).

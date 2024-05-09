@@ -1,5 +1,5 @@
 ---
-title: "10. Measuring Biodiversity: Exam Tutorial"
+title: "12. Measuring Biodiversity: Exam Tutorial"
 subtitle: "A quick overview of the lecture series"  
 author: 
   - "Jasper Slingsby, BIO3018F"
@@ -54,13 +54,20 @@ library(kableExtra)
 
 ## A quick overview of the exam
 
-<br>
-
-Answer 3 of 4 essay questions (but read the instructions!).
+Answer three of four 50 mark essay questions (but read the instructions!).
 
 Most questions integrate across content from multiple lecturers. The most relevant lecturers are indicated for each question. Feel free to include content from other lecturers (especially examples), but don't ignore the content of the lecturers indicated.
 
 The final mark allocation by lecturer for the course (across the test and exam) is roughly proportional to the number of lectures in their section. That said, all sections are relevant to the exam, especially given the integrative nature of the essays.
+
+So the mark allocation across the 4 questions (200 marks) in the exam is roughly:
+
+- Laurence 50
+- Robert 15
+- Dawood 10
+- Charlene 50
+- Mike 40
+- Jasper 35
 
 ---
 

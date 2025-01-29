@@ -276,7 +276,7 @@ There are 3 major approaches to calculating **continuous** metrics of functional
 
 - _Hierarchical clustering_ - e.g. sum of the branch length joining all species in the sample (Petchey and Gaston 2002)
 
-- _Multidimensional ordination_ - e.g. the area or volume of encompassed by the set of species in an ordination of trait space - 2 or more dimensions - (Villeger et al. 2008)
+- _Multidimensional ordination_ - e.g. the area or volume encompassed by the set of species in an ordination of trait space (of 2 or more dimensions) - (Villeger et al. 2008)
 ]
 
 .pull-right[

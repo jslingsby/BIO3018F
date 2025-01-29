@@ -58,6 +58,12 @@ library(knitr)
 library(kableExtra)
 ```
 
+class: center, middle
+
+## Why are traits (functional) and evolutionary history (phylogenetic) important dimensions of biodiversity to measure?
+
+---
+
 layout: false
 
 ## There's a lot of variation in species' traits
@@ -200,16 +206,16 @@ knitr::include_graphics("images/proteas_Roets2006.jpg")
 
 layout: false
 
-### Traits are often similar among closely related species...
+## Traits are often similar among closely related species...
 
 .pull-left[
-```{r echo = F, fig.align = 'center', out.width = '60%'}
+```{r echo = F, fig.align = 'center', out.width = '55%'}
 knitr::include_graphics("images/restiobook1.jpeg")
 ```
 ]
 
 .pull-right[
-```{r echo = F, fig.align = 'center', out.width = '60%'}
+```{r echo = F, fig.align = 'center', out.width = '55%'}
 knitr::include_graphics("images/restiobook2.jpeg")
 ```
 ]

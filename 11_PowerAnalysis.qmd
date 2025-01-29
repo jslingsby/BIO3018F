@@ -328,7 +328,7 @@ Fortunately, there's a better way (for common tests...)!
 
 ### One sample *t*-test
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r, echo = T}
 library(pwr)
@@ -353,7 +353,7 @@ Here we have set ***n*** = *NULL* because that's the property we want to estimat
 
 -   i.e. you input the effect size and variability in one go
 :::
-:::
+:::::
 
 ## Estimating the number of samples {.smaller background-color="#33431e"}
 
@@ -377,7 +377,7 @@ mean(df$Data)/sd(df$Data)
 
 ## Estimating the number of samples {.smaller background-color="#33431e"}
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 Rerun for our observed ***d***:
 
@@ -404,7 +404,7 @@ pwr.t.test(d = 0.65,
   plot()
 ```
 :::
-:::
+:::::
 
 ## ***library(pwr)*** functions: {.smaller background-color="#33431e"}
 
@@ -454,10 +454,10 @@ cohen.ES(test = "t", size = "medium")$effect.size
 
 For comparisons among 3 or more groups (k) for different effect sizes (f)
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
-
 Small effect size
+
 ```{r, echo = T}
 pwr.anova.test(f = cohen.ES(test = "anov", 
                             size = "small")$effect.size,
@@ -470,6 +470,7 @@ pwr.anova.test(f = cohen.ES(test = "anov",
 
 ::: {.column width="50%"}
 Large effect size
+
 ```{r, echo = T}
 pwr.anova.test(f = cohen.ES(test = "anov", 
                             size = "large")$effect.size,
@@ -479,15 +480,14 @@ pwr.anova.test(f = cohen.ES(test = "anov",
   plot
 ```
 :::
-:::
+:::::
 
 ## ***library(pwr)*** functions: Chi-squared {.smaller background-color="#c2c190"}
 
 Tests whether 2 categorical variables (dimensions of a contingency table) are independent
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
-
 ```{r, echo = T}
 pwr.chisq.test(w = cohen.ES(test = "chisq", 
                             size = "small")$effect.size,
@@ -499,7 +499,6 @@ pwr.chisq.test(w = cohen.ES(test = "chisq",
 :::
 
 ::: {.column width="50%"}
-
 ```{r, echo = T}
 pwr.chisq.test(w = cohen.ES(test = "chisq", 
                             size = "large")$effect.size,
@@ -509,7 +508,7 @@ pwr.chisq.test(w = cohen.ES(test = "chisq",
   plot()
 ```
 :::
-:::
+:::::
 
 w = Effect size, df = Degrees of freedom
 
@@ -517,7 +516,7 @@ w = Effect size, df = Degrees of freedom
 
 r = correlation coefficient (i.e. it is not $R^2$)
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 ```{r, echo = T}
 pwr.r.test(r = cohen.ES(test = "r", 
@@ -539,18 +538,16 @@ pwr.r.test(r = cohen.ES(test = "r",
   plot()
 ```
 :::
-:::
+:::::
 
 Note that for regression analysis you'd need to set the "alternative" to "greater" or "less", because it assumes that one variable is dependent on the other
-
 
 ## ***library(pwr)*** functions: general linear model (i.e. multiple regression) {.smaller background-color="#c2c190"}
 
 For regression analysis with multiple covariates (explanatory variables)
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
-
 ```{r, echo = T}
 pwr.f2.test(u = 1,
             v = NULL,
@@ -569,7 +566,8 @@ pwr.f2.test(u = 1,
             sig.level = 0.05)
 ```
 :::
-:::
+:::::
+
 f2 = Effect size
 
 u = degrees of freedom for numerator (= number of groups - 1)
@@ -592,10 +590,8 @@ v = degrees of freedom for denominator (= total number of individuals across gro
 
 ## Further resources {background-color="#33431e"}
 
-- [library(simr)](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.12504) for generalised linear mixed effects models (GLMM), e.g. this [demo](https://humburg.github.io/Power-Analysis/simr_power_analysis.html).
+-   [library(simr)](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.12504) for generalised linear mixed effects models (GLMM), e.g. this [demo](https://humburg.github.io/Power-Analysis/simr_power_analysis.html).
 
-- [A blog with examples and R code](https://ladal.edu.au/pwr.html)
+-   [A blog with examples and R code](https://ladal.edu.au/pwr.html)
 
-- [Another blog/webpage with examples and R code](https://psych252.github.io/psych252book/power-analysis.html#power-analysis-1)
-
-
+-   [Another blog/webpage with examples and R code](https://psych252.github.io/psych252book/power-analysis.html#power-analysis-1)

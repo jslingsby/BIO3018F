@@ -235,10 +235,9 @@ layout: false
 .pull-left[
 ## But there are many facets of biodiversity!
 
-<br>
-
 > "biodiversity is the sum total of all biotic variation from the level of genes to ecosystems" - Purvis & Hector 2000, _Nature_
 
+> "A definition of biodiversity that is altogether simple, comprehensive, and fully operational (i.e. responsive to real- life management and regulatory questions) is unlikely to be found. More useful than a definition, perhaps, would be a characterisation of biodiversity that identifies the major components at several levels of organization." - Noss 1990, _Conservation Biology_
 ]
 
 .pull-right[
@@ -247,6 +246,16 @@ knitr::include_graphics("images/Noss_Biodiversity.png")
 ```
 .footnote[Noss 1990, _Conservation Biology_]
 ]
+
+---
+
+class: center, middle
+
+## Scenario
+
+We are on a newly discovered island. We need to do a **quantitative** survey of the ecosystems on the island so as to describe their biodiversity and infer the key ecological processes that drive them.
+
+What are you going to measure?
 
 ---
 
@@ -303,13 +312,13 @@ We need to be able to measure biodiversity to develop questions, test hypotheses
 
 > *"The use of different measures or analytical approaches on a single set of data can naturally result in quite different outcomes and interpretations."* - Anderson et al. 2011
 
-i.e., there is no one perfect measure of biodiversity.
+i.e., there is no one perfect measure of biodiversity(which shouldn't be surprising given we don't have one perfect definition of biodiversity...)
 
 <br>
 
 ## Take home
 
-_**Measures of biodiversity are hypotheses themselves**_! Most biodiversity-related hypotheses should be prefaced *"Assuming our measure of biodiversity is a reasonable approximation of reality, then..."*
+_**Measures of biodiversity are hypotheses!**_ Most biodiversity-related hypotheses should be prefaced *"Assuming our measure of biodiversity is a reasonable approximation of reality, then..."*
 
 It's crucial that we master the methods for measuring and analyzing biodiversity data, and explore the assumptions and implications of the measures we use for the questions and goals at hand...
 

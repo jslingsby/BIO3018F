@@ -592,6 +592,6 @@ v = degrees of freedom for denominator (= total number of individuals across gro
 
 -   [library(simr)](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.12504) for generalised linear mixed effects models (GLMM), e.g. this [demo](https://humburg.github.io/Power-Analysis/simr_power_analysis.html).
 
--   [A blog with examples and R code](https://ladal.edu.au/pwr.html)
+-   [library(pwrss)](https://cran.r-project.org/web/packages/pwrss/vignettes/examples.html)
 
 -   [Another blog/webpage with examples and R code](https://psych252.github.io/psych252book/power-analysis.html#power-analysis-1)

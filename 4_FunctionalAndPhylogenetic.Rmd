@@ -495,7 +495,7 @@ layout: false
 
 ## Null models...
 
-Null models "randomize" properties of interest in the data, servings as a "null expectation" for comparison to your actual data. 
+Null models "randomize" properties of interest in the data, serving as a "null expectation" for comparison to your actual data. 
 
 There are a number of ways of doing this, but the key is to only randomize the property of interest and keep everything else the same.
 

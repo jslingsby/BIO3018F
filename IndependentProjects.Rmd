@@ -67,7 +67,11 @@ class: center
 
 ## The purpose
 
+<br>
+
 This is an opportunity for you to develop your own research project, from conceptualisation to data collection, analysis and interpretation.
+
+<br>
 
 The exercise is aimed at helping you learn to develop hypotheses, formulate questions, design field sampling and analysis methods (and test them with a power analysis), collect data, analyse data, interpret and write up your results.
 
@@ -81,6 +85,13 @@ Lectures:
 - Developing hypotheses and questions (Claire)
 - Scientific writing (Claire)
 - Power analysis (Jasper)
+
+Scheduled Sessions:
+- Two afternoons and a morning to develop your projects
+- An afternoon of presentations to get feedback
+- Two afternoons for data collection
+
+Feel free to ask ad hoc questions or bounce ideas at any time
 
 ---
 
@@ -131,22 +142,28 @@ Allowing plenty of opportunities to ask questions and test hypotheses that requi
 
 # Deliverable
 
-A brief research report in the format of a paper in the journal [_Biology Letters_](https://royalsocietypublishing.org/rsbl/for-authors).
+A brief research report in the format of a paper in the journal [**_Biology Letters_**](https://royalsocietypublishing.org/rsbl/for-authors).
 
 - 2,500 words maximum, including references.
-- Standard journal paper format: 
-  - Title 
-  - Abstract 
-  - Introduction 
-  - Methods 
-  - Results 
-  - Discussion 
-  - References
-  
+- Standard journal paper format: Title, Abstract, Introduction, Methods, Results (with figures and tables), Discussion, References
 - Consider relevant references from the lectures...
 - Clearly state your research question(s) and hypothesis(es).
 - Provide your power analysis and justification for your sampling design. Describe it in your methods and present it in your results. (Note that few papers present a power analysis even if they do them, but we are asking you to do and present one as it is a good practice to follow and can tell you whether your project is doomed from the start...)
-- Feel free to highlight the shortcomings of our study and what you would do to improve it.
+- Present your results in a way that is clear and easy to interpret.
+- Discuss your results in the context of your hypothesis and the literature.
+- Feel free to highlight the shortcomings of your study and what could be done to improve it.
+- Conclude with a summary of your findings and their implications.
+- More on how to write a paper [**here**](https://docs.google.com/document/d/1xidafYQKbNyvfvBRtj7-NblW6sg_9_h5HJWgtUsgasY/edit?usp=sharing).
+
+---
+
+# Rules
+
+- We usually work in groups of 2-3 to make fieldwork easier and safer. You can work alone if you prefer, but only if its something you can do safely on your own or if you can collect your data while tagging along with another team.
+
+- You may use ChatGPT and other AI tools to help write R code etc, but you must acknowledge its use appropriately. 
+
+- You may NOT plaigarise or use ChatGPT or other AI tools to write the text of your paper. This is considered to be academic misconduct and is a very serious offence, with severe consequences. It is also a disservice to yourself as you will not learn scientific writing, which will limit your scientific thinking. Why pay the University so you can cheat yourself?
 
 ---
 

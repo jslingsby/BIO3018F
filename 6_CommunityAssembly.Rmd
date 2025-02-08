@@ -125,11 +125,41 @@ layout: false
 
 ## Niche theory
 
-The niche is a multidimensional description of a species resource needs, habitat requirements and environmental tolerances<sup>1</sup> 
+The niche is a multidimensional description of a species resource needs, habitat requirements, environmental tolerances and interactions<sup>1</sup> 
 - i.e. a particular set of abiotic (light, water, nutrient, shelter, etc) and biotic conditions (predators, prey, pathogens, mutualists (e.g. mycorrhizae, pollinators), competitors, etc)
 - often explored by looking at where species occur in the environment, or by looking at their traits, assuming these reflect resource use strategies
 
 .center[#####<sup>1</sup>_**In simplified terms**_ (there are a few definitions)]
+
+.footnote[Using the Cape sedge genus _Tetraria_ as an example]
+
+]
+
+.pull-right[
+```{r echo = F, fig.align = 'center', out.width = '80%'}
+knitr::include_graphics("images/tetraria_plate.jpg")
+```
+
+
+.footnote[Slingsby 2011, [Slingsby et al. 2014](http://dx.doi.org/10.1016/j.ympev.2013.11.017)]
+
+]
+
+---
+
+layout: false
+
+.pull-left[
+
+## Niche theory
+
+The niche is a multidimensional description of a species resource needs, habitat requirements, environmental tolerances and interactions<sup>1</sup> 
+- i.e. a particular set of abiotic (light, water, nutrient, shelter, etc) and biotic conditions (predators, prey, pathogens, mutualists (e.g. mycorrhizae, pollinators), competitors, etc)
+- often explored by looking at where species occur in the environment, or by looking at their traits, assuming these reflect resource use strategies
+
+.center[#####<sup>1</sup>_**In simplified terms**_ (there are a few definitions)]
+
+.footnote[Using the Cape sedge genus _Tetraria_ as an example]
 
 ]
 
@@ -160,6 +190,7 @@ Niche theory predicts local deterministic processes like habitat filtering, comp
 - These processes influence the co-occurrence/coexistence, trait/functional similarity and relatedness of species
 - Thus influencing various forms of diversity (species, functional, phylogenetic)
 
+.footnote[Using the Cape sedge genus _Tetraria_ as an example]
 ]
 
 .pull-right[
@@ -436,7 +467,7 @@ knitr::include_graphics("images/cavender2006.png")
 
 ---
 
-### An example of inferring community assembly from the Cape...
+### An example of inferring the assembly of _Tetraria_ communities
 
 .pull-left[
 

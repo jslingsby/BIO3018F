@@ -189,7 +189,7 @@ knitr::include_graphics("images/cowling2015b.png")
 
 Major change can be bad for diversity though... Too much, and things go extinct!
 
-Environmental stability is key for maintaining high diversity, as evidences in the Med-Type Ecosystems of the world.
+Environmental stability is key for maintaining high diversity, as evidenced by the Med-Type Ecosystems of the world.
 
 ]
 
@@ -248,9 +248,43 @@ _Larger islands, closer to the mainland have more species._
 
 ]
 
+--
+
 .pull-right[
 
-<br>
+```{r echo = F, fig.align = 'center', out.width = '100%'}
+knitr::include_graphics("images/island_biogeography.png")
+```
+
+Immigration rate declines as more species accumulate (there are fewer that still need to arrive).
+
+Extinction rate increases as more species accumulate (there are more that could go extinct).
+
+Island size alters these rates, adjusting the point of equilibrium.
+
+.footnote[MacArthur and Wilson 1967 (Figure - Warren et al. 2015)]
+
+]
+
+---
+
+.pull-left[
+
+## Dispersal (and extinction)
+
+#### The Equilibrium Theory of Island Biogeography 
+
+```{r echo = F, fig.align = 'center', out.width = '60%'}
+knitr::include_graphics("images/IBT.png")
+```
+
+_Larger islands, closer to the mainland have more species._
+- Larger = lower extinction (larger populations)
+- Closer = higher immigration
+
+]
+
+.pull-right[
 
 ```{r echo = F, fig.align = 'center', out.width = '100%'}
 knitr::include_graphics("images/island_biogeography.png")
@@ -260,7 +294,7 @@ knitr::include_graphics("images/island_biogeography.png")
 
 An extension of IBT is to consider specific habitats as islands in a sea of unfavourable habitat (e.g. forest fragments in Fynbos).
 
-.footnote[MacArthur and Wilson 1967 (Figure from Warren et al. 2015)]
+.footnote[MacArthur and Wilson 1967 (Figure - Warren et al. 2015)]
 
 ]
 
@@ -276,7 +310,7 @@ Better connected islands/habitats are likely to be dominated by colonization, le
 
 Isolated islands/habitats where immigration is rare are likely to see local adaptation and _in situ_ speciation over time, resulting in a community of close relatives
 
-.footnote[Emerson and Gillespie 2008]
+.footnote[[Emerson and Gillespie 2008](https://doi.org/10.1016/j.tree.2008.07.005)]
 
 ]
 
@@ -423,7 +457,7 @@ Local determinism makes 3 predictions (Ricklefs 2004)
 1. diversity should be strongly correlated with physical aspects of the environment
     - see EH hypothesis
 2. local diversity in comparable habitats should not vary between regions
-    - see Stability slides, comparing MTEs
+    - but see slide comparing MTEs...
 3. local diversity, above some saturation level, should be independent of regional diversity
     - Type I = local diversity $\propto$ regional diversity
     - Type II = local diversity saturates (i.e. because niche space is full...)

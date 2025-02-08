@@ -304,7 +304,17 @@ knitr::include_graphics("images/beaver_dam.jpg")
 knitr::include_graphics("images/tree_plant_soil.png")
 ```
 
-.footnote[e.g. trees and plant-soil feedbacks through leaf litter etc]
+.footnote[e.g. trees and plant-soil feedbacks through leaf litter etc (e.g. bush nucleation)]
+
+---
+
+## Niche construction
+
+```{r echo = F, fig.align = 'center', out.width = '50%'}
+knitr::include_graphics("images/potberg_strandveld.jpg")
+```
+
+.footnote[e.g. bush nucleation, but also grazer-induced "grazing lawns"]
 
 ---
 
@@ -406,6 +416,8 @@ knitr::include_graphics("images/daisyworld.png")
 ]
 
 .pull_right[
+
+<br>
 
 - A planet with nothing but black and white daisies
 

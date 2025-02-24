@@ -77,7 +77,7 @@ We are on a newly discovered island. In order to manage the island's biodiversit
 
 - What are the dominant ecological processes in each community and how could you infer them?
 
-- Does the variation in environmental conditions and/or ecological processes explain the observed variation in biodiversity (species, functional and phylogenetic $\alpha$ and $\beta$ diversity)?
+- Is there an association between the variation in environmental conditions and/or ecological processes and the observed variation in biodiversity (species and functional $\alpha$ and $\beta$ diversity) that may suggest a causal link?
 
 
 ---
@@ -159,7 +159,7 @@ Sample _Diversity:_
 
 class: center, middle
 
-R code for the following analyses can be accessed [**at this link**](https://github.com/jslingsby/BIO3018F/blob/main/9_PracPresentation.Rmd)
+R code for the following analyses can be accessed [**at this link**](https://github.com/jslingsby/BIO3018F/blob/main/PracPresentation2025.Rmd)
 
 
 ---
@@ -308,7 +308,7 @@ sn_ni %>%
 
 ---
 
-### What about similarity in composition among sites? (presence/absence)
+### What about compositional dissimilarity among sites? (presence/absence)
 
 ```{r echo = F, fig.align = 'center', out.height = '100%', warning=F, messages=F}
 
@@ -336,7 +336,7 @@ kable(msite_BD, digits = 3)
 
 ---
 
-### What about similarity in composition among sites? (abundance)
+### What about compositional dissimilarity among sites? (abundance)
 
 ```{r echo = F, fig.align = 'center', out.height = '100%', warning=F, messages=F}
 

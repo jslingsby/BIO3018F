@@ -90,36 +90,7 @@ Also consider and discuss what factors, if any, could confound your ability to a
 
 ---
 
-class: center
-
-## The De Hoop landscape includes a wide range of environmental conditions and vegetation communities
-
-```{r echo = F, fig.align = 'center', out.height = '60%', warning=F, messages=F}
-
-library(terra, quiet = T)
-library(sf, quiet = T)
-library(tidyverse, quiet = T)
-library(readxl, quiet = T)
-library(mapview, quiet = T)
-library(vegan, quiet = T)
-library(GGally, quiet = T)
-
-ndvi <- rast("prac/MODIS/20220130_MODIS_v1g_POT_MOD13Q1_006_NDVI.tif")
-
-# Get veg map and fire and plot
-veg <- st_read("/Users/jasper/Documents/Datasets/SANBI/RLE_2021_Remnants/FynRemnantsClean.gpkg", quiet = T)
-ndvi_g <- project(ndvi, st_crs(veg)$Wkt)
-veg <- st_crop(veg, ndvi_g, quiet = T)
-#fire <- st_read("/home/jasper/Documents/Datasets/Fire/All_Fires_20_21_gw/CNCFires2021Clean.gpkg", quiet = T)
-#fire <- st_crop(fire, ndvi_g, quiet = T)
-mapview::mapview(veg, zcol = "name", quiet = T) #+
-#mapview::mapview(fire, zcol = "year", quiet = T)
-
-```
-
----
-
-## What are you going to measure?
+## Sampling methods
 
 ### You decided that at each location you'd set up a 4x4m plot and...
 
@@ -141,7 +112,7 @@ Sample _Environmental conditions:_
 
 ---
 
-## What are you going to measure?
+## Sampling methods
 
 ### You decided that at each location you'd set up a 4x4m plot and...
 
@@ -159,19 +130,58 @@ Sample _Diversity:_
 
 class: center, middle
 
-R code for the following analyses can be accessed [**at this link**](https://github.com/jslingsby/BIO3018F/blob/main/PracPresentation2025.Rmd)
+R code for this presentation with R code for the following analyses can be accessed [**at this link**](https://github.com/jslingsby/BIO3018F/blob/main/PracPresentation2025.Rmd)
+
+<br>
+
+The data are available [**here**](https://github.com/jslingsby/BIO3018F/blob/main/prac/2025/Data_Biodiversity2_withdensiometer.xlsx)
 
 
 ---
 
-### Some results from the survey:
+### Some results from the survey: Sites sampled
 
 ```{r echo = F, fig.align = 'center', out.height = '60%', warning=F, messages=F}
-dat = read_xlsx("prac/2025/Data_Biodiversity2_withdensiometer.xlsx", sheet = "Sheet1") # , range = "A1:M13")
 
-dat %>%
+library(terra, quiet = T)
+library(sf, quiet = T)
+library(tidyverse, quiet = T)
+library(readxl, quiet = T)
+library(mapview, quiet = T)
+library(vegan, quiet = T)
+library(GGally, quiet = T)
+
+# Get veg map, crop to extent (of older NDVI data) and plot
+ndvi <- rast("prac/MODIS/20220130_MODIS_v1g_POT_MOD13Q1_006_NDVI.tif") # NDVI data from MODIS satellite
+veg <- st_read("/Users/jasper/Documents/Datasets/SANBI/RLE_2021_Remnants/FynRemnantsClean.gpkg", quiet = T) # Map of remnants of vegetation types from Skowno et al. 2021 SAJS
+ndvi_g <- project(ndvi, st_crs(veg)$Wkt) # Project NDVI data to same Coordinate Reference System (CRS) as veg map
+veg <- st_crop(veg, ndvi_g, quiet = T) # Crop veg map to extent of NDVI data
+
+
+# Get site data and plot on vegmap
+dat = read_xlsx("prac/2025/Data_Biodiversity2_withdensiometer.xlsx", sheet = "Sheet1") # , range = "A1:K13")
+
+# Convert to spatial object
+sp_sites = st_as_sf(dat, coords = c("Longitude", "Latitude"), crs = 4326) #convert to spatial object
+
+# Plot on veg map
+mapview(veg, zcol = "name", quiet = T) + # Plot veg map
+  mapview(sp_sites, zcol = "Site") # Add site data
+
+```
+
+---
+
+### Some results from the survey: Environmental conditions
+
+```{r echo = F, fig.align = 'center', out.height = '60%', warning=F, messages=F}
+#dat = read_xlsx("prac/2025/Data_Biodiversity2_withdensiometer.xlsx", sheet = "Sheet1") # , range = "A1:M13")
+
+dat %>% 
+  select(!c("Latitude", "Longitude", "Site")) %>%
   kable("html") %>% 
-  kable_styling("striped", full_width = F)
+  kable_styling("striped", full_width = F) %>%
+  scroll_box(width = "100%", height = "500px")
 ```
 
 ---
@@ -182,7 +192,7 @@ dat %>%
 
 set.seed(1234) #So I get the same results each time
 
-vd = read_xlsx("prac/2025/Data_Biodiversity2_withdensiometer.xlsx", sheet = "Sheet2", range = "A1:DK14")
+vd = read_xlsx("prac/2025/Data_Biodiversity2_withdensiometer.xlsx", sheet = "Sheet2", range = "A1:DH14")
 
 # vd = vd %>% select(Site, WorkingName) %>% 
 #   distinct() %>% 
@@ -190,7 +200,8 @@ vd = read_xlsx("prac/2025/Data_Biodiversity2_withdensiometer.xlsx", sheet = "She
 
 vd %>%
   kable("html") %>% 
-  kable_styling("striped", full_width = F)
+  kable_styling("striped", full_width = F) %>%
+  scroll_box(width = "100%", height = "500px")
  
 ```
 
@@ -201,7 +212,7 @@ vd %>%
 ```{r echo = F, fig.align = 'center', out.height = '60%', warning=F, messages=F}
 # Do a pivot_longer to get species and abundance in separate columns and count species as records with abundance > 0 and present as a table
 sn = vd %>% slice(-1) %>% # Drop the functional type row
-  pivot_longer(names_to = "Species", cols = 2:115, values_to = "Abundance")  %>% # Convert to long format data
+  pivot_longer(names_to = "Species", cols = !Site, values_to = "Abundance")  %>% # Convert to long format data
   group_by(Site) %>% # Set is so that summaries are grouped by Site
   summarize(`Species Number` = sum(Abundance > 0, na.rm=TRUE)) # Count the number of species (i.e. cells that are > 0)
 
@@ -251,7 +262,7 @@ sn %>%
 .pull-left[
 ```{r echo = F, fig.align = 'center', out.height = '100%', warning=F, messages=F}
 sn_ni = vd %>% slice(-1) %>% # Drop the growth form row
-  pivot_longer(names_to = "Species", cols = 2:115, values_to = "Abundance") %>% # Convert to long format data
+  pivot_longer(names_to = "Species", cols = !Site, values_to = "Abundance") %>% # Convert to long format data
   mutate_at("Abundance", as.numeric) %>% # Convert abundance data to numeric
   group_by(Site) %>% # Group by site
   summarize(`Species Number` = sum(Abundance > 0, na.rm=TRUE), 
@@ -308,7 +319,7 @@ sn_ni %>%
 
 ---
 
-### What about compositional dissimilarity among sites? (presence/absence)
+### What about compositional dissimilarity among sites? (0/1)
 
 ```{r echo = F, fig.align = 'center', out.height = '100%', warning=F, messages=F}
 
@@ -316,7 +327,7 @@ sn_ni %>%
 tvd = vd %>% slice(-1)
 rownames(tvd) = tvd$Site
 
-# Calculate Sorenson's distances between sites
+# Calculate Sorenson's distances between sites (binary data - 1/0 - presence/absence)
 sdist = tvd %>% select(-Site) %>% # remove site
   mutate_if(is.character, as.numeric) %>% # convert all data from class character to class numeric
   replace(is.na(.), 0) %>% # replace "NA" values with 0
@@ -340,7 +351,7 @@ kable(msite_BD, digits = 3)
 
 ```{r echo = F, fig.align = 'center', out.height = '100%', warning=F, messages=F}
 
-# Calculate Bray-Curtis distances between sites
+# Calculate Bray-Curtis distances between sites (uses continuous abundance data)
 sdist = tvd %>% select(-Site) %>% # remove site
   mutate_if(is.character, as.numeric) %>% # convert all data from class character to class numeric
   replace(is.na(.), 0) %>% # replace "NA" values with 0
@@ -360,11 +371,100 @@ kable(msite_BD, digits = 3)
 
 ---
 
-## References
+### What about plant functional types (PFTs)?
 
-```{r refs, echo=FALSE, results="asis"}
-NoCite(myBib)
-PrintBibliography(myBib)
+```{r  echo = F}
+# Group species by site occurrences into growth forms
+pfts = vd %>% 
+  slice(-1) %>% # Select the functional type row
+  pivot_longer(cols = -Site, values_drop_na = TRUE) %>% # Convert to long format data
+  mutate(value = as.numeric(value)) %>% # Convert value to numeric
+  #filter(value != "0") %>% # Remove species with no occurrences
+  left_join(data.frame(name = colnames(vd), PFT = t(vd[1,]))) # Add functional type
+  
+# Show table
+pfts %>% 
+  kable("html") %>% 
+  kable_styling("striped", full_width = F) %>%
+  scroll_box(width = "100%", height = "500px")
+
+```
+
+---
+
+### And PFTs by site?
+
+```{r echo = F}
+
+# Calculate PFT number and names per site
+pft_div = pfts %>%
+  select(!name) %>% # Drop the species column
+  group_by(Site, PFT) %>% # Set is so that summaries are grouped by Site and PFT
+  summarize(`PFT abundance` = sum(value, na.rm=TRUE)) %>% # Count the number of individuals per PFT
+  ungroup() %>% # Remove grouping
+  group_by(Site) %>% # Set is so that summaries are grouped by Site
+  summarize(`PFT number` = sum(`PFT abundance` > 0, na.rm=TRUE), # Count the number of PFTs per site
+            `PFT names` = paste(PFT, collapse = ", ")) # Concatenate the PFT names
+  
+# Present table
+pft_div %>%
+  kable("html") %>% 
+  kable_styling("striped", full_width = F)
+```
+
+---
+
+### Add PFT diversity to our other measures of diversity
+
+```{r echo = F}
+sn_ni %>% 
+  mutate(`Species Richness` = sr) %>% # add rarefied species richness to the table
+  mutate(`Shannon Diversity` = sdiv) %>% # add shannon diversity to the species richness table
+  mutate(`Pielou Evenness` = `Shannon Diversity`/log(`Species Number`)) %>% # calculate Pielou's evenness
+  mutate(`PFT number` = pft_div$`PFT number`) %>% # add PFT number to the table
+  kable("html") %>% 
+  kable_styling("striped", full_width = F) %>%
+  scroll_box(width = "100%", height = "500px")
+```
+
+---
+
+### And compare the relationships among them...
+
+```{r echo = F, fig.align = 'center', out.height = '100%', warning=F, messages=F}
+sn_ni %>% 
+  mutate(`Species Richness` = sr) %>% # add rarefied species richness to the table
+  mutate(`Shannon Diversity` = sdiv) %>% # add shannon diversity to the species richness table
+  mutate(`Pielou Evenness` = `Shannon Diversity`/log(`Species Number`)) %>% # calculate Pielou's evenness
+  mutate(`PFT number` = pft_div$`PFT number`) %>% # add PFT number to the table
+  select(-Site) %>% # Drop Site
+  ggpairs()
+```
+
+---
+
+### What about PFT dissimilarity among sites? (0/1)
+
+```{r echo = F, fig.align = 'center', out.height = '100%', warning=F, messages=F}
+# Calculate Sorenson's index based on PFTs
+pftdis = pfts %>%
+  select(!name) %>% # Drop the species column
+  group_by(Site, PFT) %>% # Set is so that summaries are grouped by Site and PFT
+  summarize(`PFT abundance` = sum(value, na.rm=TRUE)) %>% # Count the number of individuals per PFT
+  ungroup() %>% # Remove grouping
+  pivot_wider(names_from = PFT, values_from = `PFT abundance`, values_fill = 0) %>% # Convert to wide format data
+  select(-Site) %>% # remove site
+  designdist(method = "(A+B-2*J)/(A+B)", terms = "binary") # calculate Sorenson's distance
+
+# some tomfoolery to present it nicely... (kable() doesn't like class "dist" - i.e. distance objects)
+pft_BD <- as.data.frame(as.matrix(pftdis)) # make it a rectangular table
+pft_BD[upper.tri(pft_BD, diag = T)] <- NA # set the top-right to "NA"
+options(knitr.kable.NA = '') # set the kable() table printing function to make NA values blank
+rownames(pft_BD) <- unique(pft_div$Site) # add names
+colnames(pft_BD) <- rownames(pft_BD) # make the rownames the column names
+
+# Present as a table
+kable(pft_BD, digits = 3)
 ```
 
 ---

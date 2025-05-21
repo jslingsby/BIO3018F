@@ -12,7 +12,7 @@ This is a 3-week equivalent lecture series on _Measuring Biodiversity_ for the t
 4. [Functional and Phylogenetic Diversity](4_FunctionalAndPhylogenetic)
 5. [Traits, Trade-offs and Phylogeny](5_TraitEvolution)
 6. [The Assembly of Diversity: Local Processes](6_CommunityAssembly)
-7. [The Assembly of Diversity Regional Processes](7_RegionalAssembly)
+7. [The Assembly of Diversity: Regional Processes](7_RegionalAssembly)
 8. [Biodiversity and Ecosystem Function](8_BiodiversityEF)
 9. [Remote Sensing of Biodiversity](9_RemoteSensingBio)
 10. [Feedbacks in Ecology](10_Feedbacks)

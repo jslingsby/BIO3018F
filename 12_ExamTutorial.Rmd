@@ -58,16 +58,16 @@ Answer three of four 50 mark essay questions (but read the instructions!).
 
 Most questions integrate across content from multiple lecturers. The most relevant lecturers are indicated for each question. Feel free to include content from other lecturers (especially examples), but don't ignore the content of the lecturers indicated.
 
-The final mark allocation by lecturer for the course (across the test and exam) is roughly proportional to the number of lectures in their section. That said, all sections are relevant to the exam, especially given the integrative nature of the essays.
+The final mark allocation by lecturer for the course (across the test and exam) is roughly proportional to the number of lectures in their section, discounted by their contribution to tests etc. That said, all sections are relevant to the exam, especially given the integrative nature of the essays.
 
-So the mark allocation across the 4 questions (200 marks) in the exam is roughly:
+So the mark allocation across the 4 questions (200 marks) in the exam is roughly (this is not exact):
 
-- Laurence 50
-- Robert 15
-- Dawood 10
-- Charlene 50
+- Laurence 40
+- Robert 10
+- Claire 30
+- Charlene 40
 - Mike 40
-- Jasper 35
+- Jasper 40
 
 ---
 
@@ -217,7 +217,7 @@ knitr::include_graphics("images/anderson_fig2.png")
 
 ##3. Why do we measure $\beta$ diversity and what questions can it be used to address?
 
-The application $\beta$ diversity can be largely split into 
+The application of $\beta$ diversity can be largely split into 
 * directional analyses, that explore *turnover* along spatial, temporal or environmental gradients, and 
 
 * non-directional analyses, that explore *variation* within or among groups.

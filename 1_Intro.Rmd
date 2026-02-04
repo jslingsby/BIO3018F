@@ -58,7 +58,7 @@ xaringanExtra::use_xaringan_extra(c("tile_view", "scribble"))
 
 layout: false
 
-## This module is about how you would measure biodiversity to address the different needs, 
+## This module is about how you would measure biodiversity to address different needs, 
 
 but first, a little *think-pair-share* activity:
 
@@ -304,17 +304,22 @@ knitr::include_graphics("images/diversitymeasures.png")
 ]
 
 ---
-class: center
+class: center, middle
 
 ## Problem!
 
 We need to be able to measure biodiversity to develop questions, test hypotheses, map priorities, etc
 
+But this requires deciding what data we need to collect, and how to analyze it!
+
+Even once you've collected data:
+
 > *"The use of different measures or analytical approaches on a single set of data can naturally result in quite different outcomes and interpretations."* - Anderson et al. 2011
 
-i.e., there is no one perfect measure of biodiversity(which shouldn't be surprising given we don't have one perfect definition of biodiversity...)
+i.e., there is no one perfect measure of biodiversity (which shouldn't be surprising given we don't have one perfect definition of biodiversity...)
 
-<br>
+---
+class: center, middle
 
 ## Take home
 

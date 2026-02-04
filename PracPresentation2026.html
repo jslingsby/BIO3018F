@@ -1,0 +1,1606 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Practical</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Jasper Slingsby, BIO3018F" />
+    <meta name="date" content="2026-02-04" />
+    <script src="PracPresentation2026_files/header-attrs/header-attrs.js"></script>
+    <script src="PracPresentation2026_files/kePrint/kePrint.js"></script>
+    <link href="PracPresentation2026_files/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+.title[
+# Practical
+]
+.subtitle[
+## Mapping Wetlands
+]
+.author[
+### Jasper Slingsby, BIO3018F
+]
+.date[
+### 2026-02-04
+]
+
+---
+
+
+
+
+
+
+
+
+
+class: center, middle
+
+## Scenario
+
+The manager of De Hoop Nature Reserve has asked for help mapping wetlands in the reserve. The existing map does not indicate any mountain seep wetlands on Potberg, but these small wetlands are typically important for biodiversity conservation, providing hydrological refugia that support species that may otherwise not be able to survive in the prevailing climate.
+
+---
+
+## What is a seep?
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="images/wetlands_ollis2012SANBI.png" alt="(from Ollis et al 2012, SANBI)" width="60%" /&gt;
+&lt;p class="caption"&gt;(from Ollis et al 2012, SANBI)&lt;/p&gt;
+&lt;/div&gt;
+
+"Seeps are characterised by their association with geological formations (lithologies) and topographic positions that either cause groundwater to discharge to the land surface or rain-derived water to ‘seep’ down-slope as subsurface interflow."
+
+---
+
+## Remote sensing - A solution?
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="images/sentinel_moisture.jpg" alt="Moisture Index for a section of De Hoop from Sentinel 2 data (from Copernicus Browser)." width="70%" /&gt;
+&lt;p class="caption"&gt;Moisture Index for a section of De Hoop from Sentinel 2 data (from Copernicus Browser).&lt;/p&gt;
+&lt;/div&gt;
+
+---
+
+## Remote sensing - A solution?
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="images/sentinel_RGB.jpg" alt="True colour image for a section of De Hoop from Sentinel 2 data (from Copernicus Browser)." width="70%" /&gt;
+&lt;p class="caption"&gt;True colour image for a section of De Hoop from Sentinel 2 data (from Copernicus Browser).&lt;/p&gt;
+&lt;/div&gt;
+
+---
+
+## Problem
+
+One needs to "ground-truth" remote sensing data with on-the-ground surveys to be sure that you are mapping wetlands and not other features.
+
+## Task 
+
+You are tasked with developing and testing a rapid field survey protocol* to efficiently identify and characterise seep wetland vegetation communities on Potberg.
+
+.footnote[*This does not mean that your study methods should be rapid, but rather that they help identify a rapid method.]
+
+---
+
+## What can you use as indicators?
+
+---
+
+## What is a wetland?
+
+Wetlands are defined by the presence of water at or near the soil surface (which may be seasonal), hydric soils, and specially adapted vegetation (hydrophytes).
+
+--
+
+### What are the indicators of a wetland?
+
+--
+
+- Wetlands tend to have higher soil moisture (or a shallower water table) than the surrounding landscape.
+
+- Wetlands tend to support distinct plant communities relative to the surrounding landscape, often more productive and typically dominated by hydrophytes.
+
+- Wetlands tend to have hydric soils, which are soils that are saturated, flooded, or ponded long enough during the growing season to develop anaerobic conditions in the upper part. A good indicator of this is higher organic matter content (i.e. darker soils).
+
+---
+
+## How would you measure these indicators?
+
+--
+
+#### Soil moisture?
+
+
+--
+
+
+#### Vegetation?
+
+--
+
+
+- Species?
+- Properties?
+
+
+--
+
+
+#### Soil organic matter?
+
+---
+
+## Field equipment?
+
+#### Soil moisture?
+
+#### Vegetation?
+- Species?
+- Properties?
+
+#### Soil organic matter?
+
+---
+
+## Field equipment?
+
+#### Soil moisture?
+- The Aston (metal bar) + 5 pound hammer + 5m measuring tape + glove
+- Trowel, sealable plastic bags, permanent marker
+
+#### Vegetation?
+- Species: 20m measuring tape, large plastic bags, permanent markers, masking tape, smartphone with camera
+
+- Properties: 5m measuring tape, densiometer, clipboard, paper and pen/pencil
+
+#### Soil organic matter?
+- See _Soil moisture_ above (can inspect same sample in lab)
+
+#### Site?
+- GPS, clipboard, paper and pen/pencil, 50m measuring tape?
+
+---
+
+## Data sheet?
+
+--
+
+- Site name or number
+- GPS coords
+- Date, Time
+- Observer(s)
+- Water table depth (cm)
+- Soil sample collected (Y/N)
+- Site photos collected (Y/N, camera/owner, numbers/timestamp)
+- Vegetation plot established (Y/N)
+- Vegetation height (m)
+- Vegetation cover (%)
+- Densiometer reading
+- Species recorded (list)
+- Notes
+
+---
+
+## Results: The Dataset
+
+&lt;div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; "&gt;&lt;table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; Site Number &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; Team &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; Site &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; Latitude &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; Longitude &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; Date &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; Bare Ground (%) &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; Species &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; Wet mass (g) &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; Dry mass (g) &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; Notes &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; Veg Height (m) &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; MoistureFraction &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; All &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40583 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57963 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Saturday, 24 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia strobilifera &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.010 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.59 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4975000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; All &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40583 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57963 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Saturday, 24 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Platycaulos &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.540 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.59 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6150000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; All &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40583 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57963 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Saturday, 24 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Berzelia lanuginosa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.670 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.59 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5825000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; All &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40583 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57963 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Saturday, 24 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella quercifolia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.850 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.59 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5375000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; All &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40583 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57963 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Saturday, 24 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 299.350 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 216.750 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.59 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2759312 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; All &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40551 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57920 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Saturday, 24 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Leucadendron salignum &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.896 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5260000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; All &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40551 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57920 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Saturday, 24 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Pentameris &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.050 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4875000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; All &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40551 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57920 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Saturday, 24 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia stricta &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.590 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3525000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; All &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40551 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57920 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Saturday, 24 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella quercifolia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.020 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4950000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; A &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; All &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40551 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57920 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Saturday, 24 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 374.850 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 359.500 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.56 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0409497 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40324 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56521 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Berzelia lanuginosa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.573 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site B &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.94 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6067500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40324 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56521 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia strobilifera &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.003 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.876 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site B &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.94 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5313515 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40324 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56521 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Restio tetragonis &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.070 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site B &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.94 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4825000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40324 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56521 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Elegia juncea &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.003 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.209 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site B &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.94 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6979765 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40324 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56521 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 37.609 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 26.100 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site B &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.94 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3060172 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -27.28763 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22.48551 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.247 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site A &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.67 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4383904 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -27.28763 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22.48551 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia stricta &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.003 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.180 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site A &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.67 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4554084 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -27.28763 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22.48551 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.003 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.391 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site A &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.67 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4026980 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -27.28763 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22.48551 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mastersiella digitata &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.358 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site A &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.67 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4105000 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; B &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -27.28763 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22.48551 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 10 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 58.375 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56.550 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site A &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.67 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0312634 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.41252 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.58039 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Platycaulos &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.000 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.605 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site D &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.04 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5987500 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.41252 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.58039 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Berzelia lanuginosa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.568 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site D &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.04 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6080980 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.41252 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.58039 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella quercifolia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.003 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.871 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site D &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.04 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5326005 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.41252 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.58039 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.002 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.943 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site D &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.04 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5289710 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.41252 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.58039 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 27.684 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 22.700 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site D &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.04 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1800318 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.41376 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57859 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.008 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.124 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site C &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4402390 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.41376 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57859 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella quercifolia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.003 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.863 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site C &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5345991 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.41376 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57859 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Leucadendron salignum &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.003 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.872 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site C &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5323507 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.41376 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57859 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia strobilifera &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.004 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.143 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site C &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4647852 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; C &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; JB, EGW, SJLR, AC, TP &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.41376 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57859 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 25 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 56.559 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 54.400 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site C &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.30 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0381725 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40315 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56481 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Berzelia lanuginosa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.004 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.888 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 1 (wet) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.03 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5284715 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40315 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56481 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Platycaulos &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.058 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.074 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 1 (wet) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.03 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4889108 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40315 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56481 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.045 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.950 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 1 (wet) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.03 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5179234 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40315 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56481 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella quercifolia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.016 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.940 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 1 (wet) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.03 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5169323 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40315 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56481 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 47.550 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 41.900 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 1 (wet) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.03 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1188223 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40352 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56452 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Hypodiscus aristata &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.016 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.854 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 1 (dry) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.03 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5383466 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40352 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56452 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Leucadendron salignum &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.033 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.632 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 1 (dry) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.03 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5953385 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40352 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56452 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Phylica &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.003 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.524 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 1 (dry) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.03 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3694729 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40352 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56452 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia stricta &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.005 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.515 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 1 (dry) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.03 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3720350 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; D &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40352 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56452 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 43 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 71.400 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 70.600 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 1 (dry) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.03 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0112045 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40315 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56481 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Berzelia lanuginosa &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.005 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.764 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 2 (wet) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5595506 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40315 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56481 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia stricta &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.010 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.137 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 2 (wet) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4670823 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40315 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56481 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella quercifolia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.036 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.741 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 2 (wet) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5686323 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40315 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56481 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Platycaulos &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.048 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 2 (wet) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4881280 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.40315 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.56481 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 50.200 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 45.250 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 2 (wet) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.35 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0986056 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.41318 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57854 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.172 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 2 (dry) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.97 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4605067 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.41318 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57854 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.002 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.483 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 2 (dry) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.97 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6294353 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.41318 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57854 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella quercifolia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.001 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 2.111 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 2 (dry) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.97 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4723819 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.41318 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57854 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Restio tetragonis &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 4.078 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 1.924 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 2 (dry) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.97 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5282001 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; E &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; KK, JF, SB, BM, JCM &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; -34.41318 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 20.57854 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sunday, 25 Jan, 2026 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 65.850 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 61.600 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Site 2 (dry) &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.97 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0645406 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;
+
+---
+
+## Results: Site level
+
+&lt;img src="PracPresentation2026_files/figure-html/unnamed-chunk-5-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+While we estimated bare ground at the wetland sites, it was always zero, so these bars are not visible. 
+
+.footnote[I dropped site E as both sites sampled were wetlands, so there is no "dry" comparison.]
+
+---
+
+## Results: Vegetation Community
+
+&lt;img src="PracPresentation2026_files/figure-html/unnamed-chunk-6-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+Leaf moisture fraction (1 - dry mass/wet mass) for plant species collected from wet and dry sites on Day 1. Samples are quasi-paired by relatedness (same species, genus, family, etc.), see next slide.
+
+---
+
+## Results: Species Level
+
+&lt;img src="PracPresentation2026_files/figure-html/unnamed-chunk-7-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+---
+
+## Results
+
+&lt;div style="border: 1px solid #ddd; padding: 0px; overflow-y: scroll; height:500px; overflow-x: scroll; width:100%; "&gt;&lt;table class="table table-striped" style="width: auto !important; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; Site &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; Species &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; Pair &lt;/th&gt;
+   &lt;th style="text-align:right;position: sticky; top:0; background-color: #FFFFFF;"&gt; MoistureFraction &lt;/th&gt;
+   &lt;th style="text-align:left;position: sticky; top:0; background-color: #FFFFFF;"&gt; Habitat &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia strobilifera &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4975000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Widespread in marshy areas &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Platycaulos &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Graminoid &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6150000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Damp places and seepages in mountains and along streams &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Berzelia lanuginosa &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Berz-Leuc &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5825000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sandy flats and slopes in permanently moist sites &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella quercifolia &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5375000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sandy flats and slopes &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.2759312 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Leucadendron salignum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Berz-Leuc &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5260000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Many soils and widely distributed &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Pentameris &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Graminoid &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4875000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Most drier fynbos areas &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia stricta &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3525000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Flats and lower slopes &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella quercifolia &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4950000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sandy flats and slopes &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0409497 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Berzelia lanuginosa &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Berz-Leuc &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6067500 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sandy flats and slopes in permanently moist sites &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia strobilifera &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5313515 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Widespread in marshy areas &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Restio tetragonis &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Restio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4825000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Elegia juncea &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Elegia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6979765 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3060172 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4383904 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia stricta &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4554084 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Flats and lower slopes &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4026980 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Mastersiella digitata &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Restio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4105000 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0312634 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Platycaulos &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Graminoid &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5987500 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Damp places and seepages in mountains and along streams &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Berzelia lanuginosa &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Berz-Leuc &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6080980 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sandy flats and slopes in permanently moist sites &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella quercifolia &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5326005 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sandy flats and slopes &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5289710 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1800318 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4402390 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella quercifolia &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5345991 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sandy flats and slopes &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Leucadendron salignum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Berz-Leuc &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5323507 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Many soils and widely distributed &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia strobilifera &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4647852 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Widespread in marshy areas &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0381725 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Berzelia lanuginosa &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Berz-Leuc &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5284715 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sandy flats and slopes in permanently moist sites &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Platycaulos &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Restio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4889108 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Damp places and seepages in mountains and along streams &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; EricaPhylica &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5179234 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella quercifolia &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5169323 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sandy flats and slopes &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.1188223 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Hypodiscus aristata &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Restio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5383466 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Leucadendron salignum &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Berz-Leuc &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5953385 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Many soils and widely distributed &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Phylica &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; EricaPhylica &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3694729 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia stricta &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.3720350 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Flats and lower slopes &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0112045 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Berzelia lanuginosa &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Berz-Leuc &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5595506 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sandy flats and slopes in permanently moist sites &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia stricta &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Cliffortia &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4670823 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella quercifolia &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5686323 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sandy flats and slopes &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Platycaulos &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Graminoid &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4881280 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Damp places and seepages in mountains and along streams &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Wet &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0986056 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 2 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 2 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4605067 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Erica 1 &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.6294353 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella quercifolia &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Morella &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.4723819 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Sandy flats and slopes &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Restio tetragonis &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Restio &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.5282001 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Dry &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; Soil &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+   &lt;td style="text-align:right;"&gt; 0.0645406 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; NA &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;&lt;/div&gt;
+
+---
+
+## What have we learned so far?
+
+---
+
+## What have we learned so far?
+
+- Wet sites have higher soil moisture content than dry sites
+- Wet sites tend to have plants with higher leaf moisture content than dry sites
+- Some species occur only in wet sites, some only in dry sites, and some in both
+- Leaf moisture content may be constrained by phylogeny (related species have similar leaf moisture content), but within lineages wet site species tend to have higher leaf moisture content than dry site species
+
+---
+
+## Where does this leave us with regard to our task?
+
+_You are tasked with developing and testing a rapid field survey protocol to efficiently identify and characterise seep wetland vegetation communities on Potberg._
+
+---
+
+## How would you establish good indicators?
+
+- Plant species? What do you need to know?
+
+- Traits?
+
+
+---
+
+## Plant distributions as indicators?
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="images/inat_potberg_Jan2026.png" alt="Screenshot of iNaturalist records for plants in De Hoop NR." width="70%" /&gt;
+&lt;p class="caption"&gt;Screenshot of iNaturalist records for plants in De Hoop NR.&lt;/p&gt;
+&lt;/div&gt;
+
+---
+
+## Traits from remote sensing?
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="PracPresentation2026_files/figure-html/unnamed-chunk-10-1.png" alt="RGB image of BioSCape imagery for Potberg (see www.bioscape.io)." width="100%" /&gt;
+&lt;p class="caption"&gt;RGB image of BioSCape imagery for Potberg (see www.bioscape.io).&lt;/p&gt;
+&lt;/div&gt;
+
+---
+
+## Traits from remote sensing?
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="PracPresentation2026_files/figure-html/unnamed-chunk-11-1.png" alt="Average community leaf water content derived from BioSCape imagery for Potberg (see www.bioscape.io)." width="100%" /&gt;
+&lt;p class="caption"&gt;Average community leaf water content derived from BioSCape imagery for Potberg (see www.bioscape.io).&lt;/p&gt;
+&lt;/div&gt;
+
+
+
+---
+
+## Sampling methods
+
+### You decided that at each location you'd set up a 4x4m plot and...
+
+Sample _Environmental conditions:_
+
+- Estimate % projected cover (the area you would see from above) bare soil
+
+- Take a densiometer reading at ground level
+
+- Take a **soil sample** from the 4 corners to measure volumetric soil water content
+
+- Note prevalence of **dung**: none/low/medium/high
+
+- Note presence/absence of burnt dead skeletons or charcoal
+
+- Note prevalence of serotiny
+  
+- Take a few notes (and photos) on any features you think may be interesting
+
+---
+
+## Sampling methods
+
+### You decided that at each location you'd set up a 4x4m plot and...
+
+Sample _Diversity:_
+
+- Count the number of individuals and estimate % cover of each species
+
+- Collect a voucher specimen of each species
+
+- Assign species to functional types:
+  
+  - Trees, shrubs, herbs, grasses, succulents, geophytes, climbers, parasites, etc.?
+
+---
+
+class: center, middle
+
+R code for this presentation with R code for the following analyses can be accessed [**at this link**](https://github.com/jslingsby/BIO3018F/blob/main/PracPresentation2026.Rmd)
+
+&lt;br&gt;
+
+The data are available [**here**](https://github.com/jslingsby/BIO3018F/blob/main/prac/)
+
+---
+class: center, middle
+
+# Thanks!
+
+Slides created via the R packages:
+
+[**xaringan**](https://github.com/yihui/xaringan)&lt;br&gt;
+[gadenbuie/xaringanthemer](https://github.com/gadenbuie/xaringanthemer)
+
+The chakra comes from [remark.js](https://remarkjs.com), [**knitr**](http://yihui.name/knitr), and [R Markdown](https://rmarkdown.rstudio.com).
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+  "slideNumberFormat": "%current% / %total%",
+  "highlightStyle": "github",
+  "highlightLines": true,
+  "ratio": "16:9",
+  "countIncrementalSlides": true
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// add `data-at-shortcutkeys` attribute to <body> to resolve conflicts with JAWS
+// screen reader (see PR #262)
+(function(d) {
+  let res = {};
+  d.querySelectorAll('.remark-help-content table tr').forEach(tr => {
+    const t = tr.querySelector('td:nth-child(2)').innerText;
+    tr.querySelectorAll('td:first-child .key').forEach(key => {
+      const k = key.innerText;
+      if (/^[a-z]$/.test(k)) res[k] = t;  // must be a single letter (key)
+    });
+  });
+  d.body.setAttribute('data-at-shortcutkeys', JSON.stringify(res));
+})(document);
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

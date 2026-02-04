@@ -162,9 +162,9 @@ Driven by many processes, but dramatic radiations often triggered by major event
 
 E.g. The "Andean radiation" of the genus _Lupinus_ was driven by the uplift of the Andes 
 
-The uplift created diverse new habitats, because it created steep climatic gradients and exposed new geology/soils. 
+The uplift created diverse new habitats, because it created steep climatic gradients and exposed new geology/soils, creating opportunity for sympatric or peripatric speciation. 
 
-It also split populations by creating new barriers to dispersal (e.g. high mountains between lowland populations, or deep valleys between high elevation populations).
+It also split populations by creating new barriers to dispersal (e.g. high mountains between lowland populations, or deep valleys between high elevation populations), driving allopatric speciation.
 
 .footnote[Hughes and Eastwood 2006]
 
@@ -260,7 +260,7 @@ Immigration rate declines as more species accumulate (there are fewer that still
 
 Extinction rate increases as more species accumulate (there are more that could go extinct).
 
-Island size alters these rates, adjusting the point of equilibrium.
+Island size and distance from mainland alter these rates, adjusting the point of equilibrium.
 
 .footnote[MacArthur and Wilson 1967 (Figure - Warren et al. 2015)]
 

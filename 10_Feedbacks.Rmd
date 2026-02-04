@@ -224,7 +224,11 @@ knitr::include_graphics("images/pausas_bond_2020_1.jpg")
 
 ## What is a feedback?
 
+--
+
 > _"the modification or control of a process or system by its results or effects"_ - Oxford Dictionary
+
+--
 
 <br>
 
@@ -232,6 +236,8 @@ knitr::include_graphics("images/pausas_bond_2020_1.jpg")
 
 - **Positive (amplifying) feedback:** 
   - "a feedback process where a stimulus (e.g., disturbance) causes a reaction _**in the same direction**_ and thus it amplifies the stimulus. Thus, it moves the system away from equilibrium; it generates instability, and when strong enough, causes state shifts. It may require an external force to initiate it."
+
+--
 
 - **Negative (stabilizing) feedback:** 
   - "a feedback process where a stimulus (e.g., disturbance) causes a reaction _**in the opposite direction**_ so that the state of the system is maintained. Negative feedbacks promote stability (e.g., homeostasis) and ensure the maintenance of a steady, stable state."
@@ -242,7 +248,7 @@ knitr::include_graphics("images/pausas_bond_2020_1.jpg")
 
 ## What are feedbacks in ecology?
 
-Organisms can modify their environment, and these modifications can feed back to the organism and generate emergent properties at different scales, with ecological and evolutionary consequences...
+Organisms can modify their environment, and these modifications can feed back to the organism and generate **_emergent properties_** at different scales, with ecological and evolutionary consequences...
 
 ```{r echo = F, fig.align = 'center', out.width = '55%'}
 knitr::include_graphics("images/pausas_bond_2022.jpg")

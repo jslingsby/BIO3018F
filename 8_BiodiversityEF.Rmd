@@ -293,10 +293,11 @@ knitr::include_graphics("images/tilman2014_fig2.png")
 ```
 
 Generally results are consistent with "niche complementarity" (modelled in panel c)
-  - biomass increases with diversity above that of the most productive monoculture - a phenomenon termed "overyielding"
+  - biomass increases with diversity above that of the most productive monoculture* - a phenomenon termed "overyielding"
 
 Under "the selection effect" (panel b) the expected maximum cannot exceed that of the most productive monoculture 
 
+.footnote[*i.e. dashed line exceeds points on the graph at Nspp = 1]
 ]
 
 ---
@@ -460,7 +461,7 @@ layout: false
 ###Space? - It's complicated!!!
 Niche complementarity is a local co-existence mechanism, but becomes less important at the regional scale, so the effect on EF should decrease.
 
-Greater heterogeneity at the regional scale means adding species with different niche preferences should increase EF (but not so in homogenous regions).
+Greater environmental heterogeneity at the regional scale means adding species with different niche preferences should increase EF (but not so in homogenous regions).
 
 The actual ecosystem functions themselves often change with scale!
 
@@ -493,10 +494,10 @@ layout: false
 
 ## Experiments vs the real world?
 
-```{r echo = F, fig.align = 'center', out.width = '65%'}
+```{r echo = F, fig.align = 'center', out.width = '55%'}
 knitr::include_graphics("images/vanderplas2019_BEF_table1.jpg")
 ```
-.footnote[van der Plas 2019]
+.footnote[van der Plas 2019 found varied support - mostly positive results (green), but many ambivalent (yellow) or negative (red).]
 
 ---
 

@@ -156,13 +156,17 @@ Trade-offs dictate that some traits and trait combinations (and thus life-histor
 
 <br>
 
-If each trait is a dimension, trade-offs dictate that the "volume" of the trait space is constrained (cannot be filled).
+If each trait is a dimension (axis in the figure), trade-offs dictate that the "volume" of the trait space is constrained (cannot be filled).
+
+<br>
+
+Here, null models that assume no trade-offs (random trait combinations) cannot reproduce the observed trait combinations (a constrained convex "hull" within trait space).
 
 .footnote[Diaz et al. 2016]
 ]
 
 .pull-right[
-```{r echo = F, fig.align = 'center', out.width = '80%'}
+```{r echo = F, fig.align = 'center', out.width = '85%'}
 knitr::include_graphics("images/diaz_hull.webp")
 ```
 ]
@@ -180,11 +184,15 @@ But trait values, combinations and trade-offs are further constrained by phyloge
 
 Traits and trade-offs often vary among taxonomic lineages, revealing a signal of their evolutionary history (phylogeny).
 
+<br>
+
+Note that most woody plants are dicotyledonous, while most non-woody are monocotyledonous plants (grasses, sedges, restios, orcids, etc).
+
 .footnote[Diaz et al. 2016]
 ]
 
 .pull-right[
-```{r echo = F, fig.align = 'center', out.width = '75%'}
+```{r echo = F, fig.align = 'center', out.width = '85%'}
 knitr::include_graphics("images/diaz.webp")
 ```
 
@@ -239,7 +247,7 @@ knitr::include_graphics("images/pinus_radiata.jpg")
 ]
 
 .pull-right[
-```{r echo = F, fig.align = 'center', out.width = '90%'}
+```{r echo = F, fig.align = 'center', out.width = '88%'}
 knitr::include_graphics("images/protea_nana.jpg")
 ```
 ]
@@ -279,7 +287,7 @@ Large (diverse) clades like the Proteaceae (~300 spp), Restionaceae (~300 spp) a
 ]
 
 .pull-right[
-```{r echo = F, fig.align = 'center', out.width = '80%'}
+```{r echo = F, fig.align = 'center', out.width = '85%'}
 knitr::include_graphics("images/proteas_Roets2006.jpg")
 ```
 ]
@@ -370,6 +378,8 @@ Speciation is more likely to occur via dispersal to a similar biome on a differe
 class: center, middle
 
 ## Take-home
+
+*Trade-offs among traits limit the spectrum of potential trait combinations, constraining life-history strategies and niche space.*
 
 *The evolutionary history of species leaves a strong imprint on current ecology, especially through trait and niche conservatism.*
 

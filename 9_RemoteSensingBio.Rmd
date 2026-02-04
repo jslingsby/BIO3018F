@@ -558,7 +558,7 @@ Another approach is just to map and monitor environmental heterogeneity
 
 ####_"Conserving nature's stage"_
 
-The Nature Conservancy and others using this approach to identify parcels of Earth that are valuable for their capacity to support diverse life forms today and into the future
+The Nature Conservancy and others are using this approach to identify parcels of Earth that are valuable for their capacity to support diverse life forms today and into the future
 
 Typically identified based on their abiotic heterogeneity or geodiversity, much of which can be mapped and/or monitored with remote sensing - topography, climate, soils, etc
 

@@ -81,31 +81,43 @@ knitr::include_graphics("images/wetlands_ollis2012SANBI.png")
 
 ---
 
-## Remote sensing - A solution?
+## Why are seeps important?
 
-```{r echo = F, fig.align = 'center', out.width = '70%', fig.cap = "Moisture Index for a section of De Hoop from Sentinel 2 data (from Copernicus Browser)."}
-knitr::include_graphics("images/sentinel_moisture.jpg")
-```
+<br>
+
+Seeps provide hydrological refugia that support species that may otherwise not be able to survive in the prevailing climate [(McLaughlin et al. 2017)](https://doi.org/10.1111/gcb.13629).
+
+<br>
+
+Hydric habitats contribute greatly to the richness of the Cape Fynbos Flora [(van Blerk et al. 2025)](https://doi.org/10.1111/ddi.13962).
+
+<br>
+
+Groundwater dependent ecosystems (including seeps) are particularly vulnerable to invasive alien species and groundwater abstraction for human use [(Slingsby 2018)](https://groundup.org.za/article/rush-drill-water-could-threaten-our-future-water-supply/)
 
 ---
-
-## Remote sensing - A solution?
-
-```{r echo = F, fig.align = 'center', out.width = '70%', fig.cap = "True colour image for a section of De Hoop from Sentinel 2 data (from Copernicus Browser)."}
-knitr::include_graphics("images/sentinel_RGB.jpg")
-```
-
----
-
-## Problem
-
-One needs to "ground-truth" remote sensing data with on-the-ground surveys to be sure that you are mapping wetlands and not other features.
 
 ## Task 
 
-You are tasked with developing and testing a rapid field survey protocol* to efficiently identify and characterise seep wetland vegetation communities on Potberg.
+You are tasked with developing and testing a rapid protocol* to efficiently identify and characterise seep wetland vegetation communities on Potberg.
 
 .footnote[*This does not mean that your study methods should be rapid, but rather that they help identify a rapid method.]
+
+---
+
+# Deliverable
+
+A brief research report in the format of a Research Article in the journal [**_Biology Letters_**](https://royalsocietypublishing.org/rsbl/for-authors).
+
+- 2,500 words maximum, including references.
+- Standard journal paper format: Title, Abstract, Introduction, Methods, Results (with figures and tables), Discussion, References
+- Consider relevant references from the lectures...
+- Clearly state your research question(s) and hypothesis(es).
+- Present your results in a way that is clear and easy to interpret.
+- Discuss your results in the context of your hypothesis and the literature.
+- Feel free to highlight the shortcomings of your study and what could be done to improve it.
+- Conclude with a summary of your findings and their implications.
+- More on how to write a paper [**here**](https://docs.google.com/document/d/1xidafYQKbNyvfvBRtj7-NblW6sg_9_h5HJWgtUsgasY/edit?usp=sharing).
 
 ---
 
@@ -137,9 +149,7 @@ Wetlands are defined by the presence of water at or near the soil surface (which
 
 #### Soil moisture?
 
-
 --
-
 
 #### Vegetation?
 
@@ -213,6 +223,10 @@ Wetlands are defined by the presence of water at or near the soil surface (which
 ```{r echo = F, fig.align = 'center', out.height = '60%', warning=F, messages=F}
 library(tidyverse)
 library(readxl)
+library(sf)
+library(terra)
+library(mapview)
+library(rinat)
 
 set.seed(1234) #So I get the same results each time
 
@@ -232,32 +246,35 @@ d1 %>% select(!c(Habitat,Pair)) %>%
 ## Results: Site level
 
 ```{r echo = F, fig.align = 'center'}
-d1 %>% filter(Species == "Soil", `Site Number` !="E") %>%
-  select(Site, `Site Number`, MoistureFraction, `Bare Ground (%)`, `Veg Height (m)`) %>%
-  pivot_longer(cols = c(MoistureFraction, `Bare Ground (%)`, `Veg Height (m)`), names_to = "Variable", values_to = "Value") %>%
+
+# Plot site-level indicators of wetness (soil moisture, bare ground, vegetation height)
+d1 %>% filter(Species == "Soil") %>%
+  rename("Soil Moisture Fraction" = MoistureFraction, 
+         "Vegetation Height (m)" = `Veg Height (m)`) %>%
+  select(Site, `Site Number`, `Soil Moisture Fraction`, `Bare Ground (%)`, `Vegetation Height (m)`) %>%
+  pivot_longer(cols = c(`Soil Moisture Fraction`, `Bare Ground (%)`, `Vegetation Height (m)`), names_to = "Variable", values_to = "Value") %>%
   ggplot(aes(x = `Site Number`, y = Value, fill = Site)) +
   geom_col(outlier.shape = NA, position = "dodge") +
-#  geom_line(aes(group = Pair)) +
-#  geom_point() +
   facet_wrap(~Variable, scales = "free_y")
 ```
-While we estimated bare ground at the wetland sites, it was always zero, so these bars are not visible. 
+While we estimated bare ground at the wet sites, it was always zero, so these bars are not visible. 
 
-.footnote[I dropped site E as both sites sampled were wetlands, so there is no "dry" comparison.]
+.footnote[Why no bare ground at the dry sample at site E?]
 
 ---
 
 ## Results: Vegetation Community
 
 ```{r echo = F, fig.align = 'center'}
-d1 %>% filter(Species != "Soil", `Site Number` !="E") %>%
-  ggplot(aes(x = `Site Number`, y = MoistureFraction, colour = Site)) +
+# Plot community-level indicators of wetness (leaf moisture fraction) for all species across sites
+d1 %>% filter(Species != "Soil") %>% 
+  rename("Leaf Moisture Fraction" = MoistureFraction) %>%
+  ggplot(aes(x = `Site Number`, y = `Leaf Moisture Fraction`, colour = Site)) +
   geom_boxplot(outlier.shape = NA) +
-#  geom_line(aes(group = Pair)) +
   geom_point()
 ```
 
-Leaf moisture fraction (1 - dry mass/wet mass) for plant species collected from wet and dry sites on Day 1. Samples are quasi-paired by relatedness (same species, genus, family, etc.), see next slide.
+Leaf moisture fraction (1 - dry mass/wet mass) for all plant species collected across sites. Each boxplot summarises the distribution of leaf moisture fraction for all species collected at each site, and the points show the values for each individual plant sampled.
 
 ---
 
@@ -265,15 +282,18 @@ Leaf moisture fraction (1 - dry mass/wet mass) for plant species collected from 
 
 ```{r echo = F, fig.align = 'center'}
 
+# Plot species-level indicators of wetness (leaf moisture fraction) for all species that occur in both wet and dry sites
  d1 %>% group_by(Species) %>%
+  rename("Leaf Moisture Fraction" = MoistureFraction) %>%
   filter(Species != "Soil", n_distinct(Site) >= 2) %>%
   ungroup() %>%
-  ggplot(aes(x = Species, y = MoistureFraction, colour = Site)) +
+  ggplot(aes(x = Species, y = `Leaf Moisture Fraction`, colour = Site)) +
   geom_boxplot(outlier.shape = NA) +
-#  geom_line(aes(group = Pair)) +
   geom_point() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1))
 ```
+
+Leaf moisture fraction (1 - dry mass/wet mass) for all plant species that occur in both wet and dry sites. Each boxplot summarises the distribution of leaf moisture fraction for each species across sites, and the points show the values for each individual plant sampled.
 
 ---
 
@@ -281,16 +301,22 @@ Leaf moisture fraction (1 - dry mass/wet mass) for plant species collected from 
 
 --
 
+It seems that...
+
 - Wet sites have higher soil moisture content than dry sites
 - Wet sites tend to have plants with higher leaf moisture content than dry sites
 - Some species occur only in wet sites, some only in dry sites, and some in both
-- Leaf moisture content may be constrained by phylogeny (related species have similar leaf moisture content), but within species individuals in wet sites tend to have higher leaf moisture content than in dry sites.
+- Within species, individuals in wet sites tend to have higher leaf moisture content than in dry sites
+
+<br>
+
+...but we haven't done any statistics, so we can't be sure that these patterns are real and not just due to random variation in our small sample size. I'll leave it up to you to work this bit out...
 
 ---
 
 ## Where does this leave us with regard to our task?
 
-_You are tasked with developing and testing a rapid field survey protocol to efficiently identify and characterise seep wetland vegetation communities on Potberg._
+_You are tasked with developing and testing a rapid protocol to efficiently identify and characterise seep wetland vegetation communities on Potberg._
 
 ---
 
@@ -305,25 +331,21 @@ _You are tasked with developing and testing a rapid field survey protocol to eff
 
 ## Plant distributions as indicators?
 
-```{r echo = F, fig.align = 'center', out.width = '70%', fig.cap = "Screenshot of iNaturalist records for plants in De Hoop NR."}
+```{r echo = F, fig.align = 'center', out.width = '85%', fig.cap = "Screenshot of iNaturalist records for plants in De Hoop NR."}
 knitr::include_graphics("images/inat_potberg_Jan2026.png")
 ```
-
 
 ---
 
 ## Plant distributions as indicators?
 
-```{r echo = F, fig.align = 'center', out.width = '70%', fig.cap = "Occurrence of the vlei kolkol (_Berzelia lanuginosa_) in De Hoop NR. It is a good indicator of wet environments, but occurs only in a few locations on Potberg."}
-
-library(rinat)
-library(sf)
+```{r echo = F}
 
 #Call the data directly from iNat
 bl <- get_inat_obs(taxon_name = "Berzelia lanuginosa",
                    bounds = c(-34.426285, 20.512737, -34.348832, 20.776036),
-                   maxresults = 1000) %>% 
-            filter(positional_accuracy<46 & 
+                   maxresults = 1000) %>%
+            filter(positional_accuracy<46 &
                 latitude<0 &
                 !is.na(latitude) &
                 captive_cultivated == "false" &
@@ -336,12 +358,15 @@ mapview::mapview(bl, zcol = "positional_accuracy", legend = FALSE)
 
 ```
 
+.footnote[iNaturalist records of the occurrence of the vlei kolkol (_Berzelia lanuginosa_) in De Hoop Nature Reserve. It is a good indicator of wet environments, but occurs only in a few locations on Potberg.]
+
 ---
 
-## Results: Literature?
+## What does the literature say about our sampled species?
 
 ```{r echo = F, fig.align = 'center'}
-d1 %>% select(Site, Species, Pair, MoistureFraction,Habitat) %>%
+# Display table showing the species we collected, their moisture fraction, and habitat description derived from the literature
+d1 %>% select(Site, Species, MoistureFraction, Habitat) %>%
   kable("html") %>% 
   kable_styling("striped", full_width = F) %>%
   scroll_box(width = "100%", height = "500px")
@@ -349,10 +374,86 @@ d1 %>% select(Site, Species, Pair, MoistureFraction,Habitat) %>%
 
 ---
 
+## Remote sensing - A solution?
+
+```{r echo = F, fig.align = 'center', out.width = '70%', fig.cap = "Moisture Index (MI) for a section of De Hoop from Sentinel 2 data (from Copernicus Browser)."}
+knitr::include_graphics("images/sentinel_moisture.jpg")
+```
+
+---
+
+## Remote sensing - A solution?
+
+```{r echo = F, fig.align = 'center', out.width = '70%', fig.cap = "True colour image for a section of De Hoop from Sentinel 2 data (from Copernicus Browser)."}
+knitr::include_graphics("images/sentinel_RGB.jpg")
+```
+
+---
+
+## Problem
+
+One needs to "ground-truth" remote sensing data with on-the-ground surveys to be sure that you are mapping wetlands and not other features.
+
+---
+
+### Do our sites match up with our remotely sensed moisture index?
+
+#### [Moisture Index (MI)](https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/msi/)
+```{r echo = F}
+# Read in Sentinel moisture indices
+ndmi <- rast("prac/2026/NDMI_custom.tiff")[[1]] # ranges 0 to 1
+mi <- rast("prac/2026/MI_custom.tiff")[[1]]/255*3 # rescale to 0-3 
+
+# Get site coordinates and convert to spatial object
+sites_sf <- d1 %>% select(`Site Number`, Site, Latitude, Longitude) %>% 
+  unique() %>% 
+  st_as_sf(coords = c("Longitude", "Latitude"), crs = 4326)
+
+# Plot MI and add points for the site locations
+mapview(mi) + mapview(sites_sf, label = sites_sf$`Site Number`)
+```
+
+.footnote[MI is calculated by dividing the SWIR by the NIR bands of Sentinel 2 data, and is negatively correlated with moisture.]
+
+---
+
+### Do our sites match up with normalised difference moisture index?
+
+#### [Normalised Difference Moisture Index (NDMI)](https://custom-scripts.sentinel-hub.com/custom-scripts/sentinel-2/ndmi/)
+```{r echo = F}
+# Plot NDMI and add points for the site locations
+mapview(ndmi) + mapview(sites_sf, label = sites_sf$`Site Number`)
+```
+
+.footnote[NDMI is the normalised difference of the NIR and SWIR bands of Sentinel 2 data, and is positively correlated with moisture.]
+
+---
+
+### Do our sites match up with our remotely sensed moisture indices?
+
+```{r echo = F}
+# Extract NDMI and MI values at the site locations
+sites_sf <- sites_sf %>% mutate(NDMI = terra::extract(ndmi, sites_sf)[,2],
+                      MI = terra::extract(mi, sites_sf)[,2])
+
+# Plot NDMI and MI at the site locations
+sites_sf %>%
+  pivot_longer(cols = c(`NDMI`, `MI`), names_to = "Variable", values_to = "Value") %>%
+  ggplot(aes(x = `Site Number`, y = Value, fill = Site)) +
+  geom_col(outlier.shape = NA, position = "dodge") +
+  facet_wrap(~Variable, scales = "free_y")
+```
+
+
+---
+
+### Do the locations of our wetland species match up with our remotely sensed moisture index?
+
+---
+
 ## Traits from remote sensing?
 
-```{r echo = F, fig.align = 'center', fig.cap = "RGB image of BioSCape imagery for Potberg (see www.bioscape.io)."}
-library(terra)
+```{r echo = F, fig.align = 'center', fig.cap = "RGB image of AVIRIS-NG imagery from the BioSCape project for Potberg (see www.bioscape.io)."}
 
 wat <- rast("/Users/jasper/Documents/Datasets/BioSCape/TraitMaps/Potberg/ang20231031t102201_001_L2A_OE_0b4f48b4_RFL_ORT_QL.tif")
 
@@ -360,70 +461,77 @@ plot(wat)
 
 ```
 
+
 ---
 
 ## Traits from remote sensing?
 
-```{r echo = F, fig.align = 'center', fig.cap = "Average community leaf water content derived from BioSCape imagery for Potberg (see www.bioscape.io)."}
+```{r echo = F}
 library(terra)
 
-wat <- rast("/Users/jasper/Documents/Datasets/BioSCape/TraitMaps/Potberg/ang20231031t102201_001_L2A_OE_0b4f48b4_RFL_ORT_Water.nc")
+# Plot the water content layer and add points for the site locations
+wat <- rast("/Users/jasper/Documents/Datasets/BioSCape/TraitMaps/Potberg/ang20231031t102201_001_L2A_OE_0b4f48b4_RFL_ORT_Water.nc")[[1]]
 
-plot(wat[[1]])
+#plot(wat)
+
+mapview(wat) + mapview(sites_sf, label = sites_sf$`Site Number`)
 
 ```
 
-
-
----
-
-## Sampling methods
-
-### You decided that at each location you'd set up a 4x4m plot and...
-
-Sample _Environmental conditions:_
-
-- Estimate % projected cover (the area you would see from above) bare soil
-
-- Take a densiometer reading at ground level
-
-- Take a **soil sample** from the 4 corners to measure volumetric soil water content
-
-- Note prevalence of **dung**: none/low/medium/high
-
-- Note presence/absence of burnt dead skeletons or charcoal
-
-- Note prevalence of serotiny
-  
-- Take a few notes (and photos) on any features you think may be interesting
+.footnote[Preliminary model of average community leaf water content derived from BioSCape imagery for Potberg (see www.bioscape.io).]
 
 ---
 
-## Sampling methods
+## Traits from remote sensing?
 
-### You decided that at each location you'd set up a 4x4m plot and...
+```{r echo = F}
+# Extract leaf water content at the site locations
+sites_sf <- sites_sf %>% mutate(`Leaf Water Content` = terra::extract(wat, sites_sf, method = "bilinear")[,2])
 
-Sample _Diversity:_
+# Plot leaf water content at the site locations
+sites_sf %>%
+  ggplot(aes(x = `Site Number`, y = `Leaf Water Content`, fill = Site)) +
+  geom_col(outlier.shape = NA, position = "dodge")
+```
 
-- Count the number of individuals and estimate % cover of each species
+.footnote[Like I said... preliminary...]
 
-- Collect a voucher specimen of each species
+---
 
-- Assign species to functional types:
-  
-  - Trees, shrubs, herbs, grasses, succulents, geophytes, climbers, parasites, etc.?
+## Traits from remote sensing?
+
+### What about the leaf water content estimates for our Berzelia localities?
+
+```{r echo = F}
+# Extract estimates for our Berzelia localities
+berz <- terra::extract(wat[[1]], bl)
+
+# Generate background points (e.g., 100 points)
+bg_pts <- spatSample(wat[[1]], size=100, "random", as.points=TRUE)
+bg_vals <- terra::extract(wat[[1]], bg_pts)
+
+# Plot comparison as a density plot
+tibble(Target = factor(c(rep("Berzelia", nrow(berz)), rep("Background", nrow(bg_vals)))),
+  `Leaf Water Content` = rbind(berz,bg_vals)[,2]) %>%
+  ggplot(aes(x = `Leaf Water Content`, fill = Target)) +
+  geom_density(alpha = 0.5) +
+  labs(x = "Estimated Leaf Water Content", fill = "Target") +
+  theme_minimal()
+```
+
 
 ---
 
 class: center, middle
 
-R code for this presentation with R code for the following analyses can be accessed [**at this link**](https://github.com/jslingsby/BIO3018F/blob/main/PracPresentation2026.Rmd)
+R code for this presentation with R code for the analyses can be accessed [**at this link**](https://github.com/jslingsby/BIO3018F/blob/main/PracPresentation2026.Rmd)
 
 <br>
 
-The data are available [**here**](https://github.com/jslingsby/BIO3018F/blob/main/prac/)
+The data are available [**here**](https://github.com/jslingsby/BIO3018F/blob/main/prac/2026/)
 
 ---
+
 class: center, middle
 
 # Thanks!

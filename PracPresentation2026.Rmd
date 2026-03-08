@@ -455,7 +455,7 @@ sites_sf %>%
 
 ```{r echo = F, fig.align = 'center', fig.cap = "RGB image of AVIRIS-NG imagery from the BioSCape project for Potberg (see www.bioscape.io)."}
 
-wat <- rast("/Users/jasper/Documents/Datasets/BioSCape/TraitMaps/Potberg/ang20231031t102201_001_L2A_OE_0b4f48b4_RFL_ORT_QL.tif")
+wat <- rast("prac/2026/ang20231031t102201_001_L2A_OE_0b4f48b4_RFL_ORT_QL.tif")
 
 plot(wat)
 
@@ -470,11 +470,12 @@ plot(wat)
 library(terra)
 
 # Plot the water content layer and add points for the site locations
-wat <- rast("/Users/jasper/Documents/Datasets/BioSCape/TraitMaps/Potberg/ang20231031t102201_001_L2A_OE_0b4f48b4_RFL_ORT_Water.nc")[[1]]
+wat <- rast("prac/2026/ang20231031t102201_001_L2A_OE_0b4f48b4_RFL_ORT_Water.nc", lyrs = 1)#[[1]]
 
-#plot(wat)
+plot(wat)
+points(sites_sf)
 
-mapview(wat) + mapview(sites_sf, label = sites_sf$`Site Number`)
+#mapview(wat) + mapview(sites_sf, label = sites_sf$`Site Number`)
 
 ```
 
